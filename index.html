@@ -3,77 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Goutham Bolli Portfolio</title>
+    <title>Editor Goutham Bolli | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #000000; color: #e5e7eb; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #050505; color: #ffffff; margin: 0; padding: 0; line-height: 1.6; }
         
-        /* Cinematic Header */
-        .hero { background: linear-gradient(180deg, #111827 0%, #000000 100%); padding: 80px 20px; border-bottom: 2px solid #fbbf24; text-align: center; }
-        h1 { color: #fbbf24; font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        .sub-text { color: #9ca3af; font-size: 1.1rem; margin-top: 10px; }
-        
+        /* Hero Section */
+        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; border-bottom: 4px solid #d4af37; text-align: center; padding: 20px; }
+        h1 { font-family: 'Bebas Neue', cursive; font-size: clamp(3rem, 10vw, 5.5rem); color: #d4af37; margin: 0; letter-spacing: 4px; }
+        .tagline { font-size: 1.2rem; letter-spacing: 3px; color: #9ca3af; text-transform: uppercase; margin-top: 10px; }
+
         /* Buttons */
-        .btn-group { margin-top: 20px; text-align: center; }
-        .btn { background: #fbbf24; color: #000; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin: 10px; transition: 0.3s; }
-        .btn:hover { background: #fff; transform: translateY(-3px); }
+        .btn-group { margin-top: 30px; }
+        .btn { padding: 12px 30px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.4s; margin: 10px; display: inline-block; letter-spacing: 1px; }
+        .btn:hover { background: #d4af37; color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+
+        /* Container */
+        .container { max-width: 900px; margin: auto; padding: 60px 20px; }
+        h2 { font-family: 'Bebas Neue', cursive; font-size: 2.8rem; color: #d4af37; border-left: 5px solid #d4af37; padding-left: 20px; margin: 40px 0 20px 0; letter-spacing: 2px; }
         
-        /* Project Section */
-        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .project-card { background: #111827; border-radius: 12px; padding: 25px; margin-bottom: 30px; border: 1px solid #1f2937; text-align: left; }
-        .project-card h3 { color: #fbbf24; margin-top: 0; font-size: 1.5rem; }
-        
-        /* Video Box */
-        .video-box { background: #000; width: 100%; aspect-ratio: 16/9; margin-top: 15px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #4b5563; border: 1px solid #374151; }
-        
-        /* Skills */
-        .skills-section { text-align: center; margin-top: 40px; }
-        .skill-tag { background: #1f2937; color: #fbbf24; padding: 8px 18px; border-radius: 4px; display: inline-block; margin: 6px; border: 1px solid #374151; font-size: 0.9rem; }
-        
-        footer { text-align: center; padding: 40px; color: #4b5563; font-size: 0.8rem; }
+        /* Cards */
+        .card { background: #111; border: 1px solid #222; padding: 30px; border-radius: 5px; margin-bottom: 20px; transition: 0.3s; }
+        .card:hover { border-color: #d4af37; background: #161616; }
+        p { color: #ccc; font-size: 1.05rem; }
+
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .skill-box { border: 1px solid #333; padding: 15px; text-align: center; border-radius: 4px; color: #d4af37; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+
+        /* Contact Section */
+        .contact-info { text-align: center; background: #111; padding: 40px; border-radius: 5px; border-top: 3px solid #d4af37; }
+        .contact-info a { color: #d4af37; text-decoration: none; font-size: 1.2rem; display: block; margin: 10px 0; }
+
+        footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; border-top: 1px solid #111; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-<div class="hero">
-    <h1>Editor Goutham Bolli</h1>
-    <p class="sub-text">Professional Video Editor & Content Writer</p>
-    <div class="btn-group">
-        <a href="https://instagram.com/your_id" class="btn">INSTAGRAM</a>
-        <a href="https://wa.me/91your_number" class="btn">WHATSAPP</a>
-    </div>
-</div>
+    <section class="hero">
+        <h1>EDITOR GOUTHAM BOLLI</h1>
+        <p class="tagline">Cinematic Storyteller | Content Creator</p>
+        <p style="color: #d4af37; margin-top: 15px;">📍 Sircilla, Telangana</p>
+        <div class="btn-group">
+            <a href="https://wa.me/918341388567" class="btn">Hire Me (WhatsApp)</a>
+            <a href="mailto:gouthambolli576@gmail.com" class="btn">Email Me</a>
+        </div>
+    </section>
 
-<div class="container">
-    <h2 style="border-left: 4px solid #fbbf24; padding-left: 15px; margin-bottom: 30px;">MY PROJECTS</h2>
-    
-    <div class="project-card">
-        <h3>ఓ చిన్న ప్రేమ కథ</h3>
-        <p>Short Film Trailer Editing | Sound Design</p>
-        <div class="video-box">
-            <p>Video Coming Soon</p>
+    <div class="container">
+        <h2>🎬 Professional Summary</h2>
+        <div class="card">
+            <p>Hi everyone! I’m Goutham, a passionate <b>Video Editor and Content Writer</b>, with a strong love for storytelling through visual editing. My heart lies in video editing, and I specialize in creating engaging and impactful content.</p>
+            <p>With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. Whether it’s social media content, YouTube edits, or short films, I ensure your story is told with maximum impact.</p>
+        </div>
+
+        <h2>💡 Skills & Software Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-box">🎞️ Video Editing</div>
+            <div class="skill-box">💥 Adobe After Effects</div>
+            <div class="skill-box">🎛️ Adobe Premiere Pro</div>
+            <div class="skill-box">📱 Alight Motion</div>
+            <div class="skill-box">✍️ Content Writing</div>
+            <div class="skill-box">🧠 Film Analysis</div>
+        </div>
+
+        <h2>🎓 Education</h2>
+        <div class="card">
+            <h3 style="color: #d4af37; margin: 0;">Matriculation (SSC)</h3>
+            <p style="margin: 5px 0;">Thakshashila English High School, Sircilla</p>
+            <p style="color: #d4af37; font-weight: bold;">Score: 80%</p>
+        </div>
+
+        <h2>🎯 Hobbies & Interests</h2>
+        <div class="card">
+            <ul style="list-style: none; padding: 0; color: #ccc;">
+                <li>🎬 Watching movies and studying their editing techniques</li>
+                <li>🧠 Analyzing story pacing, transitions, and effects</li>
+                <li>📝 Writing content around videos and visual media</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h2>📣 Let’s Work Together!</h2>
+            <p>If you’re looking for a creative and dedicated video editor...</p>
+            <a href="tel:+918341388567">📞 83413 88567</a>
+            <a href="mailto:gouthambolli576@gmail.com">📩 gouthambolli576@gmail.com</a>
         </div>
     </div>
 
-    <div class="project-card">
-        <h3>కథలో కొన్ని పాత్రలు</h3>
-        <p>Title Design | Intro Editing</p>
-        <div class="video-box">
-            <p>Video Coming Soon</p>
-        </div>
-    </div>
-
-    <div class="skills-section">
-        <h2 style="color: #fbbf24;">SOFTWARE EXPERTISE</h2>
-        <div class="skill-tag">Adobe Premiere Pro</div>
-        <div class="skill-tag">After Effects</div>
-        <div class="skill-tag">Alight Motion</div>
-        <div class="skill-tag">KineMaster</div>
-    </div>
-</div>
-
-<footer>
-    © 2026 Editor Goutham Bolli | All Rights Reserved.
-</footer>
+    <footer>
+        &copy; 2026 Editor Goutham Bolli. All Rights Reserved. <br>
+        Built for the next generation of Cinematic Storytelling.
+    </footer>
 
 </body>
 </html>
