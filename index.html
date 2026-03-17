@@ -8,57 +8,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --halo-bg: #fcfbf7;
-            --accent-gold: #b8964d;
-            --deep-gray: #2d2d2d;
-            --soft-white: rgba(255, 255, 255, 0.9);
-            --border-gold: rgba(184, 150, 77, 0.2);
+            --bg-black: #000000;
+            --gold-gradient: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --accent-gold: #d4af37;
+            --text-gray: #cccccc;
+            --panel-bg: rgba(255, 255, 255, 0.03);
+            --border-gold: rgba(212, 175, 55, 0.3);
         }
 
         body {
             margin: 0;
-            background: var(--halo-bg);
-            color: var(--deep-gray);
+            background: var(--bg-black);
+            color: #ffffff;
             font-family: 'Montserrat', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Status Bar - Minimal & Clean */
-        .top-line {
-            text-align: center;
-            padding: 15px;
-            font-size: 10px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            border-bottom: 1px solid var(--border-gold);
-            font-weight: 700;
-        }
-
         .container {
             max-width: 1000px;
-            margin: 60px auto;
+            margin: 40px auto;
             padding: 0 25px;
         }
 
         /* Hero Header Section */
         header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .main-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 8vw, 4rem);
             margin: 0;
-            color: var(--deep-gray);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: -1px;
-        }
-
-        .main-title span {
-            color: var(--accent-gold);
-            font-style: italic;
-            font-weight: 400;
+            font-weight: 700;
         }
 
         .subtitle {
@@ -66,44 +52,47 @@
             letter-spacing: 5px;
             text-transform: uppercase;
             color: var(--accent-gold);
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: 500;
         }
 
         /* Glass Panel Styling */
         .panel {
-            background: var(--soft-white);
+            background: var(--panel-bg);
             border: 1px solid var(--border-gold);
-            border-radius: 4px; /* Professional squareish-round corners */
-            padding: 50px;
+            border-radius: 8px;
+            padding: 40px;
             margin-bottom: 40px;
-            box-shadow: 0 20px 60px rgba(184, 150, 77, 0.05);
+            backdrop-filter: blur(10px);
         }
 
         .intro-text {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.8;
-            color: #555;
-            max-width: 800px;
+            color: var(--text-gray);
+            max-width: 850px;
             margin: 0 auto;
             text-align: center;
         }
 
-        /* Section Headings */
+        /* Section Headings with Gold Texture */
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            border-bottom: 2px solid var(--accent-gold);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: inline-block;
             margin-bottom: 30px;
             padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-gold);
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .skill-box b {
@@ -112,54 +101,57 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--accent-gold);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .skill-box p {
             margin: 0;
-            font-size: 15px;
-            color: #666;
+            font-size: 14px;
+            color: var(--text-gray);
         }
 
-        /* Contact & CTA */
-        .contact-bar {
+        /* Contact Header Style */
+        .contact-header {
             text-align: center;
-            font-size: 13px;
-            margin-top: 20px;
-            color: #888;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin: 20px 0;
+            letter-spacing: 1px;
         }
 
+        /* CTA Section */
         .cta-button {
             display: inline-block;
             margin-top: 30px;
             padding: 18px 45px;
-            background: var(--deep-gray);
-            color: #fff;
+            background: var(--gold-gradient);
+            color: #000;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
+            border-radius: 4px;
             transition: all 0.3s ease;
         }
 
         .cta-button:hover {
-            background: var(--accent-gold);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(184, 150, 77, 0.2);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
         }
 
         .footer-quote {
             text-align: center;
-            margin-top: 100px;
+            margin-top: 80px;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.5rem;
-            color: var(--accent-gold);
-            opacity: 0.8;
+            font-size: 1.3rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.9;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 600px) {
             .panel { padding: 30px 20px; }
         }
@@ -167,13 +159,11 @@
 </head>
 <body>
 
-    <div class="top-line">Official Creative Portfolio 2026</div>
-
     <div class="container">
         <header>
-            <h1 class="main-title">Editor <span>Goutham Bolli</span></h1>
-            <div class="subtitle">Cinematic Storyteller</div>
-            <div class="contact-bar">
+            <h1 class="main-title">EDITOR GOUTHAM BOLLI</h1>
+            <div class="subtitle">Visual Storyteller & Content Creator</div>
+            <div class="contact-header">
                 📍 Sircilla, Telangana &nbsp; | &nbsp; 📞 83413 88567 &nbsp; | &nbsp; 📧 gouthambolli576@gmail.com
             </div>
         </header>
@@ -181,43 +171,50 @@
         <!-- Professional Summary -->
         <div class="panel">
             <div class="intro-text">
-                "I am a passionate Video Editor and Content Writer dedicated to the art of visual storytelling. 
-                With expertise in high-end post-production tools, I transform raw concepts into 
-                emotionally resonant cinematic experiences."
+                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer, with a strong love for storytelling through visual editing. I specialize in creating engaging and impactful content using tools like Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster."
             </div>
         </div>
 
         <!-- Skills Section -->
-        <h2>Expertise</h2>
+        <h2>Skills & Software Expertise</h2>
         <div class="panel">
             <div class="skills-grid">
                 <div class="skill-box"><b>🎞️ Master Editing</b>YouTube, Cinematic Reels, Shorts & Vlogs.</div>
                 <div class="skill-box"><b>💥 Visual Effects</b>Advanced Motion Graphics in Adobe After Effects.</div>
-                <div class="skill-box"><b>🎛️ Post-Production</b>Professional workflow in Adobe Premiere Pro.</div>
-                <div class="skill-box"><b>📱 Mobile Craft</b>Expertise in Alight Motion & KineMaster.</div>
-                <div class="skill-box"><b>✍️ Narrative</b>Professional Scriptwriting & Content Strategy.</div>
-                <div class="skill-box"><b>🧠 Cinematic Eye</b>In-depth Film Analysis & Story Pacing.</div>
+                <div class="skill-box"><b>🎛️ Post-Production</b>Professional timeline editing in Adobe Premiere Pro.</div>
+                <div class="skill-box"><b>📱 Mobile Craft</b>Advanced editing in Alight Motion & KineMaster.</div>
+                <div class="skill-box"><b>✍️ Content Writing</b>Professional Scriptwriting, Captions & Descriptions.</div>
+                <div class="skill-box"><b>🧠 Film Analysis</b>Understanding Editing Styles, Pacing & Cinematics.</div>
             </div>
         </div>
 
         <!-- Education -->
-        <h2>Background</h2>
-        <div class="panel" style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Education</h2>
+        <div class="panel" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
             <div>
-                <strong style="font-size: 1.1rem;">Matriculation (SSC)</strong><br>
-                <span style="color: #888;">Thakshashila English High School, Sircilla</span>
+                <strong style="font-size: 1.1rem; color: #fff;">Matriculation (SSC)</strong><br>
+                <span style="color: var(--text-gray);">Thakshashila English High School, Sircilla</span>
             </div>
-            <div style="font-family: 'Playfair Display'; font-size: 1.5rem; color: var(--accent-gold);">80% Result</div>
+            <div style="font-family: 'Playfair Display'; font-size: 1.8rem; color: var(--accent-gold); font-weight: 700;">Scored: 80%</div>
+        </div>
+
+        <!-- Hobbies Section -->
+        <h2>Hobbies & Interests</h2>
+        <div class="panel">
+            <ul style="margin: 0; padding-left: 20px; color: var(--text-gray); line-height: 2;">
+                <li>Watching movies and studying their editing techniques.</li>
+                <li>Analyzing story pacing, transitions, and effects.</li>
+            </ul>
         </div>
 
         <!-- CTA Section -->
-        <div style="text-align: center; margin-top: 60px;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">Available for Freelance & Collaboration</p>
-            <a href="https://wa.me/918341388567" class="cta-button">Start a Project</a>
-            <p style="margin-top: 15px; font-size: 12px; color: #aaa;">"Every cut tells a story – Let me help tell yours."</p>
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 12px; color: var(--accent-gold);">Ready for Collaboration?</p>
+            <a href="https://wa.me/918341388567" class="cta-button">Initialize Project</a>
+            <p style="margin-top: 20px; font-size: 12px; color: #666;">💬 DM for freelance or collaboration!</p>
         </div>
 
-        <div class="footer-quote">Cinematics. Emotion. Impact.</div>
+        <div class="footer-quote">“Every cut tells a story – Let me help tell yours.”</div>
     </div>
 
 </body>
