@@ -3,105 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Professional Video Editor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Cinematic Editor</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --bg: #050505; --glass: rgba(255, 255, 255, 0.03); }
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--bg); color: #fff; margin: 0; line-height: 1.6; }
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        
-        header { text-align: center; padding: 60px 0; border-bottom: 1px solid rgba(212,175,55,0.1); }
-        h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(1.8rem, 6vw, 3rem); margin: 0; color: var(--gold); letter-spacing: 5px; }
-        .sub-head { font-size: 1.1rem; color: #aaa; margin-top: 10px; letter-spacing: 2px; text-transform: uppercase; }
+        :root {
+            --gold: #d4af37;
+            --glass-bg: rgba(255, 255, 255, 0.05); /* గాజు లాంటి ఫినిష్ కోసం */
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
-        h2 { font-family: 'Syncopate', sans-serif; font-size: 0.9rem; color: var(--gold); text-transform: uppercase; letter-spacing: 4px; margin-top: 50px; border-left: 3px solid var(--gold); padding-left: 15px; }
-        .glass-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; margin-top: 20px; }
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top, #1a1a1a, #050505); /* సినిమాటిక్ డార్క్ బ్యాక్‌గ్రౌండ్ */
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
 
-        .project-poster { width: 100%; max-width: 400px; height: auto; border-radius: 12px; border: 1px solid var(--gold); margin: 20px auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        /* Glass Finish Card */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px); /* వెనుక ఉన్నది మసకగా కనిపించేలా (Glass Blur) */
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            margin-bottom: 30px;
+        }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-        .skill-item { background: rgba(212,175,55,0.05); padding: 15px; border-radius: 10px; border: 1px solid rgba(212,175,55,0.1); font-size: 0.95rem; }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
 
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-        .video-box { position: relative; padding-bottom: 177%; height: 0; border-radius: 10px; overflow: hidden; background: #000; border: 1px solid #1a1a1a; }
-        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 3rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
-        .btn-group { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
-        .btn { flex: 1; min-width: 150px; padding: 15px; text-align: center; text-decoration: none; color: #fff; border-radius: 8px; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); transition: 0.3s; }
-        .btn-whatsapp { background: #075e54; border: none; }
-        .btn:hover { background: #fff; color: #000; }
-
-        .quote { text-align: center; font-style: italic; color: var(--gold); margin-top: 60px; font-size: 1.2rem; opacity: 0.8; }
-        footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; letter-spacing: 2px; }
+        .tagline {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 50px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>GOUTHAM</h1>
-        <div class="sub-head">Video Editor & Content Creator</div>
-        <p style="color: #888;">📍 Sircilla, Telangana | 📞 83413 88567</p>
-    </header>
-
-    <section>
-        <h2>🎬 Professional Journey</h2>
-        <div class="glass-card">
-            <p>I am Goutham, a passionate Video Editor and Content Writer specializing in cinematic storytelling. My professional path has been built on the solid support of <b>My Family</b> and the constant encouragement of <b>My Best Friend</b>.</p>
-            <p>A transformative moment in my career was collaborating with <b>Director Prithvi</b>. His vision and the opportunity to work on projects like the web series <span style="color: var(--gold);">"Babu Gari Lokamanta Mayajalame"</span> helped me elevate my craft to a professional standard.</p>
+    <div class="container">
+        <!-- Header Section with Glass Finish -->
+        <div class="glass-panel">
+            <h1>GOUTHAM</h1>
+            <div class="tagline">Cinematic Video Editor & Content Creator</div>
         </div>
-    </section>
-
-    <section>
-        <h2>🏆 Featured Project</h2>
-        <div class="glass-card" style="text-align: center;">
-            <h3 style="color: var(--gold); margin: 0;">Babu Gari Lokamanta Mayajalame (Web Series)</h3>
-            <p style="margin-top: 10px; color: #ccc;"><b>Director:</b> Prithvi</p>
-            
-            <img src="https://i.ibb.co/vzX8GjX/Babu-Gari-Lokamanta-Mayajalame.jpg" alt="Web Series Poster" class="project-poster">
-            
-            <p style="color: #aaa; font-size: 0.95rem; text-align: left;">Lead editor on this professional web series, delivering high-impact cinematic pacing and visual storytelling under <b>Director Prithvi's</b> guidance.</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>💡 Skills & Software</h2>
-        <div class="skills-grid">
-            <div class="skill-item">🎞️ Professional Video Editing</div>
-            <div class="skill-item">💥 Adobe After Effects (VFX)</div>
-            <div class="skill-item">🎛️ Adobe Premiere Pro</div>
-            <div class="skill-item">📱 Alight Motion & KineMaster</div>
-            <div class="skill-item">✍️ Content Writing (Scripts)</div>
-            <div class="skill-item">🧠 Film Analysis & Cinematics</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>📺 Portfolio Showcase</h2>
-        <div class="video-grid">
-            <div class="video-box"><iframe src="https://www.youtube.com/embed/qapXhJJNAy8"></iframe></div>
-            <div class="video-box"><iframe src="https://www.youtube.com/embed/QZ-oVwPiynk"></iframe></div>
-            <div class="video-box"><iframe src="https://www.youtube.com/embed/B40DUa3aido"></iframe></div>
-            <div class="video-box"><iframe src="https://www.youtube.com/embed/ToqrBwMIfbI"></iframe></div>
-            <div class="video-box"><iframe src="https://www.youtube.com/embed/PlCYKdb-PZc"></iframe></div>
-            <div class="video-box"><iframe src="https://www.youtube.com/embed/fmhoa_RT6Uk"></iframe></div>
-            <div class="video-box"><iframe src="https://www.youtube.com/embed/hf5PijeSxmI"></iframe></div>
-        </div>
-    </section>
-
-    <section>
-        <h2>📣 Let's Work Together!</h2>
-        <div class="btn-group">
-            <a href="https://wa.me/918341388567" class="btn btn-whatsapp">WhatsApp Me</a>
-            <a href="https://www.instagram.com/editorgouthambolli" target="_blank" class="btn">Instagram</a>
-            <a href="mailto:gouthambolli576@gmail.com" class="btn">Email</a>
-        </div>
-    </section>
-
-    <p class="quote">“Every cut tells a story – Let me help tell yours.”</p>
-    <footer>&copy; 2026 GOUTHAM BOLLI | SIRCILLA</footer>
-</div>
+    </div>
 
 </body>
 </html>
