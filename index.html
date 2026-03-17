@@ -3,52 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Professional Editor</title>
+    <title>Goutham Bolli | Editor & Creator</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --glass: rgba(255, 255, 255, 0.02); --border: rgba(212, 175, 55, 0.15); }
-        body { font-family: 'Montserrat', sans-serif; background-color: #050505; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.6; }
-        
-        /* Aesthetic Background */
-        .bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #0f0f0f 0%, #000 100%); z-index: -2; }
-        .aesthetic-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.15; z-index: -1; }
+        :root { --gold: #d4af37; --glass: rgba(255, 255, 255, 0.03); --border: rgba(212, 175, 55, 0.15); }
+        body { font-family: 'Montserrat', sans-serif; background-color: #080808; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.7; }
+        .bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #111 0%, #000 100%); z-index: -2; }
+        .aesthetic-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.12; z-index: -1; pointer-events: none; }
 
         .container { max-width: 850px; margin: auto; padding: 40px 20px; }
+        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .glass-frame { background: var(--glass); backdrop-filter: blur(25px); padding: 50px 30px; border: 1px solid var(--border); border-radius: 4px; width: 90%; max-width: 650px; border-bottom: 3px solid var(--gold); }
         
-        /* Hero Section */
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .glass-frame { background: var(--glass); backdrop-filter: blur(20px); padding: 50px 30px; border: 1px solid var(--border); border-radius: 4px; width: 90%; max-width: 650px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
         h1 { font-family: 'Bebas Neue', cursive; font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--gold); margin: 0; letter-spacing: 8px; }
-        .hero-info { font-size: 0.9rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-top: 15px; }
-
         h2 { font-family: 'Bebas Neue', cursive; font-size: 2.2rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0 30px 0; display: flex; align-items: center; }
         h2::after { content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 20px; }
 
         .card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 2px; margin-bottom: 20px; }
-        p { color: #bbb; font-weight: 300; }
-
-        /* Projects */
-        .project-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .project-card { background: #0d0d0d; border: 1px solid #1a1a1a; padding: 25px; border-radius: 4px; transition: 0.3s; }
-        .project-card:hover { border-color: var(--gold); }
-        .tag { display: inline-block; padding: 2px 8px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase; border-radius: 2px; margin-bottom: 10px; }
-        .tag-live { background: #d42020; color: #fff; }
-        .tag-work { background: #333; color: #aaa; }
-
-        /* Skills */
+        .project-card { background: #0d0d0d; border: 1px solid #1a1a1a; padding: 25px; border-radius: 4px; transition: 0.4s; }
+        .project-card:hover { transform: translateY(-8px); border-color: var(--gold); }
+        
+        .tag-live { background: #d42020; color: #fff; padding: 2px 8px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase; border-radius: 2px; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
         .skill-item { background: #0d0d0d; border-left: 3px solid var(--gold); padding: 15px; }
-        .skill-item b { color: var(--gold); display: block; font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 5px; }
-
-        /* Lists */
         .list-item { margin-bottom: 15px; padding-left: 15px; border-left: 1px solid #333; }
-        .list-item b { color: var(--gold); }
-
         .quote { text-align: center; padding: 60px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: #fff; opacity: 0.8; }
-
-        .contact-box { text-align: center; border: 1px solid var(--gold); padding: 40px; margin-top: 40px; }
+        .contact-box { text-align: center; border: 1px solid var(--gold); padding: 40px; margin-top: 40px; background: linear-gradient(to bottom, rgba(212, 175, 55, 0.05), transparent); }
         .contact-box a { color: var(--gold); text-decoration: none; font-size: 1.2rem; display: block; margin: 10px 0; font-weight: 600; }
-
         footer { text-align: center; padding: 60px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
     </style>
 </head>
@@ -59,11 +40,8 @@
     <section class="hero">
         <div class="glass-frame">
             <h1>GOUTHAM BOLLI</h1>
-            <p class="hero-info">Video Editor & Content Creator</p>
-            <p style="font-size: 0.8rem; color: #555; margin-top: 10px;">📍 Sircilla, Telangana</p>
-            <div style="margin-top: 25px;">
-                <a href="https://wa.me/918341388567" style="color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 10px 20px; font-size: 0.75rem; letter-spacing: 2px;">DM FOR COLLABORATION</a>
-            </div>
+            <p style="letter-spacing: 3px; color: #888; text-transform: uppercase; margin-top: 15px;">Video Editor & Content Creator</p>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">📍 Sircilla, Telangana</p>
         </div>
     </section>
 
@@ -78,21 +56,20 @@
 
         <section>
             <h2>🚀 Featured Projects</h2>
-            <div class="project-grid">
+            <div style="display: grid; gap: 20px;">
                 <div class="project-card">
-                    <span class="tag tag-live">● Live on YouTube</span>
-                    <h3 style="color: var(--gold); margin: 0 0 10px 0; font-family: 'Bebas Neue';">Short Film - Complete Post Production</h3>
-                    <p style="font-size: 0.9rem;">బ్యాక్ గ్రౌండ్ స్కోర్ (BGM), కలర్ గ్రేడింగ్, టైటిల్ డిజైన్ మరియు పూర్తి ఎడిటింగ్ నిర్వహించబడింది.</p>
+                    <span class="tag-live">● Live on YouTube</span>
+                    <h3 style="color: var(--gold); margin: 10px 0;">Cinematic Short Film (Full Post-Production)</h3>
+                    <p>I handled the Background Score (BGM), Color Grading, Title Design, and full Video Editing for this project.</p>
                 </div>
                 <div class="project-card">
-                    <span class="tag tag-live">● Live on YouTube</span>
-                    <h3 style="color: var(--gold); margin: 0 0 10px 0; font-family: 'Bebas Neue';">Professional Title & Intro Design</h3>
-                    <p style="font-size: 0.9rem;">రెండు ప్రధాన ప్రాజెక్టులకు సినిమాటిక్ టైటిల్స్ మరియు హై-ఇంపాక్ట్ ఇంట్రోస్ డిజైన్ చేశాను.</p>
+                    <span class="tag-live">● Live on YouTube</span>
+                    <h3 style="color: var(--gold); margin: 10px 0;">Main Title Design & Intro Work</h3>
+                    <p>Designed high-quality cinematic main titles and intros for two major streaming projects.</p>
                 </div>
                 <div class="project-card">
-                    <span class="tag tag-work">Social Media</span>
-                    <h3 style="color: var(--gold); margin: 0 0 10px 0; font-family: 'Bebas Neue';">Reels & Shorts Content</h3>
-                    <p style="font-size: 0.9rem;">యూట్యూబ్ షార్ట్స్ మరియు ఇన్‌స్టాగ్రామ్ రీల్స్ కోసం ఎంగేజింగ్ ఎడిటింగ్.</p>
+                    <h3 style="color: var(--gold); margin: 0 0 10px 0;">Reels & Shorts Content Specialist</h3>
+                    <p>Expertly edited engaging YouTube Shorts and Instagram Reels with a focus on pacing and transitions.</p>
                 </div>
             </div>
         </section>
@@ -100,12 +77,12 @@
         <section>
             <h2>💡 Skills & Software Expertise</h2>
             <div class="skills-grid">
-                <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts, Vlogs</div>
+                <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts, Vlogs, etc.</div>
                 <div class="skill-item"><b>💥 Adobe After Effects</b>Visual Effects & Motion Graphics</div>
                 <div class="skill-item"><b>🎛️ Adobe Premiere Pro</b>Professional Timeline Editing</div>
-                <div class="skill-item"><b>📱 Mobile Editing</b>Alight Motion & KineMaster</div>
-                <div class="skill-item"><b>✍️ Content Writing</b>Scripts, Captions, Descriptions</div>
-                <div class="skill-item"><b>🧠 Film Analysis</b>Understanding Styles & Cinematics</div>
+                <div class="skill-item"><b>📱 Alight Motion & KineMaster</b>Mobile Editing</div>
+                <div class="skill-item"><b>✍️ Content Writing</b>Scriptwriting, Captions, Descriptions</div>
+                <div class="skill-item"><b>🧠 Film Analysis</b>Understanding Editing Styles & Cinematics</div>
             </div>
         </section>
 
@@ -113,8 +90,8 @@
             <h2>🎓 Education</h2>
             <div class="list-item">
                 <b>Matriculation (SSC)</b><br>
-                Thakshashila English High School, Sircilla<br>
-                <span style="color: var(--gold);">Scored: 80%</span>
+                📍 Thakshashila English High School, Sircilla<br>
+                📈 Scored: 80%
             </div>
         </section>
 
@@ -125,23 +102,18 @@
             <div class="list-item">📝 Writing content around videos and visual media</div>
         </section>
 
-        <div class="quote">
-            “Every cut tells a story – Let me help tell yours.”
-        </div>
+        <div class="quote">“Every cut tells a story – Let me help tell yours.”</div>
 
         <section>
             <div class="contact-box">
                 <h2 style="justify-content: center; border: none; margin-bottom: 10px;">📣 Let’s Work Together!</h2>
-                <p>If you’re looking for a creative and dedicated video editor...</p>
+                <p>DM for collaboration or freelance work!</p>
                 <a href="tel:8341388567">83413 88567</a>
                 <a href="mailto:gouthambolli576@gmail.com">gouthambolli576@gmail.com</a>
-                <p style="font-size: 0.8rem; margin-top: 20px;">Or just DM me anytime!</p>
             </div>
         </section>
     </div>
 
-    <footer>
-        &copy; 2026 GOUTHAM BOLLI | ALL RIGHTS RESERVED
-    </footer>
+    <footer>&copy; 2026 GOUTHAM BOLLI | ALL RIGHTS RESERVED</footer>
 </body>
 </html>
