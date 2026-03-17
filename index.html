@@ -3,118 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDITOR GOUTHAM BOLLI | 2026 OFFICIAL</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>EDITOR GOUTHAM BOLLI | Official Portfolio</title>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #ffcc00; --bg: #030303; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.1); }
-        body { margin: 0; background: var(--bg); color: #fff; font-family: 'Outfit', sans-serif; line-height: 1.6; }
-        
-        .status-bar {
-            display: flex; justify-content: space-between; padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.05); border-bottom: 1px solid var(--border);
-            font-family: 'Orbitron'; font-size: 10px; color: var(--gold); letter-spacing: 2px;
+        :root {
+            --halo-bg: #fcfbf7;
+            --accent-gold: #b8964d;
+            --deep-gray: #2d2d2d;
+            --soft-white: rgba(255, 255, 255, 0.9);
+            --border-gold: rgba(184, 150, 77, 0.2);
         }
 
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-
-        .glass-panel {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-            backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 25px;
-            padding: 35px; margin-bottom: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        body {
+            margin: 0;
+            background: var(--halo-bg);
+            color: var(--deep-gray);
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1 { font-family: 'Orbitron'; font-size: clamp(1.4rem, 6vw, 2.5rem); color: var(--gold); letter-spacing: 5px; text-align: center; margin: 0; }
-        h2 { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--gold); letter-spacing: 3px; border-left: 3px solid var(--gold); padding-left: 15px; margin: 40px 0 20px 0; text-transform: uppercase; }
+        /* Status Bar - Minimal & Clean */
+        .top-line {
+            text-align: center;
+            padding: 15px;
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            border-bottom: 1px solid var(--border-gold);
+            font-weight: 700;
+        }
 
-        .contact-header { text-align: center; font-size: 0.85rem; color: #aaa; margin: 15px 0 30px 0; letter-spacing: 1px; }
-        
-        /* Summary Section */
-        .summary-text { color: #ccc; font-size: 1.05rem; text-align: center; }
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        /* Hero Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin: 0;
+            color: var(--deep-gray);
+            letter-spacing: -1px;
+        }
+
+        .main-title span {
+            color: var(--accent-gold);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Glass Panel Styling */
+        .panel {
+            background: var(--soft-white);
+            border: 1px solid var(--border-gold);
+            border-radius: 4px; /* Professional squareish-round corners */
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(184, 150, 77, 0.05);
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent-gold);
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+        }
 
         /* Skills Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .skill-item { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid var(--border); }
-        .skill-item b { color: var(--gold); display: block; margin-bottom: 5px; font-family: 'Orbitron'; font-size: 0.8rem; }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
 
-        /* Education & Hobbies */
-        .info-card { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-        .score { background: var(--gold); color: #000; padding: 2px 10px; border-radius: 5px; font-weight: bold; font-family: 'Orbitron'; }
+        .skill-box b {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
 
-        .btn { display: block; width: fit-content; margin: 20px auto; padding: 15px 40px; background: var(--gold); color: #000; text-decoration: none; border-radius: 50px; font-family: 'Orbitron'; font-weight: bold; transition: 0.3s; box-shadow: 0 0 20px rgba(255, 204, 0, 0.3); }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 204, 0, 0.5); }
+        .skill-box p {
+            margin: 0;
+            font-size: 15px;
+            color: #666;
+        }
 
-        .quote { text-align: center; font-style: italic; color: var(--gold); opacity: 0.8; margin: 60px 0; font-size: 1.1rem; letter-spacing: 1px; }
+        /* Contact & CTA */
+        .contact-bar {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 20px;
+            color: #888;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 45px;
+            background: var(--deep-gray);
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(184, 150, 77, 0.2);
+        }
+
+        .footer-quote {
+            text-align: center;
+            margin-top: 100px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .panel { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="status-bar">
-        <div>SYSTEM: GOUTHAM_BOLLI_2026_V1</div>
-        <div id="clock">LOADING_TIME...</div>
-    </div>
+    <div class="top-line">Official Creative Portfolio 2026</div>
 
     <div class="container">
-        <!-- Header Section -->
-        <div class="glass-panel">
-            <h1>EDITOR <span>GOUTHAM BOLLI</span></h1>
-            <div class="contact-header">
-                📍 Sircilla, Telangana | 📞 83413 88567 | 📧 gouthambolli576@gmail.com
+        <header>
+            <h1 class="main-title">Editor <span>Goutham Bolli</span></h1>
+            <div class="subtitle">Cinematic Storyteller</div>
+            <div class="contact-bar">
+                📍 Sircilla, Telangana &nbsp; | &nbsp; 📞 83413 88567 &nbsp; | &nbsp; 📧 gouthambolli576@gmail.com
             </div>
-            <div class="summary-text">
-                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer. I specialize in turning raw footage into visually compelling stories using high-end tools."
+        </header>
+
+        <!-- Professional Summary -->
+        <div class="panel">
+            <div class="intro-text">
+                "I am a passionate Video Editor and Content Writer dedicated to the art of visual storytelling. 
+                With expertise in high-end post-production tools, I transform raw concepts into 
+                emotionally resonant cinematic experiences."
             </div>
         </div>
 
         <!-- Skills Section -->
-        <h2>💡 Skills & Software Expertise</h2>
-        <div class="grid">
-            <div class="skill-item"><b>🎞️ Video Editing</b> YouTube, Reels, Shorts, Vlogs, etc.</div>
-            <div class="skill-item"><b>💥 Adobe After Effects</b> Visual Effects & Motion Graphics.</div>
-            <div class="skill-item"><b>🎛️ Adobe Premiere Pro</b> Professional Timeline Editing.</div>
-            <div class="skill-item"><b>📱 Alight Motion & KineMaster</b> Advanced Mobile Editing.</div>
-            <div class="skill-item"><b>✍️ Content Writing</b> Scriptwriting, Captions, Descriptions.</div>
-            <div class="skill-item"><b>🧠 Film Analysis</b> Understanding Editing Styles & Cinematics.</div>
-        </div>
-
-        <!-- Education Section -->
-        <h2>🎓 Education</h2>
-        <div class="glass-panel">
-            <div class="info-card">
-                <div>
-                    <b style="font-size: 1.1rem;">Matriculation (SSC)</b><br>
-                    <span style="color: #888;">Thakshashila English High School, Sircilla</span>
-                </div>
-                <div class="score">80%</div>
+        <h2>Expertise</h2>
+        <div class="panel">
+            <div class="skills-grid">
+                <div class="skill-box"><b>🎞️ Master Editing</b>YouTube, Cinematic Reels, Shorts & Vlogs.</div>
+                <div class="skill-box"><b>💥 Visual Effects</b>Advanced Motion Graphics in Adobe After Effects.</div>
+                <div class="skill-box"><b>🎛️ Post-Production</b>Professional workflow in Adobe Premiere Pro.</div>
+                <div class="skill-box"><b>📱 Mobile Craft</b>Expertise in Alight Motion & KineMaster.</div>
+                <div class="skill-box"><b>✍️ Narrative</b>Professional Scriptwriting & Content Strategy.</div>
+                <div class="skill-box"><b>🧠 Cinematic Eye</b>In-depth Film Analysis & Story Pacing.</div>
             </div>
         </div>
 
-        <!-- Hobbies Section -->
-        <h2>🎯 Hobbies & Interests</h2>
-        <div class="glass-panel">
-            <ul style="margin: 0; padding-left: 20px; color: #ccc;">
-                <li>Watching movies and studying their editing techniques.</li>
-                <li>Analyzing story pacing, transitions, and effects.</li>
-            </ul>
+        <!-- Education -->
+        <h2>Background</h2>
+        <div class="panel" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <strong style="font-size: 1.1rem;">Matriculation (SSC)</strong><br>
+                <span style="color: #888;">Thakshashila English High School, Sircilla</span>
+            </div>
+            <div style="font-family: 'Playfair Display'; font-size: 1.5rem; color: var(--accent-gold);">80% Result</div>
         </div>
 
-        <!-- Call to Action -->
-        <h2>📣 Let’s Work Together!</h2>
-        <div class="glass-panel" style="text-align: center; border-color: var(--gold);">
-            <p style="margin-bottom: 25px;">If you’re looking for a creative and dedicated editor for personal or business content —</p>
-            <a href="https://wa.me/918341388567" class="btn">INITIALIZE COLLABORATION</a>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 20px;">💬 DM me anytime for freelance work!</p>
+        <!-- CTA Section -->
+        <div style="text-align: center; margin-top: 60px;">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">Available for Freelance & Collaboration</p>
+            <a href="https://wa.me/918341388567" class="cta-button">Start a Project</a>
+            <p style="margin-top: 15px; font-size: 12px; color: #aaa;">"Every cut tells a story – Let me help tell yours."</p>
         </div>
 
-        <div class="quote">“Every cut tells a story – Let me help tell yours.”</div>
+        <div class="footer-quote">Cinematics. Emotion. Impact.</div>
     </div>
 
-    <script>
-        function updateClock() {
-            const now = new Date();
-            document.getElementById('clock').innerText = now.toLocaleString('en-IN');
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
 </body>
 </html>
