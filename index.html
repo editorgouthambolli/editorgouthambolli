@@ -3,143 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Professional Video Editor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Editor & Creator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #d4af37;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(212, 175, 55, 0.2);
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(212, 175, 55, 0.15);
         }
 
         body { 
             font-family: 'Montserrat', sans-serif; 
-            background-color: #080808; 
-            color: #fff; 
+            background-color: #050505; 
+            color: #e0e0e0; 
             margin: 0; padding: 0; 
             overflow-x: hidden;
         }
 
-        /* Premium Texture Background */
-        .bg-texture {
+        /* Aesthetic Texture Background */
+        .bg-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            background: radial-gradient(circle at center, #0f0f0f 0%, #000 100%);
             z-index: -2;
         }
-        .film-grain {
+        .aesthetic-grain {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
-            opacity: 0.4; z-index: -1; pointer-events: none;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.15; z-index: -1; pointer-events: none;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh; display: flex; flex-direction: column; 
             justify-content: center; align-items: center; text-align: center;
-            position: relative;
         }
 
-        /* Stable Glass Logo Display */
-        .logo-display {
-            display: flex; gap: 20px; margin-bottom: 30px;
-            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.1));
+        .logo-row {
+            display: flex; gap: 25px; margin-bottom: 30px;
         }
-        .logo-display img {
-            width: 45px; height: 45px; opacity: 0.8;
-            transition: 0.5s; cursor: pointer;
-        }
-        .logo-display img:hover {
-            opacity: 1; transform: scale(1.2); filter: drop-shadow(0 0 10px var(--gold));
-        }
+        .logo-row img { width: 40px; height: 40px; opacity: 0.7; filter: grayscale(20%); }
 
-        .main-frame {
+        .glass-frame {
             background: var(--glass);
-            backdrop-filter: blur(15px);
-            padding: 50px 80px;
-            border-radius: 2px;
+            backdrop-filter: blur(20px);
+            padding: 60px 40px;
             border: 1px solid var(--border);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border-radius: 4px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            max-width: 700px; width: 85%;
         }
 
         h1 { 
-            font-family: 'Bebas Neue', cursive; font-size: clamp(3rem, 10vw, 5.5rem); 
-            color: var(--gold); margin: 0; letter-spacing: 8px; line-height: 1;
+            font-family: 'Bebas Neue', cursive; font-size: clamp(3rem, 10vw, 5rem); 
+            color: var(--gold); margin: 0; letter-spacing: 10px; line-height: 0.9;
         }
-        .tagline { 
-            font-size: 0.9rem; letter-spacing: 5px; color: #888; 
-            text-transform: uppercase; margin-top: 20px; font-weight: 300;
-        }
+        .location { font-size: 0.8rem; letter-spacing: 4px; color: #666; margin-top: 15px; text-transform: uppercase; }
 
-        .btn-group { margin-top: 40px; }
-        .btn { 
-            padding: 12px 35px; border: 1px solid var(--gold); color: var(--gold); 
-            text-decoration: none; font-size: 0.8rem; font-weight: 700; 
-            text-transform: uppercase; letter-spacing: 2px; transition: 0.4s;
-        }
-        .btn:hover { background: var(--gold); color: #000; }
-
-        /* Content Container */
-        .container { max-width: 1000px; margin: auto; padding: 100px 20px; }
+        /* General Layout */
+        .container { max-width: 850px; margin: auto; padding: 100px 20px; }
+        
+        section { margin-bottom: 100px; }
+        
         h2 { 
-            font-family: 'Bebas Neue', cursive; font-size: 3rem; color: var(--gold); 
-            margin-bottom: 40px; letter-spacing: 3px; display: flex; align-items: center;
+            font-family: 'Bebas Neue', cursive; font-size: 2.5rem; color: var(--gold); 
+            letter-spacing: 3px; margin-bottom: 30px; display: flex; align-items: center;
         }
-        h2::after {
-            content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 20px;
-        }
+        h2::after { content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 20px; }
 
+        .card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; border-radius: 2px; }
+        p { line-height: 1.8; font-weight: 300; font-size: 1.05rem; color: #bbb; }
+
+        /* Skills Grid */
         .skills-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 20px; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; 
         }
-        .skill-card {
-            background: #0c0c0c; border: 1px solid #1a1a1a; padding: 30px;
+        .skill-item {
+            background: #0d0d0d; border-left: 3px solid var(--gold); padding: 20px;
             transition: 0.3s;
         }
-        .skill-card:hover { border-color: var(--gold); background: #111; }
-        .skill-card h3 { color: var(--gold); margin-top: 0; font-family: 'Bebas Neue'; letter-spacing: 1px; }
-        .skill-card p { color: #888; font-size: 0.9rem; margin-bottom: 0; }
+        .skill-item:hover { background: #111; transform: translateX(5px); }
+        .skill-item b { color: var(--gold); display: block; margin-bottom: 5px; font-size: 0.9rem; letter-spacing: 1px; }
 
-        footer { text-align: center; padding: 80px 20px; color: #444; font-size: 0.75rem; letter-spacing: 2px; }
+        /* Education & Hobbies */
+        .list-item { margin-bottom: 20px; padding-left: 20px; border-left: 1px solid #333; }
+        .list-item b { color: var(--gold); }
+
+        /* Quote Section */
+        .quote-box {
+            text-align: center; padding: 80px 20px;
+            font-family: 'Playfair Display', serif; font-style: italic;
+            font-size: 1.8rem; color: #fff; opacity: 0.8;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            text-align: center; border: 1px solid var(--gold); padding: 50px;
+        }
+        .contact-box a { color: var(--gold); text-decoration: none; font-size: 1.3rem; display: block; margin: 15px 0; font-weight: 600; }
+
+        footer { text-align: center; padding: 60px 20px; color: #444; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; }
     </style>
 </head>
 <body>
-    <div class="bg-texture"></div>
-    <div class="film-grain"></div>
+    <div class="bg-layer"></div>
+    <div class="aesthetic-grain"></div>
 
     <section class="hero">
-        <div class="logo-display">
+        <div class="logo-row">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="PR">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="AE">
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="AI">
         </div>
-        
-        <div class="main-frame">
+        <div class="glass-frame">
             <h1>GOUTHAM BOLLI</h1>
-            <p class="tagline">Visual Storyteller & Video Architect</p>
-            <div class="btn-group">
-                <a href="https://wa.me/918341388567" class="btn">Connect Now</a>
+            <p class="location">Sircilla, Telangana</p>
+            <div style="margin-top: 30px;">
+                <a href="https://wa.me/918341388567" style="color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 10px 25px; letter-spacing: 2px; font-size: 0.8rem;">WORK WITH ME</a>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <h2>Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Cinematic Editing</h3>
-                <p>High-end timeline assembly with Focus on story pacing and rhythm.</p>
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <div class="card">
+                <p>Hi everyone! I’m Goutham, a passionate <b>Video Editor and Content Writer</b>, with a strong love for storytelling through visual editing. My heart lies in video editing, and I specialize in creating engaging and impactful content using tools like Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</p>
+                <p>With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. Whether it’s social media content, YouTube edits, or short films, I ensure your story is told with maximum impact.</p>
             </div>
-            <div class="skill-card">
-                <h3>Visual Effects</h3>
-                <p>Advanced motion graphics and compositions using After Effects.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts, Vlogs.</div>
+                <div class="skill-item"><b>💥 After Effects</b>Visual Effects & Motion Graphics.</div>
+                <div class="skill-item"><b>🎛️ Premiere Pro</b>Professional Timeline Editing.</div>
+                <div class="skill-item"><b>📱 Mobile Tools</b>Alight Motion & KineMaster.</div>
+                <div class="skill-item"><b>✍️ Content Writing</b>Scripts, Captions, Descriptions.</div>
+                <div class="skill-item"><b>🧠 Film Analysis</b>Styles & Cinematic Pacing.</div>
             </div>
-            <div class="skill-card">
-                <h3>Title Design</h3>
-                <p>Vector-based cinematic titles crafted in Adobe Illustrator.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="list-item">
+                <b>Matriculation (SSC)</b><br>
+                Thakshashila English High School, Sircilla<br>
+                <span style="color: var(--gold);">Scored: 80%</span>
             </div>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies & Interests</h2>
+            <div class="list-item">🎬 Watching movies and studying editing techniques</div>
+            <div class="list-item">🧠 Analyzing story pacing, transitions, and effects</div>
+            <div class="list-item">📝 Writing content around videos and visual media</div>
+        </section>
+
+        <div class="quote-box">
+            “Every cut tells a story – Let me help tell yours.”
         </div>
+
+        <section id="contact">
+            <div class="contact-box">
+                <h2 style="justify-content: center; border: none; margin-bottom: 10px;">Let’s Work Together</h2>
+                <p>DM for collaboration or freelance work!</p>
+                <a href="tel:8341388567">83413 88567</a>
+                <a href="mailto:gouthambolli576@gmail.com">gouthambolli576@gmail.com</a>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        &copy; 2026 GOUTHAM BOLLI | ALL RIGHTS RESERVED
+    </footer>
+</body>
+</html>
+</div>
 
     <footer>
         DESIGNED BY GOUTHAM BOLLI &copy; 2026 | SIRCILLA, TELANGANA
