@@ -13,51 +13,43 @@
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--bg); color: #fff; margin: 0; padding: 0; line-height: 1.7; overflow-x: hidden; }
         
-        /* Background Cinematic Overlay */
         body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, #151515 0%, #000 100%); z-index: -1; }
 
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
 
-        /* Header */
-        header { text-align: center; padding: 120px 0 60px; }
-        h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2rem, 8vw, 4.2rem); margin: 0; background: linear-gradient(to bottom, #fff, var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 12px; text-transform: uppercase; line-height: 1; }
-        .location-tag { color: var(--gold); letter-spacing: 4px; margin-top: 15px; font-weight: 300; text-transform: uppercase; font-size: 0.8rem; }
+        /* Header Details */
+        header { text-align: center; padding: 100px 0 40px; }
+        h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(2rem, 8vw, 4.2rem); margin: 0; background: linear-gradient(to bottom, #fff, var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 12px; text-transform: uppercase; }
+        .contact-bar { color: var(--gold); letter-spacing: 2px; margin-top: 15px; font-weight: 300; font-size: 0.9rem; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2); padding: 10px 0; display: inline-block; }
 
         h2 { font-family: 'Syncopate', sans-serif; font-size: 1rem; color: var(--gold); text-transform: uppercase; letter-spacing: 5px; margin: 80px 0 30px; display: flex; align-items: center; gap: 15px; }
         h2::after { content: ""; flex: 1; height: 1px; background: rgba(212,175,55,0.2); }
 
-        .glass-card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 25px; padding: 45px; margin-bottom: 35px; transition: 0.4s; }
-        .glass-card:hover { border-color: var(--gold); background: rgba(255,255,255,0.08); }
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); border-radius: 25px; padding: 40px; margin-bottom: 35px; transition: 0.4s; }
 
-        /* Video Grid Section */
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-        .video-box { position: relative; padding-bottom: 177%; height: 0; border-radius: 20px; overflow: hidden; border: 1px solid #1a1a1a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        /* Portfolio Items */
+        .poster-box { text-align: center; margin-bottom: 50px; }
+        .poster-img { width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 0 40px rgba(0,0,0,0.8); border: 1px solid rgba(212,175,55,0.3); transition: 0.5s; }
+        .poster-img:hover { transform: scale(1.02); border-color: var(--gold); }
+
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 30px; }
+        .video-box { position: relative; padding-bottom: 177%; height: 0; border-radius: 20px; overflow: hidden; border: 1px solid #1a1a1a; transition: 0.3s; }
+        .video-box:hover { border-color: var(--gold); transform: translateY(-5px); }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* Skill Chips */
+        /* Skills & Content */
         .skills-wrap { display: flex; flex-wrap: wrap; gap: 12px; }
-        .skill-pill { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 12px 25px; border-radius: 100px; font-size: 0.9rem; transition: 0.3s; cursor: default; }
-        .skill-pill:hover { background: var(--gold); color: #000; font-weight: 700; border-color: var(--gold); transform: scale(1.05); }
+        .skill-pill { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 12px 22px; border-radius: 100px; font-size: 0.85rem; }
+        .skill-pill:hover { background: var(--gold); color: #000; font-weight: 700; }
 
-        /* Contact & Buttons */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .btn { padding: 22px; border-radius: 18px; text-decoration: none; color: #fff; font-weight: 700; text-align: center; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.95rem; }
-        .btn:hover { background: #fff; color: #000; transform: translateY(-5px); }
-        .wa-btn { background: #075e54 !important; border: none !important; }
+        /* Action Grid */
+        .action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .btn { padding: 20px; border-radius: 18px; text-decoration: none; color: #fff; font-weight: 700; text-align: center; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); transition: 0.3s; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn:hover { background: #fff; color: #000; }
+        .wa-btn { background: #075e54 !important; }
 
-        /* Highlights */
-        .highlight-text { color: var(--gold); font-weight: 700; }
-        .edu-box { display: flex; justify-content: space-between; align-items: center; border-left: 2px solid var(--gold); padding-left: 20px; }
-
-        .quote { text-align: center; margin: 100px 0; font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--gold); opacity: 0.8; }
-
-        footer { text-align: center; padding: 60px 20px; color: #333; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .glass-card { padding: 30px; }
-            .edu-box { flex-direction: column; align-items: flex-start; gap: 10px; }
-        }
+        .quote { text-align: center; margin: 80px 0; font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--gold); opacity: 0.8; }
+        footer { text-align: center; padding: 40px; color: #333; font-size: 0.7rem; letter-spacing: 4px; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
@@ -65,41 +57,35 @@
 <div class="container">
     <header>
         <h1>Goutham Bolli</h1>
-        <p class="location-tag">📍 Sircilla, Telangana</p>
+        <div class="contact-bar">
+            📍 Sircilla | 📞 83413 88567 | 📧 gouthambolli576@gmail.com
+        </div>
     </header>
 
     <section>
         <h2>🎬 Professional Summary</h2>
         <div class="glass-card">
-            <p style="font-size: 1.25rem; font-weight: 300;">
-                Hi everyone! I’m <span class="highlight-text">Goutham</span>, a passionate Video Editor and Content Writer with a strong love for storytelling through visual editing. 
-                My heart lies in video editing, and I specialize in creating engaging and impactful content.
+            <p style="font-size: 1.2rem; font-weight: 300;">
+                Hi everyone! I’m <b>Goutham</b>, a passionate Video Editor and Content Writer, with a strong love for storytelling through visual editing. 
+                My heart lies in video editing, and I specialize in creating engaging and impactful content using tools like <b>Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</b>
                 <br><br>
                 With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. 
-                Whether it’s social media content, YouTube edits, or short films, I ensure your story is told with <span class="highlight-text">maximum impact.</span>
+                Whether it’s social media content, YouTube edits, or short films, I ensure your story is told with <b>maximum impact.</b>
             </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>💡 Skills & Software Expertise</h2>
-        <div class="glass-card">
-            <div class="skills-wrap">
-                <div class="skill-pill">🎞️ Video Editing (YouTube, Reels, Shorts)</div>
-                <div class="skill-pill">💥 Adobe After Effects (VFX & Motion Graphics)</div>
-                <div class="skill-pill">🎛️ Adobe Premiere Pro (Pro Timeline)</div>
-                <div class="skill-pill">📱 Alight Motion & KineMaster</div>
-                <div class="skill-pill">✍️ Content Writing (Scripts & Captions)</div>
-                <div class="skill-pill">🧠 Film Analysis (Cinematic Styles)</div>
-            </div>
         </div>
     </section>
 
     <section>
         <h2>📺 Work Showcase</h2>
         <div class="glass-card">
-            <h3 style="font-family: 'Dancing Script', cursive; font-size: 3rem; color: var(--gold); text-align: center; margin-bottom: 40px;">Babu Gari Lokamantha Mayajalame</h3>
+            <div class="poster-box">
+                <img src="poster.jpg" class="poster-img" alt="Babu Gari Poster">
+                <h3 style="font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--gold); margin-top: 20px;">Babu Gari Lokamantha Mayajalame</h3>
+                <p style="letter-spacing: 4px; color: #555; font-size: 0.8rem; text-transform: uppercase;">Official Collaboration</p>
+            </div>
+
             <div class="video-grid">
+                <!-- Total 7 Videos Integrated -->
                 <div class="video-box"><iframe src="https://www.youtube.com/embed/qapXhJJNAy8"></iframe></div>
                 <div class="video-box"><iframe src="https://www.youtube.com/embed/QZ-oVwPiynk"></iframe></div>
                 <div class="video-box"><iframe src="https://www.youtube.com/embed/B40DUa3aido"></iframe></div>
@@ -112,15 +98,27 @@
     </section>
 
     <section>
-        <h2>🎓 Education</h2>
+        <h2>💡 Skills & Software</h2>
         <div class="glass-card">
-            <div class="edu-box">
-                <div>
-                    <h3 style="margin: 0; font-size: 1.4rem;">Matriculation (SSC)</h3>
-                    <p style="margin: 5px 0 0; color: #888;">Thakshashila English High School, Sircilla</p>
-                </div>
-                <div style="font-size: 1.8rem; font-weight: 900; color: var(--gold);">80%</div>
+            <div class="skills-wrap">
+                <div class="skill-pill">🎞️ Video Editing (YouTube, Reels, Shorts)</div>
+                <div class="skill-pill">💥 Adobe After Effects (VFX)</div>
+                <div class="skill-pill">🎛️ Adobe Premiere Pro</div>
+                <div class="skill-pill">📱 Alight Motion & KineMaster</div>
+                <div class="skill-pill">✍️ Content Writing & Scripts</div>
+                <div class="skill-pill">🧠 Film Analysis & Pacing</div>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎓 Education</h2>
+        <div class="glass-card" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h3 style="margin: 0;">Matriculation (SSC)</h3>
+                <p style="margin: 5px 0; color: #777;">Thakshashila English High School, Sircilla</p>
+            </div>
+            <div style="font-size: 2rem; font-weight: 900; color: var(--gold);">80%</div>
         </div>
     </section>
 
@@ -128,57 +126,29 @@
         <h2>🎯 Hobbies & Interests</h2>
         <div class="glass-card">
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem;">
-                <li style="margin-bottom: 15px;">🎬 Watching movies and studying their editing techniques</li>
-                <li style="margin-bottom: 15px;">🧠 Analyzing story pacing, transitions, and effects</li>
+                <li style="margin-bottom: 12px;">🎬 Watching movies and studying editing techniques</li>
+                <li style="margin-bottom: 12px;">🧠 Analyzing story pacing, transitions, and effects</li>
                 <li>📝 Writing content around videos and visual media</li>
             </ul>
         </div>
     </section>
 
-    <div class="quote">
-        “Every cut tells a story – Let me help tell yours.”
-    </div>
+    <div class="quote">“Every cut tells a story – Let me help tell yours.”</div>
 
     <section>
         <h2>📣 Let’s Work Together!</h2>
         <div class="glass-card" style="text-align: center;">
-            <p style="font-size: 1.1rem; margin-bottom: 40px; color: #bbb;">DM for collaboration or freelance work! Available for personal, business, or social media content.</p>
-            <div class="contact-grid">
-                <a href="https://wa.me/918341388567?text=Hi%20Goutham,%20I'm%20looking%20for%20a%20creative%20Video%20Editor!" class="btn wa-btn">WHATSAPP: 83413 88567</a>
-                <a href="mailto:gouthambolli576@gmail.com" class="btn">EMAIL: gouthambolli576@gmail.com</a>
-                <a href="https://www.instagram.com/editorgouthambolli" target="_blank" class="btn">INSTAGRAM (OFFICIAL)</a>
-                <a href="https://www.instagram.com/gouthambolli_nani" target="_blank" class="btn">INSTAGRAM (PERSONAL)</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2026 GOUTHAM BOLLI | THE FUTURE OF VISUAL STORYTELLING
-    </footer>
-</div>
-
-</body>
-</html>
-<div class="quote-box">
-        <p class="quote-text">“Every cut tells a story – Let me help tell yours.”</p>
-    </div>
-
-    <section id="contact">
-        <h2>05. Let's Work Together</h2>
-        <div class="glass-card">
-            <p class="contact-info-text">📍 Sircilla, Telangana | 📞 83413 88567</p>
+            <p style="margin-bottom: 30px; color: #aaa;">DM for collaboration or freelance work! Available for personal or business projects.</p>
             <div class="action-grid">
-                <a href="https://wa.me/918341388567?text=Hi%20Goutham,%20I'm%20impressed%20by%20your%202026%20portfolio.%20Let's%20talk!" class="btn wa-btn">WHATSAPP DIRECT</a>
+                <a href="https://wa.me/918341388567?text=Hi%20Goutham,%20I%20saw%20your%202026%20portfolio%20and%20want%20to%20collaborate!" class="btn wa-btn">WHATSAPP: 83413 88567</a>
                 <a href="https://www.instagram.com/editorgouthambolli" target="_blank" class="btn">INSTAGRAM (MAIN)</a>
                 <a href="https://www.instagram.com/gouthambolli_nani" target="_blank" class="btn">INSTAGRAM (PERSONAL)</a>
-                <a href="mailto:gouthambolli576@gmail.com" class="btn">EMAIL ME</a>
+                <a href="mailto:gouthambolli576@gmail.com" class="btn">EMAIL: gouthambolli576@gmail.com</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        &copy; 2026 GOUTHAM BOLLI | BUILT FOR THE FUTURE
-    </footer>
+    <footer>&copy; 2026 GOUTHAM BOLLI | BUILT FOR THE FUTURE</footer>
 </div>
 
 </body>
