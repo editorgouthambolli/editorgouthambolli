@@ -9,11 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        :root { --gold: #d4af37; --bg: #080808; --card-bg: #111111; --text: #e0e0e0; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+        :root { --gold: #d4af37; --bg: #080808; --card-bg: #111111; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: #e0e0e0; margin: 0; padding: 0; line-height: 1.6; }
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
         
-        /* Stylish Cursive Headings */
         h1, h2, .cursive-font { 
             font-family: 'Dancing Script', cursive !important; 
             color: var(--gold); 
@@ -24,20 +23,18 @@
 
         .card { background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid #222; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         
-        /* Project Poster Image */
+        /* Poster Image Settings */
         .poster-img { width: 100%; max-width: 500px; border-radius: 8px; border: 1px solid var(--gold); display: block; margin: 0 auto 20px; }
         
-        /* Video Grid for Shorts */
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 25px; }
+        /* Video Grid for 7 Shorts */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 25px; }
         .video-box { position: relative; padding-bottom: 177%; height: 0; border-radius: 8px; overflow: hidden; background: #000; border: 1px solid #333; }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* Skills Layout */
         .skill-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-        .skill-item { background: #1a1a1a; padding: 12px 15px; border-left: 4px solid var(--gold); border-radius: 4px; font-weight: 400; font-size: 0.95rem; }
+        .skill-item { background: #1a1a1a; padding: 12px 15px; border-left: 4px solid var(--gold); border-radius: 4px; font-size: 0.95rem; }
         
         .footer { text-align: center; padding: 60px 20px; color: #555; font-size: 0.8rem; letter-spacing: 2px; }
-        
         b { color: var(--gold); }
     </style>
 </head>
@@ -46,14 +43,14 @@
 <div class="container">
     <header style="text-align: center; padding-bottom: 40px;">
         <h1>Goutham Bolli</h1>
-        <p style="letter-spacing: 4px; color: #888; font-size: 0.9rem; font-weight: 300;">VIDEO EDITOR & CONTENT WRITER</p>
+        <p style="letter-spacing: 4px; color: #888; font-size: 0.9rem;">VIDEO EDITOR & CONTENT WRITER</p>
     </header>
 
     <section>
         <h2>Professional Summary</h2>
         <div class="card">
-            <p>Hi everyone! I’m <b>Goutham</b>, a dedicated <b>Video Editor and Content Writer</b>. I have a deep passion for visual storytelling and cinematic editing. Over the years, I've honed my skills in creating high-quality, engaging content that resonates with audiences.</p>
-            <p>I specialize in handling complex projects from start to finish, ensuring every transition and cut adds to the story's impact. My expertise covers both long-form content and high-energy social media promotional material.</p>
+            <p>Hi everyone! I’m <b>Goutham</b>, a passionate <b>Video Editor and Content Writer</b>. I specialize in cinematic storytelling and visual editing using industry-standard tools like <b>Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</b></p>
+            <p>I focus on creating high-energy content, ensuring every cut and transition adds impact to the final story.</p>
         </div>
     </section>
 
@@ -67,7 +64,7 @@
             </div>
             
             <p style="font-style: italic; border-left: 3px solid var(--gold); padding-left: 15px; color: #bbb; margin-bottom: 25px;">
-                "I worked closely with the production team to create impactful promotional content. My role focused on editing high-energy shorts and digital marketing assets that drove significant engagement for the series."
+                "I collaborated with a production team to create high-impact promotional shorts and social media content for this web series."
             </p>
 
             <div class="video-grid">
@@ -75,12 +72,10 @@
                 <div class="video-box"><iframe src="https://www.youtube.com/embed/QZ-oVwPiynk"></iframe></div>
                 <div class="video-box"><iframe src="https://www.youtube.com/embed/B40DUa3aido"></iframe></div>
                 <div class="video-box"><iframe src="https://www.youtube.com/embed/ToqrBwMIfbI"></iframe></div>
+                <div class="video-box"><iframe src="https://www.youtube.com/embed/IAnX_u12X_Y"></iframe></div>
+                <div class="video-box"><iframe src="https://www.youtube.com/embed/F6V-G8i0q_o"></iframe></div>
+                <div class="video-box"><iframe src="https://www.youtube.com/embed/RkGz_nFmBmo"></iframe></div>
             </div>
-        </div>
-
-        <div class="card">
-            <h3 class="cursive-font" style="font-size: 1.8rem; margin-bottom: 10px;">Short Film Post-Production</h3>
-            <p>Complete handling of <b>Color Grading, Title Design, and Background Score (BGM)</b> synchronization for independent short film projects.</p>
         </div>
     </section>
 
@@ -93,8 +88,8 @@
             <div class="skill-item">KineMaster</div>
             <div class="skill-item">Content Writing</div>
             <div class="skill-item">Cinematic Transitions</div>
-            <div class="skill-item">Match Cut Editing</div>
             <div class="skill-item">Color Grading</div>
+            <div class="skill-item">Story Pacing</div>
         </div>
     </section>
 
