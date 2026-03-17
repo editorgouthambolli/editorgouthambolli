@@ -3,62 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Goutham Bolli | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Editor Goutham Bolli | Cinematic Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background-color: #050505; color: #ffffff; margin: 0; padding: 0; line-height: 1.6; }
-        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; border-bottom: 4px solid #d4af37; text-align: center; padding: 20px; }
-        h1 { font-family: 'Bebas Neue', cursive; font-size: clamp(2.5rem, 8vw, 5rem); color: #d4af37; margin: 0; letter-spacing: 4px; }
-        .handwritten-name { font-family: 'Caveat', cursive; font-size: 2rem; color: #fff; margin-top: -5px; }
-        .tagline { font-size: 1rem; letter-spacing: 2px; color: #9ca3af; text-transform: uppercase; margin-top: 10px; }
-        .btn-group { margin-top: 25px; }
-        .btn { padding: 10px 25px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.4s; margin: 5px; display: inline-block; font-size: 0.8rem; }
-        .btn:hover { background: #d4af37; color: #000; }
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        h2 { font-family: 'Bebas Neue', cursive; font-size: 2.5rem; color: #d4af37; border-left: 5px solid #d4af37; padding-left: 15px; margin: 40px 0 20px 0; }
-        .card { background: #111; border: 1px solid #222; padding: 25px; border-radius: 5px; margin-bottom: 20px; }
-        .summary-text { font-family: 'Caveat', cursive; font-size: 1.6rem; color: #eee; line-height: 1.3; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
-        .skill-box { border: 1px solid #333; padding: 15px; text-align: center; border-radius: 4px; color: #d4af37; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; background: #0a0a0a; }
-        .skill-box img { width: 25px; margin-right: 10px; }
-        footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; border-top: 1px solid #111; }
+        :root {
+            --glass: rgba(255, 255, 255, 0.05);
+            --gold: #d4af37;
+            --text-main: #ffffff;
+            --text-sub: #9ca3af;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: #000; color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; overflow-x: hidden; }
+
+        /* Cinematic Background with Gradient & Film Grain */
+        .master-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            z-index: -2;
+        }
+        .film-grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Noise_texture.png/1200px-Noise_texture.png');
+            opacity: 0.03; z-index: -1;
+        }
+
+        /* Hero Section - The Glass Frame */
+        .hero {
+            height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+            position: relative; overflow: hidden;
+        }
+
+        /* The Frosted Glass Container */
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 10; position: relative; max-width: 600px; width: 90%;
+        }
+
+        h1 { font-family: 'Bebas Neue', cursive; font-size: clamp(3rem, 10vw, 6rem); color: var(--gold); margin: 0; letter-spacing: 5px; text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+        .handwritten-name { font-weight: 100; font-size: 1.8rem; color: #fff; margin-top: -5px; letter-spacing: 1px; }
+        .tagline { font-size: 1rem; letter-spacing: 3px; color: var(--text-sub); text-transform: uppercase; margin-top: 15px; font-weight: 300; }
+
+        .btn-group { margin-top: 35px; z-index: 20; position: relative; }
+        .btn { padding: 12px 30px; border: 2px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.4s; margin: 10px; display: inline-block; font-size: 0.85rem; letter-spacing: 1px; }
+        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+
+        /* Background Animated Rings & Software Logos */
+        .logo-map {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
+        }
+
+        .ring {
+            position: absolute; border: 2px solid rgba(212, 175, 55, 0.1);
+            border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            animation: ringOrbit 15s infinite linear;
+        }
+        .ring-1 { width: 400px; height: 400px; animation-duration: 20s; }
+        .ring-2 { width: 600px; height: 600px; animation-duration: 25s; animation-direction: reverse; }
+
+        .map-logo {
+            position: absolute; width: 50px;
+            animation: logoOrbit 20s infinite linear;
+        }
+
+        @keyframes ringOrbit { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+        @keyframes logoOrbit { from { transform: translate(-50%, -50%) rotate(0deg) translate(200px) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg) translate(200px) rotate(-360deg); } }
+
+        /* Main Container */
+        .container { max-width: 900px; margin: auto; padding: 60px 20px; z-index: 10; position: relative; }
+        h2 { font-family: 'Bebas Neue', cursive; font-size: clamp(2.5rem, 6vw, 3.5rem); color: var(--gold); border-left: 5px solid var(--gold); padding-left: 20px; margin: 60px 0 25px 0; letter-spacing: 2px; }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px; border-radius: 8px; margin-bottom: 25px;
+            transition: 0.4s;
+        }
+        .card:hover { border-color: var(--gold); background: rgba(255, 255, 255, 0.08); }
+        p { color: #ccc; font-size: 1.1rem; }
+
+        /* Skills Grid - Simple, Clean Logos */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 25px; }
+        .skill-box { border: 1px solid rgba(212, 175, 55, 0.3); padding: 18px; text-align: center; border-radius: 5px; color: var(--gold); font-weight: bold; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); text-transform: uppercase; letter-spacing: 1px; }
+        .skill-box img { width: 30px; margin-right: 12px; }
+
+        footer { text-align: center; padding: 60px; color: #555; font-size: 0.85rem; border-top: 1px solid #111; margin-top: 80px; }
     </style>
 </head>
 <body>
+    <div class="master-bg"></div>
+    <div class="film-grain"></div>
+
     <section class="hero">
-        <h1>EDITOR GOUTHAM BOLLI</h1>
-        <div class="handwritten-name">Goutham (పండు)</div>
-        <p class="tagline">Cinematic Storyteller | Content Creator</p>
-        <div class="btn-group">
-            <a href="https://wa.me/918341388567" class="btn">WhatsApp Me</a>
-            <a href="mailto:gouthambolli576@gmail.com" class="btn">Email Me</a>
+        <div class="logo-map">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" class="map-logo pr-logo" style="top:50%; left:50%;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" class="map-logo ae-logo" style="top:50%; left:50%; animation-delay: -5s; animation-duration: 25s;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" class="map-logo ai-logo" style="top:50%; left:50%; animation-delay: -10s; animation-duration: 30s;">
+        </div>
+
+        <div class="glass-panel">
+            <h1>EDITOR GOUTHAM BOLLI</h1>
+            <div class="handwritten-name">Goutham (పండు)</div>
+            <p class="tagline">Cinematic Storyteller | Content Creator</p>
+            <div class="btn-group">
+                <a href="https://wa.me/918341388567" class="btn">WhatsApp Me</a>
+                <a href="mailto:gouthambolli576@gmail.com" class="btn">Email Me</a>
+            </div>
         </div>
     </section>
 
     <div class="container">
         <h2>🎬 About Me</h2>
         <div class="card">
-            <p class="summary-text">Hi! I’m Goutham, a passionate Video Editor and Content Writer from Sircilla. I specialize in turning raw footage into impactful cinematic stories using pro tools.</p>
+            <p>Hi! I’m Goutham, a passionate Video Editor and Content Writer from Sircilla. I specialize in creating engaging stories using professional tools.</p>
         </div>
 
-        <h2>💡 Skills & Software</h2>
+        <h2>💡 Technical Arsenal</h2>
         <div class="skills-grid">
             <div class="skill-box"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg">Premiere Pro</div>
             <div class="skill-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg">After Effects</div>
             <div class="skill-box"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg">Illustrator</div>
-            <div class="skill-box">✨ Title Design</div>
+            <div class="skill-box">✨ Cinematic Title Design</div>
             <div class="skill-box">🎞️ Video Editing</div>
             <div class="skill-box">📱 Alight Motion</div>
             <div class="skill-box">✍️ Content Writing</div>
         </div>
 
-        <div style="text-align: center; margin-top: 50px; background: #111; padding: 30px; border-radius: 5px; border-top: 3px solid #d4af37;">
-            <h3 style="color: #d4af37; font-family: 'Bebas Neue'; font-size: 2rem;">Let’s Collaborate!</h3>
-            <p>📞 83413 88567</p>
-            <p>📧 gouthambolli576@gmail.com</p>
+        <div style="text-align: center; margin-top: 80px; background: var(--glass); backdrop-filter: blur(10px); padding: 50px; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2);">
+            <h3 style="color: var(--gold); font-family: 'Bebas Neue'; font-size: 2.5rem; margin: 0 0 20px 0;">Let’s Collaborate</h3>
+            <p style="font-size: 1.2rem;">📞 83413 88567</p>
+            <p style="font-size: 1.2rem;">📩 gouthambolli576@gmail.com</p>
         </div>
     </div>
 
-    <footer>&copy; 2026 Editor Goutham Bolli | Sircilla</footer>
+    <footer>&copy; 2026 Editor Goutham Bolli | Sircilla, Telangana</footer>
 </body>
 </html>
