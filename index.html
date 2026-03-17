@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goutham Bolli | Editor & Creator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
+    
     <style>
         :root { --gold: #d4af37; --glass: rgba(255, 255, 255, 0.03); --border: rgba(212, 175, 55, 0.15); }
         body { font-family: 'Montserrat', sans-serif; background-color: #080808; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.7; }
@@ -15,17 +18,17 @@
         .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .glass-frame { background: var(--glass); backdrop-filter: blur(25px); padding: 50px 30px; border: 1px solid var(--border); border-radius: 4px; width: 90%; max-width: 650px; border-bottom: 3px solid var(--gold); }
         
-        /* Cursive Header Style */
-        h1 { font-family: 'Dancing Script', cursive; font-size: clamp(3rem, 10vw, 5.5rem); color: var(--gold); margin: 0; letter-spacing: 2px; }
+        /* Cursive Header - Explicit weight to avoid default bolding */
+        h1 { font-family: 'Dancing Script', cursive; font-weight: 500; font-size: clamp(3rem, 10vw, 5.5rem); color: var(--gold); margin: 0; letter-spacing: 1px; }
         
-        /* Cursive Section Titles */
-        h2 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--gold); margin: 60px 0 30px 0; display: flex; align-items: center; }
+        /* Cursive Titles with adjusted font weight */
+        h2 { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 2.8rem; color: var(--gold); margin: 60px 0 30px 0; display: flex; align-items: center; }
         h2::after { content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 20px; }
 
         .card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 2px; margin-bottom: 20px; }
         .project-card { background: #0d0d0d; border: 1px solid #1a1a1a; padding: 25px; border-radius: 4px; transition: 0.4s; }
         .project-card:hover { transform: translateY(-8px); border-color: var(--gold); }
-        .project-card h3 { font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
+        .project-card h3 { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
         
         .tag-live { background: #d42020; color: #fff; padding: 2px 8px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase; border-radius: 2px; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
@@ -33,7 +36,7 @@
         .list-item { margin-bottom: 15px; padding-left: 15px; border-left: 1px solid #333; }
         .quote { text-align: center; padding: 60px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: #fff; opacity: 0.8; }
         .contact-box { text-align: center; border: 1px solid var(--gold); padding: 40px; margin-top: 40px; background: linear-gradient(to bottom, rgba(212, 175, 55, 0.05), transparent); }
-        .contact-box h2 { justify-content: center; }
+        .contact-box h2 { justify-content: center; margin: 0 0 20px 0; }
         .contact-box a { color: var(--gold); text-decoration: none; font-size: 1.2rem; display: block; margin: 10px 0; font-weight: 600; }
         footer { text-align: center; padding: 60px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
     </style>
