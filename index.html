@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Editor</title>
+    <title>Editor Goutham Bolli | Cinematic Portfolio</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #d4af37;
-            --glass-bg: rgba(255, 255, 255, 0.05); /* గాజు లాంటి ఫినిష్ కోసం */
+            --glass-bg: rgba(255, 255, 255, 0.05); /* గాజు లాంటి ఫినిష్ */
             --glass-border: rgba(255, 255, 255, 0.1);
         }
 
@@ -19,19 +19,7 @@
             background: radial-gradient(circle at top, #1a1a1a, #050505); /* సినిమాటిక్ డార్క్ బ్యాక్‌గ్రౌండ్ */
             color: #fff;
             font-family: 'Outfit', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Glass Finish Card */
-        .glass-panel {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px); /* వెనుక ఉన్నది మసకగా కనిపించేలా (Glass Blur) */
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-            margin-bottom: 30px;
+            min-height: 100vh;
         }
 
         .container {
@@ -40,23 +28,48 @@
             padding: 0 20px;
         }
 
+        /* Glass Finish Card */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px); /* గ్లాస్ బ్లర్ ఎఫెక్ట్ */
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 50px 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
         h1 {
             font-family: 'Syncopate', sans-serif;
-            font-size: 3rem;
+            font-size: clamp(1.4rem, 5vw, 2.5rem);
             color: var(--gold);
-            letter-spacing: 8px;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-            text-align: center;
-            margin-bottom: 10px;
+            letter-spacing: 6px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
 
         .tagline {
-            text-align: center;
+            margin-top: 20px;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 50px;
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        /* Divider */
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+            margin: 30px auto;
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -65,8 +78,9 @@
     <div class="container">
         <!-- Header Section with Glass Finish -->
         <div class="glass-panel">
-            <h1>GOUTHAM</h1>
-            <div class="tagline">Cinematic Video Editor & Content Creator</div>
+            <h1>EDITOR <span>GOUTHAM BOLLI</span></h1>
+            <div class="divider"></div>
+            <div class="tagline">Visual Storyteller & Cinematic Content Creator</div>
         </div>
     </div>
 
