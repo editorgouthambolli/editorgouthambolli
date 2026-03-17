@@ -6,11 +6,11 @@
     <title>Goutham Bolli | Editor & Creator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
     
     <style>
         :root { --gold: #d4af37; --glass: rgba(255, 255, 255, 0.03); --border: rgba(212, 175, 55, 0.15); }
-        body { font-family: 'Montserrat', sans-serif; background-color: #080808; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.7; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #080808; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.7; -webkit-font-smoothing: antialiased; }
         .bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #111 0%, #000 100%); z-index: -2; }
         .aesthetic-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.12; z-index: -1; pointer-events: none; }
 
@@ -18,17 +18,17 @@
         .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .glass-frame { background: var(--glass); backdrop-filter: blur(25px); padding: 50px 30px; border: 1px solid var(--border); border-radius: 4px; width: 90%; max-width: 650px; border-bottom: 3px solid var(--gold); }
         
-        /* Cursive Header - Explicit weight to avoid default bolding */
-        h1 { font-family: 'Dancing Script', cursive; font-weight: 500; font-size: clamp(3rem, 10vw, 5.5rem); color: var(--gold); margin: 0; letter-spacing: 1px; }
+        /* Cursive Header - Setting explicit weight 400 for a cleaner look */
+        h1 { font-family: 'Dancing Script', cursive !important; font-weight: 400 !important; font-size: clamp(3rem, 10vw, 5.5rem); color: var(--gold); margin: 0; letter-spacing: 1px; }
         
-        /* Cursive Titles with adjusted font weight */
-        h2 { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 2.8rem; color: var(--gold); margin: 60px 0 30px 0; display: flex; align-items: center; }
+        /* Cursive Titles */
+        h2 { font-family: 'Dancing Script', cursive !important; font-weight: 500 !important; font-size: 2.8rem; color: var(--gold); margin: 60px 0 30px 0; display: flex; align-items: center; }
         h2::after { content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 20px; }
 
         .card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 2px; margin-bottom: 20px; }
         .project-card { background: #0d0d0d; border: 1px solid #1a1a1a; padding: 25px; border-radius: 4px; transition: 0.4s; }
         .project-card:hover { transform: translateY(-8px); border-color: var(--gold); }
-        .project-card h3 { font-family: 'Dancing Script', cursive; font-weight: 700; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
+        .project-card h3 { font-family: 'Dancing Script', cursive !important; font-weight: 500 !important; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
         
         .tag-live { background: #d42020; color: #fff; padding: 2px 8px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase; border-radius: 2px; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
@@ -68,16 +68,16 @@
                 <div class="project-card">
                     <span class="tag-live">● Live on YouTube</span>
                     <h3>Short Film (Full Post-Production)</h3>
-                    <p>నేను ఈ ప్రాజెక్ట్ కి బ్యాక్ గ్రౌండ్ స్కోర్ (BGM), కలర్ గ్రేడింగ్, టైటిల్ డిజైన్ మరియు పూర్తి వీడియో ఎడిటింగ్ నిర్వహించాను.</p>
+                    <p>I handled the Background Score (BGM), Color Grading, Title Design, and full Video Editing for this project.</p>
                 </div>
                 <div class="project-card">
                     <span class="tag-live">● Live on YouTube</span>
                     <h3>Title Design & Intro Work</h3>
-                    <p>ప్రధాన స్ట్రీమింగ్ ప్రాజెక్టుల కోసం హై-క్వాలిటీ సినిమాటిక్ టైటిల్స్ మరియు ఇంట్రోస్ డిజైన్ చేశాను.</p>
+                    <p>Designed high-quality cinematic main titles and intros for two major streaming projects.</p>
                 </div>
                 <div class="project-card">
                     <h3>Social Media Specialist</h3>
-                    <p>యూట్యూబ్ షార్ట్స్ మరియు ఇన్‌స్టాగ్రామ్ రీల్స్ కోసం ఫాస్ట్-పేస్డ్ మరియు ఎంగేజింగ్ ఎడిటింగ్.</p>
+                    <p>Fast-paced and engaging editing for YouTube Shorts and Instagram Reels.</p>
                 </div>
             </div>
         </section>
@@ -88,7 +88,7 @@
                 <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts, Vlogs, etc.</div>
                 <div class="skill-item"><b>💥 Adobe After Effects</b>Visual Effects & Motion Graphics</div>
                 <div class="skill-item"><b>🎛️ Adobe Premiere Pro</b>Professional Timeline Editing</div>
-                <div class="skill-item"><b>📱 Mobile Editing</b>Alight Motion & KineMaster</div>
+                <div class="skill-item"><b>📱 Alight Motion & KineMaster</b>Mobile Editing</div>
                 <div class="skill-item"><b>✍️ Content Writing</b>Scriptwriting, Captions, Descriptions</div>
                 <div class="skill-item"><b>🧠 Film Analysis</b>Understanding Editing Styles & Cinematics</div>
             </div>
