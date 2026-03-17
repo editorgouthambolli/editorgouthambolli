@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goutham Bolli | Editor & Creator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #d4af37; --glass: rgba(255, 255, 255, 0.03); --border: rgba(212, 175, 55, 0.15); }
         body { font-family: 'Montserrat', sans-serif; background-color: #080808; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.7; }
@@ -15,13 +15,17 @@
         .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .glass-frame { background: var(--glass); backdrop-filter: blur(25px); padding: 50px 30px; border: 1px solid var(--border); border-radius: 4px; width: 90%; max-width: 650px; border-bottom: 3px solid var(--gold); }
         
-        h1 { font-family: 'Bebas Neue', cursive; font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--gold); margin: 0; letter-spacing: 8px; }
-        h2 { font-family: 'Bebas Neue', cursive; font-size: 2.2rem; color: var(--gold); letter-spacing: 3px; margin: 60px 0 30px 0; display: flex; align-items: center; }
+        /* Cursive Header Style */
+        h1 { font-family: 'Dancing Script', cursive; font-size: clamp(3rem, 10vw, 5.5rem); color: var(--gold); margin: 0; letter-spacing: 2px; }
+        
+        /* Cursive Section Titles */
+        h2 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--gold); margin: 60px 0 30px 0; display: flex; align-items: center; }
         h2::after { content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 20px; }
 
         .card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 2px; margin-bottom: 20px; }
         .project-card { background: #0d0d0d; border: 1px solid #1a1a1a; padding: 25px; border-radius: 4px; transition: 0.4s; }
         .project-card:hover { transform: translateY(-8px); border-color: var(--gold); }
+        .project-card h3 { font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
         
         .tag-live { background: #d42020; color: #fff; padding: 2px 8px; font-size: 0.65rem; font-weight: bold; text-transform: uppercase; border-radius: 2px; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
@@ -29,6 +33,7 @@
         .list-item { margin-bottom: 15px; padding-left: 15px; border-left: 1px solid #333; }
         .quote { text-align: center; padding: 60px 20px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.6rem; color: #fff; opacity: 0.8; }
         .contact-box { text-align: center; border: 1px solid var(--gold); padding: 40px; margin-top: 40px; background: linear-gradient(to bottom, rgba(212, 175, 55, 0.05), transparent); }
+        .contact-box h2 { justify-content: center; }
         .contact-box a { color: var(--gold); text-decoration: none; font-size: 1.2rem; display: block; margin: 10px 0; font-weight: 600; }
         footer { text-align: center; padding: 60px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
     </style>
@@ -39,7 +44,7 @@
 
     <section class="hero">
         <div class="glass-frame">
-            <h1>GOUTHAM BOLLI</h1>
+            <h1>Goutham Bolli</h1>
             <p style="letter-spacing: 3px; color: #888; text-transform: uppercase; margin-top: 15px;">Video Editor & Content Creator</p>
             <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">📍 Sircilla, Telangana</p>
         </div>
@@ -47,7 +52,7 @@
 
     <div class="container">
         <section>
-            <h2>🎬 Professional Summary</h2>
+            <h2>Professional Summary</h2>
             <div class="card">
                 <p>Hi everyone! I’m Goutham, a passionate <b>Video Editor and Content Writer</b>, with a strong love for storytelling through visual editing. My heart lies in video editing, and I specialize in creating engaging and impactful content using tools like <b>Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</b></p>
                 <p>With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. Whether it’s social media content, YouTube edits, or short films, I ensure your story is told with maximum impact.</p>
@@ -55,39 +60,39 @@
         </section>
 
         <section>
-            <h2>🚀 Featured Projects</h2>
+            <h2>Featured Projects</h2>
             <div style="display: grid; gap: 20px;">
                 <div class="project-card">
                     <span class="tag-live">● Live on YouTube</span>
-                    <h3 style="color: var(--gold); margin: 10px 0;">Cinematic Short Film (Full Post-Production)</h3>
-                    <p>I handled the Background Score (BGM), Color Grading, Title Design, and full Video Editing for this project.</p>
+                    <h3>Short Film (Full Post-Production)</h3>
+                    <p>నేను ఈ ప్రాజెక్ట్ కి బ్యాక్ గ్రౌండ్ స్కోర్ (BGM), కలర్ గ్రేడింగ్, టైటిల్ డిజైన్ మరియు పూర్తి వీడియో ఎడిటింగ్ నిర్వహించాను.</p>
                 </div>
                 <div class="project-card">
                     <span class="tag-live">● Live on YouTube</span>
-                    <h3 style="color: var(--gold); margin: 10px 0;">Main Title Design & Intro Work</h3>
-                    <p>Designed high-quality cinematic main titles and intros for two major streaming projects.</p>
+                    <h3>Title Design & Intro Work</h3>
+                    <p>ప్రధాన స్ట్రీమింగ్ ప్రాజెక్టుల కోసం హై-క్వాలిటీ సినిమాటిక్ టైటిల్స్ మరియు ఇంట్రోస్ డిజైన్ చేశాను.</p>
                 </div>
                 <div class="project-card">
-                    <h3 style="color: var(--gold); margin: 0 0 10px 0;">Reels & Shorts Content Specialist</h3>
-                    <p>Expertly edited engaging YouTube Shorts and Instagram Reels with a focus on pacing and transitions.</p>
+                    <h3>Social Media Specialist</h3>
+                    <p>యూట్యూబ్ షార్ట్స్ మరియు ఇన్‌స్టాగ్రామ్ రీల్స్ కోసం ఫాస్ట్-పేస్డ్ మరియు ఎంగేజింగ్ ఎడిటింగ్.</p>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>💡 Skills & Software Expertise</h2>
+            <h2>Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts, Vlogs, etc.</div>
                 <div class="skill-item"><b>💥 Adobe After Effects</b>Visual Effects & Motion Graphics</div>
                 <div class="skill-item"><b>🎛️ Adobe Premiere Pro</b>Professional Timeline Editing</div>
-                <div class="skill-item"><b>📱 Alight Motion & KineMaster</b>Mobile Editing</div>
+                <div class="skill-item"><b>📱 Mobile Editing</b>Alight Motion & KineMaster</div>
                 <div class="skill-item"><b>✍️ Content Writing</b>Scriptwriting, Captions, Descriptions</div>
                 <div class="skill-item"><b>🧠 Film Analysis</b>Understanding Editing Styles & Cinematics</div>
             </div>
         </section>
 
         <section>
-            <h2>🎓 Education</h2>
+            <h2>Education</h2>
             <div class="list-item">
                 <b>Matriculation (SSC)</b><br>
                 📍 Thakshashila English High School, Sircilla<br>
@@ -96,7 +101,7 @@
         </section>
 
         <section>
-            <h2>🎯 Hobbies & Interests</h2>
+            <h2>Hobbies & Interests</h2>
             <div class="list-item">🎬 Watching movies and studying their editing techniques</div>
             <div class="list-item">🧠 Analyzing story pacing, transitions, and effects</div>
             <div class="list-item">📝 Writing content around videos and visual media</div>
@@ -106,7 +111,7 @@
 
         <section>
             <div class="contact-box">
-                <h2 style="justify-content: center; border: none; margin-bottom: 10px;">📣 Let’s Work Together!</h2>
+                <h2>Let’s Work Together!</h2>
                 <p>DM for collaboration or freelance work!</p>
                 <a href="tel:8341388567">83413 88567</a>
                 <a href="mailto:gouthambolli576@gmail.com">gouthambolli576@gmail.com</a>
