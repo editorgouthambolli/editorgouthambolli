@@ -1,126 +1,107 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goutham Bolli | Editor & Creator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:italic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        :root { --gold: #d4af37; --glass: rgba(255, 255, 255, 0.03); --border: rgba(212, 175, 55, 0.15); }
-        body { font-family: 'Montserrat', sans-serif; background-color: #080808; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.7; }
-        .bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, #111 0%, #000 100%); z-index: -2; }
-        .aesthetic-grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.12; z-index: -1; pointer-events: none; }
-        .container { max-width: 850px; margin: auto; padding: 40px 20px; }
+        :root { --gold: #d4af37; --bg: #080808; --card-bg: #111111; --text: #e0e0e0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
         
-        /* Cursive Styles */
-        h1, h2, .cursive-title { font-family: 'Dancing Script', cursive !important; font-weight: 500 !important; color: var(--gold); }
-        h1 { font-size: clamp(3rem, 10vw, 5.5rem); text-align: center; margin: 0; }
-        h2 { font-size: 2.8rem; margin: 60px 0 30px 0; display: flex; align-items: center; }
-        h2::after { content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 20px; }
+        /* Stylish Cursive Headings */
+        h1, h2, .cursive-font { 
+            font-family: 'Dancing Script', cursive !important; 
+            color: var(--gold); 
+            font-weight: 400; 
+        }
+        h1 { font-size: 3.8rem; text-align: center; margin-bottom: 5px; }
+        h2 { font-size: 2.5rem; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 10px; margin-top: 50px; }
 
-        .card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 2px; margin-bottom: 20px; }
-        .project-card { background: #0d0d0d; border: 1px solid #1a1a1a; padding: 25px; border-radius: 4px; margin-bottom: 25px; }
+        .card { background: var(--card-bg); padding: 25px; border-radius: 12px; border: 1px solid #222; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        
+        /* Project Poster Image */
+        .poster-img { width: 100%; max-width: 500px; border-radius: 8px; border: 1px solid var(--gold); display: block; margin: 0 auto 20px; }
         
         /* Video Grid for Shorts */
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
-        .video-container { position: relative; padding-bottom: 177.77%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #222; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 25px; }
+        .video-box { position: relative; padding-bottom: 177%; height: 0; border-radius: 8px; overflow: hidden; background: #000; border: 1px solid #333; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        .skill-item { background: #0d0d0d; border-left: 3px solid var(--gold); padding: 15px; }
-        .list-item { margin-bottom: 15px; padding-left: 15px; border-left: 1px solid #333; }
-        .contact-box { text-align: center; border: 1px solid var(--gold); padding: 40px; margin-top: 40px; }
-        .contact-box a { color: var(--gold); text-decoration: none; font-size: 1.2rem; display: block; margin: 10px 0; font-weight: 600; }
-        footer { text-align: center; padding: 60px; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
+        /* Skills Layout */
+        .skill-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+        .skill-item { background: #1a1a1a; padding: 12px 15px; border-left: 4px solid var(--gold); border-radius: 4px; font-weight: 400; font-size: 0.95rem; }
+        
+        .footer { text-align: center; padding: 60px 20px; color: #555; font-size: 0.8rem; letter-spacing: 2px; }
+        
+        b { color: var(--gold); }
     </style>
 </head>
 <body>
-    <div class="bg-layer"></div>
-    <div class="aesthetic-grain"></div>
 
-    <div class="container">
-        <section style="padding: 60px 0; text-align: center;">
-            <h1>Goutham Bolli</h1>
-            <p style="letter-spacing: 3px; color: #888; text-transform: uppercase;">Video Editor & Content Creator</p>
-            <p style="font-size: 0.8rem; color: #666;">📍 Sircilla, Telangana</p>
-        </section>
+<div class="container">
+    <header style="text-align: center; padding-bottom: 40px;">
+        <h1>Goutham Bolli</h1>
+        <p style="letter-spacing: 4px; color: #888; font-size: 0.9rem; font-weight: 300;">VIDEO EDITOR & CONTENT WRITER</p>
+    </header>
 
-        <section>
-            <h2>Professional Summary</h2>
-            <div class="card">
-                <p>Hi everyone! I’m Goutham, a passionate <b>Video Editor and Content Writer</b>, with a strong love for storytelling through visual editing. My heart lies in video editing, and I specialize in creating engaging and impactful content using tools like <b>Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</b></p>
-                <p>With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. Whether it’s social media content, YouTube edits, or short films, I ensure your story is told with maximum impact.</p>
+    <section>
+        <h2>Professional Summary</h2>
+        <div class="card">
+            <p>Hi everyone! I’m <b>Goutham</b>, a dedicated <b>Video Editor and Content Writer</b>. I have a deep passion for visual storytelling and cinematic editing. Over the years, I've honed my skills in creating high-quality, engaging content that resonates with audiences.</p>
+            <p>I specialize in handling complex projects from start to finish, ensuring every transition and cut adds to the story's impact. My expertise covers both long-form content and high-energy social media promotional material.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Featured Projects</h2>
+        <div class="card" style="border-top: 5px solid var(--gold);">
+            <div style="text-align: center;">
+                <img src="JPG%20poster.jpg" class="poster-img" alt="Babu Gari Lokamantha Mayajalame Poster">
+                <h3 class="cursive-font" style="font-size: 2.8rem; margin: 15px 0 5px 0;">Babu Gari Lokamantha Mayajalame</h3>
+                <p style="color: var(--gold); font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 25px;">WEB SERIES COLLABORATION | 2022</p>
             </div>
-        </section>
-
-        <section>
-            <h2>Featured Projects</h2>
             
-            <div class="project-card" style="border-top: 3px solid var(--gold);">
-                <span style="background: #333; color: var(--gold); padding: 2px 10px; font-size: 0.7rem; font-weight: bold; border-radius: 2px;">ESTD. 2022 | WEB SERIES COLLABORATION</span>
-                
-                <div style="margin-top: 20px; text-align: center;">
-                    <img src="https://i.postimg.cc/85zXp9zN/1000143126.jpg" style="width: 100%; max-width: 450px; border-radius: 4px; border: 1px solid var(--border);">
-                    <h3 class="cursive-title" style="font-size: 2.2rem; margin: 15px 0;">Babu Gari Lokamantha Mayajalame</h3>
-                </div>
+            <p style="font-style: italic; border-left: 3px solid var(--gold); padding-left: 15px; color: #bbb; margin-bottom: 25px;">
+                "I worked closely with the production team to create impactful promotional content. My role focused on editing high-energy shorts and digital marketing assets that drove significant engagement for the series."
+            </p>
 
-                <p style="font-style: italic; color: #bbb; border-left: 3px solid var(--gold); padding-left: 15px; margin-top: 20px;">
-                    "Collaborated with a talented director friend on this web series project in 2022. I specialized in creating high-impact promotional shorts and engaging social media content, contributing significantly to the project's digital presence."
-                </p>
-
-                <div class="video-grid">
-                    <div class="video-container"><iframe src="https://www.youtube.com/embed/qapXhJJNAy8"></iframe></div>
-                    <div class="video-container"><iframe src="https://www.youtube.com/embed/QZ-oVwPiynk"></iframe></div>
-                    <div class="video-container"><iframe src="https://www.youtube.com/embed/B40DUa3aido"></iframe></div>
-                    <div class="video-container"><iframe src="https://www.youtube.com/embed/ToqrBwMIfbI"></iframe></div>
-                    <div class="video-container"><iframe src="https://www.youtube.com/embed/PlCYKdb-PZc"></iframe></div>
-                    <div class="video-container"><iframe src="https://www.youtube.com/embed/fmhoa_RT6Uk"></iframe></div>
-                    <div class="video-container"><iframe src="https://www.youtube.com/embed/hf5PijeSxmI"></iframe></div>
-                </div>
+            <div class="video-grid">
+                <div class="video-box"><iframe src="https://www.youtube.com/embed/qapXhJJNAy8"></iframe></div>
+                <div class="video-box"><iframe src="https://www.youtube.com/embed/QZ-oVwPiynk"></iframe></div>
+                <div class="video-box"><iframe src="https://www.youtube.com/embed/B40DUa3aido"></iframe></div>
+                <div class="video-box"><iframe src="https://www.youtube.com/embed/ToqrBwMIfbI"></iframe></div>
             </div>
-        </section>
+        </div>
 
-        <section>
-            <h2>Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts, Vlogs, etc.</div>
-                <div class="skill-item"><b>💥 Adobe After Effects</b>Visual Effects & Motion Graphics</div>
-                <div class="skill-item"><b>🎛️ Adobe Premiere Pro</b>Professional Timeline Editing</div>
-                <div class="skill-item"><b>📱 Alight Motion & KineMaster</b>Mobile Editing</div>
-                <div class="skill-item"><b>✍️ Content Writing</b>Scriptwriting, Captions, Descriptions</div>
-                <div class="skill-item"><b>🧠 Film Analysis</b>Understanding Editing Styles & Cinematics</div>
-            </div>
-        </section>
+        <div class="card">
+            <h3 class="cursive-font" style="font-size: 1.8rem; margin-bottom: 10px;">Short Film Post-Production</h3>
+            <p>Complete handling of <b>Color Grading, Title Design, and Background Score (BGM)</b> synchronization for independent short film projects.</p>
+        </div>
+    </section>
 
-        <section>
-            <h2>Education</h2>
-            <div class="list-item">
-                <b>Matriculation (SSC)</b><br>
-                📍 Thakshashila English High School, Sircilla<br>
-                📈 Scored: 80%
-            </div>
-        </section>
+    <section>
+        <h2>Skills & Expertise</h2>
+        <div class="skill-list">
+            <div class="skill-item">Adobe Premiere Pro</div>
+            <div class="skill-item">Adobe After Effects</div>
+            <div class="skill-item">Alight Motion</div>
+            <div class="skill-item">KineMaster</div>
+            <div class="skill-item">Content Writing</div>
+            <div class="skill-item">Cinematic Transitions</div>
+            <div class="skill-item">Match Cut Editing</div>
+            <div class="skill-item">Color Grading</div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Hobbies & Interests</h2>
-            <div class="list-item">🎬 Watching movies and studying their editing techniques</div>
-            <div class="list-item">🧠 Analyzing story pacing, transitions, and effects</div>
-            <div class="list-item">📝 Writing content around videos and visual media</div>
-        </section>
+    <footer class="footer">
+        &copy; 2026 GOUTHAM BOLLI | ALL RIGHTS RESERVED
+    </footer>
+</div>
 
-        <section>
-            <div class="contact-box">
-                <h2 style="justify-content: center; border: none; margin: 0;">Let’s Work Together!</h2>
-                <p>DM for collaboration or freelance work!</p>
-                <a href="tel:8341388567">83413 88567</a>
-                <a href="mailto:gouthambolli576@gmail.com">gouthambolli576@gmail.com</a>
-            </div>
-        </section>
-    </div>
-
-    <footer>&copy; 2026 GOUTHAM BOLLI | ALL RIGHTS RESERVED</footer>
 </body>
 </html>
