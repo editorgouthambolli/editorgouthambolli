@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDITOR GOUTHAM BOLLI | Official Portfolio</title>
+    <title>EDITOR GOUTHAM BOLLI | Portfolio</title>
     <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-black: #000000;
             --gold-gradient: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            --accent-gold: #d4af37;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(212, 175, 55, 0.2);
             --text-gray: #cccccc;
-            --panel-bg: rgba(255, 255, 255, 0.03);
-            --border-gold: rgba(212, 175, 55, 0.3);
         }
 
         body {
@@ -21,16 +20,16 @@
             background: var(--bg-black);
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 25px;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
-        /* Hero Header Section */
+        /* Hero Section */
         header {
             text-align: center;
             margin-bottom: 60px;
@@ -38,122 +37,111 @@
 
         .main-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            margin: 0;
+            font-size: clamp(2rem, 8vw, 3.5rem);
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .subtitle {
             font-size: 12px;
             letter-spacing: 5px;
+            color: #d4af37;
             text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-top: 15px;
-            font-weight: 500;
+            margin-top: 10px;
         }
 
-        /* Glass Panel Styling */
-        .panel {
-            background: var(--panel-bg);
-            border: 1px solid var(--border-gold);
-            border-radius: 8px;
+        /* Glass Finish Panels */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
             padding: 40px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .intro-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-gray);
-            max-width: 850px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Section Headings with Gold Texture */
+        /* Gold Texture Headings */
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
             display: inline-block;
-            margin-bottom: 30px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            text-align: center;
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        .skill-box b {
+        .skill-item b {
             display: block;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-gold);
-            margin-bottom: 10px;
-        }
-
-        .skill-box p {
-            margin: 0;
-            font-size: 14px;
-            color: var(--text-gray);
-        }
-
-        /* Contact Header Style */
-        .contact-header {
-            text-align: center;
+            color: #d4af37;
+            margin-bottom: 5px;
             font-size: 0.9rem;
-            color: var(--text-gray);
-            margin: 20px 0;
-            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* CTA Section */
-        .cta-button {
+        .skill-item p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* CTA Button */
+        .cta-btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 18px 45px;
+            margin-top: 20px;
+            padding: 15px 35px;
             background: var(--gold-gradient);
             color: #000;
             text-decoration: none;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+            border-radius: 5px;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
 
-        .cta-button:hover {
+        .cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
         }
 
-        .footer-quote {
+        .contact-info {
             text-align: center;
-            margin-top: 80px;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        .quote {
+            text-align: center;
+            margin-top: 60px;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.3rem;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 600px) {
-            .panel { padding: 30px 20px; }
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -162,59 +150,58 @@
     <div class="container">
         <header>
             <h1 class="main-title">EDITOR GOUTHAM BOLLI</h1>
-            <div class="subtitle">Visual Storyteller & Content Creator</div>
-            <div class="contact-header">
-                📍 Sircilla, Telangana &nbsp; | &nbsp; 📞 83413 88567 &nbsp; | &nbsp; 📧 gouthambolli576@gmail.com
+            <div class="subtitle">Cinematic Editor & Content Creator</div>
+            <div class="contact-info">
+                📍 Sircilla, Telangana | 📞 83413 88567 | 📧 gouthambolli576@gmail.com
             </div>
         </header>
 
         <!-- Professional Summary -->
-        <div class="panel">
+        <div class="glass-panel">
             <div class="intro-text">
-                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer, with a strong love for storytelling through visual editing. I specialize in creating engaging and impactful content using tools like Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster."
+                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer. I specialize in turning raw footage into visually compelling stories using high-end cinematic tools."
             </div>
         </div>
 
-        <!-- Skills Section -->
-        <h2>Skills & Software Expertise</h2>
-        <div class="panel">
+        <!-- Expertise Section -->
+        <h2>Skills & Software</h2>
+        <div class="glass-panel">
             <div class="skills-grid">
-                <div class="skill-box"><b>🎞️ Master Editing</b>YouTube, Cinematic Reels, Shorts & Vlogs.</div>
-                <div class="skill-box"><b>💥 Visual Effects</b>Advanced Motion Graphics in Adobe After Effects.</div>
-                <div class="skill-box"><b>🎛️ Post-Production</b>Professional timeline editing in Adobe Premiere Pro.</div>
-                <div class="skill-box"><b>📱 Mobile Craft</b>Advanced editing in Alight Motion & KineMaster.</div>
-                <div class="skill-box"><b>✍️ Content Writing</b>Professional Scriptwriting, Captions & Descriptions.</div>
-                <div class="skill-box"><b>🧠 Film Analysis</b>Understanding Editing Styles, Pacing & Cinematics.</div>
+                <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts & Vlogs.</div>
+                <div class="skill-item"><b>💥 After Effects</b>Visual Effects & Motion Graphics.</div>
+                <div class="skill-item"><b>🎛️ Premiere Pro</b>Professional Timeline Workflow.</div>
+                <div class="skill-item"><b>📱 Mobile Craft</b>Alight Motion & KineMaster Expert.</div>
+                <div class="skill-item"><b>✍️ Content Writing</b>Scripts, Captions & Storyboarding.</div>
+                <div class="skill-item"><b>🧠 Film Analysis</b>Understanding Pacing & Cinematics.</div>
             </div>
         </div>
 
         <!-- Education -->
         <h2>Education</h2>
-        <div class="panel" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <div class="glass-panel" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
             <div>
-                <strong style="font-size: 1.1rem; color: #fff;">Matriculation (SSC)</strong><br>
-                <span style="color: var(--text-gray);">Thakshashila English High School, Sircilla</span>
+                <b>Matriculation (SSC)</b><br>
+                <span style="color: #888;">Thakshashila English High School, Sircilla</span>
             </div>
-            <div style="font-family: 'Playfair Display'; font-size: 1.8rem; color: var(--accent-gold); font-weight: 700;">Scored: 80%</div>
+            <div style="font-size: 1.5rem; color: #d4af37; font-weight: bold;">80%</div>
         </div>
 
-        <!-- Hobbies Section -->
-        <h2>Hobbies & Interests</h2>
-        <div class="panel">
-            <ul style="margin: 0; padding-left: 20px; color: var(--text-gray); line-height: 2;">
+        <!-- Hobbies -->
+        <h2>Interests</h2>
+        <div class="glass-panel">
+            <ul style="color: var(--text-gray); line-height: 1.8; margin: 0;">
                 <li>Watching movies and studying their editing techniques.</li>
                 <li>Analyzing story pacing, transitions, and effects.</li>
             </ul>
         </div>
 
-        <!-- CTA Section -->
+        <!-- Call to Action -->
         <div style="text-align: center; margin-top: 40px;">
-            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 12px; color: var(--accent-gold);">Ready for Collaboration?</p>
-            <a href="https://wa.me/918341388567" class="cta-button">Initialize Project</a>
-            <p style="margin-top: 20px; font-size: 12px; color: #666;">💬 DM for freelance or collaboration!</p>
+            <a href="https://wa.me/918341388567" class="cta-btn">Start Collaboration</a>
+            <p style="font-size: 11px; color: #555; margin-top: 15px;">DM FOR FREELANCE WORK</p>
         </div>
 
-        <div class="footer-quote">“Every cut tells a story – Let me help tell yours.”</div>
+        <div class="quote">“Every cut tells a story – Let me help tell yours.”</div>
     </div>
 
 </body>
