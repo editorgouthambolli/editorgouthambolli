@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Portfolio</title>
+    <title>Goutham Bolli | Editor & Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #d4af37;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(212, 175, 55, 0.2);
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(212, 175, 55, 0.2);
         }
 
         body {
@@ -17,99 +17,62 @@
             background: #000;
             color: #fff;
             font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
+            background-image: radial-gradient(circle at 5% 5%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                              radial-gradient(circle at 95% 95%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
         }
 
-        /* Animated Background for Realistic Glass Effect */
-        .bg-motion {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
-            z-index: -1;
-        }
+        .container { max-width: 850px; margin: auto; padding: 60px 20px; }
 
-        .bg-glow {
-            position: fixed;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(50px);
-            animation: move 15s infinite alternate;
-            z-index: -1;
-        }
+        header { text-align: center; margin-bottom: 60px; }
 
-        @keyframes move {
-            from { transform: translate(-10%, -10%); }
-            to { transform: translate(110%, 110%); }
-        }
-
-        .container {
-            max-width: 850px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        header { text-align: center; margin-bottom: 70px; }
-
-        .cursive-name {
+        .name {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(3.5rem, 10vw, 5rem);
             color: var(--gold);
             margin: 0;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
-        .tagline {
-            letter-spacing: 6px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            opacity: 0.8;
-            margin-top: 10px;
-        }
+        .tagline { letter-spacing: 7px; font-size: 0.8rem; text-transform: uppercase; opacity: 0.8; margin-top: 10px; }
 
-        /* Realistic Glass Box */
+        /* Glass Panels */
         .glass-panel {
-            background: var(--glass-bg);
+            background: var(--glass);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
             padding: 40px;
             margin-bottom: 35px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transition: 0.4s;
+            transition: 0.4s ease;
         }
 
         .glass-panel:hover {
             border-color: var(--gold);
-            transform: scale(1.01);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
         }
 
-        h2 {
-            font-size: 0.75rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        h2 { font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 30px; }
 
-        .summary-text {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: center;
-        }
-
-        .grid {
+        /* Skills Grid with Real Logos */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
-        .skill-item b { color: var(--gold); display: block; font-size: 0.85rem; margin-bottom: 5px; }
-        .skill-item p { font-size: 0.8rem; color: #ccc; margin: 0; }
+        .skill-item { display: flex; align-items: center; gap: 15px; }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+        }
+
+        .skill-text b { display: block; color: var(--gold); font-size: 0.85rem; margin-bottom: 3px; }
+        .skill-text p { font-size: 0.8rem; color: #bbb; margin: 0; }
 
         .info-row {
             display: flex;
@@ -130,7 +93,7 @@
             font-size: 0.8rem;
             font-weight: 600;
             transition: 0.4s;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px var(--gold); }
@@ -143,66 +106,76 @@
             margin-top: 80px;
             opacity: 0.6;
         }
-
-        .contact-footer { font-size: 0.85rem; color: #888; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="bg-motion"></div>
-    <div class="bg-glow"></div>
-
     <div class="container">
-        <!-- Header Section -->
         <header>
-            <p style="font-size: 0.75rem; color: var(--gold);">📍 Sircilla, Telangana</p>
-            <h1 class="cursive-name">Goutham Bolli</h1>
-            <div class="tagline">Video Editor & Content Creator</div>
-            <p class="contact-footer">📞 83413 88567 | 📧 gouthambolli576@gmail.com</p>
+            <p style="font-size: 0.7rem; color: var(--gold);">📍 SIRCILLA, TELANGANA</p>
+            <h1 class="name">Goutham Bolli</h1>
+            <div class="tagline">Video Editor & Title Designer</div>
+            <p style="font-size: 0.8rem; color: #777; margin-top: 15px;">83413 88567 | gouthambolli576@gmail.com</p>
         </header>
 
-        <!-- Professional Summary -->
+        <!-- Summary -->
         <div class="glass-panel">
-            <div class="summary-text">
-                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer. With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. My heart lies in storytelling through visual editing."
+            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; text-align: center; line-height: 1.8;">
+                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer. With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling cinematic videos."
+            </p>
+        </div>
+
+        <h2>Software Expertise & Skills</h2>
+        <div class="glass-panel">
+            <div class="skills-grid">
+                <!-- Premiere Pro -->
+                <div class="skill-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" class="logo-img">
+                    <div class="skill-text"><b>PREMIERE PRO</b><p>Professional Cinematic Editing</p></div>
+                </div>
+                <!-- After Effects -->
+                <div class="skill-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" class="logo-img">
+                    <div class="skill-text"><b>AFTER EFFECTS</b><p>Visual Effects & Motion Graphics</p></div>
+                </div>
+                <!-- Illustrator -->
+                <div class="skill-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" class="logo-img">
+                    <div class="skill-text"><b>ILLUSTRATOR</b><p>Cinematic Title Design & Graphics</p></div>
+                </div>
+                <!-- Alight Motion -->
+                <div class="skill-item">
+                    <img src="https://raw.githubusercontent.com/ArielSalgado/ArielSalgado/main/assets/alight-motion.png" class="logo-img" onerror="this.src='https://play-lh.googleusercontent.com/979u7yT0q6vV_Y4eXfX5Bq_r-e5hK5lS0k2l4h3z1X_l_H_J0p4F_V_v_V_v_V_v_V_v'">
+                    <div class="skill-text"><b>ALIGHT MOTION</b><p>High-end Mobile Motion Design</p></div>
+                </div>
+                <!-- KineMaster / Video Editing -->
+                <div class="skill-item">
+                    <span style="font-size: 35px;">🎞️</span>
+                    <div class="skill-text"><b>VIDEO EDITING</b><p>YouTube, Reels & Short Films</p></div>
+                </div>
+                <!-- Content Writing -->
+                <div class="skill-item">
+                    <span style="font-size: 35px;">✍️</span>
+                    <div class="skill-text"><b>CONTENT WRITING</b><p>Scriptwriting & Storytelling</p></div>
+                </div>
             </div>
         </div>
 
-        <!-- Skills & Software -->
-        <h2>Skills & Software Expertise</h2>
-        <div class="glass-panel">
-            <div class="grid">
-                <div class="skill-item"><b>🎞️ Video Editing</b>YouTube, Reels, Shorts, Vlogs, etc.</div>
-                <div class="skill-item"><b>💥 Adobe After Effects</b>Visual Effects & Motion Graphics</div>
-                <div class="skill-item"><b>🎛️ Adobe Premiere Pro</b>Professional Timeline Editing</div>
-                <div class="skill-item"><b>📱 Mobile Editing</b>Alight Motion & KineMaster</div>
-                <div class="skill-item"><b>✍️ Content Writing</b>Scriptwriting, Captions, Descriptions</div>
-                <div class="skill-item"><b>🧠 Film Analysis</b>Understanding Editing Styles & Cinematics</div>
-            </div>
-        </div>
-
-        <!-- Education -->
-        <h2>Education</h2>
+        <h2>Background & Education</h2>
         <div class="glass-panel">
             <div class="info-row">
-                <span><b>Matriculation (SSC)</b><br><small>Thakshashila English High School, Sircilla</small></span>
+                <span><b>Matriculation (SSC)</b><br><small style="color:#888">Thakshashila English High School, Sircilla</small></span>
                 <span style="font-size: 1.5rem; color: var(--gold);">80%</span>
+            </div>
+            <div class="info-row">
+                <span><b>Interests</b></span>
+                <span>Film Study & Cinematic Analysis</span>
             </div>
         </div>
 
-        <!-- Hobbies & Interests -->
-        <h2>Hobbies & Interests</h2>
-        <div class="glass-panel">
-            <div class="info-row"><span>🎬 Watching movies & studying editing techniques</span></div>
-            <div class="info-row"><span>🧠 Analyzing story pacing, transitions, and effects</span></div>
-            <div class="info-row"><span>📝 Writing content around videos and visual media</span></div>
-        </div>
-
-        <!-- Contact CTA -->
-        <div style="text-align: center;">
-            <p style="color: #aaa;">💬 DM for collaboration or freelance work!</p>
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="color: #aaa;">💬 Available for Collaboration & Freelance Projects</p>
             <a href="https://wa.me/918341388567" class="btn">Let’s Work Together!</a>
-            <p style="font-size: 0.7rem; color: #555; margin-top: 15px;">Available for Personal, Business, or Social Media Content</p>
         </div>
 
         <div class="footer-quote">“Every cut tells a story – Let me help tell yours.”</div>
