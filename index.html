@@ -3,53 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Step 1</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Cinematic Storyteller</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --white-glow: rgba(255, 255, 255, 0.8);
+            --metal-silver: #cbd5e1; /* షైనీ మెటాలిక్ సిల్వర్ */
+            --glass-finish: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
         body {
-            margin: 0;
-            padding: 0;
-            /* 🤍 వైట్ & 💜 పర్పుల్ సినిమాటిక్ గ్రేడియంట్ */
-            background: radial-gradient(circle at top right, #ffffff, #f3e8ff, #d8b4fe, #581c87);
+            margin: 0; padding: 0;
+            /* స్క్రీన్‌షాట్‌లో ఉన్న స్మూత్ పర్పుల్-వైట్ రేడియంట్ బ్యాక్‌గ్రౌండ్ */
+            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 30%, #d8b4fe 100%);
             background-attachment: fixed;
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Montserrat', sans-serif;
         }
 
-        /* గ్లాసీ ఫినిష్ కార్డ్ */
+        /* సినిమాటిక్ గ్లాసీ కార్డ్ (గ్లాస్-ఫినిష్) */
         .glass-header {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 20px;
-            padding: 60px 100px;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 60px 80px;
             text-align: center;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
         }
 
         .name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            /* పర్పుల్ & వైట్ మిక్స్ రేడియంట్ కలర్ */
-            background: linear-gradient(to bottom, #ffffff, #a855f7);
+            font-family: 'Montserrat', sans-serif; /* పర్ఫెక్ట్ మ్యాచ్ ఫాంట్ */
+            font-size: 4rem; /* పేరుకి షైనీ మెటాలిక్ సిల్వర్ బోర్డర్ */
+            background: linear-gradient(to bottom, #ffffff 30%, var(--metal-silver) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 0;
-            /* మెటాలిక్ గ్లో ఎఫెక్ట్ */
-            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            font-weight: 700;
+            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4)); /* పర్పుల్ గ్లో */
         }
 
         .tagline {
-            letter-spacing: 10px;
+            letter-spacing: 12px;
             font-size: 0.7rem;
-            color: #4c1d95;
+            color: #4c1d95; /* థిక్ పర్పుల్ */
             text-transform: uppercase;
             margin-top: 15px;
-            opacity: 0.9;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* సాఫ్ట్ మోషన్ (10%) */
+        .glass-header {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -57,7 +78,7 @@
 
     <div class="glass-header">
         <h1 class="name">Goutham Bolli</h1>
-        <div class="tagline">The Romantic Cinematic Storyteller</div>
+        <div class="tagline">THE CINEMATIC STORYTELLER</div>
     </div>
 
 </body>
