@@ -119,19 +119,11 @@
             pointer-events: none;
         }
 
-        /* Journey Style Updates */
-        .journey-item {
-            margin-bottom: 20px;
-        }
-        .journey-quote {
-            display: block;
-            color: var(--gold);
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            border-left: 2px solid var(--gold);
-            padding-left: 10px;
-        }
+        /* Journey Item Styling */
+        .journey-item { margin-bottom: 25px; }
+        .journey-header { color: var(--gold); font-weight: 600; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+        .journey-quote { font-style: italic; color: var(--gray); font-size: 0.85rem; display: block; margin-bottom: 10px; border-left: 2px solid var(--gold); padding-left: 10px; }
+        .journey-desc { font-size: 0.9rem; color: #ccc; margin: 0; }
 
         .skills-grid {
             display: grid;
@@ -143,14 +135,6 @@
         .skill-icon { width: 35px; height: 35px; object-fit: contain; }
         .skill-details b { display: block; color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; }
         .skill-details p { font-size: 0.8rem; color: var(--gray); margin: 0; }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-        }
 
         .hire-btn {
             display: inline-block;
@@ -169,12 +153,8 @@
 
         .hire-btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); }
 
-        ul { list-style: none; padding: 0; margin: 0; }
-        li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: #ccc; }
-
         @media (max-width: 600px) {
             .name-brand { font-size: 3rem; }
-            .info-row { flex-direction: column; text-align: center; gap: 10px; }
         }
     </style>
 </head>
@@ -193,37 +173,35 @@
             <div class="tagline">Video Editor & Content Creator</div>
             <div style="margin-top: 20px; font-size: 0.85rem; color: #ccc; line-height: 1.8;">
                 📍 Sircilla, Telangana | 📞 83413 88567<br>
-                📧 gouthambolli576@gmail.com<br>
-                <span style="color: var(--gold);">💬 DM for collaboration or freelance work!</span>
+                📧 gouthambolli576@gmail.com
             </div>
         </header>
 
-        <!-- Summary Section -->
-        <div id="summary" class="glass-panel" data-tilt data-tilt-max="5">
+        <div id="summary" class="glass-panel" data-tilt>
             <h2>🎬 Professional Summary</h2>
             <p class="summary-text">
-                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer, with a strong love for storytelling through visual editing. I turn raw footage into visually compelling videos using tools like Adobe Premiere Pro and After Effects."
+                "Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer. I specialize in turning raw footage into visually compelling stories using Adobe Premiere Pro, After Effects, and mobile tools. My mission is to tell your story with maximum cinematic impact."
             </p>
         </div>
 
-        <!-- Journey Section - పండు, ఇక్కడ నీ కొత్త జర్నీ యాడ్ చేశాను -->
+        <!-- Journey Section - Now in Pure English -->
         <h2 id="journey">🚀 My Cinematic Journey</h2>
-        <div class="glass-panel" data-tilt data-tilt-max="3">
+        <div class="glass-panel" data-tilt>
             <div class="journey-item">
                 <span class="journey-quote">"Ambition > Condition"</span>
-                <b>01. THE GENESIS (2018-2022)</b>
-                <p style="font-size: 0.9rem; color: #ccc;">2018లో ఒక స్మార్ట్‌ఫోన్, <b>KineMaster</b>తో నా ప్రయాణం మొదలైంది. పరిమితులు ఉన్నా, ప్యాషన్‌తో <b>7 ఇంపాక్ట్‌ఫుల్ మొబైల్ షార్ట్స్</b> క్రియేట్ చేశాను. ఈ 7+ ఏళ్ల ఎవల్యూషన్ నన్ను మొబైల్ స్క్రీన్ నుండి <b>Adobe Premiere Pro</b> వరకు ఒక ప్రొఫెషనల్ విజువల్ స్టోరీటెల్లర్‌గా మార్చింది.</p>
+                <b class="journey-header">01. THE GENESIS (2018-2022)</b>
+                <p class="journey-desc">Started in 2018 with just a smartphone and KineMaster. Engineered 7 high-impact mobile shorts, proving that creativity has no boundaries. This evolution from mobile mastery to Adobe Premiere Pro marks my professional transformation.</p>
             </div>
             
             <div class="journey-item" style="margin-top: 30px;">
                 <span class="journey-quote">"When Vision Meets Opportunity"</span>
-                <b>02. THE BREAKTHROUGH (2022)</b>
-                <p style="font-size: 0.9rem; color: #ccc;">నా కెరీర్‌లో అసలైన టర్నింగ్ పాయింట్ 2022. నా బెస్ట్ ఫ్రెండ్ నా టాలెంట్‌ని గుర్తించి, డైరెక్టర్ <b>పృథ్వీ</b> గారికి పరిచయం చేసింది. ఆయన వెబ్ సిరీస్ <b>'బాబు గారి లోకమంతా మాయాజాలమే'</b> కోసం నేను చేసిన <b>7 డెడికేటెడ్ షార్ట్స్</b>, నా ప్యాషన్‌ని ఒక ప్రొఫెషనల్ మిషన్‌గా మార్చేశాయి.</p>
+                <b class="journey-header">02. THE BREAKTHROUGH (2022)</b>
+                <p class="journey-desc">Introduced to Director Prithvi by my Best Friend, I transitioned to the professional league. For his official Web Series 'Babu Gari Lokamantha Mayajalame', I delivered 7 dedicated shorts, shifting my homegrown passion into an industry mission.</p>
             </div>
         </div>
 
-        <h2 id="skills">💡 Skills & Software Expertise</h2>
-        <div class="glass-panel" data-tilt data-tilt-max="3">
+        <h2 id="skills">💡 Skills & Expertise</h2>
+        <div class="glass-panel" data-tilt>
             <div class="skills-grid">
                 <div class="skill-item">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" class="skill-icon">
@@ -231,30 +209,18 @@
                 </div>
                 <div class="skill-item">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" class="skill-icon">
-                    <div class="skill-details"><b>Adobe After Effects</b><p>Visual Effects & Motion Graphics</p></div>
+                    <div class="skill-details"><b>Adobe After Effects</b><p>Motion Graphics & VFX</p></div>
                 </div>
                 <div class="skill-item">
                     <span style="font-size: 1.5rem;">📱</span>
-                    <div class="skill-details"><b>Alight Motion & KineMaster</b><p>Mobile Editing Expertise</p></div>
+                    <div class="skill-details"><b>Mobile Editing</b><p>Alight Motion & KineMaster Expert</p></div>
                 </div>
-                <div class="skill-item">
-                    <span style="font-size: 1.5rem;">🎞️</span>
-                    <div class="skill-details"><b>Video Editing</b><p>YouTube, Reels, Shorts, Vlogs</p></div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="education">🎓 Education</h2>
-        <div class="glass-panel" data-tilt data-tilt-max="5">
-            <div class="info-row">
-                <span><b>Matriculation (SSC)</b><br><small style="color:var(--gray)">Thakshashila English High School, Sircilla</small></span>
-                <span style="font-size: 1.5rem; color: var(--gold);">80%</span>
             </div>
         </div>
 
         <div id="contact" style="text-align: center; margin-top: 40px; padding-bottom: 60px;">
             <h2>📣 Let’s Work Together!</h2>
-            <a href="https://wa.me/918341388567" class="hire-btn">Contact Me Now</a>
+            <a href="https://wa.me/918341388567" class="hire-btn">Get In Touch</a>
         </div>
     </div>
 
