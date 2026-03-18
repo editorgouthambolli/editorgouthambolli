@@ -53,6 +53,31 @@
             font-weight: 400;
             opacity: 0.8;
         }
+        /* Step 2: Summary Glass Box Design */
+        .summary-clip {
+            margin: 40px auto;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 25px;
+            max-width: 85%;
+            text-align: left;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2e1065;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .summary-content b {
+            color: #7c3aed;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -61,6 +86,14 @@
         <h1 class="name">Goutham Bolli</h1>
         <div class="tagline">THE CINEMATIC STORYTELLER</div>
     </div>
-
+<!-- Step 2: Professional Summary Content -->
+    <div class="summary-clip">
+        <p class="summary-content">
+            Hi everyone! I’m <b>Goutham</b>, a passionate <b>Video Editor</b> and <b>Content Writer</b>, with a strong love for storytelling through visual editing. 
+            My heart lies in video editing, and I specialize in creating engaging and impactful content using tools like <b>Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</b>
+            <br><br>
+            With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. Whether it’s <i>social media content, YouTube edits, or short films</i>, I ensure your story is told with maximum impact.
+        </p>
+    </div>
 </body>
 </html>
