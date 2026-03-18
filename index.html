@@ -1,4 +1,4 @@
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -99,9 +99,10 @@
 
         .summary-text { font-size: 1.05rem; color: #efefef; line-height: 1.8; }
 
-        /* Skills Section */
+        /* Skills Section - పండు, ఇక్కడ ఐకాన్స్ స్టైలింగ్ మార్చాను */
         .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .skill-box { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+        .skill-box { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+        .skill-icon { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
         .skill-box b { color: var(--gold); margin-right: 5px; }
 
         /* Journey & Education */
@@ -166,7 +167,6 @@
             </div>
         </header>
 
-        <!-- Summary Section -->
         <section id="summary" class="glass-panel">
             <h2>🎬 Professional Summary</h2>
             <p class="summary-text">
@@ -176,7 +176,6 @@
             </p>
         </section>
 
-        <!-- Journey Section -->
         <section id="journey" class="glass-panel">
             <h2>🚀 My Cinematic Journey</h2>
             <div class="info-block">
@@ -189,20 +188,23 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="glass-panel">
             <h2>💡 Skills & Software Expertise</h2>
             <div class="skills-list">
-                <div class="skill-box"><b>🎞️ Video Editing:</b> YouTube, Reels, Shorts, Vlogs, etc.</div>
-                <div class="skill-box"><b>💥 Adobe After Effects:</b> Visual Effects & Motion Graphics</div>
-                <div class="skill-box"><b>🎛️ Adobe Premiere Pro:</b> Professional Timeline Editing</div>
-                <div class="skill-box"><b>📱 Mobile Editing:</b> Alight Motion & KineMaster</div>
-                <div class="skill-box"><b>✍️ Content Writing:</b> Scriptwriting, Captions, Descriptions</div>
-                <div class="skill-box"><b>🧠 Film Analysis:</b> Understanding Editing Styles & Cinematics</div>
+                <div class="skill-box"><span style="font-size: 1.2rem;">🎥</span> <span><b>Video Editing:</b> YouTube, Reels, Shorts, Vlogs, etc.</span></div>
+                
+                <div class="skill-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="After Effects" class="skill-icon"> <span><b>Adobe After Effects:</b> Visual Effects & Motion Graphics</span></div>
+                
+                <div class="skill-box"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro" class="skill-icon"> <span><b>Adobe Premiere Pro:</b> Professional Timeline Editing</span></div>
+                
+                <div class="skill-box"><span style="font-size: 1.2rem;">📱</span> <span><b>Mobile Editing:</b> Alight Motion & KineMaster</span></div>
+                
+                <div class="skill-box"><span style="font-size: 1.2rem;">✍️</span> <span><b>Content Writing:</b> Scriptwriting, Captions, Descriptions</span></div>
+                
+                <div class="skill-box"><span style="font-size: 1.2rem;">🎞️</span> <span><b>Film Analysis:</b> Understanding Editing Styles & Cinematics</span></div>
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="glass-panel">
             <h2>🎓 Education</h2>
             <div class="info-block">
@@ -212,7 +214,6 @@
             </div>
         </section>
 
-        <!-- Hobbies Section -->
         <section id="hobbies" class="glass-panel">
             <h2>🎯 Hobbies & Interests</h2>
             <div class="hobby-item"><span>🎬</span> <span>Watching movies and studying their editing techniques</span></div>
