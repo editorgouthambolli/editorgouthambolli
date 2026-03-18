@@ -4,73 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goutham Bolli | Cinematic Storyteller</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --white-glow: rgba(255, 255, 255, 0.8);
-            --metal-silver: #cbd5e1; /* షైనీ మెటాలిక్ సిల్వర్ */
-            --glass-finish: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
         body {
             margin: 0; padding: 0;
-            /* స్క్రీన్‌షాట్‌లో ఉన్న స్మూత్ పర్పుల్-వైట్ రేడియంట్ బ్యాక్‌గ్రౌండ్ */
-            background: linear-gradient(135deg, #f3e8ff 0%, #ffffff 30%, #d8b4fe 100%);
+            /* నువ్వు పంపిన స్క్రీన్‌షాట్‌లో ఉన్న పర్ఫెక్ట్ వైట్ & పర్పుల్ గ్రేడియంట్ */
+            background: linear-gradient(180deg, #ffffff 0%, #f3e8ff 45%, #d8b4fe 100%);
             background-attachment: fixed;
-            color: #000;
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* సినిమాటిక్ గ్లాసీ కార్డ్ (గ్లాస్-ఫినిష్) */
+        /* సినిమాటిక్ గ్లాసీ ఫినిష్ కార్డ్ */
         .glass-header {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
             padding: 60px 80px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
         .name {
-            font-family: 'Montserrat', sans-serif; /* పర్ఫెక్ట్ మ్యాచ్ ఫాంట్ */
-            font-size: 4rem; /* పేరుకి షైనీ మెటాలిక్ సిల్వర్ బోర్డర్ */
-            background: linear-gradient(to bottom, #ffffff 30%, var(--metal-silver) 100%);
+            font-size: 4.5rem;
+            /* పేరుకి క్లీన్ మెటాలిక్ సిల్వర్ లుక్ */
+            background: linear-gradient(to bottom, #4c1d95 0%, #8b5cf6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: -1px;
             font-weight: 700;
-            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4)); /* పర్పుల్ గ్లో */
+            letter-spacing: -2px;
+            /* సాఫ్ట్ గ్లో */
+            filter: drop-shadow(0 5px 15px rgba(139, 92, 246, 0.3));
         }
 
         .tagline {
             letter-spacing: 12px;
-            font-size: 0.7rem;
-            color: #4c1d95; /* థిక్ పర్పుల్ */
+            font-size: 0.75rem;
+            color: #5b21b6;
             text-transform: uppercase;
             margin-top: 15px;
-            font-family: 'Montserrat', sans-serif;
             font-weight: 400;
             opacity: 0.8;
-        }
-
-        /* సాఫ్ట్ మోషన్ (10%) */
-        .glass-header {
-            animation: float 5s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
