@@ -1,121 +1,64 @@
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Premiere Pro Style Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Cinematic Storyteller</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pr-purple: #3e1063; /* Premiere Pro Signature Purple */
-            --pr-glow: #a855f7;
+            /* పర్పుల్ మరియు వైట్ కలర్ కాంబినేషన్ */
+            --purple-deep: #1a0129; /* థిక్ పర్పుల్ (Premiere Pro Style) */
+            --purple-light: #3e0a3e; /* లైట్ పర్పుల్ */
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(168, 85, 247, 0.4);
+            --glass-white: rgba(255, 255, 255, 0.03); /* గ్లాస్ ఎఫెక్ట్ కోసం */
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
         body {
             margin: 0;
-            background: radial-gradient(circle at center, #1a0b2e 0%, #050505 100%);
+            padding: 0;
+            /* సినిమాటిక్ గ్రేడియంట్ బ్యాక్‌గ్రౌండ్ (పర్పుల్ & బ్లాక్ మిక్స్) */
+            background: radial-gradient(circle at top right, var(--purple-light), var(--purple-deep) 50%, #000000 100%);
+            background-attachment: fixed;
             color: var(--white);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        .container { max-width: 900px; margin: 50px auto; padding: 20px; }
-
-        /* Premiere Pro Header Style */
-        header { text-align: center; margin-bottom: 60px; }
-        .name { font-family: 'Great Vibes', cursive; font-size: 5rem; color: var(--white); margin: 0; }
-        .tagline { letter-spacing: 5px; font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; }
-
-        /* Timeline Container */
-        .timeline-box {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
+        /* సినిమాటిక్ గ్లాసీ హెడర్ */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--glass-white);
+            backdrop-filter: blur(25px); /* గ్లాస్ ఫినిష్ */
+            border-bottom: 1px solid var(--glass-border);
             position: relative;
-            backdrop-filter: blur(15px);
         }
 
-        /* Focus & Blur Logic for Clips */
-        .timeline-box:hover .clip {
-            filter: blur(5px);
-            opacity: 0.4;
+        /* పేరు మరియు ట్యాగ్‌లైన్ డిజైన్ */
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.5rem, 10vw, 5.5rem);
+            color: var(--white);
+            margin: 0;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* Timeline "Clip" Design */
-        .clip {
-            background: linear-gradient(90deg, var(--pr-purple), #250840);
-            border: 1px solid var(--pr-glow);
-            border-radius: 6px;
-            padding: 25px;
-            margin-bottom: 20px;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-            animation: slideIn 0.8s ease-out both;
-        }
-
-        .clip:hover {
-            filter: blur(0px) !important;
-            opacity: 1 !important;
-            transform: scale(1.03);
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
-        }
-
-        /* Clip 'Handle' like in Premiere Pro */
-        .clip::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; width: 5px; height: 100%;
-            background: var(--pr-glow);
-        }
-
-        .clip-label {
-            font-size: 0.65rem;
+        .tagline {
+            letter-spacing: 8px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--pr-glow);
-            font-weight: 700;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        h2 { font-size: 1.2rem; margin: 0 0 10px 0; font-weight: 700; }
-        p { font-size: 0.95rem; line-height: 1.7; opacity: 0.9; margin: 0; font-weight: 300; }
-
-        @keyframes slideIn {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1 class="name">Goutham Bolli</h1>
-            <div class="tagline">The Romantic Cinematic Storyteller</div>
-        </header>
-
-        <div class="timeline-box">
-            <!-- Summary Clip -->
-            <div class="clip" style="animation-delay: 0.2s;">
-                <span class="clip-label">[V1] Professional Summary</span>
-                <h2>The Director's Cut</h2>
-                <p>Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer. With a sharp eye for detail, I turn raw footage into visually compelling videos that linger in the heart.</p>
-            </div>
-
-            <!-- Journey Clip -->
-            <div class="clip" style="animation-delay: 0.4s; background: linear-gradient(90deg, #4c1d95, #2e1065);">
-                <span class="clip-label">[V2] My Journey</span>
-                <h2>Beyond Limits</h2>
-                <p>Started in 2018 with a smartphone. By 2022, I proved that creativity has no boundaries. Today, with 7+ years of experience, I specialize in professional storytelling.</p>
-            </div>
-        </div>
-    </div>
-
+    <header>
+        <h1 class="name">Goutham Bolli</h1>
+        <div class="tagline">The Romantic Cinematic Storyteller</div>
+    </header>
 </body>
 </html>
