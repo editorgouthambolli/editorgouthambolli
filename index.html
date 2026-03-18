@@ -1,107 +1,139 @@
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Editor Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Romantic Cinematic Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #000000;
+            --bg-color: #050505;
             --gold: #d4af37;
+            --rose-gold: #e0bfb8;
             --glass: rgba(255, 255, 255, 0.03); 
             --glass-border: rgba(212, 175, 55, 0.2);
             --white: #ffffff;
-            --gray: #a0a0a0;
+            --gray: #b0b0b0;
         }
 
         html { scroll-behavior: smooth; }
         body {
             margin: 0;
             background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(224, 191, 184, 0.05) 0%, transparent 40%);
             background-attachment: fixed;
             color: var(--white);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
         }
 
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
         nav {
-            position: sticky; top: 0; background: rgba(0, 0, 0, 0.9);
+            position: sticky; top: 0; background: rgba(5, 5, 5, 0.95);
             backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border);
-            z-index: 1000; padding: 15px 0; text-align: center;
+            z-index: 1000; padding: 18px 0; text-align: center;
         }
-        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; opacity: 0.7; }
-        nav a:hover { color: var(--gold); opacity: 1; }
+        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; opacity: 0.6; font-weight: 600; }
+        nav a:hover { color: var(--gold); opacity: 1; text-shadow: 0 0 10px var(--gold); }
 
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+        .container { max-width: 950px; margin: auto; padding: 40px 20px; animation: fadeIn 1.5s ease; }
 
-        header { text-align: center; margin-bottom: 50px; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; margin-bottom: 20px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-        .name-brand { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 10vw, 4.5rem); color: var(--gold); margin: 0; }
-        .tagline { text-transform: uppercase; letter-spacing: 5px; font-size: 0.75rem; opacity: 0.8; margin-bottom: 15px; }
+        header { text-align: center; margin-bottom: 80px; }
+        .profile-img { 
+            width: 160px; height: 160px; border-radius: 50%; 
+            border: 2px solid var(--gold); object-fit: cover; 
+            margin-bottom: 25px; box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            transition: 0.5s;
+        }
+        .profile-img:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(212, 175, 55, 0.4); }
+
+        .name-brand { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 12vw, 5.5rem); color: var(--gold); margin: 0; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5)); }
+        .tagline { text-transform: uppercase; letter-spacing: 6px; font-size: 0.8rem; color: var(--rose-gold); margin-bottom: 20px; opacity: 0.9; }
         
-        .contact-top { font-size: 0.85rem; color: var(--gray); line-height: 1.8; }
-        .contact-top span { color: var(--gold); }
+        .contact-top { font-size: 0.9rem; color: var(--gray); line-height: 2; font-style: italic; }
+        .contact-top b { color: var(--gold); font-style: normal; }
 
         .glass-panel {
-            background: var(--glass); backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 20px;
-            padding: 35px; margin-bottom: 40px;
+            background: var(--glass); backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border); border-radius: 30px;
+            padding: 45px; margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        h2 { font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--glass-border); display: inline-block; margin-bottom: 25px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; color: var(--gold); border-bottom: 1px solid var(--glass-border); display: block; margin-bottom: 30px; padding-bottom: 10px; font-style: italic; }
 
-        .summary-text { font-size: 1rem; line-height: 1.8; color: #efefef; }
+        .summary-text { font-size: 1.1rem; line-height: 1.9; color: #e0e0e0; font-family: 'Montserrat', sans-serif; font-weight: 300; }
 
-        /* Journey Styles */
-        .journey-box { margin-bottom: 30px; border-left: 2px solid var(--gold); padding-left: 20px; }
-        .journey-year { color: var(--gold); font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 10px; }
+        /* Titles Section - Fixed to match Poster Style */
+        .title-design-box {
+            text-align: right; /* Poster lo unnatte right side align chesa */
+            margin: 40px 0;
+            padding-right: 20px;
+        }
+        .title-main {
+            font-family: 'Great Vibes', cursive; /* Poster style script font */
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            color: var(--white);
+            display: block;
+            line-height: 1.1;
+            text-shadow: 2px 2px 10px rgba(255,255,255,0.2);
+        }
+        .title-sub {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(1.5rem, 6vw, 2.5rem);
+            color: var(--white);
+            display: block;
+            margin-top: -10px;
+        }
 
         /* Video Embed Grid */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
         .video-item {
-            position: relative;
-            padding-bottom: 177.77%; /* 9:16 Ratio for Shorts */
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px;
-            border: 1px solid var(--glass-border);
-            background: #000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative; padding-bottom: 177.77%; height: 0; overflow: hidden;
+            border-radius: 20px; border: 1px solid var(--glass-border); background: #000;
+            transition: 0.4s;
         }
-        .video-item iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        .video-item:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 20px rgba(212,175,55,0.2); }
+        .video-item iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .work-poster { width: 100%; border-radius: 20px; margin-bottom: 25px; border: 1px solid var(--glass-border); }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .skill-item { font-size: 1rem; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; }
+        .skill-item b { color: var(--gold); margin-right: 8px; font-weight: 600; }
+
+        .final-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: var(--gold); text-align: center; margin: 80px 0; line-height: 1.4; }
+        .final-quote span { display: block; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; letter-spacing: 4px; text-transform: uppercase; margin-top: 15px; color: var(--rose-gold); }
+
+        .hire-btn { 
+            display: inline-block; padding: 18px 50px; 
+            background: linear-gradient(45deg, #d4af37, #f1d592);
+            color: #000; text-decoration: none; text-transform: uppercase; 
+            letter-spacing: 3px; border-radius: 50px; transition: 0.5s; font-weight: 700;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
-
-        /* Poster Style */
-        .work-poster { width: 100%; border-radius: 15px; margin-bottom: 20px; border: 1px solid var(--glass-border); }
-
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        .skill-item { font-size: 0.95rem; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .skill-item b { color: var(--gold); }
-
-        .final-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: var(--gold); text-align: center; margin: 60px 0; }
-        .hire-btn { display: inline-block; padding: 15px 40px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; border-radius: 50px; transition: 0.4s; font-weight: 600; }
-        .hire-btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .hire-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5); }
 
         @media (max-width: 600px) { 
-            .name-brand { font-size: 3rem; }
+            .name-brand { font-size: 3.5rem; }
+            .title-design-box { text-align: center; padding-right: 0; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#summary">Summary</a>
+        <a href="#summary">Bio</a>
         <a href="#journey">Journey</a>
-        <a href="#projects">Work</a>
+        <a href="#projects">Cinema</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -110,233 +142,71 @@
         <header>
             <img src="my-photo.jpg" alt="Goutham Bolli" class="profile-img">
             <h1 class="name-brand">Goutham Bolli</h1>
-            <div class="tagline">Video Editor & Content Creator</div>
+            <div class="tagline">The Romantic Cinematic Storyteller</div>
             <div class="contact-top">
-                📍 Sircilla, Telangana | 📞 <span>83413 88567</span><br>
-                📧 gouthambolli576@gmail.com<br>
-                <span>💬 DM for collaboration or freelance work!</span>
+                📍 Sircilla, Telangana | 📞 <b>83413 88567</b><br>
+                📩 gouthambolli576@gmail.com<br>
+                <span>Creating magic, one frame at a time.</span>
             </div>
         </header>
 
         <section id="summary" class="glass-panel">
-            <h2>🎬 Professional Summary</h2>
+            <h2>🎬 The Artist Behind the Lens</h2>
             <p class="summary-text">
-                Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer. My heart lies in video editing, specializing in creating impactful content using tools like <b>Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</b> I turn raw footage into visually compelling stories with a sharp eye for detail.
+                I am Goutham, a dedicated Video Editor and Content Writer who believes that every video is a heartbeat. I specialize in <b>Romantic Cinematic Editing</b>, where I blend emotions with professional tools like <b>Adobe After Effects and Premiere Pro</b>. My goal is to capture the soul of a moment and present it in a way that lingers in the heart forever.
             </p>
         </section>
 
         <section id="journey" class="glass-panel">
-            <h2>🚀 Journey & Breakthrough</h2>
-            
+            <h2>🚀 A Journey of Passion</h2>
             <div class="journey-box">
-                <span class="journey-year">BEYOND LIMITS: MY JOURNEY</span>
-                <p>In 2018, I started my editing journey with KineMaster on a smartphone. By 2022, I created 7 impactful mobile shorts that changed everything. Recognition from my female best friend opened the doors to my first professional collaboration with Director Prithvi. Today, with 7+ years of experience—transitioning from mobile mastery to professional tools like Premiere Pro—I prove that creativity has no boundaries. For me, it's always <b>Ambition > Condition</b>.</p>
+                <span class="journey-year">THE BREAKTHROUGH (2022)</span>
+                <p>My destiny changed when my talent was recognized by a special friend. She saw the cinematic soul in my mobile edits and bridged the gap between my dreams and reality by introducing me to <b>Director Prithvi</b>. That moment transformed a passionate editor into a professional storyteller.</p>
             </div>
-
             <div class="journey-box">
-                <span class="journey-year">THE POWER OF CREATIVITY</span>
-                <p>My professional breakthrough in 2022 started with nothing more than a smartphone and a vision. I began by crafting unique Chat Edits on Alight Motion, pushing the limits of mobile editing. My talent was recognized by my female best friend, who saw the potential in my work and introduced me to Upcoming Director Prithvi. Impressed by what I could achieve on a mobile screen, Director Prithvi gave me the opportunity to work on my first official project. This proved that you don't need a high-end studio to create magic; you only need the right mindset and an unstoppable passion. From those mobile chat edits to cinematic projects, my journey is a testament to <b>'Skill over Tools'</b>.</p>
-            </div>
-
-            <div class="journey-box">
-                <span class="journey-year">THE BREAKTHROUGH MOMENT (2022)</span>
-                <p>Every great journey starts with a single opportunity. In 2022, my talent was recognized by my female best friend, who acted as a bridge between my skills and the industry. She introduced me to Upcoming Director Prithvi, who was looking for a fresh perspective. After seeing my passion for cinematic storytelling, Director Prithvi entrusted me with my first official project: <b>'Babu Gari Lokamantha Mayajalame'</b>. This was a leap of faith that transformed my home-grown passion into a professional mission.</p>
+                <span class="journey-year">SKILL OVER TOOLS</span>
+                <p>Starting with a smartphone and <b>KineMaster</b>, I proved that creativity isn't bound by high-end gear. Today, with 7+ years of experience and mastery in professional software, I continue to push the boundaries of visual storytelling.</p>
             </div>
         </section>
 
         <section id="projects" class="glass-panel">
-            <h2>🎥 Featured Work</h2>
-            <img src="poster.jpg" alt="Babu Gari Lokamantha Mayajalame Poster" class="work-poster">
-            <p style="margin-bottom: 20px;"><b>Babu Gari Lokamantha Mayajalame</b> - Official Shorts Collection</p>
+            <h2>🎥 Featured Cinema</h2>
+            
+            <!-- Poster Design Style Titles -->
+            <div class="title-design-box">
+                <span class="title-main">బాబు గారి లోకమంతా...</span>
+                <span class="title-sub">మాయాజాలమే</span>
+            </div>
+
+            <img src="poster.jpg" alt="Cinema Poster" class="work-poster">
             
             <div class="video-grid">
                 <div class="video-item"><iframe src="https://www.youtube.com/embed/qapXhJJNAy8" allowfullscreen></iframe></div>
                 <div class="video-item"><iframe src="https://www.youtube.com/embed/QZ-oVwPiynk" allowfullscreen></iframe></div>
                 <div class="video-item"><iframe src="https://www.youtube.com/embed/B40DUa3aido" allowfullscreen></iframe></div>
                 <div class="video-item"><iframe src="https://www.youtube.com/embed/ToqrBwMIfbI" allowfullscreen></iframe></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/PlCYKdb-PZc" allowfullscreen></iframe></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/fmhoa_RT6Uk" allowfullscreen></iframe></div>
-                <div class="video-item"><iframe src="https://www.youtube.com/embed/hf5PijeSxmI" allowfullscreen></iframe></div>
             </div>
         </section>
 
         <section id="skills" class="glass-panel">
-            <h2>💡 Technical Arsenal</h2>
+            <h2>💡 Technical Artistry</h2>
             <div class="skills-grid">
-                <div class="skill-item">🎞️ <b>Video Editing:</b> YouTube, Reels, Vlogs</div>
-                <div class="skill-item">💥 <b>After Effects:</b> VFX & Motion Graphics</div>
-                <div class="skill-item">🎛️ <b>Premiere Pro:</b> Professional Editing</div>
-                <div class="skill-item">📱 <b>Mobile:</b> Alight Motion & KineMaster</div>
-                <div class="skill-item">✍️ <b>Writing:</b> Scripts & Descriptions</div>
-                <div class="skill-item">🧠 <b>Analysis:</b> Cinematic Techniques</div>
+                <div class="skill-item">📽️ <b>Romantic Edits:</b> Wedding & Cinematic Shorts</div>
+                <div class="skill-item">✨ <b>VFX:</b> Motion Graphics & Visual Magic</div>
+                <div class="skill-item">🖥️ <b>Software:</b> Premiere Pro & After Effects</div>
+                <div class="skill-item">📱 <b>Mobile Master:</b> Alight Motion & KineMaster</div>
+                <div class="skill-item">📝 <b>Scripting:</b> Emotional Storytelling</div>
+                <div class="skill-item">🎓 <b>Education:</b> SSC (80%) - Thakshashila High School</div>
             </div>
-        </section>
-
-        <section id="education" class="glass-panel">
-            <h2>🎓 Education</h2>
-            <p><b>Matriculation (SSC)</b> - 80%</p>
-            <p style="color: var(--gray); font-size: 0.9rem;">Thakshashila English High School, Sircilla</p>
         </section>
 
         <div class="final-quote">
-            “Every cut tells a story – Let me help tell yours.”
+            “Every cut tells a story...<br>Let me help tell yours with soul.”
+            <span>Crafting Cinematic Dreams</span>
         </div>
 
-        <div id="contact" style="text-align: center; padding-bottom: 60px;">
-            <a href="https://wa.me/918341388567" class="hire-btn">Get In Touch Now</a>
-        </div>
-    </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Portfolio Details</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #000000;
-            --gold: #d4af37;
-            --white: #ffffff;
-            --gray: #a0a0a0;
-            --glass: rgba(255, 255, 255, 0.05);
-            --border: rgba(212, 175, 55, 0.3);
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-
-        .details-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .section {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-
-        h1 { color: var(--gold); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; }
-        h2 { color: var(--gold); font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
-
-        .contact-info { color: var(--gray); font-size: 0.9rem; margin-bottom: 20px; }
-        .contact-info b { color: var(--gold); }
-
-        .skills-list, .hobbies-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .item { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px 0; font-size: 0.95rem; }
-        .item b { color: var(--gold); }
-
-        .edu-box { display: flex; justify-content: space-between; align-items: center; }
-        .score { color: var(--gold); font-weight: bold; font-size: 1.2rem; }
-
-        .quote {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.5rem;
-            color: var(--gold);
-            text-align: center;
-            margin-top: 50px;
-            opacity: 0.9;
-        }
-
-        .btn-call {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 25px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            border-radius: 25px;
-            transition: 0.3s;
-        }
-
-        .btn-call:hover { background: var(--gold); color: #000; }
-    </style>
-</head>
-<body>
-
-    <div class="details-container">
-        <!-- Header Section -->
-        <div class="section" style="text-align: center;">
-            <h1>Goutham Bolli</h1>
-            <p class="contact-info">
-                📍 Sircilla, Telangana | 📞 <b>83413 88567</b><br>
-                📧 gouthambolli576@gmail.com<br>
-                <span style="color: var(--gold);">💬 DM for collaboration or freelance work!</span>
-            </p>
-        </div>
-
-        <!-- Summary Section -->
-        <div class="section">
-            <h2>🎬 Professional Summary</h2>
-            <p>Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer, with a strong love for storytelling through visual editing. My heart lies in video editing, and I specialize in creating engaging and impactful content using tools like <b>Adobe Premiere Pro, After Effects, Alight Motion, and KineMaster.</b></p>
-            <p>With a sharp eye for detail and a creative mindset, I turn raw footage into visually compelling videos. Whether it’s social media content, YouTube edits, or short films, I ensure your story is told with maximum impact.</p>
-        </div>
-
-        <!-- Skills Section -->
-        <div class="section">
-            <h2>💡 Skills & Software Expertise</h2>
-            <div class="skills-list">
-                <div class="item">🎞️ <b>Video Editing:</b> YouTube, Reels, Shorts</div>
-                <div class="item">💥 <b>After Effects:</b> Visual Effects & Motion</div>
-                <div class="item">🎛️ <b>Premiere Pro:</b> Professional Editing</div>
-                <div class="item">📱 <b>Mobile:</b> Alight Motion & KineMaster</div>
-                <div class="item">✍️ <b>Writing:</b> Scripts, Captions, Descriptions</div>
-                <div class="item">🧠 <b>Analysis:</b> Editing Styles & Cinematics</div>
-            </div>
-        </div>
-
-        <!-- Education Section -->
-        <div class="section">
-            <h2>🎓 Education</h2>
-            <div class="edu-box">
-                <div>
-                    <b>Matriculation (SSC)</b><br>
-                    <span style="color: var(--gray); font-size: 0.9rem;">📍 Thakshashila English High School, Sircilla</span>
-                </div>
-                <div class="score">80%</div>
-            </div>
-        </div>
-
-        <!-- Hobbies Section -->
-        <div class="section">
-            <h2>🎯 Hobbies & Interests</h2>
-            <div class="hobbies-list">
-                <div class="item">🎬 Studying movie editing techniques</div>
-                <div class="item">🧠 Analyzing story pacing & transitions</div>
-                <div class="item">📝 Content writing for visual media</div>
-            </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="section" style="text-align: center;">
-            <h2>📣 Let’s Work Together!</h2>
-            <p>If you’re looking for a creative and dedicated video editor –</p>
-            <a href="tel:8341388567" class="btn-call">📞 Call 83413 88567</a>
-            <p style="margin-top: 15px; font-size: 0.8rem; color: var(--gray);">📩 Or just DM me anytime!</p>
-        </div>
-
-        <div class="quote">
-            “Every cut tells a story – Let me help tell yours.”
+        <div id="contact" style="text-align: center; padding-bottom: 100px;">
+            <a href="https://wa.me/918341388567" class="hire-btn">Collaborate With Me</a>
         </div>
     </div>
 
