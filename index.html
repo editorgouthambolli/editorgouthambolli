@@ -3,225 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Storyteller</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Cinematic Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --deep-bg: #050505; /* పర్ఫెక్ట్ సినిమాటిక్ బ్లాక్ బ్యాక్‌గ్రౌండ్ */
-            --white-glow: rgba(255, 255, 255, 0.8);
-            --neon-violet: #8a2be2; /* నియాన్ రేడియన్ వైలెట్ (Purple & White Mix) */
-            --glass-finish: rgba(255, 255, 255, 0.03);
-            --border: rgba(138, 43, 226, 0.4);
-        }
-
-        html { scroll-behavior: smooth; }
         body {
-            margin: 0; padding: 0;
-            background-color: var(--deep-bg);
-            /* స్మూత్ గ్రేడియంట్ బ్యాక్‌గ్రౌండ్ (పర్పుల్ & బ్లాక్ మిక్స్) */
-            background-image: 
-                radial-gradient(circle at 10% 10%, rgba(138, 43, 226, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(138, 43, 226, 0.05) 0%, transparent 40%);
+            margin: 0;
+            padding: 0;
+            /* 💜 + 🖤 సినిమాటిక్ బ్యాక్‌గ్రౌండ్ */
+            background: radial-gradient(circle at top, #2e0249 0%, #000000 80%);
             background-attachment: fixed;
-            color: #fff;
+            color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Focus & Blur Logic for Cinematic Panels */
-        .container:hover .glass-panel {
-            filter: blur(5px);
-            opacity: 0.5;
-            transform: scale(0.98);
-        }
-
-        .container .glass-panel:hover {
-            filter: blur(0px) !important;
-            opacity: 1 !important;
-            transform: scale(1.02) !important;
-            border-color: var(--neon-violet);
-            box-shadow: 0 0 50px rgba(138, 43, 226, 0.2);
-        }
-
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(15px);
-            padding: 15px 0; border-bottom: 1px solid var(--border);
+        header {
             text-align: center;
-        }
-        nav a { color: #888; text-decoration: none; margin: 0 12px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; opacity: 0.6; }
-        nav a:hover { color: var(--neon-violet); opacity: 1; }
-
-        .container { max-width: 950px; margin: auto; padding: 120px 20px 40px; }
-
-        header { text-align: center; margin-bottom: 60px; animation: fadeInUp 1s ease; }
-        .name { 
-            font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 12vw, 5.5rem); 
-            color: var(--neon-violet); margin: 0; 
-            text-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
-        }
-        .tagline { 
-            text-transform: uppercase; letter-spacing: 5px; font-size: 0.75rem; 
-            color: var(--white-glow); margin-bottom: 20px; 
-            font-family: 'Montserrat', sans-serif; font-weight: 400;
-        }
-        
-        .contact-top { font-size: 0.9rem; color: #b0b0b0; line-height: 2; font-style: italic; }
-        .contact-top b { color: var(--neon-violet); font-style: normal; }
-
-        .glass-panel {
-            background: var(--glass-finish); backdrop-filter: blur(25px);
-            border: 1px solid var(--border); border-radius: 25px;
-            padding: 40px; margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: fadeInUp 1.2s ease;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            padding-top: 150px;
         }
 
-        h2 { 
-            font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 2px; 
-            color: var(--neon-violet); border-bottom: 1px solid var(--border); 
-            display: block; margin-bottom: 30px; padding-bottom: 10px; font-style: italic; 
+        /* 💜🤍 మిక్స్డ్ మెటాలిక్ గ్లో టెక్స్ట్ */
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            margin: 0;
+            background: linear-gradient(to bottom, #ffffff 30%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.8));
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
-        .summary-text { font-size: 1.1rem; line-height: 1.9; color: #e0e0e0; font-family: 'Montserrat', sans-serif; font-weight: 300; }
-
-        /* Journey Timeline Styles */
-        .journey-box { margin-bottom: 35px; border-left: 1px solid var(--neon-violet); padding-left: 25px; position: relative; }
-        .journey-box::before { content: '❤'; position: absolute; left: -9px; top: 0; color: var(--neon-violet); font-size: 12px; }
-        .journey-year { color: var(--neon-violet); font-weight: 600; font-size: 1.2rem; display: block; margin-bottom: 12px; font-family: 'Playfair Display', serif; }
-
-        /* Video Grid */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px; margin-top: 30px;
+        .tagline {
+            letter-spacing: 8px;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            margin-top: 10px;
         }
-        .video-item {
-            position: relative; padding-bottom: 177.77%; height: 0; overflow: hidden;
-            border-radius: 20px; border: 1px solid var(--border); background: #000;
-            transition: 0.4s;
-        }
-        .video-item:hover { transform: translateY(-10px); border-color: var(--neon-violet); box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2); }
-        .video-item iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .skill-item { font-size: 1rem; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; }
-        .skill-item b { color: var(--neon-violet); margin-right: 8px; font-weight: 600; }
-
-        .final-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; color: var(--neon-violet); text-align: center; margin: 80px 0; line-height: 1.4; }
-        .final-quote span { display: block; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; letter-spacing: 4px; text-transform: uppercase; margin-top: 15px; color: var(--white-glow); }
-
-        .hire-btn { 
-            display: inline-block; padding: 18px 50px; 
-            background: linear-gradient(45deg, var(--neon-violet), #c71585);
-            color: #000; text-decoration: none; text-transform: uppercase; 
-            letter-spacing: 3px; border-radius: 50px; transition: 0.5s; font-weight: 700;
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
-        }
-        .hire-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5); }
-
-        @media (max-width: 600px) { 
-            .name { font-size: 3.5rem; }
-            .glass-panel { padding: 25px; }
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5)); }
+            to { filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.9)); }
         }
     </style>
 </head>
 <body>
-
-    <nav>
-        <a href="#summary">Bio</a>
-        <a href="#journey">Journey</a>
-        <a href="#projects">Cinema</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        <header>
-            <h1 class="name">Goutham Bolli</h1>
-            <div class="tagline">The Romantic Cinematic Storyteller</div>
-            <div class="contact-top">
-                📍 Sircilla, Telangana | 📞 <b>83413 88567</b><br>
-                📩 gouthambolli576@gmail.com
-            </div>
-        </header>
-
-        
-<section id="summary" class="glass-panel">
-            <h2>🎬 The Artist Behind the Lens</h2>
-            <p class="summary-text">
-                I am Goutham, a dedicated Video Editor and Content Writer who believes that every video is a heartbeat. I specialize in <b>Romantic Cinematic Editing</b>, where I blend emotions with professional tools like <b>Adobe After Effects and Premiere Pro</b>. My goal is to capture the soul of a moment and present it in a way that lingers in the heart forever.
-            </p>
-        </section>
-
-        
-<section id="journey" class="glass-panel">
-            <h2>🚀 Journey & Breakthrough</h2>
-            
-            <div class="journey-box">
-                <span class="journey-year">BEYOND LIMITS: MY JOURNEY</span>
-                <p class="summary-text">In 2018, I started my editing journey with <b>KineMaster</b> on a smartphone. By 2022, I created <b>7 impactful mobile shorts</b> that changed everything. Recognition from my female best friend acting as a bridge opened the doors to my first professional collaboration with <b>Director Prithvi</b>. Transitioning from mobile mastery to professional tools like <b>Premiere Pro</b> proves that creativity has no boundaries. For me, it's always <b>Ambition > Condition</b>.</p>
-            </div>
-
-            <div class="journey-box">
-                <span class="journey-year">THE POWER OF CREATIVITY: FROM MOBILE TO CINEMA</span>
-                <p class="summary-text">My professional breakthrough in 2022 started with nothing more than a smartphone and a vision. I began by crafting unique <b>Chat Edits on Alight Motion</b>, pushing the limits of mobile editing. My talent was recognized by my best friend, who saw the potential in my work and introduced me to Upcoming Director Prithvi. Impressed by what I could achieve on a mobile screen, Director Prithvi gave me the opportunity to work on my first official project. My journey is a testament to <b>Skill over Tools</b>.</p>
-            </div>
-
-            <div class="journey-box">
-                <span class="journey-year">THE BREAKTHROUGH MOMENT (2022)</span>
-                <p class="summary-text">Every great journey starts with a single opportunity. In 2022, my talent acted as a bridge between my skills and the industry, and I was introduced to Upcoming Director Prithvi. After seeing my passion for cinematic storytelling, Director Prithvi entrusted me with my first official project: <b>'Babu Gari Lokamantha Mayajalame'</b>. This was a leap of faith that transformed my home-grown passion into a professional mission.</p>
-            </div>
-        </section>
-
-        
-<section id="projects" class="glass-panel">
-            <h2>🎥 Featured Cinema</h2>
-            <p style="font-size: 0.9rem; color: #888; margin-bottom: 20px;">Official Project: <b>'Babu Gari Lokamantha Mayajalame'</b> (Web Series)</p>
-            
-            <div class="video-grid">
-                <div class="video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/qapXhJJNAy8" frameborder="0" allowfullscreen></iframe></div>
-                <div class="video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/QZ-oVwPiynk" frameborder="0" allowfullscreen></iframe></div>
-                <div class="video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/B40DUa3aido" frameborder="0" allowfullscreen></iframe></div>
-                <div class="video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/ToqrBwMIfbI" frameborder="0" allowfullscreen></iframe></div>
-            </div>
-        </section>
-
-        
-<section id="skills" class="glass-panel">
-            <h2>💡 Technical Arsenal</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div>
-                    <span style="font-size: 1.1rem; color: #ccc;">Skills & Software</span>
-                    <div class="skills-grid" style="margin-top: 15px;">
-                        <div class="skill-item">📽️ <b>Video Editing:</b> YouTube, Reels, Shorts</div>
-                        <div class="skill-item">💥 <b>After Effects:</b> Visual Effects & Motion</div>
-                        <div class="skill-item">🎛️ <b>Premiere Pro:</b> Professional Editing</div>
-                        <div class="skill-item">📱 <b>Mobile Master:</b> Alight Motion & KineMaster</div>
-                        <div class="skill-item">📝 <b>Scripting:</b> Emotional Storytelling</div>
-                        <div class="skill-item">🧠 <b>Analysis:</b> Cinematic Storytelling</div>
-                    </div>
-                </div>
-                <div>
-                    <span style="font-size: 1.1rem; color: #ccc;">Education & Interests</span>
-                    <p style="margin-top: 15px;"><b>Matriculation (SSC)</b> - Thakshashila English High School, Sircilla (Scored: 80%)</p>
-                    <p><b>Hobbies:</b> Studying movie editing techniques, Analyzing pacing & transitions, Writing for visual media.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="final-quote">
-            “Every cut tells a story...<br>Let me help tell yours.”
-            <span>Crafting Cinematic Dreams</span>
-        </div>
-
-        <div id="contact" style="text-align: center; padding-bottom: 100px;">
-            <a href="https://wa.me/918341388567" class="hire-btn">DM for Collaboration</a>
-        </div>
-    </div>
-
+    <header>
+        <h1 class="name">Goutham Bolli</h1>
+        <div class="tagline">The Romantic Cinematic Storyteller</div>
+    </header>
 </body>
 </html>
