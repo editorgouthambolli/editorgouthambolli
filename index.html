@@ -3,87 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Editor Look</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Step 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --glass: rgba(255, 255, 255, 0.1);
-            --border: rgba(255, 255, 255, 0.2);
-            --purple-glow: #a855f7;
-        }
-
         body {
             margin: 0;
             padding: 0;
-            /* 🤍 వైట్ & 💜 పర్పుల్ మిక్స్ సినిమాటిక్ బ్యాక్‌గ్రౌండ్ */
-            background: linear-gradient(135deg, #ffffff 0%, #f3e8ff 30%, #e9d5ff 60%, #c084fc 100%);
+            /* 🤍 వైట్ & 💜 పర్పుల్ సినిమాటిక్ గ్రేడియంట్ */
+            background: radial-gradient(circle at top right, #ffffff, #f3e8ff, #d8b4fe, #581c87);
             background-attachment: fixed;
-            font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* సినిమాటిక్ గ్లాసీ కంటైనర్ */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(25px) saturate(150%);
-            -webkit-backdrop-filter: blur(25px) saturate(150%);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            padding: 80px 40px;
+        /* గ్లాసీ ఫినిష్ కార్డ్ */
+        .glass-header {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 60px 100px;
             text-align: center;
-            width: 80%;
-            max-width: 800px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* ఎడిటర్ లుక్ కోసం పైన చిన్న లైన్ */
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
-            background: linear-gradient(90deg, #a855f7, #ffffff);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
         }
 
         .name {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(3.5rem, 8vw, 5.5rem);
-            /* పర్పుల్ మెటాలిక్ టెక్స్ట్ */
-            background: linear-gradient(180deg, #4b1d3f 0%, #7e22ce 100%);
+            font-size: 5rem;
+            /* పర్పుల్ & వైట్ మిక్స్ రేడియంట్ కలర్ */
+            background: linear-gradient(to bottom, #ffffff, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 0;
-            filter: drop-shadow(0 5px 10px rgba(126, 34, 206, 0.3));
+            /* మెటాలిక్ గ్లో ఎఫెక్ట్ */
+            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
         }
 
         .tagline {
-            letter-spacing: 12px;
-            font-size: 0.75rem;
-            color: #581c87;
+            letter-spacing: 10px;
+            font-size: 0.7rem;
+            color: #4c1d95;
             text-transform: uppercase;
             margin-top: 15px;
-            font-weight: 700;
-            opacity: 0.8;
-        }
-
-        /* సాఫ్ట్ మోషన్ */
-        .glass-card {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
-    <div class="glass-card">
+    <div class="glass-header">
         <h1 class="name">Goutham Bolli</h1>
         <div class="tagline">The Romantic Cinematic Storyteller</div>
     </div>
