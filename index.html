@@ -172,115 +172,123 @@
     <!-- Main Container -->
 <div style="max-width: 1000px; margin: 0 auto; font-family: 'Segoe UI', sans-serif; background-color: transparent; color: white;">
 
-    <!-- 1. Skills & Software Expertise Section -->
-    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid #7d2ae8; border-radius: 15px; padding: 25px; margin-bottom: 30px; border-top: 5px solid #7d2ae8; box-shadow: 0 4px 15px rgba(125, 42, 232, 0.2);">
-        <h3 style="color: #b388ff; text-align: center; margin-top: 0; text-transform: uppercase; letter-spacing: 2px;">💡 Skills & Software Expertise</h3>
-        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-            <li>🎞️ <b>Video Editing</b> (YouTube, Reels, Shorts, Vlogs)</li>
-            <li>💥 <b>Adobe After Effects</b> (VFX & Motion Graphics)</li>
-            <li>🎛️ <b>Adobe Premiere Pro</b> (Timeline Editing)</li>
-            <li>📱 <b>Alight Motion & KineMaster</b> (Mobile)</li>
-            <li>✍️ <b>Content Writing</b> (Scripts & Captions)</li>
-            <li>🧠 <b>Film Analysis</b> (Styles & Cinematics)</li>
-        </ul>
+  <!-- Main Container -->
+<div style="max-width: 1000px; margin: 0 auto; font-family: 'Segoe UI', Tahoma, sans-serif; background-color: transparent; color: white; padding: 20px;">
+
+    <!-- 1. Short & Sweet Skills Section -->
+    <div style="background: rgba(125, 42, 232, 0.1); border: 1px solid rgba(125, 42, 232, 0.3); border-radius: 12px; padding: 15px; margin-bottom: 40px; text-align: center;">
+        <h4 style="color: #b388ff; margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">💡 Technical Arsenal</h4>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-size: 13px; color: #efefff;">
+            <span>🎞️ Video Editing</span> • <span>💥 After Effects</span> • <span>🎛️ Premiere Pro</span> • <span>📱 Mobile Editing</span> • <span>✍️ Content Writing</span> • <span>🧠 Film Analysis</span>
+        </div>
     </div>
 
-    <!-- 2. Single Line Categories (The Buttons) -->
-    <div class="category-wrapper" style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding: 10px 5px;">
-        <button class="cat-btn" onclick="toggleCategory('titles')">Title Designing</button>
-        <button class="cat-btn" onclick="toggleCategory('shorts')">Short Films</button>
-        <button class="cat-btn" onclick="toggleCategory('invitations')">Invitations</button>
-        <button class="cat-btn" onclick="toggleCategory('vlogs')">Vlogs</button>
-        <button class="cat-btn" onclick="toggleCategory('reels')">Reels</button>
+    <!-- 2. Universal Header (Connecting All Categories) -->
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h2 style="color: #ffffff; font-size: 26px; margin: 0; font-weight: 300; letter-spacing: 1px;">
+            Visualizing <span style="color: #7d2ae8; font-weight: bold; text-shadow: 0 0 10px rgba(125,42,232,0.4);">Stories</span>, Frame by Frame
+        </h2>
+        <div style="width: 60px; height: 3px; background: #7d2ae8; margin: 10px auto; border-radius: 5px; box-shadow: 0 0 8px #7d2ae8;"></div>
     </div>
 
-    <!-- 3. Dynamic Content Display (The Liquid Motion Area) -->
-    <div id="content-display" class="reveal-section">
-        <div id="category-title" style="color: #b388ff; font-weight: bold; margin-bottom: 15px; font-size: 20px;"></div>
-        <div id="category-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
-            <!-- Content will load here via JavaScript -->
+    <!-- 3. Single Line Category Buttons (🤍 White & Purple 💜) -->
+    <div class="category-nav" style="display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 10px;">
+        <button class="work-btn" onclick="openWork('titles', this)">Title Designing</button>
+        <button class="work-btn" onclick="openWork('shorts', this)">Short Films</button>
+        <button class="work-btn" onclick="openWork('invitations', this)">Invitations</button>
+        <button class="work-btn" onclick="openWork('vlogs', this)">Vlogs</button>
+        <button class="work-btn" onclick="openWork('reels', this)">Reels</button>
+    </div>
+
+    <!-- 4. The Magic Content Area (Liquid Motion Reveal) -->
+    <div id="work-reveal" class="content-panel">
+        <div id="panel-header" style="color: #b388ff; font-weight: bold; margin-bottom: 20px; font-size: 18px; border-left: 4px solid #7d2ae8; padding-left: 10px;"></div>
+        <div id="panel-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+            <!-- నీ వీడియోలు ఇక్కడ లోడ్ అవుతాయి -->
         </div>
     </div>
 
 </div>
 
 <style>
-/* 🤍 White & Medium Purple 💜 Styles */
-.cat-btn {
-    flex: 1;
-    background: #ffffff; /* White Base */
-    color: #7d2ae8; /* Medium Purple Text */
-    border: 2px solid #7d2ae8;
-    padding: 12px 5px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    min-width: 120px;
+/* Button Styling */
+.work-btn {
+    background: #ffffff; /* 🤍 White Base */
+    color: #7d2ae8; /* 💜 Medium Purple Text */
+    border: 1px solid #7d2ae8;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
     font-size: 13px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* క్లిక్ చేసినప్పుడు వచ్చే Motion & Glow */
-.cat-btn.active {
+/* Click Motion & Glow */
+.work-btn.active {
     background: #7d2ae8;
     color: #ffffff;
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 0 20px rgba(125, 42, 232, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(125, 42, 232, 0.4);
 }
 
-.cat-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(125, 42, 232, 0.3);
+.work-btn:hover:not(.active) {
+    background: #f0e6ff;
+    transform: translateY(-2px);
 }
 
-/* Reveal Animation */
-.reveal-section {
+/* Smooth Liquid Reveal Animation */
+.content-panel {
     max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.6s ease-out, opacity 0.5s ease;
     opacity: 0;
-    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 15px;
-    padding: 0 20px;
 }
 
-.reveal-section.open {
-    max-height: 2000px; /* Adjust based on content */
+.content-panel.show {
+    max-height: 3000px;
     opacity: 1;
-    padding: 20px;
-    border: 1px solid rgba(125, 42, 232, 0.3);
-    margin-top: 10px;
+    padding: 30px 20px;
+    border: 1px solid rgba(125, 42, 232, 0.2);
+    margin-top: 20px;
 }
+
+/* Mobile Scrollbar Hide */
+.category-nav::-webkit-scrollbar { display: none; }
+.category-nav { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 
 <script>
-function toggleCategory(type) {
-    const display = document.getElementById('content-display');
-    const title = document.getElementById('category-title');
-    const items = document.getElementById('category-items');
-    const buttons = document.querySelectorAll('.cat-btn');
+function openWork(category, btn) {
+    const panel = document.getElementById('work-reveal');
+    const header = document.getElementById('panel-header');
+    const grid = document.getElementById('panel-grid');
+    const allBtns = document.querySelectorAll('.work-btn');
 
-    // Remove active class from all buttons
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    // If clicking the same one, close it
-    if (display.classList.contains('open') && title.innerText.toLowerCase().includes(type)) {
-        display.classList.remove('open');
+    // Toggle Active Class
+    if (btn.classList.contains('active')) {
+        panel.classList.remove('show');
+        btn.classList.remove('active');
         return;
     }
 
-    // Set Active Button
-    event.currentTarget.classList.add('active');
+    allBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-    // Change Content based on Type
-    title.innerText = type.toUpperCase().replace('-', ' ');
+    // Change Content
+    header.innerText = btn.innerText;
+    grid.innerHTML = `<div style="text-align:center; width:100%; padding:50px; color:rgba(255,255,255,0.5);"> Loading ${category} projects... 📽️ </div>`;
+
+    // Reveal Motion
+    panel.classList.add('show');
     
-    // Example Content - నీ వీడియో లింక్స్ ఇక్కడ ఇచ్చుకోవచ్చు
-    items.innerHTML = `<div style="padding:40px; text-align:center; width:100%;"> Loading ${type} projects... 🎬 </div>`;
-
-    // Trigger Slide Motion
-    display.classList.add('open');
+    // Smooth scroll to content
+    setTimeout(() => {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 300);
 }
 </script>
     <!-- Project Spotlight -->
