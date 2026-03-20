@@ -185,60 +185,71 @@
     </div>
 
     <!-- 2. New Cinematic Header (Sleek & Stylized) -->
-    <div style="margin: 65px 0 35px 0; position: relative;">
-        <h2 style="color: #7d2ae8; font-size: 20px; font-weight: 300; text-transform: uppercase; letter-spacing: 6px; margin: 0; display: inline-block;">
-            Creative <span style="font-weight: 800; color: #4b0082;">Categories</span>
+    <!-- START: Cinematic Creative Categories Section -->
+<div style="max-width: 1100px; margin: 0 auto; text-align: center; font-family: 'Inter', 'Segoe UI', sans-serif;">
+
+    <!-- Cinematic Header -->
+    <div style="margin: 80px 0 40px 0;">
+        <h2 style="color: #7d2ae8; font-size: 18px; font-weight: 300; text-transform: uppercase; letter-spacing: 12px; margin: 0; opacity: 0.9; text-shadow: 0 0 10px rgba(125, 42, 232, 0.2);">
+            Creative <span style="font-weight: 800; color: #4b0082; letter-spacing: 8px;">Categories</span>
         </h2>
-        <div style="width: 40px; height: 2px; background: linear-gradient(90deg, transparent, #7d2ae8, transparent); margin: 12px auto; box-shadow: 0 0 8px #7d2ae8;"></div>
-        <p style="font-size: 9px; color: rgba(125, 42, 232, 0.5); text-transform: uppercase; letter-spacing: 4px; margin-top: 5px;">Select a Genre to Explore</p>
+        
+        <!-- Divider Dot & Lines -->
+        <div style="display: flex; align-items: center; justify-content: center; margin: 20px auto; width: 280px;">
+            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(125, 42, 232, 0.4));"></div>
+            <div style="width: 6px; height: 6px; background: #7d2ae8; border-radius: 50%; margin: 0 15px; box-shadow: 0 0 12px #7d2ae8;"></div>
+            <div style="flex: 1; height: 1px; background: linear-gradient(90deg, rgba(125, 42, 232, 0.4), transparent);"></div>
+        </div>
+        
+        <p style="font-size: 10px; color: rgba(125, 42, 232, 0.6); text-transform: uppercase; letter-spacing: 5px; margin: 0;">
+            Select a Genre to <span style="color: #7d2ae8; font-weight: 600;">Explore</span>
+        </p>
     </div>
 
-    <!-- 3. Single Line Boxes -->
-    <div class="category-nav">
-        <div class="nav-item" onclick="toggleView('titles')">TITLE DESIGNING</div>
-        <div class="nav-item" onclick="toggleView('shorts')">SHORT FILMS</div>
-        <div class="nav-item" onclick="toggleView('invites')">WEDDING INVITES</div>
-        <div class="nav-item" onclick="toggleView('vlogs')">VLOGS & TRAVEL</div>
-        <div class="nav-item" onclick="toggleView('reels')">VIRAL REELS</div>
+    <!-- Single Line Navigation Boxes -->
+    <div class="category-nav-wrapper" style="display: flex; justify-content: center; gap: 12px; overflow-x: auto; padding: 15px 10px; scrollbar-width: none;">
+        <div class="nav-box" onclick="toggleCategory('titles')">TITLE DESIGNING</div>
+        <div class="nav-box" onclick="toggleCategory('shorts')">SHORT FILMS</div>
+        <div class="nav-box" onclick="toggleCategory('invites')">WEDDING INVITES</div>
+        <div class="nav-box" onclick="toggleCategory('vlogs')">VLOGS & TRAVEL</div>
+        <div class="nav-box" onclick="toggleCategory('reels')">VIRAL REELS</div>
     </div>
 
 </div>
 
 <style>
-/* Smooth Navigation Items */
-.category-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    padding: 10px 5px;
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none;
-}
-.category-nav::-webkit-scrollbar { display: none; }
+/* Cinematic Nav Box Styling */
+.category-nav-wrapper::-webkit-scrollbar { display: none; }
 
-.nav-item {
+.nav-box {
     background: #ffffff;
     color: #7d2ae8;
     border: 1px solid rgba(125, 42, 232, 0.15);
-    padding: 14px 20px;
+    padding: 14px 22px;
     border-radius: 10px;
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    white-space: nowrap;
 }
 
-.nav-item:hover {
-    transform: translateY(-6px);
+.nav-box:hover {
+    transform: translateY(-8px);
     background: #7d2ae8;
     color: #ffffff;
-    box-shadow: 0 12px 24px rgba(125, 42, 232, 0.25);
+    box-shadow: 0 15px 30px rgba(125, 42, 232, 0.25);
     border-color: #7d2ae8;
 }
+
+.nav-box:active {
+    transform: scale(0.95);
+}
 </style>
+<!-- END Section -->
+
 
     <!-- Project Spotlight -->
     <div style="text-align: center; margin-bottom: 20px;">
