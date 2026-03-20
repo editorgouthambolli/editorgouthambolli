@@ -169,63 +169,120 @@
 <!-- Technical Arsenal కింద వచ్చే కొత్త సెక్షన్ -->
 <div style="max-width: 900px; margin: 0 auto; padding: 10px;">
 
-    <!-- 1. Skills Box with Inner Shadow (దాని కింద వస్తుంది) -->
-    <div style="
-        background: rgba(255, 255, 255, 0.03); 
-        border: 1px solid rgba(255, 255, 255, 0.1); 
-        border-radius: 15px; 
-        padding: 20px; 
-        box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.6); /* లోపల షాడో */
-        backdrop-filter: blur(10px);
-        margin-top: 20px;
-    ">
-        <h3 style="color: #b388ff; font-size: 15px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">
-            💡 Skills & Software Expertise
-        </h3>
-        
-        <!-- స్కిల్స్ గ్రిడ్ -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; color: #ffffff; font-size: 12px; font-weight: 500;">
-            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">🎞️ Video Editing</div>
-            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">💥 After Effects</div>
-            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">🎛️ Premiere Pro</div>
-            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">📱 Alight Motion</div>
-            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">✍️ Content Writing</div>
-            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">🧠 Film Analysis</div>
-        </div>
+    <!-- Main Container -->
+<div style="max-width: 1000px; margin: 0 auto; font-family: 'Segoe UI', sans-serif; background-color: transparent; color: white;">
+
+    <!-- 1. Skills & Software Expertise Section -->
+    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid #7d2ae8; border-radius: 15px; padding: 25px; margin-bottom: 30px; border-top: 5px solid #7d2ae8; box-shadow: 0 4px 15px rgba(125, 42, 232, 0.2);">
+        <h3 style="color: #b388ff; text-align: center; margin-top: 0; text-transform: uppercase; letter-spacing: 2px;">💡 Skills & Software Expertise</h3>
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <li>🎞️ <b>Video Editing</b> (YouTube, Reels, Shorts, Vlogs)</li>
+            <li>💥 <b>Adobe After Effects</b> (VFX & Motion Graphics)</li>
+            <li>🎛️ <b>Adobe Premiere Pro</b> (Timeline Editing)</li>
+            <li>📱 <b>Alight Motion & KineMaster</b> (Mobile)</li>
+            <li>✍️ <b>Content Writing</b> (Scripts & Captions)</li>
+            <li>🧠 <b>Film Analysis</b> (Styles & Cinematics)</li>
+        </ul>
     </div>
 
-    <!-- 2. Navigation Buttons (Title Designing & Shorts) -->
-    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 25px;">
-        <button onclick="scrollToSection('titles')" class="cinematic-btn">Title Designing</button>
-        <button onclick="scrollToSection('vlogs')" class="cinematic-btn">Vlogs</button>
-        <button onclick="scrollToSection('shorts')" class="cinematic-btn">Shorts</button>
-        <button onclick="scrollToSection('reels')" class="cinematic-btn">Reels</button>
+    <!-- 2. Single Line Categories (The Buttons) -->
+    <div class="category-wrapper" style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding: 10px 5px;">
+        <button class="cat-btn" onclick="toggleCategory('titles')">Title Designing</button>
+        <button class="cat-btn" onclick="toggleCategory('shorts')">Short Films</button>
+        <button class="cat-btn" onclick="toggleCategory('invitations')">Invitations</button>
+        <button class="cat-btn" onclick="toggleCategory('vlogs')">Vlogs</button>
+        <button class="cat-btn" onclick="toggleCategory('reels')">Reels</button>
+    </div>
+
+    <!-- 3. Dynamic Content Display (The Liquid Motion Area) -->
+    <div id="content-display" class="reveal-section">
+        <div id="category-title" style="color: #b388ff; font-weight: bold; margin-bottom: 15px; font-size: 20px;"></div>
+        <div id="category-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+            <!-- Content will load here via JavaScript -->
+        </div>
     </div>
 
 </div>
 
 <style>
-.cinematic-btn {
-    background: transparent;
-    color: #ffffff;
-    border: 1.5px solid rgba(255, 255, 255, 0.4);
-    padding: 10px 20px;
-    border-radius: 35px; /* Pillow Shape */
-    font-size: 11px;
+/* 🤍 White & Medium Purple 💜 Styles */
+.cat-btn {
+    flex: 1;
+    background: #ffffff; /* White Base */
+    color: #7d2ae8; /* Medium Purple Text */
+    border: 2px solid #7d2ae8;
+    padding: 12px 5px;
+    border-radius: 10px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 120px;
+    font-size: 13px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.cinematic-btn:hover {
-    background: #ffffff;
-    color: #000000;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
+/* క్లిక్ చేసినప్పుడు వచ్చే Motion & Glow */
+.cat-btn.active {
+    background: #7d2ae8;
+    color: #ffffff;
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 0 20px rgba(125, 42, 232, 0.6);
+}
+
+.cat-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(125, 42, 232, 0.3);
+}
+
+/* Reveal Animation */
+.reveal-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out, opacity 0.5s ease;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 0 20px;
+}
+
+.reveal-section.open {
+    max-height: 2000px; /* Adjust based on content */
+    opacity: 1;
+    padding: 20px;
+    border: 1px solid rgba(125, 42, 232, 0.3);
+    margin-top: 10px;
 }
 </style>
+
+<script>
+function toggleCategory(type) {
+    const display = document.getElementById('content-display');
+    const title = document.getElementById('category-title');
+    const items = document.getElementById('category-items');
+    const buttons = document.querySelectorAll('.cat-btn');
+
+    // Remove active class from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // If clicking the same one, close it
+    if (display.classList.contains('open') && title.innerText.toLowerCase().includes(type)) {
+        display.classList.remove('open');
+        return;
+    }
+
+    // Set Active Button
+    event.currentTarget.classList.add('active');
+
+    // Change Content based on Type
+    title.innerText = type.toUpperCase().replace('-', ' ');
+    
+    // Example Content - నీ వీడియో లింక్స్ ఇక్కడ ఇచ్చుకోవచ్చు
+    items.innerHTML = `<div style="padding:40px; text-align:center; width:100%;"> Loading ${type} projects... 🎬 </div>`;
+
+    // Trigger Slide Motion
+    display.classList.add('open');
+}
+</script>
     <!-- Project Spotlight -->
     <div style="text-align: center; margin-bottom: 20px;">
         <span style="color: #7c3aed; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; opacity: 0.6;">Project Spotlight</span>
