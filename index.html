@@ -168,91 +168,154 @@
 
 <div style="max-width: 1000px; margin: 0 auto; font-family: 'Inter', 'Segoe UI', sans-serif; text-align: center;">
 
-    <!-- 1. Skills Section (గ్యాప్ మెయింటెన్ చేస్తూ) -->
-    <div style="background: #ffffff; border-radius: 20px; padding: 25px; margin: 50px auto 35px auto; border: 1px solid rgba(125, 42, 232, 0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.04); border-top: 5px solid #7d2ae8; max-width: 95%;">
-        <p style="color: #7d2ae8; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 20px; opacity: 0.9;">💡 Skills & Software Expertise</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; text-align: left;">
-            <div style="background: rgba(125, 42, 232, 0.03); padding: 12px; border-radius: 10px; font-size: 11.5px; color: #4b0082; font-weight: 600; border-left: 3px solid #7d2ae8;">🎞️ Video Editing <br><span style="font-weight: 400; font-size: 10px; color: #7d2ae8;">(YouTube, Reels, Shorts)</span></div>
-            <div style="background: rgba(125, 42, 232, 0.03); padding: 12px; border-radius: 10px; font-size: 11.5px; color: #4b0082; font-weight: 600; border-left: 3px solid #7d2ae8;">💥 After Effects <br><span style="font-weight: 400; font-size: 10px; color: #7d2ae8;">(VFX & Motion Graphics)</span></div>
-            
-            <div style="background: rgba(125, 42, 232, 0.03); padding: 12px; border-radius: 10px; font-size: 11.5px; color: #4b0082; font-weight: 600; border-left: 3px solid #7d2ae8;">🎛️ Premiere Pro <br><span style="font-weight: 400; font-size: 10px; color: #7d2ae8;">(Timeline Editing)</span></div>
-            <div style="background: rgba(125, 42, 232, 0.03); padding: 12px; border-radius: 10px; font-size: 11.5px; color: #4b0082; font-weight: 600; border-left: 3px solid #7d2ae8;">📱 Alight Motion <br><span style="font-weight: 400; font-size: 10px; color: #7d2ae8;">(Mobile Editing)</span></div>
-            
-            <div style="background: rgba(125, 42, 232, 0.03); padding: 12px; border-radius: 10px; font-size: 11.5px; color: #4b0082; font-weight: 600; border-left: 3px solid #7d2ae8;">✍️ Content Writing <br><span style="font-weight: 400; font-size: 10px; color: #7d2ae8;">(Scripts & Captions)</span></div>
-            <div style="background: rgba(125, 42, 232, 0.03); padding: 12px; border-radius: 10px; font-size: 11.5px; color: #4b0082; font-weight: 600; border-left: 3px solid #7d2ae8;">🧠 Film Analysis <br><span style="font-weight: 400; font-size: 10px; color: #7d2ae8;">(Styles & Cinematics)</span></div>
-        </div>
-    </div>
-
-    <div style="max-width: 1100px; margin: 0 auto; text-align: center; font-family: 'Inter', sans-serif;">
-
-    <!-- 1. Chopsic Font Load (Dafont Style) -->
-<lin<!-- 1. Chopsic Font Load -->
+    <<!-- 1. Font & Basic Setup -->
 <link href="https://fonts.cdnfonts.com/css/chopsic" rel="stylesheet">
-
-<!-- 2. Cinematic Header with Glow -->
-<div style="text-align: center; margin: 85px 0 40px 0; font-family: 'Chopsic', sans-serif;">
-    
-    <!-- Main Title with 5% Shadow -->
-    <h2 style="color: #4b0082; font-size: 28px; font-weight: 400; text-transform: uppercase; letter-spacing: 8px; margin: 0; text-shadow: 2px 2px 6px rgba(0,0,0,0.05);">
-        Creative <span style="color: #7d2ae8;">Categories</span>
-    </h2>
-
-    <!-- Subtitle with Subtle Purple Glow -->
-    <p style="font-size: 13px; color: #7d2ae8; text-transform: uppercase; letter-spacing: 4px; margin: 18px 0 0 0; text-shadow: 0 0 10px rgba(125, 42, 232, 0.4), 1px 1px 3px rgba(0,0,0,0.05);">
-        Select a Genre to Explore
-    </p>
-
-</div>
-
-
-
-    <!-- 2. Cinematic Category Boxes with Soft Shadow -->
-    <div class="cinematic-nav-container" style="display: flex; justify-content: center; gap: 12px; overflow-x: auto; padding: 20px 10px; scrollbar-width: none;">
-        <div class="cine-box" onclick="toggleWork('titles')">TITLE DESIGNING</div>
-        <div class="cine-box" onclick="toggleWork('shorts')">SHORT FILMS</div>
-        <div class="cine-box" onclick="toggleWork('invites')">WEDDING INVITES</div>
-        <div class="cine-box" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
-        <div class="cine-box" onclick="toggleWork('reels')">VIRAL REELS</div>
-    </div>
-
-</div>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* Hide Scrollbar */
-.cinematic-nav-container::-webkit-scrollbar { display: none; }
+    :root {
+        --primary-purple: #7d2ae8;
+        --dark-purple: #4b0082;
+        --soft-shadow: rgba(0, 0, 0, 0.05);
+        --glow-shadow: rgba(125, 42, 232, 0.2);
+    }
 
-/* Cinematic Box Styling */
-.cine-box {
-    background: #ffffff;
-    color: #7d2ae8;
-    border: 1px solid rgba(125, 42, 232, 0.1);
-    padding: 15px 22px;
-    border-radius: 8px;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    /* 5% Black Shadow for Depth */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-    white-space: nowrap;
-}
+    .universal-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
 
-.cine-box:hover {
-    transform: translateY(-8px);
-    background: #7d2ae8;
-    color: #ffffff;
-    border-color: #7d2ae8;
-    /* Stronger shadow on hover for cinematic lift */
-    box-shadow: 0 15px 30px rgba(125, 42, 232, 0.3), 0 5px 15px rgba(0,0,0,0.1);
-}
+    /* --- Skills Section --- */
+    .section-title-sm {
+        text-align: center;
+        font-size: 11px;
+        color: var(--primary-purple);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 800;
+        margin-bottom: 25px;
+    }
 
-.cine-box:active {
-    transform: scale(0.95);
-}
+    .skills-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+        margin-bottom: 60px;
+    }
+
+    .skill-card {
+        background: #fff;
+        padding: 15px 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(125, 42, 232, 0.1);
+        box-shadow: 0 4px 15px var(--soft-shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .skill-card b { color: var(--dark-purple); font-size: 14px; display: block; margin-bottom: 4px; }
+    .skill-card span { color: var(--primary-purple); font-size: 11px; opacity: 0.8; }
+
+    /* --- Creative Categories Section --- */
+    .chopsic-header {
+        text-align: center;
+        margin: 40px 0;
+        font-family: 'Chopsic', sans-serif;
+    }
+
+    .chopsic-header h2 {
+        color: var(--dark-purple);
+        font-size: clamp(22px, 5vw, 32px); /* Responsive font size */
+        letter-spacing: 4px;
+        margin: 0;
+        text-shadow: 2px 2px 8px var(--soft-shadow);
+        text-transform: uppercase;
+    }
+
+    .chopsic-header p {
+        color: var(--primary-purple);
+        font-size: clamp(10px, 2.5vw, 13px);
+        letter-spacing: 2px;
+        margin-top: 15px;
+        text-shadow: 0 0 10px var(--glow-shadow);
+    }
+
+    /* --- Categories Grid --- */
+    .categories-wrapper {
+        display: grid;
+        /* Desktop: 5 columns | Mobile: 2 columns */
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .cat-btn {
+        background: #fff;
+        color: var(--primary-purple);
+        border: 1px solid rgba(125, 42, 232, 0.1);
+        padding: 15px 10px;
+        border-radius: 8px;
+        font-size: 10px;
+        font-weight: 800;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 4px 10px var(--soft-shadow);
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+
+    .cat-btn.active {
+        background: var(--primary-purple);
+        color: #fff;
+        box-shadow: 0 10px 20px rgba(125, 42, 232, 0.3);
+    }
+
+    /* --- Universal Responsive Breaks --- */
+    @media (max-width: 992px) {
+        .categories-wrapper { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+        .categories-wrapper { grid-template-columns: repeat(2, 1fr); }
+        .cat-btn:last-child { grid-column: span 2; } /* Makes 5th button full width on mobile */
+        .skills-wrapper { grid-template-columns: 1fr; }
+        .chopsic-header h2 { letter-spacing: 2px; }
+    }
 </style>
+
+<div class="universal-container">
+    <!-- Skills Section -->
+    <div class="section-title-sm">💡 Skills & Software Expertise</div>
+    <div class="skills-wrapper">
+        <div class="skill-card"><b>🎞️ Video Editing</b><span>YouTube, Reels, Shorts</span></div>
+        <div class="skill-card"><b>💥 After Effects</b><span>VFX & Motion Graphics</span></div>
+        <div class="skill-card"><b>🎬 Premiere Pro</b><span>Timeline Editing</span></div>
+        <div class="skill-card"><b>📱 Alight Motion</b><span>Mobile Editing</span></div>
+        <div class="skill-card"><b>✍️ Content Writing</b><span>Scripts & Captions</span></div>
+        <div class="skill-card"><b>🧠 Film Analysis</b><span>Styles & Cinematics</span></div>
+    </div>
+
+    <!-- Creative Categories Section -->
+    <div class="chopsic-header">
+        <h2>Creative <span style="color: var(--primary-purple);">Categories</span></h2>
+        <p>Select a Genre to Explore</p>
+    </div>
+
+    <!-- Category Grid -->
+    <div class="categories-wrapper">
+        <div class="cat-btn" onclick="toggleWork('titles')">TITLE DESIGNING</div>
+        <div class="cat-btn" onclick="toggleWork('shorts')">SHORT FILMS</div>
+        <div class="cat-btn active" onclick="toggleWork('invites')">WEDDING INVITES</div>
+        <div class="cat-btn" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
+        <div class="cat-btn" onclick="toggleWork('reels')">VIRAL REELS</div>
+    </div>
+</div>
 
     
     <!-- Project Spotlight -->
