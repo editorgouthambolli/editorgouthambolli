@@ -166,54 +166,66 @@
 
 </div>
 
-<!-- Silver & Purple Cinematic Section -->
-<div style="max-width: 800px; margin: 0 auto; padding: 10px;">
-
-    <!-- 1. Compact Skills Box -->
-    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.3); border-radius: 15px; padding: 20px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-        <h3 style="color: #d1d1d1; font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid rgba(192, 192, 192, 0.2); padding-bottom: 8px;">💡 Skills & Software Expertise</h3>
-        
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; color: #ffffff; font-size: 13px; font-weight: 500;">
-            <div style="display: flex; align-items: center; gap: 8px;">🎞️ Video Editing</div>
-            <div style="display: flex; align-items: center; gap: 8px;">💥 After Effects</div>
-            <div style="display: flex; align-items: center; gap: 8px;">🎛️ Premiere Pro</div>
-            <div style="display: flex; align-items: center; gap: 8px;">📱 Alight Motion</div>
-            <div style="display: flex; align-items: center; gap: 8px;">✍️ Content Writing</div>
-            <div style="display: flex; align-items: center; gap: 8px;">🧠 Film Analysis</div>
-        </div>
+<!-- Highlighted Skills Section -->
+<div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 25px; margin: 20px auto; max-width: 90%; backdrop-filter: blur(10px); box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+    
+    <!-- Highlighted Heading -->
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h3 style="
+            display: inline-block;
+            background: linear-gradient(90deg, #ffffff, #c0c0c0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #7d2ae8; /* Neon Purple Underline */
+        ">
+            💡 Skills & Software Expertise
+        </h3>
     </div>
-
-    <!-- 2. Silver Glow Navigation Buttons -->
-    <div style="display: flex; justify-content: center; gap: 10px; margin: 25px 0; flex-wrap: wrap;">
-        <button onclick="scrollToSection('titles')" class="silver-btn">48 Titles</button>
-        <button onclick="scrollToSection('vlogs')" class="silver-btn">Vlogs</button>
-        <button onclick="scrollToSection('shortfilms')" class="silver-btn">Short Films</button>
-        <button onclick="scrollToSection('reels')" class="silver-btn">Reels</button>
+    
+    <!-- Skills Content (బాక్స్ లోపలే పక్కాగా) -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; color: #ffffff; font-size: 13px;">
+        <span style="background: rgba(255, 255, 255, 0.08); padding: 8px 15px; border-radius: 5px; border: 0.5px solid rgba(255, 255, 255, 0.2); transition: 0.3s;">🎞️ Video Editing</span>
+        <span style="background: rgba(255, 255, 255, 0.08); padding: 8px 15px; border-radius: 5px; border: 0.5px solid rgba(255, 255, 255, 0.2); transition: 0.3s;">💥 After Effects</span>
+        <span style="background: rgba(255, 255, 255, 0.08); padding: 8px 15px; border-radius: 5px; border: 0.5px solid rgba(255, 255, 255, 0.2); transition: 0.3s;">🎛️ Premiere Pro</span>
+        <span style="background: rgba(255, 255, 255, 0.08); padding: 8px 15px; border-radius: 5px; border: 0.5px solid rgba(255, 255, 255, 0.2); transition: 0.3s;">📱 Alight Motion</span>
+        <span style="background: rgba(255, 255, 255, 0.08); padding: 8px 15px; border-radius: 5px; border: 0.5px solid rgba(255, 255, 255, 0.2); transition: 0.3s;">✍️ Content Writing</span>
+        <span style="background: rgba(255, 255, 255, 0.08); padding: 8px 15px; border-radius: 5px; border: 0.5px solid rgba(255, 255, 255, 0.2); transition: 0.3s;">🧠 Film Analysis</span>
     </div>
+</div>
 
+<!-- Category Buttons (Title Designing, etc.) -->
+<div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 25px;">
+    <button onclick="scrollToSection('titles')" class="nav-btn-chrome">Title Designing</button>
+    <button onclick="scrollToSection('vlogs')" class="nav-btn-chrome">Vlogs</button>
+    <button onclick="scrollToSection('shortfilms')" class="nav-btn-chrome">Short Films</button>
+    <button onclick="scrollToSection('reels')" class="nav-btn-chrome">Reels</button>
 </div>
 
 <style>
-.silver-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
-    border: 1px solid #c0c0c0; /* Silver Border */
+.nav-btn-chrome {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 10px 20px;
-    border-radius: 8px; /* Sharp & Professional Look */
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
-.silver-btn:hover {
+.nav-btn-chrome:hover {
     background: #ffffff;
-    color: #7d2ae8; /* Purple Text on Hover */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Silver Glow */
-    transform: translateY(-2px);
-    border-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 </style>
     <!-- Project Spotlight -->
