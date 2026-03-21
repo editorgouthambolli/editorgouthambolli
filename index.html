@@ -240,131 +240,117 @@
     </div>
     
   <style>
-   <!-- Premium Font Load -->
+ <!-- Google Fonts Load -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
 
-<div class="unique-single-line-container">
-    
-    <!-- Top Wedding Tag -->
-    <div class="wedding-tag-line">
-        <span class="tag-text">WEDDING</span>
+<div class="editor-portfolio-container">
+    <!-- Premium Editor Heading -->
+    <div class="editor-header">
+        <span class="mini-accent">PORTFOLIO</span>
+        <h2 class="main-heading">SELECTED <span>WORKS</span></h2>
     </div>
 
-    <!-- Header Section -->
-    <div class="header-content">
-        <h2 class="main-title-glass">Creative <span>Categories</span></h2>
-        <p class="sub-hint-glass">Select a Genre to Explore</p>
-    </div>
-
-    <!-- The Single Line Navigation (No Wrap) -->
-    <div class="single-line-nav">
-        <div class="nav-pill" onclick="toggleWork('titles')">TITLE DESIGN</div>
-        <div class="nav-pill" onclick="toggleWork('shorts')">SHORT FILMS</div>
-        <div class="nav-pill active" onclick="toggleWork('invites')">WEDDING INVITATION</div>
-        <div class="nav-pill" onclick="toggleWork('vlogs')">VLOGS</div>
-        <div class="nav-pill" onclick="toggleWork('reels')">REELS & SHORTS</div>
+    <!-- The Equal-Width Single Row (Single Line) -->
+    <div class="nav-table-row">
+        <div class="nav-btn" onclick="toggleWork('titles')">TITLE DESIGN</div>
+        <div class="nav-btn" onclick="toggleWork('shorts')">SHORT FILMS</div>
+        <div class="nav-btn active" onclick="toggleWork('invites')">WEDDING INVITATION</div>
+        <div class="nav-btn" onclick="vlogs">VLOGS</div>
+        <div class="nav-btn" onclick="toggleWork('reels')">REELS & SHORTS</div>
     </div>
 </div>
 
 <style>
-    .unique-single-line-container {
+    .editor-portfolio-container {
         width: 100%;
-        max-width: 1200px;
-        margin: 60px auto;
+        max-width: 1100px;
+        margin: 50px auto;
         padding: 0 5px;
         text-align: center;
         box-sizing: border-box;
     }
 
-    /* --- Wedding Tag Styling --- */
-    .wedding-tag-line {
-        margin-bottom: 15px;
+    /* --- Heading Style (Clean & Premium) --- */
+    .editor-header {
+        margin-bottom: 35px;
     }
-    .tag-text {
+
+    .mini-accent {
         font-family: 'Montserrat', sans-serif;
         font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 6px;
         color: #7d2ae8;
-        border-bottom: 1.5px solid #7d2ae8;
-        padding-bottom: 3px;
-    }
-
-    /* --- Titles --- */
-    .main-title-glass {
-        font-family: 'Syncopate', sans-serif;
-        font-size: clamp(16px, 4.5vw, 26px);
-        color: #4b0082;
         letter-spacing: 5px;
+        font-weight: 800;
         text-transform: uppercase;
-        margin: 10px 0;
-    }
-    .main-title-glass span { color: #7d2ae8; }
-
-    .sub-hint-glass {
-        font-family: 'Montserrat', sans-serif;
-        font-size: clamp(7px, 1.8vw, 10px);
-        color: #7d2ae8;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        margin-bottom: 35px;
-        font-weight: 600;
-        opacity: 0.8;
+        display: block;
+        margin-bottom: 5px;
+        opacity: 0.9;
     }
 
-    /* --- MAGIC: Single Line Flexbox --- */
-    .single-line-nav {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap; /* ఇది అస్సలు కిందకి రానివ్వదు */
-        justify-content: center;
-        align-items: center;
-        gap: 5px; /* బటన్ల మధ్య సన్నని గ్యాప్ */
+    .main-heading {
+        font-family: 'Syncopate', sans-serif;
+        font-size: clamp(18px, 4.5vw, 24px);
+        color: #4b0082;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin: 0;
+        font-weight: 700;
+    }
+
+    .main-heading span { color: #7d2ae8; }
+
+    /* --- THE SYMMETRY FIX: ఖచ్చితంగా సమానంగా ఒకే లైన్ లో --- */
+    .nav-table-row {
+        display: table;
+        table-layout: fixed; /* 5 బటన్లని పక్కాగా 20% చొప్పున పంచుతుంది */
         width: 100%;
-        overflow: hidden; /* స్క్రీన్ దాటి బయటకు వెళ్లకుండా */
+        border-spacing: 6px; 
     }
 
-    .nav-pill {
-        flex: 1; /* అన్ని బటన్లు ఒకేలా సర్దుకుంటాయి */
+    .nav-btn {
+        display: table-cell;
+        vertical-align: middle;
         background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(125, 42, 232, 0.1);
         color: #4b0082;
         
-        /* Font size adjusts to stay in one line */
+        padding: 16px 0;
+        border-radius: 12px; /* క్యూట్ అండ్ స్మూత్ లుక్ */
         font-family: 'Montserrat', sans-serif;
-        font-size: clamp(6px, 1.5vw, 10px); 
-        padding: 15px 2px;
-        border-radius: 8px;
+        font-size: clamp(5.5px, 1.3vw, 10px); 
         font-weight: 800;
         cursor: pointer;
         text-transform: uppercase;
-        white-space: nowrap; /* టెక్స్ట్ విరిగిపోకుండా ఒకే లైన్ లో ఉంటుంది */
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        white-space: nowrap;
+        transition: all 0.4s ease;
+        text-align: center;
     }
 
-    /* Active State */
-    .nav-pill.active {
+    /* Active State (Purple Theme) */
+    .nav-btn.active {
         background: #7d2ae8;
-        color: #fff !important;
+        color: #ffffff !important;
         border: none;
-        box-shadow: 0 8px 20px rgba(125, 42, 232, 0.3);
+        box-shadow: 0 10px 20px rgba(125, 42, 232, 0.3);
         transform: translateY(-3px);
     }
 
     /* Hover */
-    .nav-pill:hover:not(.active) {
-        background: rgba(255, 255, 255, 0.9);
+    .nav-btn:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.95);
         transform: translateY(-3px);
         color: #7d2ae8;
     }
 
-    /* Mobile Specific Gap Adjustment */
+    /* Mobile Adjustment - Keeping it in ONE line */
     @media screen and (max-width: 480px) {
-        .single-line-nav { gap: 3px; }
-        .nav-pill { padding: 12px 2px; border-radius: 4px; }
+        .nav-table-row { border-spacing: 3px; }
+        .nav-btn { 
+            padding: 12px 0; 
+            border-radius: 6px;
+        }
     }
 </style>
     <!-- Project Spotlight -->
