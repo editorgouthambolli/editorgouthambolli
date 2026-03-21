@@ -240,75 +240,133 @@
     </div>
     
   <style>
-    /* --- Universal Glass Grid --- */
-    .universal-glass-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 12px;
-        margin-top: 20px;
+   <!-- Premium Font Load -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+
+<div class="unique-single-line-container">
+    
+    <!-- Top Wedding Tag -->
+    <div class="wedding-tag-line">
+        <span class="tag-text">WEDDING</span>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header-content">
+        <h2 class="main-title-glass">Creative <span>Categories</span></h2>
+        <p class="sub-hint-glass">Select a Genre to Explore</p>
+    </div>
+
+    <!-- The Single Line Navigation (No Wrap) -->
+    <div class="single-line-nav">
+        <div class="nav-pill" onclick="toggleWork('titles')">TITLE DESIGN</div>
+        <div class="nav-pill" onclick="toggleWork('shorts')">SHORT FILMS</div>
+        <div class="nav-pill active" onclick="toggleWork('invites')">WEDDING INVITATION</div>
+        <div class="nav-pill" onclick="toggleWork('vlogs')">VLOGS</div>
+        <div class="nav-pill" onclick="toggleWork('reels')">REELS & SHORTS</div>
+    </div>
+</div>
+
+<style>
+    .unique-single-line-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 5px;
+        text-align: center;
+        box-sizing: border-box;
     }
 
-    /* --- Base Button (White Glass Style) --- */
-    .glass-btn-final {
-        /* వైట్ గ్లాస్ ఎఫెక్ట్ */
-        background: rgba(255, 255, 255, 0.6); 
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        
-        /* టెక్స్ట్ కలర్ పర్పుల్ */
-        color: #4b0082; 
-        padding: 16px 8px;
-        border-radius: 12px;
+    /* --- Wedding Tag Styling --- */
+    .wedding-tag-line {
+        margin-bottom: 15px;
+    }
+    .tag-text {
         font-family: 'Montserrat', sans-serif;
-        font-size: clamp(8px, 1.4vw, 10px);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 6px;
+        color: #7d2ae8;
+        border-bottom: 1.5px solid #7d2ae8;
+        padding-bottom: 3px;
+    }
+
+    /* --- Titles --- */
+    .main-title-glass {
+        font-family: 'Syncopate', sans-serif;
+        font-size: clamp(16px, 4.5vw, 26px);
+        color: #4b0082;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin: 10px 0;
+    }
+    .main-title-glass span { color: #7d2ae8; }
+
+    .sub-hint-glass {
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(7px, 1.8vw, 10px);
+        color: #7d2ae8;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+
+    /* --- MAGIC: Single Line Flexbox --- */
+    .single-line-nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; /* ఇది అస్సలు కిందకి రానివ్వదు */
+        justify-content: center;
+        align-items: center;
+        gap: 5px; /* బటన్ల మధ్య సన్నని గ్యాప్ */
+        width: 100%;
+        overflow: hidden; /* స్క్రీన్ దాటి బయటకు వెళ్లకుండా */
+    }
+
+    .nav-pill {
+        flex: 1; /* అన్ని బటన్లు ఒకేలా సర్దుకుంటాయి */
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        color: #4b0082;
+        
+        /* Font size adjusts to stay in one line */
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(6px, 1.5vw, 10px); 
+        padding: 15px 2px;
+        border-radius: 8px;
         font-weight: 800;
         cursor: pointer;
         text-transform: uppercase;
-        transition: all 0.4s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        white-space: nowrap;
+        white-space: nowrap; /* టెక్స్ట్ విరిగిపోకుండా ఒకే లైన్ లో ఉంటుంది */
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
 
-    /* --- Hover Effect (Soft Purple Tint) --- */
-    .glass-btn-final:hover:not(.active) {
-        background: rgba(234, 218, 255, 0.7); /* లైట్ పర్పుల్ టింట్ */
-        transform: translateY(-5px);
-        border-color: #7d2ae8;
+    /* Active State */
+    .nav-pill.active {
+        background: #7d2ae8;
+        color: #fff !important;
+        border: none;
+        box-shadow: 0 8px 20px rgba(125, 42, 232, 0.3);
+        transform: translateY(-3px);
+    }
+
+    /* Hover */
+    .nav-pill:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-3px);
         color: #7d2ae8;
     }
 
-    /* --- Active/Selected Button (Solid Purple) --- */
-    .glass-btn-final.active {
-        background: #7d2ae8; /* పర్పుల్ కలర్ */
-        color: #ffffff !important;
-        border: none;
-        box-shadow: 0 10px 25px rgba(125, 42, 232, 0.4);
-        transform: translateY(-3px) scale(1.02);
-    }
-
-    /* --- Responsive Fix for Mobile --- */
-    @media screen and (max-width: 650px) {
-        .universal-glass-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        .glass-btn-final:last-child {
-            grid-column: span 2;
-        }
-        .glass-btn-final {
-            padding: 14px 5px;
-        }
+    /* Mobile Specific Gap Adjustment */
+    @media screen and (max-width: 480px) {
+        .single-line-nav { gap: 3px; }
+        .nav-pill { padding: 12px 2px; border-radius: 4px; }
     }
 </style>
-
-<div class="universal-glass-grid">
-    <div class="glass-btn-final" onclick="toggleWork('titles')">TITLE DESIGNING</div>
-    <div class="glass-btn-final" onclick="toggleWork('shorts')">SHORT FILMS</div>
-    <div class="glass-btn-final active" onclick="toggleWork('invites')">WEDDING INVITES</div>
-    <div class="glass-btn-final" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
-    <div class="glass-btn-final" onclick="toggleWork('reels')">VIRAL REELS</div>
-</div>
     <!-- Project Spotlight -->
     <div style="text-align: center; margin-bottom: 20px;">
         <span style="color: #7c3aed; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; opacity: 0.6;">Project Spotlight</span>
