@@ -157,147 +157,94 @@
         <div style="font-size: 0.65rem; color: #666; margin-top: 3px;">Mobile Motion Design</div>
     </div>
 
-    <!-- Content Writing (NEW) -->
-    <div style="padding: 10px 15px; text-align: center; border-radius: 12px; border: 1.2px solid rgba(125, 42, 232, 0.3); background: rgba(125, 42, 232, 0.02);">
-        <div style="font-weight: 800; color: #4c1d95; font-size: 0.8rem; letter-spacing: 0.5px;">CONTENT WRITING</div>
-        <div style="font-size: 0.65rem; color: #666; margin-top: 3px;">Scripts & Captions</div>
-    </div>
-
-    <!-- Film Analysis (NEW) -->
-    <div style="padding: 10px 15px; text-align: center; border-radius: 12px; border: 1.2px solid rgba(125, 42, 232, 0.3); background: rgba(125, 42, 232, 0.02);">
-        <div style="font-weight: 800; color: #4c1d95; font-size: 0.8rem; letter-spacing: 0.5px;">FILM ANALYSIS</div>
-        <div style="font-size: 0.65rem; color: #666; margin-top: 3px;">Styles & Cinematics</div>
-    </div>
-
-</div>
-
-
 </div>
 
 </div>
 
-<div style="max-width: 1000px; margin: 0 auto; font-family: 'Inter', 'Segoe UI', sans-serif; text-align: center;">
-
-    <<!-- 1. Font & Basic Setup -->
-<link href="https://fonts.cdnfonts.com/css/chopsic" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-
+<!-- Glass Effect Setup -->
 <style>
     :root {
-        --primary-purple: #7d2ae8;
-        --dark-purple: #4b0082;
-        --soft-shadow: rgba(0, 0, 0, 0.05);
-        --glow-shadow: rgba(125, 42, 232, 0.2);
+        --glass-bg: rgba(255, 255, 255, 0.4); /* అద్దం లాంటి వైట్ టింట్ */
+        --glass-border: rgba(255, 255, 255, 0.5);
+        --purple-glow: rgba(125, 42, 232, 0.2);
     }
 
-    .universal-container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        box-sizing: border-box;
-        font-family: 'Inter', sans-serif;
+    /* Skills బాక్సులకి గ్లాస్ ఎఫెక్ట్ */
+    .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px); /* ఇది అసలైన గ్లాస్ బ్లర్ ఎఫెక్ట్ */
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid var(--glass-border);
+        border-radius: 15px;
+        padding: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        transition: 0.4s;
     }
 
-    
-
-    /* --- Creative Categories Section --- */
-    .chopsic-header {
-        text-align: center;
-        margin: 40px 0;
-        font-family: 'Chopsic', sans-serif;
+    .glass-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.6);
+        border-color: #7d2ae8;
     }
 
-    .chopsic-header h2 {
-        color: var(--dark-purple);
-        font-size: clamp(22px, 5vw, 32px); /* Responsive font size */
-        letter-spacing: 4px;
-        margin: 0;
-        text-shadow: 2px 2px 8px var(--soft-shadow);
-        text-transform: uppercase;
-    }
-
-    .chopsic-header p {
-        color: var(--primary-purple);
-        font-size: clamp(10px, 2.5vw, 13px);
-        letter-spacing: 2px;
-        margin-top: 15px;
-        text-shadow: 0 0 10px var(--glow-shadow);
-    }
-
-    /* --- Categories Grid --- */
-    .categories-wrapper {
-        display: grid;
-        /* Desktop: 5 columns | Mobile: 2 columns */
-        grid-template-columns: repeat(5, 1fr); 
-        gap: 12px;
-        margin-top: 30px;
-    }
-
-    .cat-btn {
-        background: #fff;
-        color: var(--primary-purple);
-        border: 1px solid rgba(125, 42, 232, 0.1);
+    /* Category బటన్లకి గ్లాస్ ఎఫెక్ట్ */
+    .glass-btn {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #4b0082;
         padding: 15px 10px;
-        border-radius: 8px;
-        font-size: 10px;
+        border-radius: 10px;
         font-weight: 800;
+        font-size: 10px;
         text-align: center;
         cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0 4px 10px var(--soft-shadow);
-        white-space: nowrap;
         text-transform: uppercase;
+        transition: 0.3s;
     }
 
-    .cat-btn.active {
-        background: var(--primary-purple);
-        color: #fff;
-        box-shadow: 0 10px 20px rgba(125, 42, 232, 0.3);
-    }
-
-    /* --- Universal Responsive Breaks --- */
-    @media (max-width: 992px) {
-        .categories-wrapper { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    @media (max-width: 600px) {
-        .categories-wrapper { grid-template-columns: repeat(2, 1fr); }
-        .cat-btn:last-child { grid-column: span 2; } /* Makes 5th button full width on mobile */
-        .skills-wrapper { grid-template-columns: 1fr; }
-        .chopsic-header h2 { letter-spacing: 2px; }
+    .glass-btn.active {
+        background: #7d2ae8;
+        color: #ffffff;
+        box-shadow: 0 0 15px rgba(125, 42, 232, 0.5);
+        border: none;
     }
 </style>
 
-<div class="universal-container">
+<div style="max-width: 1000px; margin: 0 auto; padding: 20px; font-family: 'Inter', sans-serif;">
+    
     <!-- Skills Section -->
-    <div class="section-title-sm">💡 Skills & Software Expertise</div>
-    <div class="skills-wrapper">
-        <div class="skill-card"><b>🎞️ Video Editing</b><span>YouTube, Reels, Shorts</span></div>
-        <div class="skill-card"><b>💥 After Effects</b><span>VFX & Motion Graphics</span></div>
-        <div class="skill-card"><b>🎬 Premiere Pro</b><span>Timeline Editing</span></div>
-        <div class="skill-card"><b>📱 Alight Motion</b><span>Mobile Editing</span></div>
-        <div class="skill-card"><b>✍️ Content Writing</b><span>Scripts & Captions</span></div>
-        <div class="skill-card"><b>🧠 Film Analysis</b><span>Styles & Cinematics</span></div>
+    <div style="text-align: center; margin-bottom: 25px;">
+        <p style="font-size: 11px; color: #4b0082; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;">
+            💎 Technical Arsenal
+        </p>
     </div>
 
-    <!-- Creative Categories Section -->
-    <div class="chopsic-header">
-        <h2>Creative <span style="color: var(--primary-purple);">Categories</span></h2>
-        <p>Select a Genre to Explore</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 60px;">
+        <div class="glass-card"><b>🎞️ Video Editing</b><br><span style="font-size: 11px; color: #7d2ae8;">YouTube, Reels, Shorts</span></div>
+        <div class="glass-card"><b>💥 After Effects</b><br><span style="font-size: 11px; color: #7d2ae8;">VFX & Motion Graphics</span></div>
+        <div class="glass-card"><b>🎬 Premiere Pro</b><br><span style="font-size: 11px; color: #7d2ae8;">Timeline Editing</span></div>
+        <div class="glass-card"><b>📱 Alight Motion</b><br><span style="font-size: 11px; color: #7d2ae8;">Mobile Editing</span></div>
+        <div class="glass-card"><b>✍️ Content Writing</b><br><span style="font-size: 11px; color: #7d2ae8;">Scripts & Captions</span></div>
+        <div class="glass-card"><b>🧠 Film Analysis</b><br><span style="font-size: 11px; color: #7d2ae8;">Styles & Cinematics</span></div>
     </div>
 
-    <!-- Category Grid -->
-    <div class="categories-wrapper">
-        <div class="cat-btn" onclick="toggleWork('titles')">TITLE DESIGNING</div>
-        <div class="cat-btn" onclick="toggleWork('shorts')">SHORT FILMS</div>
-        <div class="cat-btn active" onclick="toggleWork('invites')">WEDDING INVITES</div>
-        <div class="cat-btn" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
-        <div class="cat-btn" onclick="toggleWork('reels')">VIRAL REELS</div>
+    <!-- Creative Categories -->
+    <div style="text-align: center; margin-bottom: 30px; font-family: 'Chopsic', sans-serif;">
+        <h2 style="color: #4b0082; font-size: clamp(22px, 6vw, 30px); letter-spacing: 5px; margin: 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
+            Creative <span style="color: #7d2ae8;">Categories</span>
+        </h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
+        <div class="glass-btn" onclick="toggleWork('titles')">TITLE DESIGNING</div>
+        <div class="glass-btn" onclick="toggleWork('shorts')">SHORT FILMS</div>
+        <div class="glass-btn active" onclick="toggleWork('invites')">WEDDING INVITES</div>
+        <div class="glass-btn" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
+        <div class="glass-btn" onclick="toggleWork('reels')">VIRAL REELS</div>
     </div>
 </div>
-
-    
     <!-- Project Spotlight -->
     <div style="text-align: center; margin-bottom: 20px;">
         <span style="color: #7c3aed; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; opacity: 0.6;">Project Spotlight</span>
