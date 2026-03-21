@@ -180,56 +180,130 @@
     </div>
 </div>
 
-<!-- 7. SELECTED WORKS (Workstation Folders) -->
-<div style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 20px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1); margin: 30px auto; width: 90%; max-width: 500px; text-align: center;">
+<!-- SELECTED WORKS SECTION START -->
+<div id="project-station" style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 25px; padding: 30px 20px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 10px 40px rgba(124, 58, 237, 0.1); margin: 40px auto; width: 95%; max-width: 900px; text-align: center; color: #1f1f1f; -webkit-tap-highlight-color: transparent;">
     
-    <div style="margin-bottom: 20px;">
-        <span style="background: #7c3aed; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;">📂 Selected Works</span>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px;">
+        <h2 style="margin: 0; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; color: #7c3aed;">SELECTED WORKS</h2>
+    </div>
+    <div style="color: #6d28d9; font-size: 0.6rem; font-family: monospace; letter-spacing: 1px; text-transform: lowercase; margin-bottom: 25px;">root/goutham_bolli/projects_2026</div>
+
+    <!-- Scrollable Folder Dock -->
+    <div id="folder-dock" onscroll="playScrollSound()" style="display: flex; overflow-x: auto; gap: 20px; padding: 15px 10px; margin-bottom: 15px; scroll-behavior: smooth; cursor: grab; -webkit-overflow-scrolling: touch; scrollbar-width: none; justify-content: start; -webkit-tap-highlight-color: transparent;">
+        
+        <div onclick="openWork(this, 'Short Films')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
+            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">SHORT FILMS</div>
+            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        </div>
+
+        <div onclick="openWork(this, 'Title Designs')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
+            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">TITLE DESIGNS</div>
+            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        </div>
+
+        <div onclick="openWork(this, 'Wedding Invitations')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
+            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">WEDDING INVITES</div>
+            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        </div>
+
+        <div onclick="openWork(this, 'Vlogs')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
+            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">VLOGS</div>
+            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        </div>
+
+        <div onclick="openWork(this, 'Reels and Shorts')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
+            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">REELS & SHORTS</div>
+            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        </div>
     </div>
 
-    <!-- 5 Folders Dock -->
-    <div id="folder-dock" style="display: flex; overflow-x: auto; gap: 15px; padding: 10px 5px; scrollbar-width: none; -webkit-overflow-scrolling: touch; justify-content: start;">
-        <div onclick="openWork(this, 'Short Films')" style="min-width: 85px; cursor: pointer;">
-            <div style="font-size: 2rem; margin-bottom: 5px;">📂</div>
-            <div style="font-size: 0.55rem; font-weight: 700; color: #7c3aed; text-transform: uppercase;">Short Films</div>
-        </div>
-        <div onclick="openWork(this, 'Title Designs')" style="min-width: 85px; cursor: pointer;">
-            <div style="font-size: 2rem; margin-bottom: 5px;">📂</div>
-            <div style="font-size: 0.55rem; font-weight: 700; color: #7c3aed; text-transform: uppercase;">Title Designs</div>
-        </div>
-        <div onclick="openWork(this, 'Wedding Invitations')" style="min-width: 95px; cursor: pointer;">
-            <div style="font-size: 2rem; margin-bottom: 5px;">📂</div>
-            <div style="font-size: 0.55rem; font-weight: 700; color: #7c3aed; text-transform: uppercase;">Wedding Invites</div>
-        </div>
-        <div onclick="openWork(this, 'Vlogs')" style="min-width: 85px; cursor: pointer;">
-            <div style="font-size: 2rem; margin-bottom: 5px;">📂</div>
-            <div style="font-size: 0.55rem; font-weight: 700; color: #7c3aed; text-transform: uppercase;">Vlogs</div>
-        </div>
-        <div onclick="openWork(this, 'Reels and Shorts')" style="min-width: 95px; cursor: pointer;">
-            <div style="font-size: 2rem; margin-bottom: 5px;">📂</div>
-            <div style="font-size: 0.55rem; font-weight: 700; color: #7c3aed; text-transform: uppercase;">Reels & Shorts</div>
-        </div>
-    </div>
+    <div style="color: #666; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px;">Swipe to explore folders</div>
 
-    <!-- Media Player Area -->
-    <div id="work-player" style="background: #000; width: 100%; aspect-ratio: 16/9; border-radius: 15px; margin-top: 20px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(124, 58, 237, 0.2);">
-        <p style="color: rgba(255,255,255,0.4); font-size: 0.55rem; text-transform: uppercase;">Select a folder to play</p>
+    <!-- Glassy Media Player -->
+    <div id="main-player" style="background: #000; width: 100%; aspect-ratio: 16/9; border-radius: 15px; overflow: hidden; border: 2px solid rgba(124, 58, 237, 0.4); box-shadow: inset 0 0 20px rgba(124, 58, 237, 0.2), 0 5px 20px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div id="placeholder-ui" style="padding: 20px; animation: fadeIn 1s ease;">
+            <div style="font-size: 2.5rem; color: #7c3aed; margin-bottom: 10px; animation: pulse 2s infinite;">🎬</div>
+            <p style="color: white; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">SELECT A FOLDER TO PLAY</p>
+            <p style="color: #666; font-size: 0.65rem; font-style: italic; margin-top: 5px;">Your cinematic journey starts here...</p>
+        </div>
     </div>
 </div>
 
-<script>
-    function openWork(element, name) {
-        document.querySelectorAll('#folder-dock > div').forEach(d => { d.style.opacity = '0.5'; d.style.transform = 'scale(1)'; });
-        element.style.opacity = '1';
-        element.style.transform = 'scale(1.1)';
-        const player = document.getElementById('work-player');
-        player.innerHTML = `<div style="text-align:center; color:white;"><p style="font-size:0.6rem; text-transform:uppercase;">Opening ${name}...</p></div>`;
-    }
-</script>
-
+<!-- Styles and Scripts -->
 <style>
+    * { -webkit-tap-highlight-color: transparent; outline: none; }
     #folder-dock::-webkit-scrollbar { display: none; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes pulse { 0% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } 100% { opacity: 0.6; transform: scale(1); } }
+    @media (min-width: 768px) { #folder-dock { justify-content: center; } }
 </style>
 
-</body>
-</html>
+<script>
+    // 🔊 High Volume Audio Assets
+    const clickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3'); 
+    const scrollSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'); 
+
+    clickSound.volume = 1.0; 
+    scrollSound.volume = 0.8; 
+
+    let isAudioUnlocked = false;
+
+    // Unlock Audio on First Tap
+    function unlockAudio() {
+        if (!isAudioUnlocked) {
+            clickSound.play().then(() => { clickSound.pause(); clickSound.currentTime = 0; }).catch(e => {});
+            scrollSound.play().then(() => { scrollSound.pause(); scrollSound.currentTime = 0; }).catch(e => {});
+            isAudioUnlocked = true;
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('touchstart', unlockAudio);
+        }
+    }
+
+    document.addEventListener('click', unlockAudio);
+    document.addEventListener('touchstart', unlockAudio);
+
+    // Folder Click Logic
+    function openWork(element, name) {
+        if (isAudioUnlocked) {
+            clickSound.currentTime = 0; 
+            clickSound.play().catch(e => {});
+        }
+
+        document.querySelectorAll('.folder-btn').forEach(f => {
+            f.style.color = '#e1e1e1';
+            f.querySelector('.active-indicator').style.width = '0%';
+            f.style.transform = 'scale(1)';
+        });
+
+        element.style.color = '#7c3aed';
+        element.querySelector('.active-indicator').style.width = '100%';
+        element.style.transform = 'scale(1.1)';
+
+        const player = document.getElementById('main-player');
+        player.innerHTML = `
+            <div style="text-align: center; color: white; padding: 20px; animation: fadeIn 0.5s ease;">
+                <div style="font-size: 2.5rem; margin-bottom: 10px;">🎞️</div>
+                <p style="font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Opening: ${name}</p>
+                <p style="font-size: 0.65rem; color: #7c3aed; font-style: italic;">Fetching Masterpieces...</p>
+            </div>
+        `;
+    }
+
+    // Scroll Sound Logic
+    let scrollTimeout;
+    function playScrollSound() {
+        if (isAudioUnlocked) {
+            if (!scrollTimeout) {
+                scrollSound.currentTime = 0;
+                scrollSound.play().catch(e => {});
+                scrollTimeout = setTimeout(() => { scrollTimeout = null; }, 150);
+            }
+        }
+    }
+</script>
+<!-- SELECTED WORKS SECTION END -->
