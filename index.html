@@ -130,6 +130,63 @@
         </p>
     </div>
          
+<!-- 7వ బాక్స్: SELECTED WORKS (With Heading & OS Path) -->
+<div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 20px; padding: 25px 15px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); margin: 25px auto; width: 92%; max-width: 500px; text-align: center; color: white; position: relative; overflow: hidden;">
+    
+    <!-- మెయిన్ హెడింగ్ -->
+    <h2 style="margin: 0 0 5px 0; font-size: 1.1rem; letter-spacing: 1px; color: #1a1a1a; text-transform: uppercase; font-weight: 800;">
+        EXPLORE MY PROJECTS
+    </h2>
+    
+    <!-- OS Style Path (చిన్న డైరెక్టరీ లైన్) -->
+    <div style="background: rgba(0,0,0,0.05); padding: 4px 10px; border-radius: 8px; display: inline-block; margin-bottom: 15px; font-family: monospace; font-size: 0.6rem; color: #555; border: 1px solid rgba(0,0,0,0.05);">
+        root > goutham_bolli > <span style="color: #7c3aed;">selected_works_2026</span>
+    </div>
+
+    <!-- Horizontal Folder Dock -->
+    <div id="folder-dock" style="display: flex; overflow-x: auto; gap: 20px; padding: 15px 10px; margin-top: 5px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; cursor: grab; align-items: flex-end;">
+        
+        <!-- Folder 1 -->
+        <div onclick="playWorkSound(); selectFolder(this)" style="min-width: 85px; text-align: center; transition: 0.3s; cursor: pointer;">
+            <div style="font-size: 2.2rem; margin-bottom: 8px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #222; text-transform: uppercase;">Short Films</div>
+        </div>
+
+        <!-- Folder 2 -->
+        <div onclick="playWorkSound(); selectFolder(this)" style="min-width: 85px; text-align: center; transition: 0.3s; cursor: pointer;">
+            <div style="font-size: 2.2rem; margin-bottom: 8px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #222; text-transform: uppercase;">Title Designs</div>
+        </div>
+
+        <!-- Folder 3 -->
+        <div onclick="playWorkSound(); selectFolder(this)" style="min-width: 85px; text-align: center; transition: 0.3s; cursor: pointer;">
+            <div style="font-size: 2.2rem; margin-bottom: 8px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #222; text-transform: uppercase;">Weddings</div>
+        </div>
+
+        <!-- Folder 4 -->
+        <div onclick="playWorkSound(); selectFolder(this)" style="min-width: 85px; text-align: center; transition: 0.3s; cursor: pointer;">
+            <div style="font-size: 2.2rem; margin-bottom: 8px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #222; text-transform: uppercase;">Vlogs</div>
+        </div>
+
+        <!-- Folder 5 -->
+        <div onclick="playWorkSound(); selectFolder(this)" style="min-width: 85px; text-align: center; transition: 0.3s; cursor: pointer;">
+            <div style="font-size: 2.2rem; margin-bottom: 8px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">📂</div>
+            <div style="font-size: 0.65rem; font-weight: 700; color: #222; text-transform: uppercase;">RT Shorts</div>
+        </div>
+    </div>
+
+    <p style="font-size: 0.55rem; color: #888; margin: 10px 0 20px 0; text-transform: uppercase; letter-spacing: 1px;">Swipe to browse folders</p>
+
+    <!-- Preview Screen (Video Player Area) -->
+    <div id="video-preview" style="background: #000; width: 100%; aspect-ratio: 16/9; border-radius: 15px; overflow: hidden; border: 2px solid rgba(124, 58, 237, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 20px rgba(124, 58, 237, 0.2);">
+        <div style="text-align: center;">
+             <div style="font-size: 1.5rem; margin-bottom: 5px;">🎬</div>
+             <p style="color: #7c3aed; font-size: 0.65rem; font-weight: bold; letter-spacing: 1px; margin: 0;">SELECT A CATEGORY</p>
+        </div>
+    </div>
+</div>
 
 </div>
 
