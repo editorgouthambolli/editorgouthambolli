@@ -239,40 +239,124 @@
         <div class="glass-box"><b>🧠 Film Analysis</b><br><span style="font-size: 11px; color: #7d2ae8;">Styles & Cinematics</span></div>
     </div>
 
-    <!-- Categories Section -->
-    <div style="text-align: center; margin: 80px 0 40px 0; font-family: 'Chopsic', sans-serif;">
-        <h2 class="chopsic-title" style="color: #4b0082; font-size: 32px; text-transform: uppercase; letter-spacing: 6px; margin: 0;">
-            Creative <span style="color: #7d2ae8;">Categories</span>
-        </h2>
-        <p style="font-size: 12px; color: #7d2ae8; text-transform: uppercase; letter-spacing: 3px; margin-top: 15px; font-family: 'Inter', sans-serif; font-weight: 600;">
-            Select a Genre to Explore
-        </p>
+   
+
+    <!-- Dream Portfolio: Universal Responsive Categories -->
+<div class="dream-portfolio-container">
+    <div class="category-header-text">
+        <h2 class="chopsic-glow">Creative <span>Categories</span></h2>
+        <p class="explore-hint">Select a Genre to Explore</p>
     </div>
 
-    <div class="category-grid">
-        <div class="glass-btn" onclick="toggleWork('titles')">TITLE DESIGNING</div>
-        <div class="glass-btn" onclick="toggleWork('shorts')">SHORT FILMS</div>
-        <div class="glass-btn active" onclick="toggleWork('invites')">WEDDING INVITES</div>
-        <div class="glass-btn" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
-        <div class="glass-btn" onclick="toggleWork('reels')">VIRAL REELS</div>
+    <div class="universal-glass-grid">
+        <div class="glass-btn-final" onclick="toggleWork('titles')">TITLE DESIGNING</div>
+        <div class="glass-btn-final" onclick="toggleWork('shorts')">SHORT FILMS</div>
+        <div class="glass-btn-final active" onclick="toggleWork('invites')">WEDDING INVITES</div>
+        <div class="glass-btn-final" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
+        <div class="glass-btn-final" onclick="toggleWork('reels')">VIRAL REELS</div>
     </div>
 </div>
 
-    <!-- Creative Categories -->
-    <div style="text-align: center; margin-bottom: 30px; font-family: 'Chopsic', sans-serif;">
-        <h2 style="color: #4b0082; font-size: clamp(22px, 6vw, 30px); letter-spacing: 5px; margin: 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
-            Creative <span style="color: #7d2ae8;">Categories</span>
-        </h2>
-    </div>
+<style>
+    /* 1. Main Container - అన్నీ డివైజ్ లలో సెట్ అవ్వడానికి */
+    .dream-portfolio-container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+    }
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
-        <div class="glass-btn" onclick="toggleWork('titles')">TITLE DESIGNING</div>
-        <div class="glass-btn" onclick="toggleWork('shorts')">SHORT FILMS</div>
-        <div class="glass-btn active" onclick="toggleWork('invites')">WEDDING INVITES</div>
-        <div class="glass-btn" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
-        <div class="glass-btn" onclick="toggleWork('reels')">VIRAL REELS</div>
-    </div>
-</div>
+    /* 2. Title Styling */
+    .chopsic-glow {
+        font-family: 'Chopsic', sans-serif;
+        color: #4b0082;
+        font-size: clamp(22px, 5vw, 32px); /* Auto scaling font */
+        letter-spacing: 5px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+    .chopsic-glow span { color: #7d2ae8; }
+
+    .explore-hint {
+        font-size: clamp(9px, 2vw, 11px);
+        color: #7d2ae8;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 40px;
+        opacity: 0.8;
+    }
+
+    /* 3. The Grid System - ఇది అన్ని డివైజ్ లని మేనేజ్ చేస్తుంది */
+    .universal-glass-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* Laptop: 5 columns */
+        gap: 15px;
+    }
+
+    /* 4. Glass Button Styling */
+    .glass-btn-final {
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(15px); /* అద్దం లాంటి ఎఫెక్ట్ */
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #4b0082;
+        padding: clamp(12px, 2vw, 18px); /* Responsive padding */
+        border-radius: 12px;
+        font-size: clamp(8px, 1.5vw, 10px); /* Font scales with device */
+        font-weight: 800;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    /* Active & Hover States */
+    .glass-btn-final.active {
+        background: #7d2ae8;
+        color: #fff !important;
+        border: none;
+        box-shadow: 0 10px 25px rgba(125, 42, 232, 0.4);
+        transform: translateY(-5px);
+    }
+
+    .glass-btn-final:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.75);
+        transform: translateY(-5px);
+        border-color: #7d2ae8;
+    }
+
+    /* --- Universal Device Sync (Media Queries) --- */
+    
+    /* For Tablets (iPad, etc.) */
+    @media screen and (max-width: 1024px) {
+        .universal-glass-grid {
+            grid-template-columns: repeat(3, 1fr); /* 3 in a row */
+        }
+    }
+
+    /* For Mobiles (iPhone, Samsung, etc.) */
+    @media screen and (max-width: 650px) {
+        .universal-glass-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 in a row */
+            gap: 10px;
+        }
+        /* 5th Button full width to look professional */
+        .glass-btn-final:last-child {
+            grid-column: span 2; 
+        }
+        .chopsic-glow { letter-spacing: 3px; }
+    }
+
+    /* For very small screens */
+    @media screen and (max-width: 350px) {
+        .glass-btn-final { font-size: 8px; padding: 10px 5px; }
+    }
+</style>
     <!-- Project Spotlight -->
     <div style="text-align: center; margin-bottom: 20px;">
         <span style="color: #7c3aed; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; opacity: 0.6;">Project Spotlight</span>
