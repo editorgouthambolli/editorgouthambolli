@@ -129,75 +129,71 @@
             My journey from crafting unique <b>Chat Edits on Alight Motion</b> to cinematic projects proves that you don't need a high-end studio to create magic. Whether it's a mobile screen or a professional timeline, my work is driven by one core philosophy: <span style="color: #7c3aed; font-weight: bold;">"Creativity has no limits when passion leads the way."</span>
         </p>
     </div>
-         <!-- TECHNICAL ARSENAL - WIDE & SLEEK VERSION -->
-<div styl<!-- TECHNICAL ARSENAL - FULL 6 BOX VERSION -->
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; padding: 0 10px;">
-    
-    <!-- Premiere Pro -->
-    <div style="padding: 10px 15px; text-align: center; border-radius: 12px; border: 1.2px solid rgba(125, 42, 232, 0.15); background: #fff;">
-        <div style="font-weight: 800; color: #4c1d95; font-size: 0.8rem; letter-spacing: 0.5px;">PREMIERE PRO</div>
-        <div style="font-size: 0.65rem; color: #666; margin-top: 3px;">Industry Standard Editing</div>
-    </div>
-
-    <!-- After Effects -->
-    <div style="padding: 10px 15px; text-align: center; border-radius: 12px; border: 1.2px solid rgba(125, 42, 232, 0.15); background: #fff;">
-        <div style="font-weight: 800; color: #4c1d95; font-size: 0.8rem; letter-spacing: 0.5px;">AFTER EFFECTS</div>
-        <div style="font-size: 0.65rem; color: #666; margin-top: 3px;">Motion Graphics & VFX</div>
-    </div>
-
-    <!-- Illustrator -->
-    <div style="padding: 10px 15px; text-align: center; border-radius: 12px; border: 1.2px solid rgba(125, 42, 232, 0.15); background: #fff;">
-        <div style="font-weight: 800; color: #4c1d95; font-size: 0.8rem; letter-spacing: 0.5px;">ILLUSTRATOR</div>
-        <div style="font-size: 0.65rem; color: #666; margin-top: 3px;">Vector Branding & Logos</div>
-    </div>
-
-    <!-- Alight Motion -->
-    <div style="padding: 10px 15px; text-align: center; border-radius: 12px; border: 1.2px solid rgba(125, 42, 232, 0.15); background: #fff;">
-        <div style="font-weight: 800; color: #4c1d95; font-size: 0.8rem; letter-spacing: 0.5px;">ALIGHT MOTION</div>
-        <div style="font-size: 0.65rem; color: #666; margin-top: 3px;">Mobile Motion Design</div>
-    </div>
+         
 
 </div>
 
 </div>
 
-<!-- Glass Effect Setup -->
+<!-- 1. Font Load & Global Styles -->
+<link href="https://fonts.cdnfonts.com/css/chopsic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
 <style>
-    :root {
-        --glass-bg: rgba(255, 255, 255, 0.4); /* అద్దం లాంటి వైట్ టింట్ */
-        --glass-border: rgba(255, 255, 255, 0.5);
-        --purple-glow: rgba(125, 42, 232, 0.2);
+    .main-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        font-family: 'Inter', sans-serif;
     }
 
-    /* Skills బాక్సులకి గ్లాస్ ఎఫెక్ట్ */
-    .glass-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(15px); /* ఇది అసలైన గ్లాస్ బ్లర్ ఎఫెక్ట్ */
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid var(--glass-border);
-        border-radius: 15px;
-        padding: 18px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-        transition: 0.4s;
+    /* --- Glassmorphism Effect --- */
+    .glass-box {
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 8px 32px 0 rgba(125, 42, 232, 0.1);
+        transition: all 0.3s ease;
+        text-align: left;
     }
 
-    .glass-card:hover {
+    .glass-box:hover {
         transform: translateY(-5px);
         background: rgba(255, 255, 255, 0.6);
         border-color: #7d2ae8;
+        box-shadow: 0 12px 40px rgba(125, 42, 232, 0.15);
     }
 
-    /* Category బటన్లకి గ్లాస్ ఎఫెక్ట్ */
+    /* --- Skills Grid (Responsive) --- */
+    .skills-grid {
+        display: grid;
+        /* Desktop: 3 columns | Tablet: 2 | Mobile: 1 */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    /* --- Category Grid --- */
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-top: 30px;
+    }
+
     .glass-btn {
         background: rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
         color: #4b0082;
-        padding: 15px 10px;
-        border-radius: 10px;
-        font-weight: 800;
+        padding: 15px 5px;
+        border-radius: 12px;
         font-size: 10px;
+        font-weight: 800;
         text-align: center;
         cursor: pointer;
         text-transform: uppercase;
@@ -206,29 +202,61 @@
 
     .glass-btn.active {
         background: #7d2ae8;
-        color: #ffffff;
-        box-shadow: 0 0 15px rgba(125, 42, 232, 0.5);
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(125, 42, 232, 0.3);
         border: none;
+    }
+
+    /* --- Mobile & Tablet Fixes --- */
+    @media (max-width: 992px) {
+        .skills-grid { grid-template-columns: repeat(2, 1fr); }
+        .category-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+        .skills-grid { grid-template-columns: 1fr; }
+        .category-grid { grid-template-columns: repeat(2, 1fr); }
+        .glass-btn:last-child { grid-column: span 2; }
+        .chopsic-title { font-size: 24px !important; letter-spacing: 3px !important; }
     }
 </style>
 
-<div style="max-width: 1000px; margin: 0 auto; padding: 20px; font-family: 'Inter', sans-serif;">
+<div class="main-container">
     
     <!-- Skills Section -->
-    <div style="text-align: center; margin-bottom: 25px;">
-        <p style="font-size: 11px; color: #4b0082; text-transform: uppercase; letter-spacing: 3px; font-weight: 800;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <p style="font-size: 12px; color: #7d2ae8; text-transform: uppercase; letter-spacing: 4px; font-weight: 800;">
             💎 Technical Arsenal
         </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 60px;">
-        <div class="glass-card"><b>🎞️ Video Editing</b><br><span style="font-size: 11px; color: #7d2ae8;">YouTube, Reels, Shorts</span></div>
-        <div class="glass-card"><b>💥 After Effects</b><br><span style="font-size: 11px; color: #7d2ae8;">VFX & Motion Graphics</span></div>
-        <div class="glass-card"><b>🎬 Premiere Pro</b><br><span style="font-size: 11px; color: #7d2ae8;">Timeline Editing</span></div>
-        <div class="glass-card"><b>📱 Alight Motion</b><br><span style="font-size: 11px; color: #7d2ae8;">Mobile Editing</span></div>
-        <div class="glass-card"><b>✍️ Content Writing</b><br><span style="font-size: 11px; color: #7d2ae8;">Scripts & Captions</span></div>
-        <div class="glass-card"><b>🧠 Film Analysis</b><br><span style="font-size: 11px; color: #7d2ae8;">Styles & Cinematics</span></div>
+    <div class="skills-grid">
+        <div class="glass-box"><b>🎞️ Video Editing</b><br><span style="font-size: 11px; color: #7d2ae8;">YouTube, Reels, Shorts</span></div>
+        <div class="glass-box"><b>💥 After Effects</b><br><span style="font-size: 11px; color: #7d2ae8;">VFX & Motion Graphics</span></div>
+        <div class="glass-box"><b>🎬 Premiere Pro</b><br><span style="font-size: 11px; color: #7d2ae8;">Timeline Editing</span></div>
+        <div class="glass-box"><b>📱 Alight Motion</b><br><span style="font-size: 11px; color: #7d2ae8;">Mobile Editing</span></div>
+        <div class="glass-box"><b>✍️ Content Writing</b><br><span style="font-size: 11px; color: #7d2ae8;">Scripts & Captions</span></div>
+        <div class="glass-box"><b>🧠 Film Analysis</b><br><span style="font-size: 11px; color: #7d2ae8;">Styles & Cinematics</span></div>
     </div>
+
+    <!-- Categories Section -->
+    <div style="text-align: center; margin: 80px 0 40px 0; font-family: 'Chopsic', sans-serif;">
+        <h2 class="chopsic-title" style="color: #4b0082; font-size: 32px; text-transform: uppercase; letter-spacing: 6px; margin: 0;">
+            Creative <span style="color: #7d2ae8;">Categories</span>
+        </h2>
+        <p style="font-size: 12px; color: #7d2ae8; text-transform: uppercase; letter-spacing: 3px; margin-top: 15px; font-family: 'Inter', sans-serif; font-weight: 600;">
+            Select a Genre to Explore
+        </p>
+    </div>
+
+    <div class="category-grid">
+        <div class="glass-btn" onclick="toggleWork('titles')">TITLE DESIGNING</div>
+        <div class="glass-btn" onclick="toggleWork('shorts')">SHORT FILMS</div>
+        <div class="glass-btn active" onclick="toggleWork('invites')">WEDDING INVITES</div>
+        <div class="glass-btn" onclick="toggleWork('vlogs')">VLOGS & TRAVEL</div>
+        <div class="glass-btn" onclick="toggleWork('reels')">VIRAL REELS</div>
+    </div>
+</div>
 
     <!-- Creative Categories -->
     <div style="text-align: center; margin-bottom: 30px; font-family: 'Chopsic', sans-serif;">
