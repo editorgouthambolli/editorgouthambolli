@@ -180,130 +180,119 @@
     </div>
 </div>
 
-<!-- SELECTED WORKS SECTION START -->
-<div id="project-station" style="background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 25px; padding: 30px 20px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 10px 40px rgba(124, 58, 237, 0.1); margin: 40px auto; width: 95%; max-width: 900px; text-align: center; color: #1f1f1f; -webkit-tap-highlight-color: transparent;">
+<!-- 📂 SELECTED WORKS - FINAL REFINED VERSION -->
+<div id="project-station" style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 25px; padding: 25px 15px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 10px 40px rgba(124, 58, 237, 0.1); margin: 30px auto; width: 92%; max-width: 800px; text-align: center; -webkit-tap-highlight-color: transparent;">
     
-    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px;">
-        <h2 style="margin: 0; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; color: #7c3aed;">SELECTED WORKS</h2>
+    <div style="margin-bottom: 20px;">
+        <span style="background: #7c3aed; color: white; padding: 6px 18px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);">📂 Selected Works</span>
     </div>
-    <div style="color: #6d28d9; font-size: 0.6rem; font-family: monospace; letter-spacing: 1px; text-transform: lowercase; margin-bottom: 25px;">root/goutham_bolli/projects_2026</div>
 
-    <!-- Scrollable Folder Dock -->
-    <div id="folder-dock" onscroll="playScrollSound()" style="display: flex; overflow-x: auto; gap: 20px; padding: 15px 10px; margin-bottom: 15px; scroll-behavior: smooth; cursor: grab; -webkit-overflow-scrolling: touch; scrollbar-width: none; justify-content: start; -webkit-tap-highlight-color: transparent;">
+    <!-- Folder Dock: Responsive Grid for Desktop, Scroll for Mobile -->
+    <div id="folder-dock" onscroll="playScrollSound()" style="display: flex; overflow-x: auto; gap: 15px; padding: 10px 5px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; justify-content: start;">
         
-        <div onclick="openWork(this, 'Short Films')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
-            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
-            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">SHORT FILMS</div>
-            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        <!-- Folder Item -->
+        <div onclick="openWork(this, 'Short Films')" class="folder-btn" style="min-width: 90px; flex-shrink: 0; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0.6; transform: scale(0.95);">
+            <div class="folder-icon" style="font-size: 2.2rem; margin-bottom: 5px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));">📂</div>
+            <div style="font-size: 0.6rem; font-weight: 800; color: #444; text-transform: uppercase; line-height: 1.2;">Short<br>Films</div>
+            <div class="indicator" style="width: 0%; height: 3px; background: #7c3aed; margin: 6px auto 0; border-radius: 10px; transition: 0.3s;"></div>
         </div>
 
-        <div onclick="openWork(this, 'Title Designs')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
-            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
-            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">TITLE DESIGNS</div>
-            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        <div onclick="openWork(this, 'Title Designs')" class="folder-btn" style="min-width: 90px; flex-shrink: 0; cursor: pointer; transition: all 0.4s; opacity: 0.6; transform: scale(0.95);">
+            <div class="folder-icon" style="font-size: 2.2rem; margin-bottom: 5px;">📂</div>
+            <div style="font-size: 0.6rem; font-weight: 800; color: #444; text-transform: uppercase; line-height: 1.2;">Title<br>Designs</div>
+            <div class="indicator" style="width: 0%; height: 3px; background: #7c3aed; margin: 6px auto 0; border-radius: 10px; transition: 0.3s;"></div>
         </div>
 
-        <div onclick="openWork(this, 'Wedding Invitations')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
-            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
-            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">WEDDING INVITES</div>
-            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        <div onclick="openWork(this, 'Wedding Invitations')" class="folder-btn" style="min-width: 90px; flex-shrink: 0; cursor: pointer; transition: all 0.4s; opacity: 0.6; transform: scale(0.95);">
+            <div class="folder-icon" style="font-size: 2.2rem; margin-bottom: 5px;">📂</div>
+            <div style="font-size: 0.6rem; font-weight: 800; color: #444; text-transform: uppercase; line-height: 1.2;">Wedding<br>Invites</div>
+            <div class="indicator" style="width: 0%; height: 3px; background: #7c3aed; margin: 6px auto 0; border-radius: 10px; transition: 0.3s;"></div>
         </div>
 
-        <div onclick="openWork(this, 'Vlogs')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
-            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
-            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">VLOGS</div>
-            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        <div onclick="openWork(this, 'Vlogs')" class="folder-btn" style="min-width: 90px; flex-shrink: 0; cursor: pointer; transition: all 0.4s; opacity: 0.6; transform: scale(0.95);">
+            <div class="folder-icon" style="font-size: 2.2rem; margin-bottom: 5px;">📂</div>
+            <div style="font-size: 0.6rem; font-weight: 800; color: #444; text-transform: uppercase; line-height: 1.2;">Vlogs<br>& More</div>
+            <div class="indicator" style="width: 0%; height: 3px; background: #7c3aed; margin: 6px auto 0; border-radius: 10px; transition: 0.3s;"></div>
         </div>
 
-        <div onclick="openWork(this, 'Reels and Shorts')" class="folder-btn" style="min-width: 95px; text-align: center; cursor: pointer; transition: 0.3s; position: relative;">
-            <div style="font-size: 2.3rem; margin-bottom: 5px; color: #e1e1e1;">📂</div>
-            <div style="font-size: 0.65rem; font-weight: 700; color: #333;">REELS & SHORTS</div>
-            <div class="active-indicator" style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0%; height: 2px; background: #7c3aed; transition: 0.3s; border-radius: 2px;"></div>
+        <div onclick="openWork(this, 'Reels and Shorts')" class="folder-btn" style="min-width: 90px; flex-shrink: 0; cursor: pointer; transition: all 0.4s; opacity: 0.6; transform: scale(0.95);">
+            <div class="folder-icon" style="font-size: 2.2rem; margin-bottom: 5px;">📂</div>
+            <div style="font-size: 0.6rem; font-weight: 800; color: #444; text-transform: uppercase; line-height: 1.2;">Reels<br>& Shorts</div>
+            <div class="indicator" style="width: 0%; height: 3px; background: #7c3aed; margin: 6px auto 0; border-radius: 10px; transition: 0.3s;"></div>
         </div>
     </div>
 
-    <div style="color: #666; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px;">Swipe to explore folders</div>
-
-    <!-- Glassy Media Player -->
-    <div id="main-player" style="background: #000; width: 100%; aspect-ratio: 16/9; border-radius: 15px; overflow: hidden; border: 2px solid rgba(124, 58, 237, 0.4); box-shadow: inset 0 0 20px rgba(124, 58, 237, 0.2), 0 5px 20px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: center; text-align: center;">
-        <div id="placeholder-ui" style="padding: 20px; animation: fadeIn 1s ease;">
-            <div style="font-size: 2.5rem; color: #7c3aed; margin-bottom: 10px; animation: pulse 2s infinite;">🎬</div>
-            <p style="color: white; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">SELECT A FOLDER TO PLAY</p>
-            <p style="color: #666; font-size: 0.65rem; font-style: italic; margin-top: 5px;">Your cinematic journey starts here...</p>
+    <!-- Media Player View -->
+    <div id="main-player" style="background: #0a0a0a; width: 100%; aspect-ratio: 16/9; border-radius: 18px; margin-top: 25px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(124, 58, 237, 0.3); position: relative; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+        <div id="placeholder-content" style="text-align: center; animation: pulse 2s infinite;">
+            <div style="font-size: 2.5rem; filter: grayscale(1); opacity: 0.5;">🎬</div>
+            <p style="color: rgba(255,255,255,0.4); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px;">Select a folder to preview</p>
         </div>
     </div>
 </div>
 
-<!-- Styles and Scripts -->
 <style>
-    * { -webkit-tap-highlight-color: transparent; outline: none; }
     #folder-dock::-webkit-scrollbar { display: none; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes pulse { 0% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } 100% { opacity: 0.6; transform: scale(1); } }
-    @media (min-width: 768px) { #folder-dock { justify-content: center; } }
+    @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 0.8; } 100% { opacity: 0.4; } }
+    @keyframes slideUp { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    /* Laptop Fix: Center folders if screen is wide */
+    @media (min-width: 768px) { #folder-dock { justify-content: center; gap: 30px; } }
 </style>
 
 <script>
-    // 🔊 High Volume Audio Assets
-    const clickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3'); 
-    const scrollSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'); 
+    const clickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3');
+    const scrollSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+    clickSound.volume = 1.0;
+    scrollSound.volume = 0.6;
 
-    clickSound.volume = 1.0; 
-    scrollSound.volume = 0.8; 
+    let audioEnabled = false;
 
-    let isAudioUnlocked = false;
-
-    // Unlock Audio on First Tap
-    function unlockAudio() {
-        if (!isAudioUnlocked) {
-            clickSound.play().then(() => { clickSound.pause(); clickSound.currentTime = 0; }).catch(e => {});
-            scrollSound.play().then(() => { scrollSound.pause(); scrollSound.currentTime = 0; }).catch(e => {});
-            isAudioUnlocked = true;
-            document.removeEventListener('click', unlockAudio);
-            document.removeEventListener('touchstart', unlockAudio);
+    function initAudio() {
+        if (!audioEnabled) {
+            clickSound.play().then(() => { clickSound.pause(); clickSound.currentTime = 0; });
+            scrollSound.play().then(() => { scrollSound.pause(); scrollSound.currentTime = 0; });
+            audioEnabled = true;
+            document.removeEventListener('touchstart', initAudio);
+            document.removeEventListener('click', initAudio);
         }
     }
+    document.addEventListener('touchstart', initAudio);
+    document.addEventListener('click', initAudio);
 
-    document.addEventListener('click', unlockAudio);
-    document.addEventListener('touchstart', unlockAudio);
+    function openWork(element, title) {
+        if (audioEnabled) { clickSound.currentTime = 0; clickSound.play().catch(()=>{}); }
 
-    // Folder Click Logic
-    function openWork(element, name) {
-        if (isAudioUnlocked) {
-            clickSound.currentTime = 0; 
-            clickSound.play().catch(e => {});
-        }
-
-        document.querySelectorAll('.folder-btn').forEach(f => {
-            f.style.color = '#e1e1e1';
-            f.querySelector('.active-indicator').style.width = '0%';
-            f.style.transform = 'scale(1)';
+        // RESET ALL: అందరినీ డల్ చేసి, సెలెక్ట్ అయిన దాన్ని మాత్రం హైలెట్ చేయడం
+        document.querySelectorAll('.folder-btn').forEach(btn => {
+            btn.style.opacity = "0.4"; // Non-selected folders go dull
+            btn.style.transform = "scale(0.9)";
+            btn.querySelector('.indicator').style.width = "0%";
+            btn.querySelector('.folder-icon').innerHTML = "📂"; // Normal folder icon
         });
 
-        element.style.color = '#7c3aed';
-        element.querySelector('.active-indicator').style.width = '100%';
-        element.style.transform = 'scale(1.1)';
+        // SET ACTIVE: సెలెక్ట్ అయిన దానికి పవర్ ఇవ్వడం
+        element.style.opacity = "1";
+        element.style.transform = "scale(1.1)";
+        element.querySelector('.indicator').style.width = "80%";
+        element.querySelector('.folder-icon').innerHTML = "📂"; // నువ్వు కావాలంటే ఇక్కడ ఓపెన్ ఫోల్డర్ 📂 ఐకాన్ మార్చుకోవచ్చు
 
         const player = document.getElementById('main-player');
         player.innerHTML = `
-            <div style="text-align: center; color: white; padding: 20px; animation: fadeIn 0.5s ease;">
-                <div style="font-size: 2.5rem; margin-bottom: 10px;">🎞️</div>
-                <p style="font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Opening: ${name}</p>
-                <p style="font-size: 0.65rem; color: #7c3aed; font-style: italic;">Fetching Masterpieces...</p>
+            <div style="color: white; text-align: center; animation: slideUp 0.4s ease-out;">
+                <p style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: #7c3aed;">Opening ${title}</p>
+                <p style="font-size: 0.5rem; color: #666;">(Video Player Coming Soon...)</p>
             </div>
         `;
     }
 
-    // Scroll Sound Logic
-    let scrollTimeout;
+    let scrollWait;
     function playScrollSound() {
-        if (isAudioUnlocked) {
-            if (!scrollTimeout) {
-                scrollSound.currentTime = 0;
-                scrollSound.play().catch(e => {});
-                scrollTimeout = setTimeout(() => { scrollTimeout = null; }, 150);
-            }
+        if (audioEnabled && !scrollWait) {
+            scrollSound.currentTime = 0;
+            scrollSound.play().catch(()=>{});
+            scrollWait = setTimeout(() => { scrollWait = null; }, 200);
         }
     }
+</script>
 </script>
 <!-- SELECTED WORKS SECTION END -->
