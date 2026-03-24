@@ -1,260 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Storyteller</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Goutham Bolli | Cinematic Master</title>
     <style>
-        body {
-            margin: 0; 
-            padding: 40px 10px;
-            background: linear-gradient(180deg, #ffffff 0%, #f3e8ff 45%, #c084fc 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif;
+        :root { --purple: #9d72ff; --glass: rgba(255, 255, 255, 0.1); }
+        body, html { margin: 0; padding: 0; background: #000; color: #fff; overflow-x: hidden; font-family: 'Segoe UI', sans-serif; }
+
+        /* 1. CINEMATIC INTRO (Netflix Style) */
+        #intro-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 9999; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
         }
+        .g-logo { font-size: 50px; font-weight: bold; color: var(--purple); text-shadow: 0 0 30px var(--purple); opacity: 0; animation: zoomIn 2s forwards; }
+        .quote { font-size: 14px; color: #ccc; margin-top: 15px; opacity: 0; animation: fadeIn 1.5s 2.2s forwards; font-style: italic; }
+        @keyframes zoomIn { to { transform: scale(1.1); opacity: 1; } }
+        @keyframes fadeIn { to { opacity: 1; } }
 
-        /* --- Motion Animations --- */
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* --- Header --- */
-        .glass-header {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 30px;
-            padding: 45px 20px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-            width: 95%;
-            max-width: 800px;
-            margin-bottom: 30px;
-            animation: fadeInDown 1s ease-out;
+        /* 2. STATIC TOP 5 SECTION (Fixed - No Change) */
+        #main-content { display: none; padding: 15px; }
+        .glass-box { 
+            background: var(--glass); backdrop-filter: blur(15px);
+            border-radius: 15px; padding: 15px; margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
+        .tag { background: var(--purple); font-size: 10px; padding: 3px 10px; border-radius: 10px; font-weight: bold; text-transform: uppercase; }
 
-        .name {
-            font-size: clamp(2.2rem, 8vw, 4.5rem);
-            background: linear-gradient(to bottom, #4c1d95 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-            text-transform: uppercase;
-            font-weight: 700;
+        /* 3. TECHNICAL ARSENAL (Grid Layout) */
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .skill-item { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; font-size: 12px; text-align: center; border: 0.5px solid rgba(255,255,255,0.1); }
+
+        /* 4. FULL SCREEN PLAYER (Zero Inch Gap) */
+        .video-container {
+            width: 100vw; height: 100vh; margin: 20px -15px; 
+            background: #000; position: relative; overflow: hidden;
         }
+        #main-player { width: 100%; height: 100%; border: none; }
 
-        /* --- Glass Box Common Style --- */
-        .glass-box {
-            margin: 25px auto;
-            padding: 40px 30px;
-            background: rgba(255, 255, 255, 0.25); 
-            backdrop-filter: blur(20px) saturate(160%);
-            -webkit-backdrop-filter: blur(20px) saturate(160%);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 25px;
-            width: 95%;
-            max-width: 800px;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-            box-sizing: border-box;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        .box-label {
-            position: absolute;
-            top: -12px;
-            left: 30px;
-            background: #7c3aed;
-            color: white;
-            font-size: 0.65rem;
-            padding: 6px 18px;
-            border-radius: 8px;
-            letter-spacing: 2px;
-            font-weight: 700;
-            z-index: 1;
-            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
-        }
-
-        .content-text {
-            font-size: clamp(0.9rem, 2vw, 1.05rem);
-            line-height: 1.8;
-            color: #1e1b4b;
-            margin: 0;
-        }
-
-        b { color: #6d28d9; }
+        /* 5. FOLDER NAV */
+        .folder-nav { display: flex; overflow-x: auto; gap: 20px; padding: 15px 0; scrollbar-width: none; }
+        .folder { min-width: 70px; text-align: center; cursor: pointer; transition: 0.3s; }
+        .folder:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body>
 
-    <!-- Step 1: Header -->
-    <div class="glass-header">
-        <h1 class="name">Goutham Bolli</h1>
-        <div style="letter-spacing: 8px; font-size: 0.65rem; color: #5b21b6; text-transform: uppercase; margin-top: 10px;">THE CINEMATIC STORYTELLER</div>
+    <div id="intro-screen">
+        <div class="g-logo">G | GOUTHAM EDITOR</div>
+        <div class="quote">"Every frame tells a story, but only a master editor makes it a masterpiece."</div>
     </div>
 
-   <!-- Step 2: Professional Summary -->
-    <div class="glass-box" style="margin: 20px 15px; padding: 25px; text-align: left; background: rgba(124, 58, 237, 0.08); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 20px; backdrop-filter: blur(10px);">
-        <div style="display: inline-block; background: #7c3aed; color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px;">PROFESSIONAL SUMMARY</div>
-        <p style="color: #333; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-            I am a passionate <span style="color: #7c3aed; font-weight: bold;">Cinematic Storyteller</span> specializing in turning raw footage into impactful visual narratives. With mastery in <b>Adobe Premiere Pro, After Effects, and Alight Motion</b>, I ensure every frame tells a story with maximum emotional impact.
-        </p>
-    </div>
-
-    <!-- Step 3: My Journey -->
-    <div class="glass-box" style="margin: 20px 15px; padding: 25px; text-align: left; background: rgba(124, 58, 237, 0.08); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 20px; backdrop-filter: blur(10px);">
-        <div style="display: inline-block; background: #7c3aed; color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px;">BEYOND LIMITS: MY JOURNEY</div>
-        <p style="color: #333; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-            Started with a smartphone in 2018, my 7-year journey is a testament that <span style="color: #7c3aed; font-weight: bold;">Ambition > Condition</span>. After mastering mobile editing with 7+ impactful shorts, I transitioned to professional desktop tools, proving that true creativity knows no boundaries.
-        </p>
-    </div>
-
-    <!-- Step 4: Breakthrough Moment -->
-    <div class="glass-box" style="margin: 20px 15px; padding: 25px; text-align: left; background: rgba(124, 58, 237, 0.08); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 20px; backdrop-filter: blur(10px);">
-        <div style="display: inline-block; background: #7c3aed; color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px;">THE BREAKTHROUGH MOMENT (2022)</div>
-        <p style="color: #333; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-            Every great story needs a bridge. In 2022, recognized by my best friend and introduced to <b>Director Prithvi</b>, I got my first big break: <span style="color: #7c3aed; font-style: italic;">'Babu Gari Lokamantha Mayajalame'</span>. This project transformed my home-grown passion into a professional mission.
-        </p>
-    </div>
-
-    <!-- Step 5: Unstoppable Passion -->
-    <div class="glass-box" style="margin: 20px 15px; padding: 25px; text-align: left; background: rgba(124, 58, 237, 0.08); border: 1px solid rgba(124, 58, 237, 0.3); border-radius: 20px; backdrop-filter: blur(10px);">
-        <div style="display: inline-block; background: #7c3aed; color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px;">UNSTOPPABLE PASSION</div>
-        <p style="color: #333; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-            My journey from crafting unique <b>Chat Edits on Alight Motion</b> to cinematic projects proves that you don't need a high-end studio to create magic. Whether it's a mobile screen or a professional timeline, my work is driven by one core philosophy: <span style="color: #7c3aed; font-weight: bold;">"Creativity has no limits when passion leads the way."</span>
-        </p>
-    </div>
-         
-
-
- <!-- 6. TECHNICAL ARSENAL (7 Skills - Included Title Designing) -->
-<div style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-radius: 20px; padding: 25px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(124, 58, 237, 0.1); margin: 30px auto; width: 90%; max-width: 500px; text-align: center;">
-    
-    <div style="margin-bottom: 20px;">
-        <span style="background: #7c3aed; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">✨ Technical Arsenal</span>
-    </div>
-
-    <!-- 7 Skills Grid: Responsive -->
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
-        <div style="background: rgba(255,255,255,0.4); padding: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-            <div style="font-size: 1.1rem;">🎞️</div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #7c3aed;">VIDEO EDITING</div>
-            <div style="font-size: 0.45rem; color: #555;">YouTube, Reels & Shorts</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.4); padding: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-            <div style="font-size: 1.1rem;">💥</div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #7c3aed;">AFTER EFFECTS</div>
-            <div style="font-size: 0.45rem; color: #555;">Visual Effects & Motion</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.4); padding: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-            <div style="font-size: 1.1rem;">🎛️</div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #7c3aed;">PREMIERE PRO</div>
-            <div style="font-size: 0.45rem; color: #555;">Professional Timeline</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.4); padding: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-            <div style="font-size: 1.1rem;">📱</div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #7c3aed;">MOBILE EDITING</div>
-            <div style="font-size: 0.45rem; color: #555;">Alight Motion & KineMaster</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.4); padding: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-            <div style="font-size: 1.1rem;">🎨</div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #7c3aed;">TITLE DESIGNING</div>
-            <div style="font-size: 0.45rem; color: #555;">Adobe Illustrator</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.4); padding: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-            <div style="font-size: 1.1rem;">🧠</div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #7c3aed;">FILM ANALYSIS</div>
-            <div style="font-size: 0.45rem; color: #555;">Styles & Cinematics</div>
-        </div>
-        <!-- 7th Skill Centered -->
-        <div style="background: rgba(255,255,255,0.4); padding: 12px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); grid-column: span 2; width: 60%; margin: 0 auto;">
-            <div style="font-size: 1.1rem;">✍️</div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #7c3aed;">CONTENT WRITING</div>
-            <div style="font-size: 0.45rem; color: #555;">Scripts & Captions</div>
-        </div>
-    </div>
-</div>
-
-<div class="folder-grid" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 30px 0; padding: 0 10px;">
-    
-    <div onclick="openFolder('shortfilms')" style="cursor: pointer; text-align: center; width: 85px;">
-        <svg viewBox="0 0 24 24" style="width: 55px; fill: #FFCA28; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));">
-            <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-        </svg>
-        <p style="color: #fff; font-size: 10px; margin-top: 5px; font-family: sans-serif; font-weight: 600; text-transform: uppercase;">Short Films</p>
-    </div>
-
-    <div onclick="openFolder('titles')" style="cursor: pointer; text-align: center; width: 85px;">
-        <svg viewBox="0 0 24 24" style="width: 55px; fill: #FFCA28; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));">
-            <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-        </svg>
-        <p style="color: #fff; font-size: 10px; margin-top: 5px; font-family: sans-serif; font-weight: 600; text-transform: uppercase;">Titles</p>
-    </div>
-
-    <div onclick="openFolder('reels')" style="cursor: pointer; text-align: center; width: 85px;">
-        <svg viewBox="0 0 24 24" style="width: 55px; fill: #FFCA28; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));">
-            <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-        </svg>
-        <p style="color: #fff; font-size: 10px; margin-top: 5px; font-family: sans-serif; font-weight: 600; text-transform: uppercase;">Reels</p>
-    </div>
-</div>
-
-<div id="netflix-zone" style="position: relative; width: 95%; max-width: 900px; height: 500px; background: #000; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); margin: 0 auto 40px auto; box-shadow: 0 25px 50px rgba(0,0,0,0.8);">
-    
-    <div id="intro-layer" style="position: absolute; inset: 0; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 100;">
-        <h1 style="font-size: 120px; color: #E50914; margin: 0; animation: netflixZoom 2.5s ease-in-out forwards; font-family: sans-serif; font-weight: bold;">G</h1>
-        <div style="display: flex; gap: 15px; margin-top: -15px; opacity: 0; animation: fadeInLogos 1.2s 1.2s forwards;">
-            <span style="padding: 5px 12px; background: rgba(255,154,0,0.1); border: 1px solid #FF9A00; color: #FF9A00; border-radius: 5px; font-size: 13px; font-weight: bold;">Ai</span>
-            <span style="padding: 5px 12px; background: rgba(234,119,255,0.1); border: 1px solid #EA77FF; color: #EA77FF; border-radius: 5px; font-size: 13px; font-weight: bold;">Pr</span>
-        </div>
-    </div>
-
-    <div id="profile-layer" style="position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 90; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);">
-        <h2 style="color: #fff; font-weight: 300; letter-spacing: 4px; margin-bottom: 40px; font-family: sans-serif;">Who's Watching?</h2>
-        <div onclick="startChaiShorts()" style="cursor: pointer; text-align: center; transition: 0.3s;">
-            <div style="width: 130px; height: 130px; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; position: relative;">
-                <div style="position: absolute; bottom: 8px; right: 8px; background: #0070f3; width: 22px; height: 22px; border-radius: 50%; color: #fff; display: flex; justify-content: center; align-items: center; font-size: 12px;">✓</div>
+    <div id="main-content">
+        <div class="glass-box"><span class="tag">Professional Summary</span><p style="font-size:13px;">I am a passionate Cinematic Storyteller specializing in turning raw footage into impactful visual narratives.</p></div>
+        <div class="glass-box"><span class="tag">Beyond Limits: My Journey</span><p style="font-size:13px;">Started with a smartphone in 2018... proving that true creativity knows no boundaries.</p></div>
+        <div class="glass-box"><span class="tag">The Breakthrough Moment (2022)</span><p style="font-size:13px;">In 2022, recognized by Director Prithvi... transformed my passion into a professional mission.</p></div>
+        <div class="glass-box"><span class="tag">Unstoppable Passion</span><p style="font-size:13px;">From Chat Edits on Alight Motion to cinematic projects... creativity has no limits.</p></div>
+        
+        <div class="glass-box">
+            <span class="tag">Technical Arsenal</span>
+            <div class="skills-grid">
+                <div class="skill-item">🎬 Video Editing</div>
+                <div class="skill-item">💥 After Effects</div>
+                <div class="skill-item">🎥 Premiere Pro</div>
+                <div class="skill-item">📱 Alight Motion</div>
             </div>
-            <p style="color: #aaa; margin-top: 15px; font-size: 14px;">Goutham (Editor)</p>
+        </div>
+
+        <div class="glass-box" style="padding:0; overflow:hidden; border:none; background:transparent;">
+            <div style="text-align:center; padding:10px;"><span class="tag" style="background:#6a1b9a;">📁 Selected Works</span></div>
+            <div class="folder-nav">
+                <div class="folder" onclick="loadVideo('horizontal')">📂<br><span style="font-size:10px;">Short Films</span></div>
+                <div class="folder" onclick="loadVideo('vertical')">📂<br><span style="font-size:10px;">Reels</span></div>
+            </div>
+            <div class="video-container">
+                <iframe id="main-player" src="https://www.youtube.com/embed/qapXhJJNAy8?autoplay=1&mute=1&controls=0" allow="autoplay; fullscreen"></iframe>
+            </div>
         </div>
     </div>
 
-    <div id="video-layer" style="position: absolute; inset: 0; display: none; z-index: 80;">
-        <iframe id="main-player" width="100%" height="100%" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-</div>
+    <script>
+        // Intro Transition
+        setTimeout(() => {
+            document.getElementById('intro-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 4500);
 
-<style>
-    @keyframes netflixZoom { 0% { transform: scale(0.6); opacity: 0; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
-    @keyframes fadeInLogos { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-</style>
-
-<script>
-    // నిన్నటి ప్లాన్ ప్రకారం 3.5 సెకన్ల ఎంట్రీ
-    setTimeout(() => {
-        const intro = document.getElementById('intro-layer');
-        const profile = document.getElementById('profile-layer');
-        if(intro) intro.style.display = 'none';
-        if(profile) profile.style.display = 'flex';
-    }, 3500);
-
-    function startChaiShorts() {
-        document.getElementById('profile-layer').style.display = 'none';
-        document.getElementById('video-layer').style.display = 'block';
-        document.getElementById('main-player').src = "https://www.youtube.com/embed/qapXhJJNAy8?autoplay=1&rel=0";
-    }
-
-    // Scroll sound throttling (Clean Version)
-    let canPlay = true;
-    function playScrollSound() {
-        if (canPlay) {
-            canPlay = false;
-            setTimeout(() => { canPlay = true; }, 150);
+        // Single Tab Video Loader
+        function loadVideo(mode) {
+            const player = document.getElementById('main-player');
+            if(mode === 'vertical') {
+                player.src = "https://www.youtube.com/embed/your_reel_id?autoplay=1";
+            } else {
+                player.src = "https://www.youtube.com/embed/your_film_id?autoplay=1";
+            }
         }
-    }
-</script>
+    </script>
+</body>
+</html>
+
