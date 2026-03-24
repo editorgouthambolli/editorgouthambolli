@@ -280,7 +280,7 @@
         element.style.color = "#7c3aed";
         element.querySelector('.line').style.width = "80%";
 
-     <div id="netflix-zone" style="position: relative; width: 100%; height: 500px; background: #000; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); margin-top: 30px; margin-bottom: 30px;">
+ <div id="netflix-zone" style="position: relative; width: 100%; height: 500px; background: #000; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); margin-top: 30px; margin-bottom: 30px;">
 
     <div id="intro-step" style="position: absolute; width: 100%; height: 100%; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 100;">
         <h1 style="font-size: 110px; color: #E50914; margin: 0; animation: netflixZoom 2.5s ease-in-out forwards;">G</h1>
@@ -293,22 +293,20 @@
     <div id="profile-step" style="position: absolute; width: 100%; height: 100%; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 90; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);">
         <h2 style="color: #fff; font-weight: 300; letter-spacing: 4px; margin-bottom: 50px; font-family: sans-serif;">Who's Watching?</h2>
         <div style="display: flex; gap: 50px;">
-            <div onclick="startChaiShorts()" style="cursor: pointer; text-align: center; transition: 0.4s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                <div style="width: 145px; height: 145px; background: rgba(255,255,255,0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
-                    <div style="position: absolute; bottom: 10px; right: 10px; background: #0070f3; width: 25px; height: 25px; border-radius: 50%; color: #fff; display: flex; justify-content: center; align-items: center; font-size: 14px; box-shadow: 0 0 10px rgba(0,112,243,0.5);">✓</div>
+            <div onclick="startChaiShorts()" style="cursor: pointer; text-align: center; transition: 0.4s;">
+                <div style="width: 145px; height: 145px; background: rgba(255,255,255,0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; position: relative;">
+                    <div style="position: absolute; bottom: 10px; right: 10px; background: #0070f3; width: 25px; height: 25px; border-radius: 50%; color: #fff; display: flex; justify-content: center; align-items: center; font-size: 14px;">✓</div>
                 </div>
-                <p style="color: #999; margin-top: 15px; font-size: 16px;">Goutham (Editor)</p>
+                <p style="color: #999; margin-top: 15px;">Goutham (Editor)</p>
             </div>
             <div style="cursor: pointer; text-align: center; opacity: 0.4;">
                 <div style="width: 145px; height: 145px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; backdrop-filter: blur(10px);"></div>
-                <p style="color: #666; margin-top: 15px; font-size: 16px;">Writer ✍️</p>
+                <p style="color: #666; margin-top: 15px;">Writer ✍️</p>
             </div>
         </div>
     </div>
 
-    <div id="video-step" style="position: absolute; width: 100%; height: 100%; display: none; z-index: 80;">
-        <h3 style="color: #fff; text-align: center; margin-top: 220px; font-family: sans-serif;">🎬 Chai Shorts Loading...</h3>
-    </div>
+    <div id="video-step" style="position: absolute; width: 100%; height: 100%; display: none; z-index: 80;"></div>
 </div>
 
 <style>
@@ -318,17 +316,18 @@
 
 <script>
     setTimeout(() => {
-        document.getElementById('intro-step').style.display = 'none';
-        document.getElementById('profile-step').style.display = 'flex';
+        const intro = document.getElementById('intro-step');
+        const profile = document.getElementById('profile-step');
+        if(intro) intro.style.display = 'none';
+        if(profile) profile.style.display = 'flex';
     }, 4000);
 
     function startChaiShorts() {
         document.getElementById('profile-step').style.display = 'none';
         document.getElementById('video-step').style.display = 'block';
-        alert("బంగారం, Step 1 Done! ఇక ఆ 7 షార్ట్స్ ని ఈ బాక్స్ లోకి ఎక్కిద్దాం!");
+        alert("బంగారం, సెట్ అయిపోయింది! ఇక ఆ 7 షార్ట్స్ ని లోడ్ చేద్దాం!");
     }
 </script>
-    }
 
     // 📜 Scroll Sound Throttling
     let scrollThrottler = false;
