@@ -1,114 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goutham Bolli</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goutham Bolli | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --bg-gradient: linear-gradient(180deg, #1a0129, #000);
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background: linear-gradient(180deg,#f3e8ff,#d8b4fe,#a855f7);
-}
+        body {
+            background: var(--bg-gradient);
+            color: white;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
 
-/* HEADER */
-.header{
-    text-align:center;
-    padding:40px 20px;
-}
+        /* --- NAVIGATION --- */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+        }
 
-.header h1{
-    font-size:40px;
-    color:#6b21a8;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+        }
 
-/* CARD */
-.card{
-    margin:20px;
-    padding:20px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.6);
-    backdrop-filter:blur(20px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
+        .logo span {
+            font-size: 30px;
+            font-weight: 900;
+        }
 
-/* FOLDERS */
-.folders{
-    display:flex;
-    overflow-x:auto;
-    gap:15px;
-    padding:10px;
-}
+        /* --- HERO SECTION --- */
+        .hero {
+            margin-top: 80px;
+            padding: 20px;
+        }
 
-.folder{
-    min-width:120px;
-    padding:15px;
-    text-align:center;
-    border-radius:15px;
-    background:white;
-    cursor:pointer;
-    transition:0.3s;
-}
+        .banner {
+            height: 350px;
+            border-radius: 25px;
+            background: url('https://images.unsplash.com/photo-1492619334798-54265fe4bc76?q=80&w=2070&auto=format&fit=crop') center/cover;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-.folder:hover{
-    transform:scale(1.05);
-    background:#f3e8ff;
-}
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            border-radius: 25px;
+        }
 
-/* VIDEO PLAYER */
-.player{
-    display:none;
-    margin:20px;
-}
+        .overlay h1 { font-size: 32px; margin-bottom: 5px; }
+        .overlay p { color: #ccc; font-size: 14px; margin-bottom: 15px; }
 
-.player video{
-    width:100%;
-    border-radius:15px;
-}
-</style>
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-right: 10px;
+        }
 
+        .play-btn { background: white; color: black; }
+        .play-btn:hover { background: #e50914; color: white; }
+
+        /* --- FOLDERS (Glassmorphism) --- */
+        .section-title { margin: 30px 20px 15px; font-size: 20px; }
+
+        .folders-container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 20px;
+            scrollbar-width: none;
+        }
+
+        .folder {
+            min-width: 130px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .folder:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* --- VIDEO SECTION --- */
+        .video-grid {
+            display: none; 
+            padding: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .video-card {
+            background: var(--glass);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            background: #000;
+        }
+
+        /* --- BOTTOM NAV --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .bottom-nav div { font-size: 20px; cursor: pointer; opacity: 0.6; }
+        .bottom-nav div:hover { opacity: 1; color: var(--primary-color); }
+
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <h1>GOUTHAM BOLLI ✔</h1>
-    <p>Editor & Content Writer</p>
-</div>
-
-<!-- FOLDERS -->
-<div class="card">
-    <h2>📂 Categories</h2>
-    <div class="folders">
-        <div class="folder" onclick="openFolder(1)">🎬 Short Films</div>
-        <div class="folder" onclick="openFolder(2)">📱 Reels</div>
-        <div class="folder" onclick="openFolder(3)">🎥 Vlogs</div>
-        <div class="folder" onclick="openFolder(4)">⚡ Shorts</div>
+    <div class="nav">
+        <div class="logo"><span style="color: #e50914;">N</span> GOUTHAM BOLLI</div>
+        <div style="cursor: pointer;">🔍</div>
     </div>
-</div>
 
-<!-- VIDEO SECTION -->
-<div id="videos" class="player">
-    <div class="card">
-        <h2>🎥 Project Works</h2>
-
-        <!-- 4 VIDEOS -->
-        <video src="video1.mp4" controls></video><br><br>
-        <video src="video2.mp4" controls></video><br><br>
-        <video src="video3.mp4" controls></video><br><br>
-        <video src="video4.mp4" controls></video>
-
+    <div class="hero">
+        <div class="banner">
+            <div class="overlay">
+                <h1>Goutham Bolli</h1>
+                <p>Professional Video Editor & Content Writer</p>
+                <div class="btns">
+                    <button class="btn play-btn" onclick="scrollToWork()">▶ Showreel</button>
+                    <button class="btn" style="background:rgba(255,255,255,0.2); color:white;">+ My List</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<script>
-function openFolder(id){
-    document.getElementById("videos").style.display="block";
-}
-</script>
+    <h2 class="section-title">📂 Portfolio Categories</h2>
+    <div class="folders-container">
+        <div class="folder" onclick="showCategory('Short Films')">🎬<br>Short Films</div>
+        <div class="folder" onclick="showCategory('Reels')">📱<br>Reels</div>
+        <div class="folder" onclick="showCategory('Vlogs')">🎥<br>Vlogs</div>
+        <div class="folder" onclick="showCategory('Shorts')">⚡<br>Shorts</div>
+    </div>
+
+    <div id="videoSection" class="video-grid">
+        <h2 id="categoryTitle" style="margin-bottom: 20px; color: #e50914;">Projects</h2>
+        
+        <div class="video-card">
+            <video src="video1.mp4" controls></video>
+            <p style="margin-top:10px;">Project Title 01</p>
+        </div>
+
+        <div class="video-card">
+            <video src="video2.mp4" controls></video>
+            <p style="margin-top:10px;">Project Title 02</p>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div>🏠</div>
+        <div>🎬</div>
+        <div>📱</div>
+        <div>👤</div>
+    </div>
+
+    <script>
+        function showCategory(name) {
+            const section = document.getElementById("videoSection");
+            const title = document.getElementById("categoryTitle");
+            
+            section.style.display = "block";
+            title.innerText = "📂 " + name + " Works";
+            
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToWork() {
+            document.querySelector('.folders-container').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
