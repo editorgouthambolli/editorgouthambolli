@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,173 +8,107 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
 body{
-    background: linear-gradient(180deg,#2b0a3d,#1a0129,#000);
-    color:white;
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(180deg,#f3e8ff,#d8b4fe,#a855f7);
 }
 
-/* NAV */
-.nav{
+/* HEADER */
+.header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.header h1{
+    font-size:40px;
+    color:#6b21a8;
+}
+
+/* CARD */
+.card{
+    margin:20px;
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(20px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* FOLDERS */
+.folders{
     display:flex;
-    justify-content:space-between;
-    padding:15px 20px;
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
+    overflow-x:auto;
+    gap:15px;
+    padding:10px;
 }
 
-.logo{
-    font-size:22px;
-    font-weight:700;
-    color:#e50914;
-}
-
-/* HERO */
-.hero{
-    margin-top:70px;
-    padding:20px;
-}
-
-.banner{
-    height:200px;
-    border-radius:20px;
-    background:url('banner.jpg') center/cover;
-    position:relative;
-}
-
-.overlay{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    padding:20px;
-    background:linear-gradient(transparent,black);
-    border-radius:20px;
-}
-
-.overlay h1{
-    font-size:24px;
-}
-
-.btns{
-    margin-top:10px;
-}
-
-.btn{
-    padding:10px 20px;
-    border:none;
-    border-radius:5px;
-    margin-right:10px;
-    cursor:pointer;
-}
-
-.play{
+.folder{
+    min-width:120px;
+    padding:15px;
+    text-align:center;
+    border-radius:15px;
     background:white;
-    color:black;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.list{
-    background:rgba(255,255,255,0.2);
-    color:white;
+.folder:hover{
+    transform:scale(1.05);
+    background:#f3e8ff;
 }
 
-/* ROW */
-.row{
+/* VIDEO PLAYER */
+.player{
+    display:none;
     margin:20px;
 }
 
-.row h2{
-    margin-bottom:10px;
-}
-
-.cards{
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
-}
-
-.card{
-    min-width:140px;
-    border-radius:10px;
-    overflow:hidden;
-    position:relative;
-}
-
-.card img{
+.player video{
     width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-/* BOTTOM NAV */
-.bottom{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    display:flex;
-    justify-content:space-around;
-    background:black;
-    padding:10px;
+    border-radius:15px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- NAV -->
-<div class="nav">
-    <div class="logo">N</div>
-    <div>🔍</div>
+<!-- HEADER -->
+<div class="header">
+    <h1>GOUTHAM BOLLI ✔</h1>
+    <p>Editor & Content Writer</p>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-    <div class="banner">
-        <div class="overlay">
-            <h1>Goutham Bolli ✔</h1>
-            <p>Editor & Content Writer</p>
-
-            <div class="btns">
-                <button class="btn play">▶ Play</button>
-                <button class="btn list">+ My List</button>
-            </div>
-        </div>
+<!-- FOLDERS -->
+<div class="card">
+    <h2>📂 Categories</h2>
+    <div class="folders">
+        <div class="folder" onclick="openFolder(1)">🎬 Short Films</div>
+        <div class="folder" onclick="openFolder(2)">📱 Reels</div>
+        <div class="folder" onclick="openFolder(3)">🎥 Vlogs</div>
+        <div class="folder" onclick="openFolder(4)">⚡ Shorts</div>
     </div>
 </div>
 
-<!-- ROW -->
-<div class="row">
-    <h2>Continue Watching</h2>
-    <div class="cards">
-        <div class="card"><img src="thumb1.jpg"></div>
-        <div class="card"><img src="thumb2.jpg"></div>
-        <div class="card"><img src="thumb3.jpg"></div>
+<!-- VIDEO SECTION -->
+<div id="videos" class="player">
+    <div class="card">
+        <h2>🎥 Project Works</h2>
+
+        <!-- 4 VIDEOS -->
+        <video src="video1.mp4" controls></video><br><br>
+        <video src="video2.mp4" controls></video><br><br>
+        <video src="video3.mp4" controls></video><br><br>
+        <video src="video4.mp4" controls></video>
+
     </div>
 </div>
 
-<div class="row">
-    <h2>My Edits</h2>
-    <div class="cards">
-        <div class="card"><img src="thumb4.jpg"></div>
-        <div class="card"><img src="thumb5.jpg"></div>
-    </div>
-</div>
-
-<!-- BOTTOM NAV -->
-<div class="bottom">
-    <div>🏠</div>
-    <div>🎬</div>
-    <div>📱</div>
-    <div>👤</div>
-</div>
+<script>
+function openFolder(id){
+    document.getElementById("videos").style.display="block";
+}
+</script>
 
 </body>
 </html>
