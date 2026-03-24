@@ -1,9 +1,9 @@
 <div id="intro-layer" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100001; display:flex; justify-content:center; align-items:center; overflow:hidden; font-family: sans-serif;">
-    <div style="text-align: center;">
-        <h1 id="intro-logo" style="color: #ffcc00; font-size: clamp(22px, 5vw, 40px); font-weight: 900; letter-spacing: 8px; margin: 0; text-transform: uppercase; opacity: 0; transform: translateY(15px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.3));">
+    <div style="text-align: center; padding: 20px;">
+        <h1 id="intro-logo" style="color: #ffcc00; font-size: clamp(22px, 5vw, 40px); font-weight: 900; letter-spacing: 8px; margin: 0; text-transform: uppercase; opacity: 0; transform: translateY(10px); transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1); filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.4));">
             Goutham Editor
         </h1>
-        <p id="intro-quote" style="color: rgba(255, 204, 0, 0.5); font-size: 9px; letter-spacing: 3px; margin-top: 12px; opacity: 0; text-transform: uppercase; transition: all 0.5s ease-out 0.5s;">
+        <p id="intro-quote" style="color: rgba(255, 204, 0, 0.5); font-size: 9px; letter-spacing: 3px; margin-top: 10px; opacity: 0; text-transform: uppercase; transition: all 0.4s ease-out 0.3s;">
             "Bringing Visions to Life"
         </p>
     </div>
@@ -11,45 +11,47 @@
 </div>
 
 <div id="app-gate" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100000; display:none; flex-direction:column; overflow:hidden; font-family: sans-serif;">
-    <div style="height: 60%; width: 100%; position: relative; background: #000;">
+    
+    <div style="height: 60%; width: 100%; position: relative; background: #000; display: flex; align-items: center; justify-content: center;">
         <iframe src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" 
-                style="width: 100%; height: 100%; border: none; transform: scale(1.8); opacity: 0.8; pointer-events: none;"></iframe>
+                style="width: 100%; height: 100%; border: none; opacity: 0.9; pointer-events: none; object-fit: contain;"></iframe>
         
-        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px 15px; background: linear-gradient(transparent, rgba(0,0,0,0.9) 80%, #000);">
-            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.12); padding: 12px; border-radius: 10px; display: inline-block;">
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px 15px; background: linear-gradient(transparent, rgba(0,0,0,0.95) 80%, #000);">
+            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.15); padding: 12px; border-radius: 10px; display: inline-block;">
                 <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
-                    <span style="background: #e50914; color: #fff; padding: 1px 4px; font-size: 8px; font-weight: 900; border-radius: 1px; text-transform: uppercase; line-height: 1;">NEW</span>
+                    <span style="background: #e50914; color: #fff; padding: 1px 4px; font-size: 8px; font-weight: 900; border-radius: 1px; text-transform: uppercase;">NEW</span>
                     <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: bold; letter-spacing: 0.5px;">PROJECT</span>
                 </div>
                 <h2 style="color: #fff; margin: 3px 0; font-size: 18px; font-weight: 800; letter-spacing: 0.5px;">ఓ చిన్న ప్రేమ కథ</h2>
-                <p style="color: #aaa; font-size: 11px; margin: 0;">Edited by Goutham Bolli</p>
+                <p style="color: #aaa; font-size: 10px; margin: 0; text-transform: uppercase;">Coming Soon • Edited by Goutham</p>
             </div>
         </div>
     </div>
 
-    <div style="height: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000;">
-        <p style="color: #555; font-size: 12px; margin-bottom: 18px; letter-spacing: 1px; text-transform: uppercase;">Who's watching?</p>
+    <div style="height: 40%; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        
+        <p style="color: rgba(255, 255, 255, 0.4); font-size: 11px; margin-bottom: 22px; letter-spacing: 1.5px; text-transform: uppercase;">Who's watching?</p>
+        
         <div style="display: flex; gap: 20px;">
             <div onclick="unlockApp()" style="text-align: center; cursor: pointer;">
-                <div style="width: 70px; height: 70px; background: #ffcc00; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 900; color: #000; border: 2px solid transparent; transition: 0.2s;" onmouseover="this.style.borderColor='#fff'">G</div>
-                <p style="color: #777; margin-top: 8px; font-size: 12px;">goutham</p>
+                <div style="width: 72px; height: 72px; background: rgba(255, 204, 0, 0.12); backdrop-filter: blur(10px); border: 1.5px solid rgba(255, 204, 0, 0.3); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 900; color: #ffcc00; transition: 0.3s;" onmouseover="this.style.background='rgba(255, 204, 0, 0.25)'" onmouseout="this.style.background='rgba(255, 204, 0, 0.12)'">G</div>
+                <p style="color: #ffcc00; margin-top: 10px; font-size: 13px; font-weight: 500;">goutham</p>
             </div>
-            <div style="text-align: center; opacity: 0.3;">
-                <div style="width: 70px; height: 70px; background: #5dacee; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: #fff;">Kids</div>
-                <p style="color: #777; margin-top: 8px; font-size: 12px;">Children</p>
+            
+            <div style="text-align: center; opacity: 0.4;">
+                <div style="width: 72px; height: 72px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1.5px solid rgba(255, 255, 255, 0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: #fff;">Kids</div>
+                <p style="color: #888; margin-top: 10px; font-size: 13px;">Children</p>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-/* Speed Fly Up */
-.fly-up { animation: flyUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.fly-up { animation: flyUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
 @keyframes flyUp { to { transform: translateY(-120px); opacity: 0; filter: blur(8px); } }
 
-/* Profile Click Zoom */
 .zoom-out-final { animation: finalZoom 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
-@keyframes finalZoom { to { transform: scale(15); opacity: 0; visibility: hidden; } }
+@keyframes finalZoom { to { transform: scale(20); opacity: 0; visibility: hidden; } }
 </style>
 
 <script>
@@ -60,22 +62,22 @@ window.onload = function() {
     const tudum = document.getElementById('tudum');
     const gate = document.getElementById('app-gate');
 
-    // Fast reveal
+    // 1. Instant Reveal
     setTimeout(() => {
         logo.style.opacity = "1";
         logo.style.transform = "translateY(0) scale(1)";
         quote.style.opacity = "1";
         tudum.play().catch(e => {});
-    }, 200);
+    }, 150);
 
-    // After 2.5 seconds, fly up (Faster)
+    // 2. 2.5 Seconds Fly Up
     setTimeout(() => {
         logo.classList.add('fly-up');
         quote.style.opacity = "0";
         setTimeout(() => {
             intro.style.display = "none";
             gate.style.display = "flex";
-        }, 500);
+        }, 400);
     }, 2500); 
 };
 
@@ -88,7 +90,7 @@ function unlockApp() {
     }, 700);
 }
 document.body.style.overflow = "hidden";
-               </script>
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
