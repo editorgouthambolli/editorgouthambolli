@@ -5,42 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goutham Bolli | Cinematic Master</title>
     <style>
-        :root { --purple: #9d72ff; --glass: rgba(255, 255, 255, 0.08); --border: rgba(255, 255, 255, 0.15); }
-        body, html { margin: 0; padding: 0; background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+        /* 🎨 రంగులు మరియు గ్లాసీ సెట్టింగ్స్ */
+        :root { 
+            --purple: #9d72ff; 
+            --glass: rgba(255, 255, 255, 0.12); /* వైట్ గ్లాస్ ఎఫెక్ట్ */
+            --border: rgba(255, 255, 255, 0.2); 
+        }
 
-        /* 1. COMPACT CINEMATIC INTRO */
+        body, html { 
+            margin: 0; padding: 0; background: #000; color: #fff; 
+            font-family: 'Segoe UI', sans-serif; overflow-x: hidden; 
+        }
+
+        /* 1. 🎬 సినిమాటిక్ ఇంట్రో (Netflix Style) */
         #intro-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #000; z-index: 9999; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
         }
-        .g-logo { font-size: 24px; color: var(--purple); text-shadow: 0 0 15px var(--purple); letter-spacing: 2px; opacity: 0; animation: fadeIn 1s forwards; }
-        .quote { font-size: 11px; color: #777; margin-top: 10px; font-style: italic; opacity: 0; animation: fadeIn 1s 1.5s forwards; }
+        .g-logo { 
+            font-size: 26px; font-weight: bold; color: var(--purple); 
+            text-shadow: 0 0 15px var(--purple); letter-spacing: 3px; 
+            opacity: 0; animation: zoomFade 2s forwards; 
+        }
+        .quote { 
+            font-size: 11px; color: #888; margin-top: 10px; 
+            opacity: 0; animation: fadeIn 1.5s 2.2s forwards; 
+        }
+        @keyframes zoomFade { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        /* 2. MAIN LAYOUT (Fixed Top 5 - Vertical) */
+        /* 2. 📱 మెయిన్ లేఅవుట్ (One-by-One Boxes) */
         #main-site { display: none; padding: 20px; max-width: 600px; margin: 0 auto; }
         
         .glass-box { 
-            background: var(--glass); backdrop-filter: blur(20px);
+            background: var(--glass); 
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             border-radius: 15px; padding: 18px; margin-bottom: 15px; 
-            border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            animation: slideUp 0.8s ease-out;
+        }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .tag { 
+            background: var(--purple); font-size: 9px; padding: 3px 10px; 
+            border-radius: 5px; font-weight: bold; text-transform: uppercase; 
+            display: inline-block; margin-bottom: 10px; 
+        }
+        .box-text { font-size: 13px; line-height: 1.6; color: #eee; margin: 0; }
+
+        /* 🛠️ టెక్నికల్ స్కిల్స్ గ్రిడ్ */
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .skill { 
+            background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; 
+            font-size: 11px; text-align: center; border: 0.5px solid var(--border); 
         }
 
-        .tag { background: var(--purple); font-size: 9px; padding: 3px 10px; border-radius: 5px; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
-        .box-text { font-size: 13px; line-height: 1.6; color: #ddd; margin: 0; }
-
-        /* 3. TECHNICAL ARSENAL GRID */
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .skill { background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px; font-size: 11px; text-align: center; border: 1px solid var(--border); }
-
-        /* 4. ZERO-GAP FULL SCREEN PLAYER */
-        .video-container { width: 100vw; height: 100vh; margin: 20px -20px; background: #000; position: relative; }
+        /* 3. 📺 ఫుల్ స్క్రీన్ ప్లేయర్ (Zero Gap) */
+        .video-wrapper { 
+            width: 100vw; height: 100vh; margin: 20px -20px; 
+            background: #000; position: relative; overflow: hidden; 
+        }
         iframe { width: 100%; height: 100%; border: none; }
 
-        /* 5. FOLDERS (Reference 1000145265.jpg) */
-        .folder-row { display: flex; overflow-x: auto; gap: 20px; padding: 10px 0; scrollbar-width: none; }
-        .folder-btn { min-width: 80px; text-align: center; cursor: pointer; transition: 0.3s; }
+        /* 📁 ఫోల్డర్స్ సెక్షన్ */
+        .folder-nav { display: flex; overflow-x: auto; gap: 20px; padding: 10px 0; scrollbar-width: none; }
+        .folder { min-width: 80px; text-align: center; cursor: pointer; color: var(--purple); }
     </style>
 </head>
 <body onclick="unmuteVideo()">
@@ -64,7 +95,7 @@
 
         <div class="glass-box">
             <span class="tag">The Breakthrough Moment</span>
-            <p class="box-text">In 2022, my perspective changed. Transformed my home-grown passion into a professional mission.</p>
+            <p class="box-text">In 2022, my perspective changed. Transformed passion into professional mission.</p>
         </div>
 
         <div class="glass-box">
@@ -84,26 +115,25 @@
 
         <div class="glass-box" style="padding: 10px 0; background: transparent; border: none;">
             <div style="text-align:center; margin-bottom:15px;"><span class="tag" style="background:#6a1b9a;">📁 Selected Works</span></div>
-            <div class="folder-row" onscroll="playTick()">
-                <div class="folder-btn" onclick="playVid('H')">📂<br><span style="font-size:10px;">Short Films</span></div>
-                <div class="folder-btn" onclick="playVid('V')">📂<br><span style="font-size:10px;">Reels</span></div>
-                <div class="folder-btn" onclick="playVid('H')">📂<br><span style="font-size:10px;">Vlogs</span></div>
+            <div class="folder-nav">
+                <div class="folder" onclick="changeVid('H')">📂<br><span style="font-size:10px;">Short Films</span></div>
+                <div class="folder" onclick="changeVid('V')">📂<br><span style="font-size:10px;">Reels</span></div>
             </div>
             
-            <div class="video-container">
+            <div class="video-wrapper">
                 <iframe id="main-video" src="https://www.youtube.com/embed/qapXhJJNAy8?enablejsapi=1&autoplay=1&mute=1&loop=1" allow="autoplay; fullscreen"></iframe>
             </div>
         </div>
     </div>
 
     <script>
-        // Transition Logic
+        // 4 సెకన్ల తర్వాత ఇంట్రో తీసేసి మెయిన్ సైట్ చూపిస్తుంది
         setTimeout(() => {
             document.getElementById('intro-layer').style.display = 'none';
             document.getElementById('main-site').style.display = 'block';
-        }, 4500);
+        }, 4000);
 
-        // Sound & Video Logic
+        // 🔊 సౌండ్ ఫిక్స్: స్క్రీన్ ఎక్కడ టచ్ చేసినా సౌండ్ ఆన్ అవుతుంది
         function unmuteVideo() {
             const iframe = document.getElementById('main-video');
             let src = iframe.src;
@@ -112,18 +142,15 @@
             }
         }
 
-        function playVid(mode) {
+        // వీడియోలు మార్చడానికి
+        function changeVid(mode) {
             const frame = document.getElementById('main-video');
             if(mode === 'V') {
-                frame.style.objectFit = "cover";
                 frame.src = "https://www.youtube.com/embed/your_reel_id?autoplay=1&mute=0";
             } else {
                 frame.src = "https://www.youtube.com/embed/your_film_id?autoplay=1&mute=0";
             }
         }
-
-        const tick = new Audio('https://www.soundjay.com/buttons/button-20.mp3');
-        function playTick() { tick.currentTime = 0; tick.play().catch(()=>{}); }
     </script>
 </body>
 </html>
