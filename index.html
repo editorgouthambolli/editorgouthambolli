@@ -1,159 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Artist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --accent: #e50914;
-            --glow-white: #ffffff;
-            --glow-purple: #b026ff;
-            --deep-purple: #1a0129;
-            --glass: rgba(255, 255, 255, 0.08);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goutham Bolli | Unstoppable Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --royal-purple: #2b0a3d;
+        --deep-black: #05010a;
+        --gold: #ffcc00;
+        --glass: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+    }
 
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
+    
+    body { background: linear-gradient(180deg, var(--royal-purple), var(--deep-black), #000); color: white; overflow-x: hidden; scroll-behavior: smooth; padding-bottom: 80px; }
 
-        body {
-            background-color: #000;
-            color: white;
-            overflow-x: hidden;
-        }
+    /* Glass Nav */
+    .nav {
+        display: flex; justify-content: space-between; padding: 20px;
+        position: fixed; width: 100%; top: 0; z-index: 1000;
+        background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(15px);
+    }
+    .logo { font-size: 24px; font-weight: 800; color: var(--gold); }
 
-        /* --- THE GLOW EFFECT YOU NOTICED --- */
-        .white-glow {
-            position: fixed;
-            top: -100px;
-            left: -50px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(176,38,255,0.3) 50%, transparent 70%);
-            filter: blur(80px);
-            z-index: -1;
-            animation: pulse 8s infinite alternate;
-        }
+    /* Hero Banner (Netflix Style) */
+    .hero { margin-top: 60px; padding: 15px; }
+    .banner {
+        height: 250px; border-radius: 25px;
+        background: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80') center/cover;
+        position: relative; border: 1px solid var(--glass-border); overflow: hidden;
+    }
+    .overlay {
+        position: absolute; bottom: 0; width: 100%; padding: 25px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    }
+    .overlay h1 { font-size: 28px; letter-spacing: -1px; }
+    .verified { width: 20px; vertical-align: middle; }
 
-        @keyframes pulse {
-            from { transform: scale(1); opacity: 0.6; }
-            to { transform: scale(1.2); opacity: 0.9; }
-        }
+    /* Category Folders (Glassmorphism) */
+    .section-title { margin: 25px 20px 10px; font-size: 18px; color: var(--gold); }
+    .folders-container {
+        display: flex; overflow-x: auto; gap: 15px; padding: 10px 20px;
+        scrollbar-width: none;
+    }
+    .folders-container::-webkit-scrollbar { display: none; }
+    
+    .folder-card {
+        min-width: 130px; padding: 20px; text-align: center;
+        background: var(--glass); border: 1px solid var(--glass-border);
+        backdrop-filter: blur(10px); border-radius: 20px; transition: 0.3s;
+    }
+    .folder-card:active { transform: scale(0.9); background: rgba(255,255,255,0.2); }
+    .folder-card i { font-size: 30px; display: block; margin-bottom: 10px; }
 
-        /* --- GRID BACKGROUND --- */
-        .bg-grid {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bca1-0758328f773b/86071465-4d7a-4467-bc6d-0e31804f3b5f/IN-en-20220502-popsignuptwoweeks-perspective_alpha_website_small.jpg');
-            background-size: cover;
-            opacity: 0.15;
-            z-index: -2;
-        }
+    /* Netflix Rows for Projects */
+    .row { margin: 20px; }
+    .cards { display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px; scrollbar-width: none; }
+    .cards::-webkit-scrollbar { display: none; }
+    .card {
+        min-width: 150px; height: 220px; border-radius: 15px;
+        background: #1a1a1a; border: 1px solid var(--glass-border);
+        position: relative; overflow: hidden;
+    }
+    .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
 
-        /* --- NAV --- */
-        .nav {
-            display: flex; justify-content: space-between; padding: 20px 30px;
-            position: fixed; width: 100%; top: 0; z-index: 100;
-            background: rgba(0,0,0,0.4); backdrop-filter: blur(15px);
-        }
-        .logo { font-size: 22px; font-weight: 700; color: white; }
-        .logo span { color: var(--accent); font-weight: 900; font-size: 28px; }
-
-        /* --- HERO SECTION --- */
-        .hero { 
-            margin-top: 150px; padding: 20px; text-align: left; 
-            max-width: 600px; margin-left: 30px;
-        }
-        .hero h1 { 
-            font-size: 55px; font-weight: 700; line-height: 1.1;
-            text-shadow: 0 0 20px rgba(255,255,255,0.4);
-        }
-        .hero p { color: #ccc; margin-top: 10px; font-size: 18px; letter-spacing: 2px; }
-
-        /* --- CATEGORIES --- */
-        .section-title { margin: 60px 30px 20px; font-size: 22px; border-left: 4px solid var(--accent); padding-left: 15px; }
-        .folders {
-            display: flex; gap: 20px; overflow-x: auto; padding: 10px 30px;
-            scrollbar-width: none;
-        }
-        .folder {
-            min-width: 160px; height: 200px;
-            background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            backdrop-filter: blur(10px); cursor: pointer;
-            transition: 0.4s;
-        }
-        .folder:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: var(--glow-white);
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px rgba(255,255,255,0.1);
-        }
-
-        /* --- PLAYER AREA --- */
-        .video-player {
-            display: none; padding: 40px 30px;
-        }
-        .video-card {
-            background: #111; border-radius: 20px; padding: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        video { width: 100%; border-radius: 15px; }
-
-        /* --- BOTTOM NAV --- */
-        .bottom {
-            position: fixed; bottom: 0; width: 100%; display: flex;
-            justify-content: space-around; background: black; padding: 15px;
-            border-top: 1px solid #222;
-        }
-    </style>
+    /* iPhone Style Bottom Nav Dock */
+    .bottom-dock {
+        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+        width: 90%; max-width: 400px; height: 65px;
+        background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(25px);
+        border: 1px solid var(--glass-border); border-radius: 30px;
+        display: flex; justify-content: space-around; align-items: center;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 2000;
+    }
+    .nav-item { font-size: 24px; cursor: pointer; transition: 0.3s; }
+    .nav-item:active { transform: scale(1.5); color: var(--gold); }
+    
+    /* SFX Support */
+    #click-sound { display: none; }
+</style>
 </head>
-<body>
-
-    <div class="white-glow"></div>
-    <div class="bg-grid"></div>
+<body onclick="playClick()">
 
     <div class="nav">
-        <div class="logo"><span>N</span> GOUTHAM BOLLI</div>
-        <div>🔍</div>
+        <div class="logo">G</div>
+        <div style="font-size: 20px;">🔍</div>
     </div>
 
     <div class="hero">
-        <h1>Goutham<br>Bolli ✔</h1>
-        <p>CINEMATIC EDITOR</p>
-    </div>
-
-    <h2 class="section-title">My Projects</h2>
-    <div class="folders">
-        <div class="folder" onclick="play('Short Films')">🎬<br><br>Short Films</div>
-        <div class="folder" onclick="play('Wedding')">💍<br><br>Wedding</div>
-        <div class="folder" onclick="play('Reels')">📱<br><br>Reels</div>
-        <div class="folder" onclick="play('Shorts')">⚡<br><br>Shorts</div>
-    </div>
-
-    <div id="player" class="video-player">
-        <h2 id="title" style="margin-bottom: 20px; color: var(--glow-purple);">Selected Work</h2>
-        <div class="video-card">
-            <video src="video.mp4" controls></video>
+        <div class="banner">
+            <div class="overlay">
+                <h1>GOUTHAM BOLLI <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" class="verified"></h1>
+                <p style="font-size: 12px; opacity: 0.8;">Editor & Content Writer | Unstoppable</p>
+                <div style="margin-top: 15px;">
+                    <button style="padding: 10px 25px; border-radius: 10px; border: none; font-weight: bold; background: white; color: black;">▶ Play</button>
+                    <button style="padding: 10px 25px; border-radius: 10px; border: none; font-weight: bold; background: rgba(255,255,255,0.2); color: white; margin-left: 10px;">+ Info</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="bottom">
-        <div>🏠</div>
-        <div>🎬</div>
-        <div>📱</div>
-        <div>👤</div>
+    <h2 class="section-title">📂 Categories</h2>
+    <div class="folders-container">
+        <div class="folder-card"><i>🎬</i><span>Short Films</span></div>
+        <div class="folder-card"><i>📱</i><span>Reels</span></div>
+        <div class="folder-card"><i>🎥</i><span>Vlogs</span></div>
+        <div class="folder-card"><i>⚡</i><span>Shorts</span></div>
+        <div class="folder-card"><i>🎞️</i><span>Teasers</span></div>
+        <div class="folder-card"><i>💍</i><span>Wedding</span></div>
     </div>
 
-    <script>
-        function play(name) {
-            document.getElementById("player").style.display = "block";
-            document.getElementById("title").innerText = "📂 " + name;
-            document.getElementById("player").scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <div class="row">
+        <h2>Continue Watching</h2>
+        <div class="cards">
+            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=O+Chinna+Prema+Katha"></div>
+            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Restaurant+Srinu"></div>
+            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Project+3"></div>
+        </div>
+    </div>
 
+    <div class="row">
+        <h2>Recent Edits</h2>
+        <div class="cards">
+            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Teaser+1"></div>
+            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Vlog+1"></div>
+            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Project+5"></div>
+        </div>
+    </div>
+
+    <div class="bottom-dock">
+        <div class="nav-item" onclick="window.scrollTo(0,0)">🏠</div>
+        <div class="nav-item">🎬</div>
+        <div class="nav-item" onclick="window.location.href='tel:+919391522744'">📞</div>
+        <div class="nav-item">👤</div>
+    </div>
+
+    <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+
+    <script>
+        function playClick() {
+            let sfx = document.getElementById('click-sound');
+            sfx.currentTime = 0;
+            sfx.play();
+            if(navigator.vibrate) navigator.vibrate(15);
+        }
+
+        // Horizontal Scroll with Mouse Support
+        const scrollContainers = document.querySelectorAll('.cards, .folders-container');
+        scrollContainers.forEach(container => {
+            container.addEventListener('wheel', (evt) => {
+                evt.preventDefault();
+                container.scrollLeft += evt.deltaY;
+            });
+        });
+    </script>
 </body>
 </html>
