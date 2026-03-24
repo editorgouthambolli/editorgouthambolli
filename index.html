@@ -1,102 +1,95 @@
-<div id="intro-layer" style="position:fixed; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle, #1a0524 0%, #05010a 100%); z-index:100001; display:flex; justify-content:center; align-items:center; overflow:hidden;">
-    <div style="text-align: center;">
-        <h1 id="intro-logo" style="background: linear-gradient(to right, #ffcc00, #f7e18c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-                    font-size: clamp(30px, 7vw, 65px); font-weight: 900; letter-spacing: 12px; margin: 0; text-transform: uppercase; 
-                    opacity: 0; filter: drop-shadow(0 0 15px rgba(255, 204, 0, 0.3)); transform: scale(0.7);">
-            GOUTHAM BOLLI
+<div id="intro-layer" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100001; display:flex; justify-content:center; align-items:center; overflow:hidden; font-family: sans-serif;">
+    <div style="text-align: center; padding: 20px;">
+        <h1 id="intro-logo" style="color: #ffcc00; font-size: clamp(24px, 5vw, 45px); font-weight: 900; letter-spacing: 8px; margin: 0; text-transform: uppercase; opacity: 0; transform: translateY(20px); transition: all 2.5s ease-out; filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.4));">
+            Goutham Editor
         </h1>
-        <p id="intro-quote" style="color: rgba(255, 204, 0, 0.6); font-size: 12px; letter-spacing: 4px; margin-top: 20px; opacity: 0; text-transform: uppercase; font-family: sans-serif;">
-            "Turning Pixels into Stories"
+        <p id="intro-quote" style="color: rgba(255, 204, 0, 0.6); font-size: 10px; letter-spacing: 3px; margin-top: 15px; opacity: 0; text-transform: uppercase; transition: all 1.5s ease-out 1.5s;">
+            "Bringing Visions to Life"
         </p>
     </div>
     <audio id="tudum" src="https://www.myinstants.com/media/sounds/netflix-tudum.mp3"></audio>
 </div>
 
 <div id="app-gate" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100000; display:none; flex-direction:column; overflow:hidden; font-family: sans-serif;">
-    <div style="height: 65%; width: 100%; position: relative; background: #000;">
+    
+    <div style="height: 60%; width: 100%; position: relative; background: #000;">
         <iframe src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" 
                 style="width: 100%; height: 100%; border: none; transform: scale(1.8); opacity: 0.8; pointer-events: none;"></iframe>
         
-        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9) 80%, #000);">
-            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); padding: 18px; border-radius: 15px;">
-                <span style="color: #e50914; font-weight: bold; font-size: 10px; letter-spacing: 1px;">COMING SOON</span>
-                <h2 style="color: #fff; margin: 8px 0; font-size: 24px;">ఓ చిన్న ప్రేమ కథ</h2>
-                <p style="color: #bbb; font-size: 13px; margin: 0;">Directed & Edited by Goutham Bolli</p>
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 15px; background: linear-gradient(transparent, rgba(0,0,0,0.9) 85%, #000);">
+            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 10px; display: inline-block;">
+                <span style="color: #e50914; font-weight: bold; font-size: 9px; letter-spacing: 1px;">COMING SOON</span>
+                <h2 style="color: #fff; margin: 4px 0; font-size: 20px;">ఓ చిన్న ప్రేమ కథ</h2>
             </div>
         </div>
     </div>
 
-    <div style="height: 35%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000;">
-        <p style="color: #808080; font-size: 14px; margin-bottom: 25px; letter-spacing: 1px;">Who's watching?</p>
-        <div style="display: flex; gap: 30px;">
-            <div onclick="unlockSite(this)" style="text-align: center; cursor: pointer;">
-                <div style="width: 90px; height: 90px; background: #ffcc00; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 45px; font-weight: 900; color: #000; border: 3px solid transparent; transition: 0.3s;" class="p-box">G</div>
-                <p style="color: #888; margin-top: 10px; font-size: 14px;">goutham</p>
+    <div style="height: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000;">
+        <p style="color: #666; font-size: 13px; margin-bottom: 20px; letter-spacing: 1px;">Who's watching?</p>
+        
+        <div style="display: flex; gap: 25px; align-items: center;">
+            <div onclick="unlockApp()" style="text-align: center; cursor: pointer;">
+                <div style="width: 75px; height: 75px; background: #ffcc00; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 35px; font-weight: 900; color: #000; border: 2px solid transparent; transition: 0.3s;" onmouseover="this.style.borderColor='#fff'">G</div>
+                <p style="color: #888; margin-top: 8px; font-size: 13px;">goutham</p>
             </div>
-            <div style="text-align: center; opacity: 0.5;">
-                <div style="width: 90px; height: 90px; background: #5dacee; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; color: #fff;">Kids</div>
-                <p style="color: #888; margin-top: 10px; font-size: 14px;">Children</p>
+            
+            <div style="text-align: center; opacity: 0.4; cursor: default;">
+                <div style="width: 75px; height: 75px; background: #5dacee; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: #fff;">Kids</div>
+                <p style="color: #888; margin-top: 8px; font-size: 13px;">Children</p>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-/* ANIMATIONS */
-.dissolve-effect { animation: dissolve 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-@keyframes dissolve {
-    0% { transform: scale(1); opacity: 1; filter: blur(0px); }
-    100% { transform: scale(20); opacity: 0; filter: blur(25px); visibility: hidden; }
+/* Fly Up Animation for Logo */
+.fly-up { animation: flyUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+@keyframes flyUp {
+    to { transform: translateY(-200px); opacity: 0; filter: blur(15px); }
 }
 
-.profile-zoom-final { animation: finalZoom 1s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
-@keyframes finalZoom {
+/* Final Zoom Out for App Transition */
+.app-zoom-out { animation: zoomOutSite 1s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
+@keyframes zoomOutSite {
     to { transform: scale(15); opacity: 0; visibility: hidden; }
 }
-
-.p-box:hover { border-color: #fff; transform: translateY(-5px); }
 </style>
 
 <script>
 window.onload = function() {
-    const introLayer = document.getElementById('intro-layer');
+    const intro = document.getElementById('intro-layer');
     const logo = document.getElementById('intro-logo');
     const quote = document.getElementById('intro-quote');
     const tudum = document.getElementById('tudum');
-    const appGate = document.getElementById('app-gate');
+    const gate = document.getElementById('app-gate');
 
-    // 1. ఇంట్రో యానిమేషన్ స్టార్ట్ (5 సెకన్లు)
+    // 1. పేరు మెల్లగా సెంటర్ లో రావడం
     setTimeout(() => {
-        logo.style.transition = "all 2.5s ease";
         logo.style.opacity = "1";
-        logo.style.transform = "scale(1)";
-        quote.style.transition = "all 1s ease 1.5s";
+        logo.style.transform = "translateY(0) scale(1)";
         quote.style.opacity = "1";
-        tudum.play().catch(e => console.log("Sound interaction needed"));
-    }, 100);
+        tudum.play().catch(e => console.log("Sound play blocked"));
+    }, 500);
 
-    // 2. ఇంట్రో నుండి గేట్ కి ట్రాన్సిషన్ (Dissolve)
+    // 2. 5 సెకన్ల తర్వాత పైకి వెళ్ళిపోవడం (Upward Fly)
     setTimeout(() => {
-        logo.classList.add('dissolve-effect');
+        logo.classList.add('fly-up');
         quote.style.opacity = "0";
         setTimeout(() => {
-            introLayer.style.display = "none";
-            appGate.style.display = "flex";
+            intro.style.display = "none";
+            gate.style.display = "flex";
         }, 1200);
-    }, 5000); // పక్కా 5 సెకన్లు
+    }, 5000);
 };
 
-function unlockSite(el) {
+function unlockApp() {
     const gate = document.getElementById('app-gate');
-    // క్లిక్ చేసినప్పుడు జూమ్ అయ్యే ట్రాన్సిషన్
-    gate.classList.add('profile-zoom-final');
+    gate.classList.add('app-zoom-out');
     setTimeout(() => {
         gate.style.display = 'none';
         document.body.style.overflow = "auto";
-        // ఇక్కడ నీ మెయిన్ సైట్ కంటెంట్ రివీల్ అవుతుంది
     }, 900);
 }
-
 document.body.style.overflow = "hidden";
 </script>
 <!DOCTYPE html>
