@@ -3,77 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Professional Portfolio</title>
+    <title>Goutham Bolli | Glass Portfolio</title>
     <style>
-        :root { --purple: #7a4ed9; --glass: rgba(255,255,255,0.8); }
-        body { margin: 0; background: linear-gradient(180deg, #fff, #e9e2ff); font-family: 'Segoe UI', sans-serif; color: #333; }
-        
-        /* Glassy Header */
-        header { background: #fff; padding: 40px 20px; text-align: center; border-radius: 0 0 40px 40px; box-shadow: 0 10px 30px rgba(122,78,217,0.1); }
-        .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 4px solid var(--purple); object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        
-        /* Content Boxes */
-        .glass-box { background: var(--glass); backdrop-filter: blur(15px); border-radius: 25px; padding: 25px; margin: 20px 15px; border: 1px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .tag { background: var(--purple); color: #fff; font-size: 11px; padding: 5px 15px; border-radius: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-        
-        /* Video Player */
-        .video-container { margin: 0 15px; border-radius: 25px; overflow: hidden; background: #000; aspect-ratio: 9/16; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
-        iframe { width: 100%; height: 100%; border: none; }
+        :root { --purple: #7a4ed9; --glass: rgba(255, 255, 255, 0.4); --border: rgba(255, 255, 255, 0.5); }
+        body { 
+            margin: 0; 
+            background: linear-gradient(45deg, #f3f0ff, #e5dbff, #f3f0ff); 
+            background-attachment: fixed;
+            font-family: 'Segoe UI', sans-serif; 
+            color: #333;
+            overflow-x: hidden;
+        }
 
-        /* Floating WA Button */
-        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 1000; }
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            margin: 20px 15px;
+            padding: 25px;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .glass-card:active { transform: scale(0.98); }
+
+        /* Header */
+        header { 
+            background: rgba(255, 255, 255, 0.6); 
+            backdrop-filter: blur(10px);
+            padding: 40px 20px; 
+            border-radius: 0 0 40px 40px; 
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .name { font-size: 30px; font-weight: 900; color: var(--purple); margin: 0; letter-spacing: 1px; }
+
+        /* Label Tag */
+        .tag { 
+            background: var(--purple); 
+            color: white; 
+            font-size: 10px; 
+            font-weight: bold; 
+            padding: 6px 15px; 
+            border-radius: 20px; 
+            display: inline-block; 
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(122, 78, 217, 0.3);
+        }
+
+        /* Folders Grid */
+        .folder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; margin-top: 10px; }
+        .folder { cursor: pointer; }
+        .folder img { width: 45px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+        .folder span { font-size: 8px; font-weight: 800; color: #666; display: block; margin-top: 5px; }
+
+        /* Action Buttons */
+        .actions { display: flex; gap: 10px; padding: 0 15px; margin-top: 10px; }
+        .btn { 
+            flex: 1; 
+            padding: 15px; 
+            border-radius: 20px; 
+            border: none; 
+            font-weight: bold; 
+            text-decoration: none; 
+            text-align: center; 
+            font-size: 13px;
+            backdrop-filter: blur(10px);
+        }
+        .btn-call { background: rgba(122, 78, 217, 0.1); color: var(--purple); border: 1px solid var(--purple); }
+        .btn-wa { background: #25D366; color: white; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+
+        /* Video Player */
+        .video-box { background: #000; border-radius: 25px; aspect-ratio: 16/9; overflow: hidden; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
-<body>
+<body onclick="playTick()">
 
     <header>
-        <img id="p-img" src="https://via.placeholder.com/150" class="profile-img">
-        <h1 style="color:var(--purple); margin: 15px 0;">Goutham Bolli <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" width="22"></h1>
-        <p style="font-size: 10px; letter-spacing: 3px; color: #888; font-weight: bold;">VIDEO EDITOR & WRITER</p>
+        <h1 class="name">GOUTHAM BOLLI <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" width="22"></h1>
+        <p style="font-size: 10px; color: #888; font-weight: bold; letter-spacing: 3px; margin-top: 8px;">UNSTOPPABLE EDITOR</p>
     </header>
 
-    <div class="glass-box">
-        <span class="tag">ABOUT ME</span>
-        <p id="p-bio" style="line-height: 1.7; font-size: 15px;">Loading your story...</p>
+    <div class="actions">
+        <a href="tel:+919391522744" class="btn btn-call">📞 CALL ME</a>
+        <a id="p-wa" href="#" class="btn btn-wa">💬 WHATSAPP</a>
     </div>
 
-    <div style="text-align:center; margin: 10px 0;"><span class="tag" style="background:#4a148c;">LATEST WORK</span></div>
-    
-    <div class="video-container">
-        <iframe id="p-video" src=""></iframe>
+    <div class="glass-card">
+        <span class="tag">PROFESSIONAL SUMMARY</span>
+        <p id="p-summary" style="font-size: 14px; line-height: 1.6; color: #444; margin: 0;">Loading...</p>
     </div>
 
-    <div class="glass-box" style="margin-bottom: 80px;">
-        <span class="tag">SKILLS</span>
-        <p id="p-skills" style="font-size: 14px; font-weight: 500;"></p>
+    <div class="glass-card" style="background: rgba(122, 78, 217, 0.05);">
+        <span class="tag">THE BREAKTHROUGH (2022)</span>
+        <p style="font-size: 14px; color: #444; margin: 0;">2022లో 'Babu Gari Lokamantha Mayajalam' నా కెరీర్‌నే మార్చేసింది.</p>
     </div>
 
-    <a id="p-wa" href="#" class="wa-float">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
-    </a>
+    <div class="glass-card">
+        <span class="tag">SELECTED WORKS</span>
+        <div class="folder-grid">
+            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>SHORT FILMS</span></div>
+            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>VLOGS</span></div>
+            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>TITLES</span></div>
+            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>REELS</span></div>
+            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>TEASERS</span></div>
+            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>WEDDING</span></div>
+        </div>
+        <div class="video-box">
+            <iframe id="p-video" src=""></iframe>
+        </div>
+    </div>
+
+    <div class="glass-card">
+        <span class="tag">TECHNICAL ARSENAL</span>
+        <div style="font-size: 13px; color: #555; font-weight: 600;">
+            • Premiere Pro (Industry Standard)<br>
+            • After Effects (VFX & Motion)<br>
+            • Smartphone & Desktop PC
+        </div>
+    </div>
+
+    <audio id="tick" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
     <script>
-        // నీ గూగుల్ షీట్ CSV కన్వర్టర్
+        function playTick() {
+            document.getElementById('tick').play();
+            if(navigator.vibrate) navigator.vibrate(15);
+        }
+
         const sheetID = "1K65MH0F0K_Avl6S5ET3qFvGB7QsrSeZtlrtWaeShPAM";
         const csvURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv`;
 
-        async function syncSite() {
+        async function sync() {
             try {
                 const res = await fetch(csvURL);
                 const text = await res.text();
                 const rows = text.split('\n').map(row => row.replace(/"/g, '').split(','));
-
-                // షీట్ నుండి డేటా మ్యాపింగ్ (Column B)
-                document.getElementById('p-bio').innerText = rows[1][1]; 
-                document.getElementById('p-video').src = "https://www.youtube.com/embed/" + rows[2][1] + "?autoplay=1&mute=1&loop=1";
-                document.getElementById('p-img').src = rows[3][1];
-                document.getElementById('p-wa').href = "https://wa.me/91" + rows[4][1];
-                document.getElementById('p-skills').innerText = rows[5][1];
-            } catch (err) {
-                console.log("Error loading data");
-            }
+                document.getElementById('p-summary').innerText = rows[2][1]; 
+                document.getElementById('p-video').src = "https://www.youtube.com/embed/qapXhJJNAy8?autoplay=1&mute=1";
+                document.getElementById('p-wa').href = "https://wa.me/91" + rows[7][1];
+            } catch (e) { console.log("Error"); }
         }
-        syncSite();
+        sync();
     </script>
 </body>
 </html>
