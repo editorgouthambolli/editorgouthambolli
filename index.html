@@ -3,152 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Glass Portfolio</title>
+    <title>Goutham Bolli | Premium Portfolio</title>
     <style>
-        :root { --purple: #7a4ed9; --glass: rgba(255, 255, 255, 0.4); --border: rgba(255, 255, 255, 0.5); }
+        :root { 
+            --p-purple: #8a5cf5; 
+            --p-dark: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.5);
+            --border: rgba(255, 255, 255, 0.4);
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
         body { 
             margin: 0; 
-            background: linear-gradient(45deg, #f3f0ff, #e5dbff, #f3f0ff); 
+            background: linear-gradient(135deg, #f8f7ff 0%, #e8e1ff 50%, #f8f7ff 100%);
             background-attachment: fixed;
-            font-family: 'Segoe UI', sans-serif; 
-            color: #333;
-            overflow-x: hidden;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #2d2d2d;
+            line-height: 1.6;
         }
 
-        /* Glassmorphism Card Style */
-        .glass-card {
+        /* Premium Glass Header */
+        header {
+            padding: 60px 20px 40px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+        }
+
+        .name { 
+            font-size: 34px; 
+            font-weight: 900; 
+            color: var(--p-purple); 
+            margin: 0; 
+            letter-spacing: -1px;
+            text-shadow: 0 10px 20px rgba(138, 92, 245, 0.2);
+        }
+
+        .verified { width: 22px; vertical-align: middle; margin-left: 5px; }
+
+        /* Premium Floating Buttons */
+        .action-bar {
+            display: flex;
+            gap: 12px;
+            padding: 20px 15px;
+            position: sticky;
+            top: 10px;
+            z-index: 1000;
+        }
+
+        .p-btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: 24px;
+            border: none;
+            font-weight: 700;
+            font-size: 13px;
+            text-align: center;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .btn-call { background: white; color: var(--p-purple); border: 1px solid var(--border); }
+        .btn-wa { background: #25D366; color: white; }
+        .p-btn:active { transform: scale(0.92); }
+
+        /* Section Cards */
+        .p-card {
             background: var(--glass);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-radius: 30px;
-            border: 1px solid var(--border);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
             margin: 20px 15px;
             padding: 25px;
-            text-align: left;
+            border-radius: 35px;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 35px rgba(31, 38, 135, 0.05);
+        }
+
+        .p-label {
+            background: linear-gradient(90deg, var(--p-purple), #b194ff);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Grid for Folders */
+        .p-folder-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .p-folder {
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .p-folder img { 
+            width: 50px; 
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1));
             transition: 0.3s;
         }
-        .glass-card:active { transform: scale(0.98); }
 
-        /* Header */
-        header { 
-            background: rgba(255, 255, 255, 0.6); 
-            backdrop-filter: blur(10px);
-            padding: 40px 20px; 
-            border-radius: 0 0 40px 40px; 
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-        .name { font-size: 30px; font-weight: 900; color: var(--purple); margin: 0; letter-spacing: 1px; }
+        .p-folder:active img { transform: translateY(-5px) scale(1.1); }
 
-        /* Label Tag */
-        .tag { 
-            background: var(--purple); 
-            color: white; 
-            font-size: 10px; 
-            font-weight: bold; 
-            padding: 6px 15px; 
-            border-radius: 20px; 
-            display: inline-block; 
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(122, 78, 217, 0.3);
+        .p-folder span {
+            display: block;
+            font-size: 9px;
+            font-weight: 700;
+            color: #666;
+            margin-top: 8px;
+            text-transform: uppercase;
         }
 
-        /* Folders Grid */
-        .folder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; margin-top: 10px; }
-        .folder { cursor: pointer; }
-        .folder img { width: 45px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
-        .folder span { font-size: 8px; font-weight: 800; color: #666; display: block; margin-top: 5px; }
-
-        /* Action Buttons */
-        .actions { display: flex; gap: 10px; padding: 0 15px; margin-top: 10px; }
-        .btn { 
-            flex: 1; 
-            padding: 15px; 
-            border-radius: 20px; 
-            border: none; 
-            font-weight: bold; 
-            text-decoration: none; 
-            text-align: center; 
-            font-size: 13px;
-            backdrop-filter: blur(10px);
+        /* Video Showcase */
+        .p-video-container {
+            background: #000;
+            border-radius: 30px;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            margin-top: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            border: 4px solid white;
         }
-        .btn-call { background: rgba(122, 78, 217, 0.1); color: var(--purple); border: 1px solid var(--purple); }
-        .btn-wa { background: #25D366; color: white; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
 
-        /* Video Player */
-        .video-box { background: #000; border-radius: 25px; aspect-ratio: 16/9; overflow: hidden; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         iframe { width: 100%; height: 100%; border: none; }
+
+        /* Technical Tags */
+        .tech-pill {
+            display: inline-block;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border: 1px solid #eee;
+        }
+
     </style>
 </head>
-<body onclick="playTick()">
+<body onclick="interact()">
 
     <header>
-        <h1 class="name">GOUTHAM BOLLI <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" width="22"></h1>
-        <p style="font-size: 10px; color: #888; font-weight: bold; letter-spacing: 3px; margin-top: 8px;">UNSTOPPABLE EDITOR</p>
+        <div class="name">GOUTHAM BOLLI <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" class="verified"></div>
+        <p style="font-size: 11px; color: #999; font-weight: 700; letter-spacing: 4px; margin-top: 10px;">CINEMATIC STORYTELLER</p>
     </header>
 
-    <div class="actions">
-        <a href="tel:+919391522744" class="btn btn-call">📞 CALL ME</a>
-        <a id="p-wa" href="#" class="btn btn-wa">💬 WHATSAPP</a>
+    <div class="action-bar">
+        <a href="tel:+919391522744" class="p-btn btn-call">📞 CALL</a>
+        <a id="p-wa" href="#" class="p-btn btn-wa">💬 WHATSAPP</a>
     </div>
 
-    <div class="glass-card">
-        <span class="tag">PROFESSIONAL SUMMARY</span>
-        <p id="p-summary" style="font-size: 14px; line-height: 1.6; color: #444; margin: 0;">Loading...</p>
+    <div class="p-card">
+        <span class="p-label">Profile</span>
+        <p id="p-summary" style="font-size: 15px; color: #444; margin: 0; font-weight: 500;">Syncing with Google Sheets...</p>
     </div>
 
-    <div class="glass-card" style="background: rgba(122, 78, 217, 0.05);">
-        <span class="tag">THE BREAKTHROUGH (2022)</span>
-        <p style="font-size: 14px; color: #444; margin: 0;">2022లో 'Babu Gari Lokamantha Mayajalam' నా కెరీర్‌నే మార్చేసింది.</p>
+    <div class="p-card" style="background: linear-gradient(135deg, rgba(138, 92, 245, 0.1), rgba(255, 255, 255, 0.5)); border: 1px solid rgba(138, 92, 245, 0.2);">
+        <span class="p-label" style="background: var(--p-purple);">🔥 UNSTOPPABLE</span>
+        <p style="font-size: 16px; font-weight: 700; color: var(--p-purple); margin: 0; line-height: 1.4;">
+            "పరిస్థితులు ఎలా ఉన్నా, లక్ష్యం వైపు సాగడమే నా నైజం. 7 ఏళ్లుగా అలుపెరగని నా ఈ ప్రయాణం... కేవలం ఒక ఆరంభం మాత్రమే!"
+        </p>
     </div>
 
-    <div class="glass-card">
-        <span class="tag">SELECTED WORKS</span>
-        <div class="folder-grid">
-            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>SHORT FILMS</span></div>
-            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>VLOGS</span></div>
-            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>TITLES</span></div>
-            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>REELS</span></div>
-            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>TEASERS</span></div>
-            <div class="folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>WEDDING</span></div>
+    <div class="p-card">
+        <span class="p-label">Selected Works</span>
+        <div class="p-folder-grid">
+            <div class="p-folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>Short Films</span></div>
+            <div class="p-folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>Vlogs</span></div>
+            <div class="p-folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>Titles</span></div>
+            <div class="p-folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>Reels</span></div>
+            <div class="p-folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>Teasers</span></div>
+            <div class="p-folder"><img src="https://cdn-icons-png.flaticon.com/512/716/716784.png"><span>Wedding</span></div>
         </div>
-        <div class="video-box">
+        
+        <div class="p-video-container">
             <iframe id="p-video" src=""></iframe>
         </div>
     </div>
 
-    <div class="glass-card">
-        <span class="tag">TECHNICAL ARSENAL</span>
-        <div style="font-size: 13px; color: #555; font-weight: 600;">
-            • Premiere Pro (Industry Standard)<br>
-            • After Effects (VFX & Motion)<br>
-            • Smartphone & Desktop PC
+    <div class="p-card">
+        <span class="p-label">Technical Arsenal</span>
+        <div style="margin-top: 5px;">
+            <div class="tech-pill">Adobe Premiere Pro</div>
+            <div class="tech-pill">After Effects</div>
+            <div class="tech-pill">Alight Motion</div>
+            <div class="tech-pill">Content Writing</div>
         </div>
     </div>
 
-    <audio id="tick" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+    <div class="p-card" style="margin-bottom: 60px;">
+        <span class="p-label">Journey</span>
+        <p style="font-size: 13px; color: #777; margin: 0;">2018లో స్మార్ట్‌ఫోన్‌తో మొదలైన నా సినీ ప్రయాణం, ఈ రోజు ప్రొఫెషనల్ ఎడిటింగ్ వరకు అన్ స్టాపబుల్ గా సాగుతోంది.</p>
+    </div>
+
+    <audio id="click-sfx" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
     <script>
-        function playTick() {
-            document.getElementById('tick').play();
-            if(navigator.vibrate) navigator.vibrate(15);
+        function interact() {
+            document.getElementById('click-sfx').play();
+            if(navigator.vibrate) navigator.vibrate(10);
         }
 
         const sheetID = "1K65MH0F0K_Avl6S5ET3qFvGB7QsrSeZtlrtWaeShPAM";
         const csvURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv`;
 
-        async function sync() {
+        async function syncPremium() {
             try {
                 const res = await fetch(csvURL);
                 const text = await res.text();
                 const rows = text.split('\n').map(row => row.replace(/"/g, '').split(','));
+
+                // Data Binding from Google Sheets
                 document.getElementById('p-summary').innerText = rows[2][1]; 
                 document.getElementById('p-video').src = "https://www.youtube.com/embed/qapXhJJNAy8?autoplay=1&mute=1";
                 document.getElementById('p-wa').href = "https://wa.me/91" + rows[7][1];
-            } catch (e) { console.log("Error"); }
+            } catch (e) { console.log("Sync failed, but keep being unstoppable!"); }
         }
-        sync();
+        syncPremium();
     </script>
 </body>
 </html>
