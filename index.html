@@ -1,102 +1,68 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="te">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Goutham Bolli | Cinematic Master</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goutham Bolli | Cinematic Editor</title>
     <style>
-        :root { --purple: #9d72ff; --glass: rgba(255, 255, 255, 0.1); }
-        body, html { margin: 0; padding: 0; background: #000; color: #fff; overflow-x: hidden; font-family: 'Segoe UI', sans-serif; }
+        :root { --purple: #9d72ff; --glass: rgba(255, 255, 255, 0.08); }
+        body, html { margin: 0; padding: 0; background: #000; color: #fff; font-family: sans-serif; overflow-x: hidden; }
 
-        /* 1. CINEMATIC INTRO (Netflix Style) */
-        #intro-screen {
+        /* INTRO STYLE */
+        #intro-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #000; z-index: 9999; display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
+            justify-content: center; align-items: center; text-align: center;
         }
-        .g-logo { font-size: 50px; font-weight: bold; color: var(--purple); text-shadow: 0 0 30px var(--purple); opacity: 0; animation: zoomIn 2s forwards; }
-        .quote { font-size: 14px; color: #ccc; margin-top: 15px; opacity: 0; animation: fadeIn 1.5s 2.2s forwards; font-style: italic; }
-        @keyframes zoomIn { to { transform: scale(1.1); opacity: 1; } }
+        .g-name { font-size: 24px; color: var(--purple); text-shadow: 0 0 10px var(--purple); opacity: 0; animation: fadeIn 1.2s forwards; }
+        .quote { font-size: 11px; color: #777; margin-top: 8px; opacity: 0; animation: fadeIn 1.2s 1.5s forwards; }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        /* 2. STATIC TOP 5 SECTION (Fixed - No Change) */
-        #main-content { display: none; padding: 15px; }
-        .glass-box { 
-            background: var(--glass); backdrop-filter: blur(15px);
-            border-radius: 15px; padding: 15px; margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .tag { background: var(--purple); font-size: 10px; padding: 3px 10px; border-radius: 10px; font-weight: bold; text-transform: uppercase; }
-
-        /* 3. TECHNICAL ARSENAL (Grid Layout) */
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .skill-item { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; font-size: 12px; text-align: center; border: 0.5px solid rgba(255,255,255,0.1); }
-
-        /* 4. FULL SCREEN PLAYER (Zero Inch Gap) */
-        .video-container {
-            width: 100vw; height: 100vh; margin: 20px -15px; 
-            background: #000; position: relative; overflow: hidden;
-        }
-        #main-player { width: 100%; height: 100%; border: none; }
-
-        /* 5. FOLDER NAV */
-        .folder-nav { display: flex; overflow-x: auto; gap: 20px; padding: 15px 0; scrollbar-width: none; }
-        .folder { min-width: 70px; text-align: center; cursor: pointer; transition: 0.3s; }
-        .folder:hover { transform: translateY(-5px); }
+        /* CONTENT STYLE */
+        #content-layer { display: none; padding: 20px; max-width: 600px; margin: 0 auto; }
+        .glass-box { background: var(--glass); backdrop-filter: blur(20px); border-radius: 12px; padding: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1); }
+        .tag { background: var(--purple); font-size: 9px; padding: 2px 8px; border-radius: 4px; font-weight: bold; display: inline-block; margin-bottom: 8px; }
+        
+        /* FULL PLAYER - ZERO GAP */
+        .video-section { width: 100vw; height: 100vh; margin: 20px -20px; background: #000; }
+        iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
-<body>
+<body onclick="unmuteVideo()">
 
-    <div id="intro-screen">
-        <div class="g-logo">G | GOUTHAM EDITOR</div>
-        <div class="quote">"Every frame tells a story, but only a master editor makes it a masterpiece."</div>
+    <div id="intro-layer">
+        <div class="g-name">G | GOUTHAM EDITOR</div>
+        <div class="quote">"Every frame tells a story..."</div>
     </div>
 
-    <div id="main-content">
-        <div class="glass-box"><span class="tag">Professional Summary</span><p style="font-size:13px;">I am a passionate Cinematic Storyteller specializing in turning raw footage into impactful visual narratives.</p></div>
-        <div class="glass-box"><span class="tag">Beyond Limits: My Journey</span><p style="font-size:13px;">Started with a smartphone in 2018... proving that true creativity knows no boundaries.</p></div>
-        <div class="glass-box"><span class="tag">The Breakthrough Moment (2022)</span><p style="font-size:13px;">In 2022, recognized by Director Prithvi... transformed my passion into a professional mission.</p></div>
-        <div class="glass-box"><span class="tag">Unstoppable Passion</span><p style="font-size:13px;">From Chat Edits on Alight Motion to cinematic projects... creativity has no limits.</p></div>
-        
-        <div class="glass-box">
-            <span class="tag">Technical Arsenal</span>
-            <div class="skills-grid">
-                <div class="skill-item">🎬 Video Editing</div>
-                <div class="skill-item">💥 After Effects</div>
-                <div class="skill-item">🎥 Premiere Pro</div>
-                <div class="skill-item">📱 Alight Motion</div>
-            </div>
-        </div>
+    <div id="content-layer">
+        <div class="glass-box"><span class="tag">SUMMARY</span><p style="font-size:12px;">Cinematic Storyteller.</p></div>
+        <div class="glass-box"><span class="tag">JOURNEY</span><p style="font-size:12px;">Smartphone to Professional Masterpieces.</p></div>
+        <div class="glass-box"><span class="tag">BREAKTHROUGH</span><p style="font-size:12px;">2022 Transformation.</p></div>
+        <div class="glass-box"><span class="tag">PASSION</span><p style="font-size:12px;">Creativity has no limits.</p></div>
+        <div class="glass-box"><span class="tag">TECHNICAL</span><p style="font-size:12px;">Pr, Ae, Ai, Alight Motion.</p></div>
 
-        <div class="glass-box" style="padding:0; overflow:hidden; border:none; background:transparent;">
-            <div style="text-align:center; padding:10px;"><span class="tag" style="background:#6a1b9a;">📁 Selected Works</span></div>
-            <div class="folder-nav">
-                <div class="folder" onclick="loadVideo('horizontal')">📂<br><span style="font-size:10px;">Short Films</span></div>
-                <div class="folder" onclick="loadVideo('vertical')">📂<br><span style="font-size:10px;">Reels</span></div>
-            </div>
-            <div class="video-container">
-                <iframe id="main-player" src="https://www.youtube.com/embed/qapXhJJNAy8?autoplay=1&mute=1&controls=0" allow="autoplay; fullscreen"></iframe>
-            </div>
+        <div class="video-section">
+            <iframe id="main-video" src="https://www.youtube.com/embed/qapXhJJNAy8?enablejsapi=1&autoplay=1&mute=1&loop=1"></iframe>
         </div>
     </div>
 
     <script>
-        // Intro Transition
+        // ఇంట్రో అయ్యాక కంటెంట్ చూపించడం
         setTimeout(() => {
-            document.getElementById('intro-screen').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-        }, 4500);
+            document.getElementById('intro-layer').style.display = 'none';
+            document.getElementById('content-layer').style.display = 'block';
+        }, 4000);
 
-        // Single Tab Video Loader
-        function loadVideo(mode) {
-            const player = document.getElementById('main-player');
-            if(mode === 'vertical') {
-                player.src = "https://www.youtube.com/embed/your_reel_id?autoplay=1";
-            } else {
-                player.src = "https://www.youtube.com/embed/your_film_id?autoplay=1";
+        // సౌండ్ ఫిక్స్ ఫంక్షన్
+        function unmuteVideo() {
+            const iframe = document.getElementById('main-video');
+            let src = iframe.src;
+            if (src.includes("mute=1")) {
+                // మ్యూట్ తీసేసి మళ్ళీ లోడ్ చేస్తుంది
+                iframe.src = src.replace("mute=1", "mute=0");
             }
         }
     </script>
 </body>
 </html>
-
