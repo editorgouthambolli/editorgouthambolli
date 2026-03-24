@@ -1,3 +1,82 @@
+<div id="netflix-mobile-gate">
+    <div class="preview-box">
+        <iframe class="mobile-video" src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" frameborder="0"></iframe>
+        
+        <div class="mobile-overlay">
+            <span class="badge">NEW</span>
+            <h1 class="title">ఓ చిన్న ప్రేమ కథ</h1>
+            <p class="sub-text">Coming Soon | Directed by Goutham</p>
+        </div>
+    </div>
+
+    <div class="selection-box">
+        <p class="who-text">Who's watching?</p>
+        <div class="profile-card" onclick="startApp()">
+            <div class="avatar">G</div>
+            <p class="user-name">Goutham</p>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ఫోన్ కి తగ్గట్టు డిజైన్ */
+#netflix-mobile-gate {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #000; z-index: 10000; display: flex; flex-direction: column;
+}
+
+.preview-box {
+    height: 60vh; width: 100%; position: relative; overflow: hidden;
+}
+
+.mobile-video {
+    width: 100%; height: 100%; transform: scale(2.5); /* ఫోన్ లో వీడియో క్లియర్ గా కనిపించడానికి */
+    opacity: 0.8; pointer-events: none;
+}
+
+.mobile-overlay {
+    position: absolute; bottom: 15%; left: 20px;
+}
+
+.badge {
+    background: #e50914; color: #fff; padding: 2px 8px; font-size: 10px; font-weight: bold; border-radius: 2px;
+}
+
+.title { font-size: 28px; margin: 8px 0; font-weight: 900; }
+
+.sub-text { color: #aaa; font-size: 12px; letter-spacing: 1px; }
+
+.selection-box {
+    height: 40vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.who-text { color: #fff; font-size: 16px; margin-bottom: 15px; }
+
+.avatar {
+    width: 90px; height: 90px; background: #ffcc00; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; font-weight: bold; color: #000;
+}
+
+.user-name { color: #808080; margin-top: 8px; font-size: 14px; text-align: center; }
+
+/* క్లిక్ చేసినప్పుడు జూమ్ ఎఫెక్ట్ */
+.zoom-in-site { animation: zoomInSite 0.8s forwards; }
+@keyframes zoomInSite {
+    to { transform: scale(10); opacity: 0; visibility: hidden; }
+}
+</style>
+
+<script>
+function startApp() {
+    const gate = document.getElementById('netflix-mobile-gate');
+    gate.classList.add('zoom-in-site');
+    setTimeout(() => {
+        gate.style.display = 'none';
+        // ఇక్కడ నీ మెయిన్ పోర్ట్‌ఫోలియో కనిపిస్తుంది
+    }, 800);
+}
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
