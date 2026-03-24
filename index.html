@@ -2,135 +2,181 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Premium Movie Ticket</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goutham Bolli | Editor Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        background: #0f172a;
-        font-family: 'Segoe UI', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-    .ticket {
-        width: 350px;
-        background: linear-gradient(135deg, #1e293b, #0f172a);
-        color: #fff;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        overflow: hidden;
-        position: relative;
-    }
+body{
+    background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    color:white;
+}
 
-    .ticket::before,
-    .ticket::after {
-        content: "";
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: #0f172a;
-        border-radius: 50%;
-    }
+/* NAVBAR */
+.nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    backdrop-filter: blur(15px);
+}
 
-    .ticket::before {
-        top: 50%;
-        left: -15px;
-        transform: translateY(-50%);
-    }
+.logo{
+    font-size:22px;
+    font-weight:700;
+}
 
-    .ticket::after {
-        top: 50%;
-        right: -15px;
-        transform: translateY(-50%);
-    }
+.logo span{
+    color:#a855f7;
+}
 
-    .header {
-        padding: 20px;
-        text-align: center;
-        border-bottom: 1px dashed #475569;
-    }
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+}
 
-    .header h2 {
-        margin: 0;
-        font-size: 20px;
-        letter-spacing: 2px;
-        color: #facc15;
-    }
+.hero img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:3px solid #a855f7;
+    box-shadow:0 0 30px #a855f7;
+}
 
-    .movie {
-        padding: 15px 20px;
-    }
+.hero h1{
+    margin-top:20px;
+    font-size:32px;
+}
 
-    .movie h3 {
-        margin: 0;
-        font-size: 22px;
-        color: #fff;
-    }
+.hero p{
+    opacity:0.8;
+}
 
-    .details {
-        display: flex;
-        justify-content: space-between;
-        padding: 15px 20px;
-        font-size: 14px;
-        color: #cbd5f5;
-    }
+/* BUTTON */
+.btn{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#a855f7;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+}
 
-    .details div {
-        text-align: center;
-    }
+/* SECTION */
+.section{
+    padding:60px 40px;
+}
 
-    .barcode {
-        padding: 20px;
-        text-align: center;
-    }
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
 
-    .barcode img {
-        width: 80%;
-    }
+/* VIDEO GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-    .footer {
-        text-align: center;
-        padding: 10px;
-        font-size: 12px;
-        color: #94a3b8;
-    }
+.video{
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.video video{
+    width:100%;
+    border-radius:15px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:20px;
+    opacity:0.7;
+}
 </style>
 </head>
+
 <body>
 
-<div class="ticket">
-    <div class="header">
-        <h2>🎬 PREMIUM CINEMA</h2>
-    </div>
+<!-- NAV -->
+<div class="nav">
+    <div class="logo">Goutham <span>✔</span></div>
+    <div>Editor & Content Writer</div>
+</div>
 
-    <div class="movie">
-        <h3>Salaar</h3>
-        <p>Screen 3 • Dolby Atmos</p>
-    </div>
+<!-- HERO -->
+<div class="hero">
+    <img src="your-photo.jpg">
+    <h1>Goutham Bolli</h1>
+    <p>Video Editor & Content Creator</p>
+    <button class="btn">Contact Me</button>
+</div>
 
-    <div class="details">
-        <div>
-            <strong>Date</strong><br>
-            25 Mar
+<!-- ABOUT -->
+<div class="section">
+    <div class="card">
+        <h2>🎬 About Me</h2>
+        <p>
+        Hi everyone! I’m Goutham, a passionate Video Editor and Content Writer...
+        </p>
+    </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+    <div class="card">
+        <h2>💡 Skills</h2>
+        <ul>
+            <li>Premiere Pro</li>
+            <li>Illustrator (Ai)</li>
+            <li>Alight Motion</li>
+            <li>KineMaster</li>
+            <li>Content Writing</li>
+        </ul>
+    </div>
+</div>
+
+<!-- VIDEOS -->
+<div class="section">
+    <h2>🎥 My Work</h2>
+    <div class="grid">
+        <div class="video">
+            <video src="video1.mp4" controls></video>
         </div>
-        <div>
-            <strong>Time</strong><br>
-            7:30 PM
-        </div>
-        <div>
-            <strong>Seat</strong><br>
-            A12
+        <div class="video">
+            <video src="video2.mp4" controls></video>
         </div>
     </div>
+</div>
 
-    <div class="barcode">
-        <img src="https://barcode.tec-it.com/barcode.ashx?data=PREMIUM123456&code=Code128" alt="barcode">
+<!-- CONTACT -->
+<div class="section">
+    <div class="card">
+        <h2>📞 Contact</h2>
+        <p>📞 8341388567</p>
+        <p>📧 gouthambolli576@gmail.com</p>
     </div>
+</div>
 
-    <div class="footer">
-        Enjoy Your Movie 🍿
-    </div>
+<div class="footer">
+    “Every cut tells a story – Let me help tell yours.”
 </div>
 
 </body>
