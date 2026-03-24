@@ -3,152 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Master</title>
+    <title>Goutham Bolli | Portfolio</title>
     <style>
-        /* 🎨 రంగులు మరియు గ్లాసీ సెట్టింగ్స్ */
         :root { 
-            --purple: #9d72ff; 
-            --glass: rgba(255, 255, 255, 0.12); /* వైట్ గ్లాస్ ఎఫెక్ట్ */
-            --border: rgba(255, 255, 255, 0.2); 
+            --p-glow: #9d72ff; 
+            --w-glass: rgba(255, 255, 255, 0.15); 
+            --border: rgba(255, 255, 255, 0.2);
         }
 
         body, html { 
-            margin: 0; padding: 0; background: #000; color: #fff; 
-            font-family: 'Segoe UI', sans-serif; overflow-x: hidden; 
+            margin: 0; padding: 0; background: #0b021a; /* డార్క్ పర్పుల్ బేస్ */
+            color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; 
         }
 
-        /* 1. 🎬 సినిమాటిక్ ఇంట్రో (Netflix Style) */
-        #intro-layer {
+        /* 1. COMPACT INTRO */
+        #intro {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #000; z-index: 9999; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
+            justify-content: center; align-items: center;
         }
-        .g-logo { 
-            font-size: 26px; font-weight: bold; color: var(--purple); 
-            text-shadow: 0 0 15px var(--purple); letter-spacing: 3px; 
-            opacity: 0; animation: zoomFade 2s forwards; 
-        }
-        .quote { 
-            font-size: 11px; color: #888; margin-top: 10px; 
-            opacity: 0; animation: fadeIn 1.5s 2.2s forwards; 
-        }
-        @keyframes zoomFade { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .logo-text { font-size: 24px; color: var(--p-glow); text-shadow: 0 0 15px var(--p-glow); opacity: 0; animation: fadeIn 1s forwards; }
         @keyframes fadeIn { to { opacity: 1; } }
 
-        /* 2. 📱 మెయిన్ లేఅవుట్ (One-by-One Boxes) */
-        #main-site { display: none; padding: 20px; max-width: 600px; margin: 0 auto; }
+        /* 2. DEVICES SECTION (4 or 5 Boxes One-by-One) */
+        #content { display: none; padding: 20px; max-width: 480px; margin: 0 auto; }
         
-        .glass-box { 
-            background: var(--glass); 
-            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border-radius: 15px; padding: 18px; margin-bottom: 15px; 
+        .device-box { 
+            background: var(--w-glass); 
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 15px; padding: 20px; margin-bottom: 20px; 
             border: 1px solid var(--border);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-            animation: slideUp 0.8s ease-out;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: left;
         }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         .tag { 
-            background: var(--purple); font-size: 9px; padding: 3px 10px; 
-            border-radius: 5px; font-weight: bold; text-transform: uppercase; 
-            display: inline-block; margin-bottom: 10px; 
+            background: var(--p-glow); color: #fff; font-size: 10px; padding: 3px 12px; 
+            border-radius: 5px; font-weight: bold; display: inline-block; margin-bottom: 10px; 
         }
-        .box-text { font-size: 13px; line-height: 1.6; color: #eee; margin: 0; }
+        .desc { font-size: 13px; line-height: 1.6; color: #ddd; margin: 0; }
 
-        /* 🛠️ టెక్నికల్ స్కిల్స్ గ్రిడ్ */
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .skill { 
-            background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; 
-            font-size: 11px; text-align: center; border: 0.5px solid var(--border); 
-        }
-
-        /* 3. 📺 ఫుల్ స్క్రీన్ ప్లేయర్ (Zero Gap) */
-        .video-wrapper { 
-            width: 100vw; height: 100vh; margin: 20px -20px; 
-            background: #000; position: relative; overflow: hidden; 
+        /* 3. FULL VIDEO PLAYER */
+        .video-box { 
+            width: 100vw; height: 100vh; margin: 30px -20px; 
+            background: #000; position: relative;
         }
         iframe { width: 100%; height: 100%; border: none; }
-
-        /* 📁 ఫోల్డర్స్ సెక్షన్ */
-        .folder-nav { display: flex; overflow-x: auto; gap: 20px; padding: 10px 0; scrollbar-width: none; }
-        .folder { min-width: 80px; text-align: center; cursor: pointer; color: var(--purple); }
     </style>
 </head>
-<body onclick="unmuteVideo()">
+<body onclick="unmute()">
 
-    <div id="intro-layer">
-        <div class="g-logo">G | GOUTHAM EDITOR</div>
-        <div class="quote">"Every frame tells a story..."</div>
+    <div id="intro">
+        <div class="logo-text">G | GOUTHAM EDITOR</div>
     </div>
 
-    <div id="main-site">
-        
-        <div class="glass-box">
-            <span class="tag">Professional Summary</span>
-            <p class="box-text">I am a passionate Cinematic Storyteller specializing in visual narratives with mastery in Premiere Pro and After Effects.</p>
+    <div id="content">
+        <div class="device-box">
+            <span class="tag">ADOBE PREMIERE PRO</span>
+            <p class="desc">Professional timeline editing for YouTube and Short Films.</p>
         </div>
 
-        <div class="glass-box">
-            <span class="tag">Beyond Limits: My Journey</span>
-            <p class="box-text">Started with a smartphone in 2018... proving that Ambition > Condition in every frame.</p>
+        <div class="device-box">
+            <span class="tag">AFTER EFFECTS</span>
+            <p class="desc">Cinematic VFX, Motion Graphics, and high-end transitions.</p>
         </div>
 
-        <div class="glass-box">
-            <span class="tag">The Breakthrough Moment</span>
-            <p class="box-text">In 2022, my perspective changed. Transformed passion into professional mission.</p>
+        <div class="device-box">
+            <span class="tag">ALIGHT MOTION</span>
+            <p class="desc">Advanced mobile editing and creative storytelling on the go.</p>
         </div>
 
-        <div class="glass-box">
-            <span class="tag">Unstoppable Passion</span>
-            <p class="box-text">From Alight Motion to high-end cinematic projects, my work is driven by pure creativity.</p>
+        <div class="device-box">
+            <span class="tag">KINEMASTER</span>
+            <p class="desc">Quick edits and high-quality mobile video production.</p>
         </div>
 
-        <div class="glass-box">
-            <span class="tag">Technical Arsenal</span>
-            <div class="skills-grid">
-                <div class="skill">🎬 Video Editing</div>
-                <div class="skill">💥 After Effects</div>
-                <div class="skill">🎥 Premiere Pro</div>
-                <div class="skill">📱 Alight Motion</div>
-            </div>
-        </div>
-
-        <div class="glass-box" style="padding: 10px 0; background: transparent; border: none;">
-            <div style="text-align:center; margin-bottom:15px;"><span class="tag" style="background:#6a1b9a;">📁 Selected Works</span></div>
-            <div class="folder-nav">
-                <div class="folder" onclick="changeVid('H')">📂<br><span style="font-size:10px;">Short Films</span></div>
-                <div class="folder" onclick="changeVid('V')">📂<br><span style="font-size:10px;">Reels</span></div>
-            </div>
-            
-            <div class="video-wrapper">
-                <iframe id="main-video" src="https://www.youtube.com/embed/qapXhJJNAy8?enablejsapi=1&autoplay=1&mute=1&loop=1" allow="autoplay; fullscreen"></iframe>
-            </div>
+        <div style="text-align:center; margin-top:20px;"><span class="tag" style="background:#6a1b9a;">📁 SELECTED WORKS</span></div>
+        <div class="video-box">
+            <iframe id="vid" src="https://www.youtube.com/embed/qapXhJJNAy8?enablejsapi=1&autoplay=1&mute=1"></iframe>
         </div>
     </div>
 
     <script>
-        // 4 సెకన్ల తర్వాత ఇంట్రో తీసేసి మెయిన్ సైట్ చూపిస్తుంది
         setTimeout(() => {
-            document.getElementById('intro-layer').style.display = 'none';
-            document.getElementById('main-site').style.display = 'block';
-        }, 4000);
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 3500);
 
-        // 🔊 సౌండ్ ఫిక్స్: స్క్రీన్ ఎక్కడ టచ్ చేసినా సౌండ్ ఆన్ అవుతుంది
-        function unmuteVideo() {
-            const iframe = document.getElementById('main-video');
-            let src = iframe.src;
-            if (src.includes("mute=1")) {
-                iframe.src = src.replace("mute=1", "mute=0");
-            }
-        }
-
-        // వీడియోలు మార్చడానికి
-        function changeVid(mode) {
-            const frame = document.getElementById('main-video');
-            if(mode === 'V') {
-                frame.src = "https://www.youtube.com/embed/your_reel_id?autoplay=1&mute=0";
-            } else {
-                frame.src = "https://www.youtube.com/embed/your_film_id?autoplay=1&mute=0";
+        function unmute() {
+            const f = document.getElementById('vid');
+            if (f.src.includes("mute=1")) {
+                f.src = f.src.replace("mute=1", "mute=0");
             }
         }
     </script>
