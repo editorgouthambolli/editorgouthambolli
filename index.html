@@ -3,165 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Editor & Content Writer</title>
+    <title>Goutham Bolli | Professional Portfolio</title>
     <style>
-        :root { 
-            --purple-glow: #7a4ed9; 
-            --glass-bg: rgba(255, 255, 255, 0.7); 
-            --white-pure: #ffffff;
-        }
-
-        body, html { 
-            margin: 0; padding: 0; 
-            background: linear-gradient(180deg, var(--white-pure) 0%, #eee8ff 50%, #d8c4ff 100%);
-            background-attachment: fixed;
-            color: #333; font-family: 'Segoe UI', sans-serif; min-height: 100vh; overflow-x: hidden;
-        }
-
-        /* 1. NETFLIX STYLE INTRO (Pr & Ai Logo Entry) */
-        #netflix-intro {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 10000; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; transition: 0.8s;
-        }
-        .intro-logos { display: flex; gap: 20px; opacity: 0; animation: logoFade 2s forwards; }
-        .intro-logos div { width: 60px; height: 60px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 24px; color: #fff; }
-        .pr-box { background: #00005b; border: 2px solid #0000ff; }
-        .ai-box { background: #330000; border: 2px solid #ff7f00; }
-        @keyframes logoFade { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1.1); opacity: 1; } }
-
-        /* 2. WHO'S WATCHING (Professional Profiles) */
-        #profile-selector {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 9999; flex-direction: column; justify-content: center; align-items: center;
-        }
-        .profile-title { font-size: 24px; margin-bottom: 30px; color: #fff; letter-spacing: 1px; }
-        .profile-grid { display: flex; gap: 30px; }
-        .profile-card { text-align: center; cursor: pointer; }
-        .profile-img { width: 100px; height: 100px; background: var(--purple-glow); border-radius: 5px; margin-bottom: 10px; }
-
-        /* 3. MAIN UI (Glassmorphism & White-Purple) */
-        #main-site { display: none; padding: 20px; max-width: 500px; margin: 0 auto; }
+        :root { --purple: #7a4ed9; --glass: rgba(255,255,255,0.8); }
+        body { margin: 0; background: linear-gradient(180deg, #fff, #e9e2ff); font-family: 'Segoe UI', sans-serif; color: #333; }
         
-        header { 
-            background: #fff; padding: 30px; border-radius: 0 0 30px 30px; 
-            text-align: center; box-shadow: 0 10px 30px rgba(122, 78, 217, 0.1); margin-bottom: 30px;
-        }
-        .name-row { display: flex; align-items: center; justify-content: center; gap: 8px; }
-        h1 { color: var(--purple-glow); font-size: 28px; margin: 0; font-weight: 800; text-transform: uppercase; }
-        .blue-tick { width: 18px; height: 18px; }
-
-        .glass-box { 
-            background: var(--glass-bg); 
-            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border-radius: 20px; padding: 25px; margin-bottom: 25px; 
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 15px 35px rgba(122, 78, 217, 0.12);
-        }
-
-        .tag { background: var(--purple-glow); color: #fff; font-size: 10px; padding: 4px 12px; border-radius: 15px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-        .content-text { font-size: 13.5px; line-height: 1.7; color: #444; margin: 0; }
-
-        /* TECHNICAL ARSENAL GRID */
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .skill-item { background: #fff; padding: 12px; border-radius: 12px; font-size: 11px; font-weight: 600; text-align: center; border: 1px solid #eee; }
-
-        /* 4. CHAI SHORTS PLAYER (Vertical Full Screen) */
-        .video-container { 
-            width: 100%; aspect-ratio: 9/16; background: #000; 
-            border-radius: 20px; overflow: hidden; margin-top: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
+        /* Glassy Header */
+        header { background: #fff; padding: 40px 20px; text-align: center; border-radius: 0 0 40px 40px; box-shadow: 0 10px 30px rgba(122,78,217,0.1); }
+        .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 4px solid var(--purple); object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        /* Content Boxes */
+        .glass-box { background: var(--glass); backdrop-filter: blur(15px); border-radius: 25px; padding: 25px; margin: 20px 15px; border: 1px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .tag { background: var(--purple); color: #fff; font-size: 11px; padding: 5px 15px; border-radius: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        
+        /* Video Player */
+        .video-container { margin: 0 15px; border-radius: 25px; overflow: hidden; background: #000; aspect-ratio: 9/16; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
         iframe { width: 100%; height: 100%; border: none; }
 
-        /* CONTACT BUTTON */
-        .whatsapp-btn {
-            background: #25d366; color: #fff; text-decoration: none; display: flex; 
-            align-items: center; justify-content: center; gap: 10px; 
-            padding: 15px; border-radius: 15px; font-weight: bold; margin-top: 20px;
-        }
+        /* Floating WA Button */
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 1000; }
     </style>
 </head>
-<body onclick="unmuteVideo()">
+<body>
 
-    <div id="netflix-intro">
-        <div class="intro-logos">
-            <div class="pr-box">Pr</div>
-            <div class="ai-box">Ai</div>
-        </div>
+    <header>
+        <img id="p-img" src="https://via.placeholder.com/150" class="profile-img">
+        <h1 style="color:var(--purple); margin: 15px 0;">Goutham Bolli <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" width="22"></h1>
+        <p style="font-size: 10px; letter-spacing: 3px; color: #888; font-weight: bold;">VIDEO EDITOR & WRITER</p>
+    </header>
+
+    <div class="glass-box">
+        <span class="tag">ABOUT ME</span>
+        <p id="p-bio" style="line-height: 1.7; font-size: 15px;">Loading your story...</p>
     </div>
 
-    <div id="profile-selector">
-        <div class="profile-title">Who's Watching?</div>
-        <div class="profile-grid">
-            <div class="profile-card" onclick="entrySite()">
-                <div class="profile-img"></div>
-                <div style="color:#fff; font-size:12px;">Editor</div>
-            </div>
-            <div class="profile-card" onclick="entrySite()">
-                <div class="profile-img" style="background:#555;"></div>
-                <div style="color:#fff; font-size:12px;">Writer</div>
-            </div>
-        </div>
+    <div style="text-align:center; margin: 10px 0;"><span class="tag" style="background:#4a148c;">LATEST WORK</span></div>
+    
+    <div class="video-container">
+        <iframe id="p-video" src=""></iframe>
     </div>
 
-    <div id="main-site">
-        <header>
-            <div class="name-row">
-                <h1>Goutham Bolli</h1>
-                <img class="blue-tick" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified">
-            </div>
-            <p style="font-size: 10px; color: #aaa; letter-spacing: 2px;">EDITOR & CONTENT WRITER</p>
-        </header>
-
-        <div class="glass-box">
-            <span class="tag">🎬 PROFESSIONAL SUMMARY</span>
-            <p class="content-text">Hi! I’m Goutham, turning raw footage into impactful visual narratives. Mastery in <b>Premiere Pro, Illustrator (Ai), and Alight Motion.</b></p>
-        </div>
-
-        <div class="glass-box">
-            <span class="tag">💡 TECHNICAL ARSENAL</span>
-            <div class="skills-grid">
-                <div class="skill-item">Adobe Illustrator (Ai)</div>
-                <div class="skill-item">Premiere Pro</div>
-                <div class="skill-item">Alight Motion</div>
-                <div class="skill-item">KineMaster</div>
-            </div>
-        </div>
-
-        <div class="glass-box">
-            <span class="tag">🎓 EDUCATION</span>
-            <p class="content-text">Matriculation (SSC) - 80%<br>Thakshashila English High School, Sircilla</p>
-        </div>
-
-        <div style="text-align:center; margin: 20px 0;"><span class="tag" style="background:#4a148c;">📁 SELECTED WORKS</span></div>
-        
-        <div class="video-container">
-            <iframe id="main-video" src="https://www.youtube.com/embed/qapXhJJNAy8?enablejsapi=1&autoplay=1&mute=1&loop=1"></iframe>
-        </div>
-
-        <a href="https://wa.me/918341388567" class="whatsapp-btn">Direct Contact on WhatsApp</a>
+    <div class="glass-box" style="margin-bottom: 80px;">
+        <span class="tag">SKILLS</span>
+        <p id="p-skills" style="font-size: 14px; font-weight: 500;"></p>
     </div>
+
+    <a id="p-wa" href="#" class="wa-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
+    </a>
 
     <script>
-        // Intro sequence
-        setTimeout(() => {
-            document.getElementById('netflix-intro').style.display = 'none';
-            document.getElementById('profile-selector').style.display = 'flex';
-        }, 3000);
+        // నీ గూగుల్ షీట్ CSV కన్వర్టర్
+        const sheetID = "1K65MH0F0K_Avl6S5ET3qFvGB7QsrSeZtlrtWaeShPAM";
+        const csvURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv`;
 
-        function entrySite() {
-            document.getElementById('profile-selector').style.display = 'none';
-            document.getElementById('main-site').style.display = 'block';
-        }
+        async function syncSite() {
+            try {
+                const res = await fetch(csvURL);
+                const text = await res.text();
+                const rows = text.split('\n').map(row => row.replace(/"/g, '').split(','));
 
-        function unmuteVideo() {
-            const iframe = document.getElementById('main-video');
-            let src = iframe.src;
-            if (src.includes("mute=1")) {
-                iframe.src = src.replace("mute=1", "mute=0");
+                // షీట్ నుండి డేటా మ్యాపింగ్ (Column B)
+                document.getElementById('p-bio').innerText = rows[1][1]; 
+                document.getElementById('p-video').src = "https://www.youtube.com/embed/" + rows[2][1] + "?autoplay=1&mute=1&loop=1";
+                document.getElementById('p-img').src = rows[3][1];
+                document.getElementById('p-wa').href = "https://wa.me/91" + rows[4][1];
+                document.getElementById('p-skills').innerText = rows[5][1];
+            } catch (err) {
+                console.log("Error loading data");
             }
         }
+        syncSite();
     </script>
 </body>
 </html>
