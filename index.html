@@ -8,23 +8,41 @@
     <style>
         :root {
             --primary-color: #e50914;
-            --bg-gradient: linear-gradient(180deg, #1a0129, #000);
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --bg-dark: #000;
+            --glass: rgba(0, 0, 0, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
         body {
-            background: var(--bg-gradient);
+            background-color: var(--bg-dark);
             color: white;
             overflow-x: hidden;
             padding-bottom: 80px;
+        }
+
+        /* --- POSTER GRID BACKGROUND --- */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bca1-0758328f773b/86071465-4d7a-4467-bc6d-0e31804f3b5f/IN-en-20220502-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+            background-size: cover;
+            opacity: 0.3; /* Subtle grid look */
+            z-index: -1;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, black 90%);
+            z-index: -1;
         }
 
         /* --- NAVIGATION --- */
@@ -37,65 +55,33 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            letter-spacing: 1px;
-        }
+        .logo { font-size: 24px; font-weight: 700; color: white; letter-spacing: 1px; }
+        .logo span { font-size: 30px; font-weight: 900; color: var(--primary-color); }
 
-        .logo span {
-            font-size: 30px;
-            font-weight: 900;
-        }
+        /* --- HERO --- */
+        .hero { margin-top: 100px; padding: 20px; text-align: center; }
+        .hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 10px; }
+        .hero p { font-size: 18px; color: #ccc; margin-bottom: 25px; }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            margin-top: 80px;
-            padding: 20px;
-        }
-
-        .banner {
-            height: 350px;
-            border-radius: 25px;
-            background: url('https://images.unsplash.com/photo-1492619334798-54265fe4bc76?q=80&w=2070&auto=format&fit=crop') center/cover;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 40px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            border-radius: 25px;
-        }
-
-        .overlay h1 { font-size: 32px; margin-bottom: 5px; }
-        .overlay p { color: #ccc; font-size: 14px; margin-bottom: 15px; }
-
+        .btn-group { display: flex; justify-content: center; gap: 15px; }
         .btn {
-            padding: 12px 25px;
+            padding: 12px 30px;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
-            margin-right: 10px;
         }
+        .btn-red { background: var(--primary-color); color: white; }
+        .btn-red:hover { background: #b20710; }
 
-        .play-btn { background: white; color: black; }
-        .play-btn:hover { background: #e50914; color: white; }
-
-        /* --- FOLDERS (Glassmorphism) --- */
-        .section-title { margin: 30px 20px 15px; font-size: 20px; }
-
+        /* --- FOLDERS --- */
+        .section-title { margin: 40px 20px 20px; font-size: 22px; position: relative; }
         .folders-container {
             display: flex;
             gap: 15px;
@@ -103,46 +89,27 @@
             padding: 10px 20px;
             scrollbar-width: none;
         }
-
         .folder {
-            min-width: 130px;
+            min-width: 140px;
             background: var(--glass);
             border: 1px solid var(--glass-border);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .folder:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-        }
-
-        /* --- VIDEO SECTION --- */
-        .video-grid {
-            display: none; 
-            padding: 20px;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .video-card {
-            background: var(--glass);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid var(--glass-border);
-        }
-
-        video {
-            width: 100%;
+            padding: 25px 15px;
             border-radius: 10px;
-            background: #000;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
         }
+        .folder:hover { border-color: white; transform: scale(1.05); }
+
+        /* --- VIDEO AREA --- */
+        .video-grid { display: none; padding: 20px; }
+        .video-card {
+            background: #141414;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        video { width: 100%; border-radius: 5px; }
 
         /* --- BOTTOM NAV --- */
         .bottom-nav {
@@ -151,56 +118,42 @@
             width: 100%;
             display: flex;
             justify-content: space-around;
-            background: rgba(0,0,0,0.9);
-            padding: 15px;
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--glass-border);
+            background: black;
+            padding: 18px;
+            border-top: 1px solid #333;
         }
-
-        .bottom-nav div { font-size: 20px; cursor: pointer; opacity: 0.6; }
-        .bottom-nav div:hover { opacity: 1; color: var(--primary-color); }
-
     </style>
 </head>
 <body>
 
+    <div class="grid-bg"></div>
+    <div class="grid-overlay"></div>
+
     <div class="nav">
-        <div class="logo"><span style="color: #e50914;">N</span> GOUTHAM BOLLI</div>
-        <div style="cursor: pointer;">🔍</div>
+        <div class="logo"><span>N</span> GOUTHAM BOLLI</div>
+        <div>🔍</div>
     </div>
 
     <div class="hero">
-        <div class="banner">
-            <div class="overlay">
-                <h1>Goutham Bolli</h1>
-                <p>Professional Video Editor & Content Writer</p>
-                <div class="btns">
-                    <button class="btn play-btn" onclick="scrollToWork()">▶ Showreel</button>
-                    <button class="btn" style="background:rgba(255,255,255,0.2); color:white;">+ My List</button>
-                </div>
-            </div>
+        <h1>Goutham Bolli</h1>
+        <p>Editor & Content Writer</p>
+        <div class="btn-group">
+            <button class="btn btn-red" onclick="showCategory('Portfolio')">Get Started ></button>
         </div>
     </div>
 
-    <h2 class="section-title">📂 Portfolio Categories</h2>
+    <h2 class="section-title">Browse Categories</h2>
     <div class="folders-container">
         <div class="folder" onclick="showCategory('Short Films')">🎬<br>Short Films</div>
         <div class="folder" onclick="showCategory('Reels')">📱<br>Reels</div>
         <div class="folder" onclick="showCategory('Vlogs')">🎥<br>Vlogs</div>
-        <div class="folder" onclick="showCategory('Shorts')">⚡<br>Shorts</div>
+        <div class="folder" onclick="showCategory('Wedding')">💍<br>Wedding</div>
     </div>
 
     <div id="videoSection" class="video-grid">
-        <h2 id="categoryTitle" style="margin-bottom: 20px; color: #e50914;">Projects</h2>
-        
+        <h2 id="categoryTitle" style="margin-bottom: 20px;">Projects</h2>
         <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <p style="margin-top:10px;">Project Title 01</p>
-        </div>
-
-        <div class="video-card">
-            <video src="video2.mp4" controls></video>
-            <p style="margin-top:10px;">Project Title 02</p>
+            <video src="video.mp4" controls></video>
         </div>
     </div>
 
@@ -213,17 +166,9 @@
 
     <script>
         function showCategory(name) {
-            const section = document.getElementById("videoSection");
-            const title = document.getElementById("categoryTitle");
-            
-            section.style.display = "block";
-            title.innerText = "📂 " + name + " Works";
-            
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function scrollToWork() {
-            document.querySelector('.folders-container').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById("videoSection").style.display = "block";
+            document.getElementById("categoryTitle").innerText = name + " Projects";
+            document.getElementById("videoSection").scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 
