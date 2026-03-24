@@ -7,155 +7,183 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
     :root {
-        --royal-purple: #2b0a3d;
+        --royal-purple: #1a0129;
         --deep-black: #05010a;
         --gold: #ffcc00;
-        --glass: rgba(255, 255, 255, 0.1);
-        --glass-border: rgba(255, 255, 255, 0.2);
+        --glass: rgba(255, 255, 255, 0.08);
+        --glass-border: rgba(255, 255, 255, 0.15);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
     
-    body { background: linear-gradient(180deg, var(--royal-purple), var(--deep-black), #000); color: white; overflow-x: hidden; scroll-behavior: smooth; padding-bottom: 80px; }
+    body { background: linear-gradient(180deg, var(--royal-purple), var(--deep-black), #000); color: white; overflow-x: hidden; scroll-behavior: smooth; padding-bottom: 100px; }
 
-    /* Glass Nav */
+    /* Premium Glass Nav */
     .nav {
-        display: flex; justify-content: space-between; padding: 20px;
+        display: flex; justify-content: space-between; padding: 15px 20px;
         position: fixed; width: 100%; top: 0; z-index: 1000;
-        background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(15px);
+        background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(20px);
     }
-    .logo { font-size: 24px; font-weight: 800; color: var(--gold); }
+    .logo { font-size: 26px; font-weight: 900; color: var(--gold); text-shadow: 0 0 10px rgba(255,204,0,0.5); }
 
-    /* Hero Banner (Netflix Style) */
-    .hero { margin-top: 60px; padding: 15px; }
+    /* Hero Banner */
+    .hero { margin-top: 70px; padding: 15px; }
     .banner {
-        height: 250px; border-radius: 25px;
-        background: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80') center/cover;
+        height: 220px; border-radius: 25px;
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80') center/cover;
         position: relative; border: 1px solid var(--glass-border); overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
-    .overlay {
-        position: absolute; bottom: 0; width: 100%; padding: 25px;
-        background: linear-gradient(transparent, rgba(0,0,0,0.9));
-    }
-    .overlay h1 { font-size: 28px; letter-spacing: -1px; }
-    .verified { width: 20px; vertical-align: middle; }
+    .overlay { position: absolute; bottom: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.95)); }
+    .overlay h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
+    .verified { width: 18px; }
 
-    /* Category Folders (Glassmorphism) */
-    .section-title { margin: 25px 20px 10px; font-size: 18px; color: var(--gold); }
-    .folders-container {
-        display: flex; overflow-x: auto; gap: 15px; padding: 10px 20px;
-        scrollbar-width: none;
-    }
+    /* Section Titles */
+    .section-title { margin: 25px 20px 15px; font-size: 19px; font-weight: 600; color: var(--gold); display: flex; align-items: center; gap: 10px; }
+
+    /* The 4 Story Categories */
+    .folders-container { display: flex; overflow-x: auto; gap: 15px; padding: 5px 20px; scrollbar-width: none; }
     .folders-container::-webkit-scrollbar { display: none; }
     
     .folder-card {
-        min-width: 130px; padding: 20px; text-align: center;
+        min-width: 135px; padding: 20px 15px; text-align: center;
         background: var(--glass); border: 1px solid var(--glass-border);
-        backdrop-filter: blur(10px); border-radius: 20px; transition: 0.3s;
+        backdrop-filter: blur(15px); border-radius: 22px; transition: 0.4s;
     }
-    .folder-card:active { transform: scale(0.9); background: rgba(255,255,255,0.2); }
-    .folder-card i { font-size: 30px; display: block; margin-bottom: 10px; }
+    .folder-card:active { transform: scale(0.92); background: rgba(255,204,0,0.15); border-color: var(--gold); }
+    .folder-card i { font-size: 28px; display: block; margin-bottom: 8px; }
+    .folder-card span { font-size: 13px; font-weight: 500; display: block; }
 
-    /* Netflix Rows for Projects */
-    .row { margin: 20px; }
-    .cards { display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px; scrollbar-width: none; }
-    .cards::-webkit-scrollbar { display: none; }
-    .card {
-        min-width: 150px; height: 220px; border-radius: 15px;
-        background: #1a1a1a; border: 1px solid var(--glass-border);
-        position: relative; overflow: hidden;
-    }
-    .card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
-
-    /* iPhone Style Bottom Nav Dock */
-    .bottom-dock {
-        position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-        width: 90%; max-width: 400px; height: 65px;
-        background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(25px);
-        border: 1px solid var(--glass-border); border-radius: 30px;
-        display: flex; justify-content: space-around; align-items: center;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 2000;
-    }
-    .nav-item { font-size: 24px; cursor: pointer; transition: 0.3s; }
-    .nav-item:active { transform: scale(1.5); color: var(--gold); }
+    /* Dynamic Display Box */
+    #story-display { margin: 15px 20px; display: none; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     
-    /* SFX Support */
-    #click-sound { display: none; }
+    .display-card {
+        background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 20px;
+        border-left: 4px solid var(--gold); backdrop-filter: blur(10px);
+    }
+
+    /* Skills Section */
+    .skills-box { margin: 10px 20px; padding: 20px; background: var(--glass); border-radius: 20px; border: 1px solid var(--glass-border); }
+    .skill-item { margin-bottom: 15px; }
+    .skill-info { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+    .progress-bg { background: rgba(255,255,255,0.1); height: 8px; border-radius: 10px; overflow: hidden; }
+    .progress-fill { background: linear-gradient(90deg, #ffcc00, #ff8800); height: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(255,204,0,0.6); }
+
+    /* Netflix Rows */
+    .cards { display: flex; overflow-x: auto; gap: 12px; padding: 5px 20px; scrollbar-width: none; }
+    .cards::-webkit-scrollbar { display: none; }
+    .card-item { min-width: 145px; height: 210px; border-radius: 18px; background: #121212; border: 1px solid var(--glass-border); overflow: hidden; }
+    .card-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+
+    /* iPhone Bottom Dock */
+    .bottom-dock {
+        position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
+        width: 88%; max-width: 380px; height: 68px;
+        background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(30px);
+        border: 1px solid var(--glass-border); border-radius: 35px;
+        display: flex; justify-content: space-around; align-items: center;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.7); z-index: 2000;
+    }
+    .nav-icon { font-size: 24px; color: rgba(255,255,255,0.6); cursor: pointer; transition: 0.3s; }
+    .nav-icon.active { color: var(--gold); transform: scale(1.2); }
 </style>
 </head>
 <body onclick="playClick()">
 
+    <!-- NAV -->
     <div class="nav">
         <div class="logo">G</div>
-        <div style="font-size: 20px;">🔍</div>
+        <div style="font-size: 22px;">🔍</div>
     </div>
 
+    <!-- HERO -->
     <div class="hero">
         <div class="banner">
             <div class="overlay">
                 <h1>GOUTHAM BOLLI <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" class="verified"></h1>
-                <p style="font-size: 12px; opacity: 0.8;">Editor & Content Writer | Unstoppable</p>
-                <div style="margin-top: 15px;">
-                    <button style="padding: 10px 25px; border-radius: 10px; border: none; font-weight: bold; background: white; color: black;">▶ Play</button>
-                    <button style="padding: 10px 25px; border-radius: 10px; border: none; font-weight: bold; background: rgba(255,255,255,0.2); color: white; margin-left: 10px;">+ Info</button>
+                <p style="font-size: 11px; opacity: 0.7; margin-bottom: 12px;">Editor & Content Writer | Unstoppable</p>
+                <div style="display: flex; gap: 10px;">
+                    <button style="padding: 10px 28px; border-radius: 10px; border: none; font-weight: 700; background: white; color: black; font-size: 14px;">▶ Play</button>
+                    <button style="padding: 10px 28px; border-radius: 10px; border: none; font-weight: 700; background: rgba(255,255,255,0.2); color: white; backdrop-filter: blur(5px); font-size: 14px;">+ Info</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <h2 class="section-title">📂 Categories</h2>
+    <!-- 4 STORY CATEGORIES -->
+    <h2 class="section-title">🎬 The Story of Goutham</h2>
     <div class="folders-container">
-        <div class="folder-card"><i>🎬</i><span>Short Films</span></div>
-        <div class="folder-card"><i>📱</i><span>Reels</span></div>
-        <div class="folder-card"><i>🎥</i><span>Vlogs</span></div>
-        <div class="folder-card"><i>⚡</i><span>Shorts</span></div>
-        <div class="folder-card"><i>🎞️</i><span>Teasers</span></div>
-        <div class="folder-card"><i>💍</i><span>Wedding</span></div>
+        <div class="folder-card" onclick="showStory('identity')"><i>👤</i><span>Identity</span></div>
+        <div class="folder-card" onclick="showStory('journey')"><i>🚀</i><span>Journey</span></div>
+        <div class="folder-card" onclick="showStory('breakthrough')"><i>💎</i><span>Breakthrough</span></div>
+        <div class="folder-card" onclick="showStory('vision')"><i>🔥</i><span>Vision</span></div>
     </div>
 
-    <div class="row">
-        <h2>Continue Watching</h2>
-        <div class="cards">
-            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=O+Chinna+Prema+Katha"></div>
-            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Restaurant+Srinu"></div>
-            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Project+3"></div>
+    <!-- Dynamic Story Content -->
+    <div id="story-display">
+        <div class="display-card">
+            <h3 id="story-title" style="color:var(--gold); font-size:16px; margin-bottom:8px;"></h3>
+            <p id="story-text" style="font-size:13px; line-height:1.6; opacity:0.9;"></p>
         </div>
     </div>
 
-    <div class="row">
-        <h2>Recent Edits</h2>
-        <div class="cards">
-            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Teaser+1"></div>
-            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Vlog+1"></div>
-            <div class="card"><img src="https://via.placeholder.com/150x220/1a1a1a/ffffff?text=Project+5"></div>
+    <!-- SKILLS SECTION -->
+    <h2 class="section-title">⚡ Mastering Timeline</h2>
+    <div class="skills-box">
+        <div class="skill-item">
+            <div class="skill-info"><span>Adobe Premiere Pro</span><span>95%</span></div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
+        </div>
+        <div class="skill-item" style="margin-top: 20px;">
+            <div class="skill-info"><span>After Effects / Alight Motion</span><span>85%</span></div>
+            <div class="progress-bg"><div class="progress-fill" style="width: 85%;"></div></div>
         </div>
     </div>
 
+    <!-- PROJECTS ROW -->
+    <h2 class="section-title">🎞️ Continue Watching</h2>
+    <div class="cards">
+        <div class="card-item"><img src="https://via.placeholder.com/150x210/111/fff?text=O+Chinna+Prema+Katha"></div>
+        <div class="card-item"><img src="https://via.placeholder.com/150x210/111/fff?text=Restaurant+Srinu"></div>
+        <div class="card-item"><img src="https://via.placeholder.com/150x210/111/fff?text=Project+X"></div>
+    </div>
+
+    <!-- BOTTOM DOCK -->
     <div class="bottom-dock">
-        <div class="nav-item" onclick="window.scrollTo(0,0)">🏠</div>
-        <div class="nav-item">🎬</div>
-        <div class="nav-item" onclick="window.location.href='tel:+919391522744'">📞</div>
-        <div class="nav-item">👤</div>
+        <div class="nav-icon active" onclick="location.reload()">🏠</div>
+        <div class="nav-icon">🎬</div>
+        <div class="nav-icon" onclick="window.location.href='tel:+919391522744'">📞</div>
+        <div class="nav-icon">👤</div>
     </div>
 
-    <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+    <audio id="click-sfx" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
     <script>
-        function playClick() {
-            let sfx = document.getElementById('click-sound');
-            sfx.currentTime = 0;
-            sfx.play();
-            if(navigator.vibrate) navigator.vibrate(15);
+        function showStory(type) {
+            const box = document.getElementById('story-display');
+            const title = document.getElementById('story-title');
+            const text = document.getElementById('story-text');
+            box.style.display = 'block';
+
+            const content = {
+                identity: { t: "Goutham Bolli: Visual Storyteller", d: "ఎడిటింగ్ నా ప్యాషన్. ప్రతి ఫ్రేమ్‌లో ఒక కథను చూపిస్తాను. Ambition > Condition." },
+                journey: { t: "Smartphone to Cinema", d: "2018లో KineMaster తో మొదలైన ప్రయాణం, ఈరోజు ప్రొఫెషనల్ టూల్స్ వరకు చేరింది." },
+                breakthrough: { t: "The 2022 Milestone", d: "'బాబు గారి లోకమంతా మాయాజాలమే' నా లైఫ్ లో ఫస్ట్ అఫీషియల్ ప్రాజెక్ట్." },
+                vision: { t: "The Student Visionary", d: "ఇంటర్ చదువుకుంటూనే ఎడిటింగ్ లో కొత్త ఎక్స్‌పెరిమెంట్స్ చేస్తున్నా. Skill over Tools!" }
+            };
+
+            title.innerText = content[type].t;
+            text.innerText = content[type].d;
+            window.scrollTo({ top: box.offsetTop - 120, behavior: 'smooth' });
         }
 
-        // Horizontal Scroll with Mouse Support
-        const scrollContainers = document.querySelectorAll('.cards, .folders-container');
-        scrollContainers.forEach(container => {
-            container.addEventListener('wheel', (evt) => {
-                evt.preventDefault();
-                container.scrollLeft += evt.deltaY;
-            });
-        });
+        function playClick() {
+            let sound = document.getElementById('click-sfx');
+            sound.currentTime = 0;
+            sound.play().catch(()=>{});
+            if(navigator.vibrate) navigator.vibrate(10);
+        }
     </script>
 </body>
 </html>
