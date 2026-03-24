@@ -1,137 +1,62 @@
-<div id="netflix-mobile-gate">
-    <div class="preview-box">
-        <iframe class="mobile-video" src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" frameborder="0"></iframe>
+<div id="loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100000; display:flex; justify-content:center; align-items:center;">
+    <h1 style="color:#e50914; font-size:40px; font-weight:900; letter-spacing:10px; animation: zoomIn 3s forwards; opacity:0;">GOUTHAM BOLLI</h1>
+</div>
+
+<div id="app-gate" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:99999; display:none; flex-direction:column; overflow:hidden; font-family: sans-serif;">
+    
+    <div style="height: 65%; width: 100%; position: relative; background: #000;">
+        <iframe src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" 
+                style="width:100%; height:100%; border:none; transform: scale(1.8); opacity:0.8; pointer-events:none;"></iframe>
         
-        <div class="mobile-overlay">
-            <span class="badge">NEW</span>
-            <h1 class="title">ఓ చిన్న ప్రేమ కథ</h1>
-            <p class="sub-text">Coming Soon | Directed by Goutham</p>
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9) 80%, #000);">
+            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; display: inline-block;">
+                <span style="color: #e50914; font-weight: bold; font-size: 10px; letter-spacing: 1px;">COMING SOON</span>
+                <h2 style="color: #fff; margin: 5px 0; font-size: 22px;">ఓ చిన్న ప్రేమ కథ</h2>
+                <p style="color: #bbb; font-size: 12px; margin: 0;">#1 in Projects Today</p>
+            </div>
         </div>
     </div>
 
-    <div class="selection-box">
-        <p class="who-text">Who's watching?</p>
-        <div class="profile-card" onclick="startApp()">
-            <div class="avatar">G</div>
-            <p class="user-name">Goutham</p>
+    <div style="height: 35%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000;">
+        <p style="color: #808080; font-size: 14px; margin-bottom: 20px;">Choose your profile</p>
+        <div style="display: flex; gap: 20px;">
+            <div onclick="unlockSite()" style="text-align: center; cursor: pointer;">
+                <div style="width: 85px; height: 85px; background: #ffcc00; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 900; color: #000; border: 3px solid transparent;" id="p-box">G</div>
+                <p style="color: #808080; margin-top: 8px; font-size: 12px;">goutham</p>
+            </div>
+            <div style="text-align: center; opacity: 0.5;">
+                <div style="width: 85px; height: 85px; background: #5dacee; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; color: #fff;">Kids</div>
+                <p style="color: #808080; margin-top: 8px; font-size: 12px;">Children</p>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-/* ఫోన్ కి తగ్గట్టు డిజైన్ */
-#netflix-mobile-gate {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: #000; z-index: 10000; display: flex; flex-direction: column;
-}
-
-.preview-box {
-    height: 60vh; width: 100%; position: relative; overflow: hidden;
-}
-
-.mobile-video {
-    width: 100%; height: 100%; transform: scale(2.5); /* ఫోన్ లో వీడియో క్లియర్ గా కనిపించడానికి */
-    opacity: 0.8; pointer-events: none;
-}
-
-.mobile-overlay {
-    position: absolute; bottom: 15%; left: 20px;
-}
-
-.badge {
-    background: #e50914; color: #fff; padding: 2px 8px; font-size: 10px; font-weight: bold; border-radius: 2px;
-}
-
-.title { font-size: 28px; margin: 8px 0; font-weight: 900; }
-
-.sub-text { color: #aaa; font-size: 12px; letter-spacing: 1px; }
-
-.selection-box {
-    height: 40vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-}
-
-.who-text { color: #fff; font-size: 16px; margin-bottom: 15px; }
-
-.avatar {
-    width: 90px; height: 90px; background: #ffcc00; border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 40px; font-weight: bold; color: #000;
-}
-
-.user-name { color: #808080; margin-top: 8px; font-size: 14px; text-align: center; }
-
-/* క్లిక్ చేసినప్పుడు జూమ్ ఎఫెక్ట్ */
-.zoom-in-site { animation: zoomInSite 0.8s forwards; }
-@keyframes zoomInSite {
-    to { transform: scale(10); opacity: 0; visibility: hidden; }
-}
+@keyframes zoomIn { 0% { transform: scale(0.6); opacity: 0; } 50% { opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+#p-box:hover { border-color: #fff; transform: scale(1.05); transition: 0.3s; }
 </style>
 
 <script>
-function startApp() {
-    const gate = document.getElementById('netflix-mobile-gate');
-    gate.classList.add('zoom-in-site');
+window.onload = function() {
+    setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('app-gate').style.display = 'flex';
+    }, 3500);
+};
+
+function unlockSite() {
+    const gate = document.getElementById('app-gate');
+    gate.style.transition = "0.8s";
+    gate.style.transform = "scale(5)";
+    gate.style.opacity = "0";
     setTimeout(() => {
         gate.style.display = 'none';
-        // ఇక్కడ నీ మెయిన్ పోర్ట్‌ఫోలియో కనిపిస్తుంది
+        document.body.style.overflow = "auto";
     }, 800);
 }
+document.body.style.overflow = "hidden";
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Cinematic Portfolio</title>
-    <style>
-        /* 1. ఇక్కడ స్టైల్స్ అన్నీ ఉంటాయి (నేను పైన ఇచ్చినవి) */
-        body { background: #000; color: white; margin: 0; overflow-x: hidden; }
-        .zoom-out-effect { animation: zoomOut 1s forwards; }
-        @keyframes zoomOut { to { transform: scale(10); opacity: 0; visibility: hidden; } }
-    </style>
-</head>
-<body>
-
-    <div id="intro-layer">
-        <div style="height: 65vh; position: relative;">
-            <iframe src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" 
-                    style="width: 100%; height: 100%; border: none; opacity: 0.6;"></iframe>
-            <div style="position: absolute; bottom: 20px; left: 20px;">
-                <h4 style="color: #e50914; margin: 0;">COMING SOON</h4>
-                <h1 style="font-size: 35px; margin: 5px 0;">ఓ చిన్న ప్రేమ కథ</h1>
-            </div>
-        </div>
-
-        <div style="height: 35vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000;">
-            <p style="color: #666; margin-bottom: 15px;">Who's watching?</p>
-            <div onclick="startSite()" style="text-align: center; cursor: pointer;">
-                <div style="width: 100px; height: 100px; background: #ffcc00; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #000; font-weight: bold;">G</div>
-                <p style="color: #aaa; margin-top: 10px;">Goutham</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="main-portfolio" style="display: none;">
-        <h1 style="text-align: center; padding-top: 100px;">Welcome Goutham!</h1>
-    </div>
-
-    <script>
-        function startSite() {
-            const intro = document.getElementById('intro-layer');
-            const main = document.getElementById('main-portfolio');
-            
-            // జూమ్ ఎఫెక్ట్ యాడ్ చేయడం
-            intro.classList.add('zoom-out-effect');
-            
-            setTimeout(() => {
-                intro.style.display = 'none';
-                main.style.display = 'block';
-            }, 1000);
-        }
-    </script>
-
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
