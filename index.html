@@ -1,6 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goutham Bolli | Cinematic Portfolio</title>
+    <style>
+        /* 1. ఇక్కడ స్టైల్స్ అన్నీ ఉంటాయి (నేను పైన ఇచ్చినవి) */
+        body { background: #000; color: white; margin: 0; overflow-x: hidden; }
+        .zoom-out-effect { animation: zoomOut 1s forwards; }
+        @keyframes zoomOut { to { transform: scale(10); opacity: 0; visibility: hidden; } }
+    </style>
+</head>
+<body>
+
+    <div id="intro-layer">
+        <div style="height: 65vh; position: relative;">
+            <iframe src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" 
+                    style="width: 100%; height: 100%; border: none; opacity: 0.6;"></iframe>
+            <div style="position: absolute; bottom: 20px; left: 20px;">
+                <h4 style="color: #e50914; margin: 0;">COMING SOON</h4>
+                <h1 style="font-size: 35px; margin: 5px 0;">ఓ చిన్న ప్రేమ కథ</h1>
+            </div>
+        </div>
+
+        <div style="height: 35vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000;">
+            <p style="color: #666; margin-bottom: 15px;">Who's watching?</p>
+            <div onclick="startSite()" style="text-align: center; cursor: pointer;">
+                <div style="width: 100px; height: 100px; background: #ffcc00; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #000; font-weight: bold;">G</div>
+                <p style="color: #aaa; margin-top: 10px;">Goutham</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-portfolio" style="display: none;">
+        <h1 style="text-align: center; padding-top: 100px;">Welcome Goutham!</h1>
+    </div>
+
+    <script>
+        function startSite() {
+            const intro = document.getElementById('intro-layer');
+            const main = document.getElementById('main-portfolio');
+            
+            // జూమ్ ఎఫెక్ట్ యాడ్ చేయడం
+            intro.classList.add('zoom-out-effect');
+            
+            setTimeout(() => {
+                intro.style.display = 'none';
+                main.style.display = 'block';
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Goutham Bolli | Cinematic Editor</title>
