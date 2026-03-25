@@ -1,57 +1,75 @@
-<div id="intro-layer" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100001; display:flex; justify-content:center; align-items:center; overflow:hidden; font-family: sans-serif;">
+<div id="intro-layer" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100001; display:flex; justify-content:center; align-items:center; overflow:hidden; font-family: 'Poppins', sans-serif;">
     <div style="text-align: center; padding: 20px;">
-        <h1 id="intro-logo" style="color: #ffcc00; font-size: clamp(22px, 5vw, 40px); font-weight: 900; letter-spacing: 8px; margin: 0; text-transform: uppercase; opacity: 0; transform: translateY(10px); transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1); filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.4));">
+        <h1 id="intro-logo" style="color: #ffcc00; font-size: clamp(24px, 6vw, 44px); font-weight: 900; letter-spacing: 12px; margin: 0; text-transform: uppercase; opacity: 0; transform: translateY(15px); transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1); filter: drop-shadow(0 0 12px rgba(255, 204, 0, 0.6)); white-space: nowrap;">
             Goutham Editor
         </h1>
-        <p id="intro-quote" style="color: rgba(255, 204, 0, 0.5); font-size: 9px; letter-spacing: 3px; margin-top: 10px; opacity: 0; text-transform: uppercase; transition: all 0.4s ease-out 0.3s;">
+        <p id="intro-quote" style="color: rgba(255, 204, 0, 0.6); font-size: 10px; letter-spacing: 5px; margin-top: 15px; opacity: 0; text-transform: uppercase; transition: all 0.5s ease-out 0.5s;">
             "Bringing Visions to Life"
         </p>
     </div>
     <audio id="tudum" src="https://www.myinstants.com/media/sounds/netflix-tudum.mp3"></audio>
 </div>
 
-<div id="app-gate" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100000; display:none; flex-direction:column; overflow:hidden; font-family: sans-serif;">
+<div id="app-gate" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:100000; display:none; flex-direction:column; overflow:hidden; font-family: 'Segoe UI', sans-serif;">
     
     <div style="height: 60%; width: 100%; position: relative; background: #000; display: flex; align-items: center; justify-content: center;">
         <iframe src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg" 
                 style="width: 100%; height: 100%; border: none; opacity: 0.9; pointer-events: none; object-fit: contain;"></iframe>
         
-        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px 15px; background: linear-gradient(transparent, rgba(0,0,0,0.95) 80%, #000);">
-            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.15); padding: 12px; border-radius: 10px; display: inline-block;">
-                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
-                    <span style="background: #e50914; color: #fff; padding: 1px 4px; font-size: 8px; font-weight: 900; border-radius: 1px; text-transform: uppercase;">NEW</span>
-                    <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: bold; letter-spacing: 0.5px;">PROJECT</span>
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px 20px; background: linear-gradient(transparent, rgba(0,0,0,0.95) 85%);">
+            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1.5px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; display: inline-block;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                    <span style="background: #e50914; color: #fff; padding: 2px 5px; font-size: 8px; font-weight: 900; border-radius: 2px;">NEW PROJECT</span>
+                    <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: bold; letter-spacing: 1px;">COMING SOON</span>
                 </div>
-                <h2 style="color: #fff; margin: 3px 0; font-size: 18px; font-weight: 800; letter-spacing: 0.5px;">ఓ చిన్న ప్రేమ కథ</h2>
-                <p style="color: #aaa; font-size: 10px; margin: 0; text-transform: uppercase;">Coming Soon • Edited by Goutham</p>
+                <h2 style="color: #fff; margin: 3px 0; font-size: 20px; font-weight: 800; letter-spacing: 0.5px;">O CHINNA PREMA KATHA</h2>
+                <p style="color: #bbb; font-size: 11px; margin: 0; font-style: italic;">A Story of Love & Destiny</p>
             </div>
         </div>
     </div>
 
-    <div style="height: 40%; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    <div style="height: 40%; background: rgba(0,0,0,0.3); backdrop-filter: blur(35px); -webkit-backdrop-filter: blur(35px); border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center;">
         
-        <p style="color: rgba(255, 255, 255, 0.4); font-size: 11px; margin-bottom: 22px; letter-spacing: 1.5px; text-transform: uppercase;">Who's watching?</p>
+        <p style="color: rgba(255, 255, 255, 0.4); font-size: 11px; margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase;">Choose your profile</p>
         
-        <div style="display: flex; gap: 20px;">
+        <div style="display: flex; gap: 25px;">
             <div onclick="unlockApp()" style="text-align: center; cursor: pointer;">
-                <div style="width: 72px; height: 72px; background: rgba(255, 204, 0, 0.12); backdrop-filter: blur(10px); border: 1.5px solid rgba(255, 204, 0, 0.3); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 900; color: #ffcc00; transition: 0.3s;" onmouseover="this.style.background='rgba(255, 204, 0, 0.25)'" onmouseout="this.style.background='rgba(255, 204, 0, 0.12)'">G</div>
-                <p style="color: #ffcc00; margin-top: 10px; font-size: 13px; font-weight: 500;">goutham</p>
+                <div style="width: 80px; height: 80px; 
+                            background: rgba(255, 204, 0, 0.15); 
+                            backdrop-filter: blur(10px); 
+                            border: 1.5px solid rgba(255, 204, 0, 0.4); 
+                            border-radius: 8px; display: flex; align-items: center; justify-content: center; 
+                            font-size: 38px; font-weight: 900; color: #ffcc00; transition: 0.3s;" 
+                     onmouseover="this.style.background='rgba(255, 204, 0, 0.3)'; this.style.transform='scale(1.05)'"
+                     onmouseout="this.style.background='rgba(255, 204, 0, 0.15)'; this.style.transform='scale(1)'">
+                    G
+                </div>
+                <p style="color: #ffcc00; margin-top: 12px; font-size: 13px; font-weight: 600;">goutham</p>
             </div>
             
             <div style="text-align: center; opacity: 0.4;">
-                <div style="width: 72px; height: 72px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1.5px solid rgba(255, 255, 255, 0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: #fff;">Kids</div>
-                <p style="color: #888; margin-top: 10px; font-size: 13px;">Children</p>
+                <div style="width: 80px; height: 80px; 
+                            background: rgba(255, 255, 255, 0.05); 
+                            backdrop-filter: blur(10px); 
+                            border: 1.5px solid rgba(255, 255, 255, 0.2); 
+                            border-radius: 8px; display: flex; align-items: center; justify-content: center; 
+                            font-size: 18px; font-weight: 900; color: #fff;">
+                    Kids
+                </div>
+                <p style="color: #aaa; margin-top: 12px; font-size: 13px;">Children</p>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-.fly-up { animation: flyUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-@keyframes flyUp { to { transform: translateY(-120px); opacity: 0; filter: blur(8px); } }
+/* Smooth Fade-up Animation */
+.fly-up { animation: flyUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+@keyframes flyUp { to { transform: translateY(-130px); opacity: 0; filter: blur(10px); } }
 
-.zoom-out-final { animation: finalZoom 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
-@keyframes finalZoom { to { transform: scale(20); opacity: 0; visibility: hidden; } }
+/* Profile Unlock Zoom */
+.zoom-out-final { animation: finalZoom 0.9s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
+@keyframes finalZoom { to { transform: scale(25); opacity: 0; visibility: hidden; } }
 </style>
 
 <script>
@@ -62,23 +80,23 @@ window.onload = function() {
     const tudum = document.getElementById('tudum');
     const gate = document.getElementById('app-gate');
 
-    // 1. Instant Reveal
+    // Start Sequence
     setTimeout(() => {
         logo.style.opacity = "1";
         logo.style.transform = "translateY(0) scale(1)";
         quote.style.opacity = "1";
         tudum.play().catch(e => {});
-    }, 150);
+    }, 200);
 
-    // 2. 2.5 Seconds Fly Up
+    // Fly Up (Netflix Style Transition)
     setTimeout(() => {
         logo.classList.add('fly-up');
         quote.style.opacity = "0";
         setTimeout(() => {
             intro.style.display = "none";
             gate.style.display = "flex";
-        }, 400);
-    }, 2500); 
+        }, 500);
+    }, 2800); 
 };
 
 function unlockApp() {
@@ -87,224 +105,7 @@ function unlockApp() {
     setTimeout(() => {
         gate.style.display = 'none';
         document.body.style.overflow = "auto";
-    }, 700);
+    }, 800);
 }
 document.body.style.overflow = "hidden";
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goutham Bolli | Cinematic Editor</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
-<style>
-    :root {
-        --gold: #ffcc00;
-        --royal-purple: #1a0129;
-        --deep-black: #05010a;
-        --glass: rgba(255, 255, 255, 0.08);
-        --glass-border: rgba(255, 255, 255, 0.15);
-        --glow: 0 0 15px rgba(255, 204, 0, 0.4);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
-    
-    body { 
-        background: #000; 
-        color: white; 
-        overflow-x: hidden; 
-        scroll-behavior: smooth; 
-        padding-bottom: 110px;
-    }
-
-    /* Animated Background Overlay */
-    body::before {
-        content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: radial-gradient(circle at 50% -20%, #2b0a3d 0%, #000 70%);
-        z-index: -1;
-    }
-
-    /* Navigation */
-    .nav { 
-        display: flex; justify-content: space-between; align-items: center;
-        padding: 18px 25px; position: fixed; width: 100%; top: 0; z-index: 1000; 
-        background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(25px); border-bottom: 1px solid var(--glass-border);
-    }
-    .logo { font-size: 28px; font-weight: 900; color: var(--gold); text-shadow: var(--glow); }
-
-    /* Hero Banner */
-    .hero { margin-top: 85px; padding: 15px; }
-    .banner {
-        height: 250px; border-radius: 30px;
-        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80') center/cover;
-        position: relative; border: 1px solid var(--glass-border); overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    }
-    .overlay { position: absolute; bottom: 0; width: 100%; padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,1)); }
-    .overlay h1 { font-size: 26px; font-weight: 900; letter-spacing: 1px; }
-    .verified { width: 20px; vertical-align: middle; margin-left: 5px; }
-    
-    /* Buttons */
-    .btn-group { display: flex; gap: 12px; margin-top: 15px; }
-    .btn { padding: 12px 25px; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; font-size: 14px; }
-    .play { background: white; color: black; box-shadow: 0 5px 15px rgba(255,255,255,0.2); }
-    .info { background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(10px); }
-    .btn:active { transform: scale(0.95); }
-
-    /* Section Styling */
-    .section-title { margin: 30px 20px 15px; font-size: 20px; font-weight: 700; color: var(--gold); display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
-    
-    /* Horizontal Folders & Cards */
-    .scroll-container { display: flex; overflow-x: auto; gap: 15px; padding: 5px 20px; scrollbar-width: none; }
-    .scroll-container::-webkit-scrollbar { display: none; }
-    
-    .folder { 
-        min-width: 140px; padding: 20px; text-align: center; 
-        background: var(--glass); border: 1px solid var(--glass-border); 
-        backdrop-filter: blur(20px); border-radius: 25px; transition: 0.4s;
-    }
-    .folder i { display: block; font-size: 24px; margin-bottom: 8px; }
-    .folder span { font-size: 13px; font-weight: 500; }
-    .folder:active { transform: scale(0.9); border-color: var(--gold); background: rgba(255,204,0,0.05); }
-
-    /* Story Box */
-    #storyBox { 
-        margin: 20px; padding: 20px; border-radius: 20px; background: rgba(255,255,255,0.03); 
-        border-left: 4px solid var(--gold); display: none; animation: slideDown 0.4s ease forwards;
-        backdrop-filter: blur(10px);
-    }
-    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* Skill Grid */
-    .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 20px; }
-    .skill-item { 
-        background: var(--glass); padding: 15px; border-radius: 20px; 
-        border: 1px solid var(--glass-border); backdrop-filter: blur(15px);
-    }
-    .skill-item h4 { font-size: 13px; color: var(--gold); margin-bottom: 4px; }
-    .skill-item p { font-size: 10px; opacity: 0.6; }
-
-    /* Video & Project Cards */
-    .video-card { min-width: 160px; height: 230px; border-radius: 20px; background: #111; overflow: hidden; position: relative; border: 1px solid var(--glass-border); }
-    .video-card video, .video-card img { width: 100%; height: 100%; object-fit: cover; }
-    .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 30px; opacity: 0.8; }
-
-    /* Bottom Navigation Dock */
-    .dock-container { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; z-index: 2000; }
-    .dock { 
-        background: rgba(15, 15, 15, 0.85); backdrop-filter: blur(30px); 
-        border: 1px solid var(--glass-border); border-radius: 35px; 
-        display: flex; justify-content: space-around; align-items: center; padding: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .dock-item { font-size: 22px; opacity: 0.5; transition: 0.3s; padding: 10px; }
-    .dock-item.active { opacity: 1; color: var(--gold); transform: translateY(-5px); text-shadow: var(--glow); }
-
-</style>
-</head>
-
-<body onclick="playTap()">
-
-    <!-- NAV -->
-    <div class="nav">
-        <div class="logo">G</div>
-        <div style="font-size: 22px;">🔍</div>
-    </div>
-
-    <!-- HERO SECTION -->
-    <div class="hero">
-        <div class="banner">
-            <div class="overlay">
-                <h1>GOUTHAM BOLLI <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" class="verified"></h1>
-                <p>Cinematic Editor & Content Writer</p>
-                <div class="btn-group">
-                    <button class="btn play">▶ Play Reel</button>
-                    <button class="btn info" onclick="document.getElementById('vision-sec').scrollIntoView()">+ Details</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MY STORY (The 4 Personal Folders) -->
-    <h2 class="section-title">🎬 My Story</h2>
-    <div class="scroll-container">
-        <div class="folder" onclick="showStory('identity')"><i>👤</i><span>Identity</span></div>
-        <div class="folder" onclick="showStory('journey')"><i>🚀</i><span>Journey</span></div>
-        <div class="folder" onclick="showStory('break')"><i>💎</i><span>Breakthrough</span></div>
-        <div class="folder" onclick="showStory('vision')"><i>🔥</i><span>Vision</span></div>
-    </div>
-    <div id="storyBox"></div>
-
-    <!-- SKILLS & SOFTWARE (7 Skills Included) -->
-    <h2 class="section-title">💡 Skills & Expertise</h2>
-    <div class="skill-grid">
-        <div class="skill-item"><h4>🎞️ Video Editing</h4><p>YouTube, Reels, Shorts</p></div>
-        <div class="skill-item"><h4>💥 After Effects</h4><p>VFX & Motion Graphics</p></div>
-        <div class="skill-item"><h4>🎛️ Premiere Pro</h4><p>Professional Timeline</p></div>
-        <div class="skill-item"><h4>🎨 Illustrator</h4><p>Graphics & Logo Design</p></div>
-        <div class="skill-item"><h4>📱 Mobile Editing</h4><p>Alight Motion, KineMaster</p></div>
-        <div class="skill-item"><h4>✍️ Content Writing</h4><p>Scripts & Captions</p></div>
-        <div class="skill-item" style="grid-column: span 2;"><h4>🧠 Film Analysis</h4><p>Understanding Cinematic Styles & Storytelling</p></div>
-    </div>
-
-    <!-- WORK CATEGORIES -->
-    <h2 class="section-title">📂 Categories</h2>
-    <div class="scroll-container">
-        <div class="folder"><i>🎬</i><span>Short Films</span></div>
-        <div class="folder"><i>📱</i><span>Reels</span></div>
-        <div class="folder"><i>🎥</i><span>Vlogs</span></div>
-        <div class="folder"><i>⚡</i><span>Shorts</span></div>
-        <div class="folder"><i>🎞️</i><span>Teasers</span></div>
-        <div class="folder"><i>💍</i><span>Weddings</span></div>
-    </div>
-
-    <!-- CONTINUE WATCHING -->
-    <h2 class="section-title">🎞️ Continue Watching</h2>
-    <div class="scroll-container">
-        <div class="video-card"><img src="https://via.placeholder.com/160x230/111/fff?text=O+Chinna+Prema+Katha"><div class="play-icon">▶</div></div>
-        <div class="video-card"><img src="https://via.placeholder.com/160x230/111/fff?text=Restaurant+Srinu"><div class="play-icon">▶</div></div>
-    </div>
-
-    <!-- PROJECT WORKS -->
-    <h2 class="section-title" id="vision-sec">🎥 Project Works</h2>
-    <div class="scroll-container">
-        <div class="video-card"><video src="v1.mp4" poster="p1.jpg"></video></div>
-        <div class="video-card"><video src="v2.mp4" poster="p2.jpg"></video></div>
-        <div class="video-card"><video src="v3.mp4" poster="p3.jpg"></video></div>
-    </div>
-
-    <!-- BOTTOM DOCK -->
-    <div class="dock-container">
-        <div class="dock">
-            <div class="dock-item active">🏠</div>
-            <div class="dock-item">🎬</div>
-            <div class="dock-item" onclick="window.location.href='tel:+919391522744'">📞</div>
-            <div class="dock-item">👤</div>
-        </div>
-    </div>
-
-    <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
-
-    <script>
-        function showStory(type) {
-            const box = document.getElementById("storyBox");
-            box.style.display = "block";
-            const data = {
-                identity: "I am Goutham Bolli, a professional Video Editor & Content Writer dedicated to high-quality visual storytelling.",
-                journey: "My journey started from KineMaster in 2018. Today, I master Adobe Premiere Pro and After Effects for cinematic results.",
-                break: "Achieved recognition through projects like 'O Chinna Prema Katha' and 'Babu Gari Lokamantha Mayajalame'.",
-                vision: "To push the boundaries of cinematic editing and create visuals that leave a lasting impact on the audience."
-            };
-            box.innerHTML = `<p style="font-size:14px; line-height:1.6; opacity:0.9;">${data[type]}</p>`;
-            window.scrollTo({ top: box.offsetTop - 150, behavior: 'smooth' });
-        }
-
-        function playTap() {
-            const sfx = document.getElementById("clickSound");
-            sfx.currentTime = 0;
-            sfx.play().catch(() => {});
-        }
-    </script>
-</body>
-</html>
