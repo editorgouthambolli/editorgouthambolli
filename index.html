@@ -1,360 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goutham Editor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Goutham Editor Portfolio</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+        /* 1. INTRO LAYER STYLE */
+        #intro-layer {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 100001;
+            display: flex; justify-content: center; align-items: center;
+        }
 
-<style>
-:root{
---purple:#2b0a3d;
---gold:#ffcc00;
---glass:rgba(255,255,255,0.08);
-}
+        #intro-logo {
+            color: #ffcc00; font-size: clamp(22px, 8vw, 40px); font-weight: 900;
+            letter-spacing: 8px; text-transform: uppercase; opacity: 0;
+            transform: translateY(15px); transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.4)); white-space: nowrap;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        /* FLY UP ANIMATION */
+        .fly-up { animation: flyUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        @keyframes flyUp { to { transform: translateY(-150px); opacity: 0; filter: blur(10px); } }
 
-/* BODY */
-body{
-background: radial-gradient(circle at top,#2b0a3d,#000);
-color:white;
-overflow:hidden;
-}
+        /* 2. MAIN GATE STYLE */
+        #app-gate {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 100000; display: none; flex-direction: column;
+        }
 
-/* INTRO */
-#intro{
-position:fixed;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:9999;
-}
+        .video-container { height: 60%; width: 100%; position: relative; background: #000; }
+        .video-container iframe { width: 100%; height: 100%; border: none; opacity: 0.8; pointer-events: none; }
 
-#intro h1{
-color:var(--gold);
-font-size:28px;
-letter-spacing:5px;
-opacity:0;
-transform:translateY(20px);
-transition:0.6s;
-}
+        /* GLASS CARD EFFECT */
+        .glass-card {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9) 80%);
+        }
+        .glass-inner {
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15);
+            padding: 15px; border-radius: 12px; display: inline-block;
+        }
 
-#intro p{
-color:rgba(255,204,0,0.6);
-font-size:12px;
-margin-top:10px;
-opacity:0;
-transition:0.5s;
-}
+        /* PROFILE SECTION */
+        .profile-section {
+            height: 40%; background: rgba(0,0,0,0.3); backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px); border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
 
-/* GATE */
-#gate{
-display:none;
-flex-direction:column;
-height:100vh;
-background:#000;
-}
+        .profile-box {
+            width: 75px; height: 75px; background: rgba(255, 204, 0, 0.15);
+            backdrop-filter: blur(10px); border: 1.5px solid rgba(255, 204, 0, 0.4);
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            font-size: 35px; font-weight: 900; color: #ffcc00; transition: 0.3s;
+        }
 
-.video-box{
-height:60%;
-position:relative;
-overflow:hidden;
-}
-
-.video-box iframe{
-width:100%;
-height:100%;
-border:none;
-opacity:0.85;
-}
-
-/* TITLE */
-.title-card{
-position:absolute;
-bottom:0;
-width:100%;
-padding:20px;
-background:linear-gradient(transparent,#000);
-}
-
-.glass{
-background:var(--glass);
-backdrop-filter:blur(15px);
-padding:15px;
-border-radius:12px;
-}
-
-/* PROFILE */
-.profile{
-height:40%;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-}
-
-.profiles{
-display:flex;
-gap:25px;
-margin-top:15px;
-}
-
-.profile-box{
-width:80px;
-height:80px;
-border-radius:10px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-cursor:pointer;
-}
-
-.main-profile{
-border:2px solid var(--gold);
-color:var(--gold);
-}
-
-/* APP */
-#app{
-display:none;
-height:100vh;
-overflow-y:auto;
-background: radial-gradient(circle at top,#2b0a3d,#000);
-}
-
-/* NAV */
-.nav{
-display:flex;
-justify-content:space-between;
-padding:15px;
-background:rgba(0,0,0,0.6);
-position:sticky;
-top:0;
-}
-
-.logo{
-color:var(--gold);
-font-weight:900;
-font-size:20px;
-}
-
-/* HERO */
-.hero{
-padding:15px;
-}
-
-.banner{
-height:200px;
-border-radius:20px;
-background:url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80') center/cover;
-position:relative;
-overflow:hidden;
-}
-
-.overlay{
-position:absolute;
-bottom:0;
-padding:20px;
-background:linear-gradient(transparent,#000);
-width:100%;
-}
-
-/* BUTTON */
-.btn{
-padding:10px 20px;
-border:none;
-border-radius:10px;
-margin-right:10px;
-font-weight:700;
-cursor:pointer;
-}
-
-.play{background:white;color:black;}
-.info{background:rgba(255,255,255,0.2);color:white;}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* SECTIONS */
-.title{
-margin:20px;
-color:var(--gold);
-}
-
-/* FOLDERS */
-.folders{
-display:flex;
-gap:15px;
-overflow-x:auto;
-padding:0 20px;
-}
-
-.folder{
-min-width:130px;
-padding:20px;
-background:var(--glass);
-border-radius:20px;
-text-align:center;
-}
-
-/* CARDS */
-.cards{
-display:flex;
-gap:10px;
-overflow-x:auto;
-padding:0 20px;
-}
-
-.card{
-min-width:140px;
-height:200px;
-background:#111;
-border-radius:15px;
-position:relative;
-}
-
-.play-btn{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:rgba(0,0,0,0.6);
-width:45px;
-height:45px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-/* VIDEOS */
-video{
-width:160px;
-border-radius:12px;
-}
-</style>
+        /* UNLOCK ZOOM */
+        .zoom-out-final { animation: finalZoom 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
+        @keyframes finalZoom { to { transform: scale(25); opacity: 0; visibility: hidden; } }
+    </style>
 </head>
-
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-<h1>GOUTHAM EDITOR</h1>
-<p>"Cinematic Storytelling"</p>
-<audio id="sound" src="https://www.myinstants.com/media/sounds/netflix-tudum.mp3"></audio>
-</div>
+    <div id="intro-layer">
+        <div style="text-align: center;">
+            <h1 id="intro-logo">Goutham Editor</h1>
+            <p id="intro-quote" style="color: rgba(255, 204, 0, 0.5); font-size: 9px; letter-spacing: 4px; margin-top: 10px; opacity: 0; text-transform: uppercase;">"Bringing Visions to Life"</p>
+        </div>
+        <audio id="tudum" src="https://www.myinstants.com/media/sounds/netflix-tudum.mp3"></audio>
+    </div>
 
-<!-- GATE -->
-<div id="gate">
+    <div id="app-gate">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg"></iframe>
+            <div class="glass-card">
+                <div class="glass-inner">
+                    <div style="display: flex; gap: 6px; align-items: center; margin-bottom: 4px;">
+                        <span style="background: #e50914; color: #fff; padding: 2px 5px; font-size: 8px; font-weight: 900; border-radius: 2px;">NEW PROJECT</span>
+                    </div>
+                    <h2 style="color: #fff; margin: 0; font-size: 18px;">O CHINNA PREMA KATHA</h2>
+                    <p style="color: #aaa; margin: 0; font-size: 10px; text-transform: uppercase;">Coming Soon • Edited by Goutham</p>
+                </div>
+            </div>
+        </div>
 
-<div class="video-box">
-<iframe 
-src="https://www.youtube.com/embed/OkYXCAz_-Kg?autoplay=1&mute=1&controls=0&loop=1&playlist=OkYXCAz_-Kg"
-allow="autoplay">
-</iframe>
+        <div class="profile-section">
+            <p style="color: rgba(255,255,255,0.4); font-size: 11px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.5px;">Who's watching?</p>
+            <div style="display: flex; gap: 20px;">
+                <div onclick="unlockApp()" style="text-align: center; cursor: pointer;">
+                    <div class="profile-box">G</div>
+                    <p style="color: #ffcc00; margin-top: 8px; font-size: 12px; font-weight: 500;">goutham</p>
+                </div>
+                <div style="text-align: center; opacity: 0.3;">
+                    <div class="profile-box" style="background: rgba(255,255,255,0.05); color: #fff; border-color: rgba(255,255,255,0.2); font-size: 14px;">Kids</div>
+                    <p style="color: #888; margin-top: 8px; font-size: 12px;">Children</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="title-card">
-<div class="glass">
-<h2>O CHINNA PREMA KATHA</h2>
-<p>My Project is Coming Soon • Edited by Goutham</p>
-</div>
-</div>
-</div>
+    <script>
+        window.onload = function() {
+            const intro = document.getElementById('intro-layer');
+            const logo = document.getElementById('intro-logo');
+            const quote = document.getElementById('intro-quote');
+            const tudum = document.getElementById('tudum');
+            const gate = document.getElementById('app-gate');
 
-<div class="profile">
-<p style="opacity:0.6;">Who's watching?</p>
+            // 1. Reveal Intro
+            setTimeout(() => {
+                logo.style.opacity = "1";
+                logo.style.transform = "translateY(0)";
+                quote.style.opacity = "1";
+                tudum.play().catch(e => {});
+            }, 300);
 
-<div class="profiles">
-<div class="profile-box main-profile" onclick="openApp()">G</div>
-<div class="profile-box" style="opacity:0.4;">Kids</div>
-</div>
+            // 2. Transition to Main Gate (Fly Up)
+            setTimeout(() => {
+                logo.classList.add('fly-up');
+                quote.style.opacity = "0";
+                setTimeout(() => {
+                    intro.style.display = "none";
+                    gate.style.display = "flex";
+                }, 500);
+            }, 2800);
+        };
 
-<p style="color:var(--gold);margin-top:10px;">goutham</p>
-</div>
-
-</div>
-
-<!-- APP -->
-<div id="app">
-
-<div class="nav">
-<div class="logo">G</div>
-<div>🔍</div>
-</div>
-
-<div class="hero">
-<div class="banner">
-<div class="overlay">
-<h2>GOUTHAM BOLLI ✔</h2>
-<p>Editor & Content Writer</p>
-<button class="btn play">▶ Play</button>
-<button class="btn info">+ Info</button>
-</div>
-</div>
-</div>
-
-<h2 class="title">📂 Categories</h2>
-<div class="folders">
-<div class="folder">🎬 Short Films</div>
-<div class="folder">📱 Reels</div>
-<div class="folder">🎥 Vlogs</div>
-</div>
-
-<h2 class="title">🎞 Continue Watching</h2>
-<div class="cards">
-<div class="card"><div class="play-btn">▶</div></div>
-<div class="card"><div class="play-btn">▶</div></div>
-</div>
-
-<h2 class="title">🎥 Project Works</h2>
-<div class="cards">
-<video src="video1.mp4" controls></video>
-<video src="video2.mp4" controls></video>
-<video src="video3.mp4" controls></video>
-<video src="video4.mp4" controls></video>
-</div>
-
-</div>
-
-<script>
-window.addEventListener("load", () => {
-const intro = document.getElementById("intro");
-const gate = document.getElementById("gate");
-const sound = document.getElementById("sound");
-
-setTimeout(()=>{
-document.querySelector("#intro h1").style.opacity=1;
-document.querySelector("#intro h1").style.transform="translateY(0)";
-document.querySelector("#intro p").style.opacity=1;
-sound.play().catch(()=>{});
-},300);
-
-setTimeout(()=>{
-intro.style.display="none";
-gate.style.display="flex";
-},2500);
-});
-
-function openApp(){
-document.getElementById("gate").style.display="none";
-document.getElementById("app").style.display="block";
-document.body.style.overflow="auto";
-}
-</script>
-
+        function unlockApp() {
+            const gate = document.getElementById('app-gate');
+            gate.classList.add('zoom-out-final');
+            setTimeout(() => {
+                gate.style.display = 'none';
+                document.body.style.overflow = "auto";
+            }, 700);
+        }
+    </script>
 </body>
 </html>
 <!DOCTYPE html>
