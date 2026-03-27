@@ -2,22 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Goutham Bolli | Editor</title>
-    
+    <title>Goutham Bolli | Admin Setup</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 </head>
 <body>
-    </body>
-</html>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+    <h1 style="text-align:center; margin-top:50px;">Setting up Admin... Please wait...</h1>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
         });
       }
-    });
-  }
-</script>
+    </script>
+</body>
+</html>
