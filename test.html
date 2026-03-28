@@ -160,27 +160,29 @@
 </body>
 </html>
         <style>
-    .skills-wrapper {
-        width: 100%;
-        max-width: 850px;
-        margin: 40px auto;
-        text-align: center;
+    /* స్కిల్స్ హెడ్డింగ్‌ను పైన ఉన్న జర్నీ కార్డ్స్ హెడ్డింగ్స్‌లా మార్చే కోడ్ */
+    .skills-badge-fixed {
+        background-color: #8e44ad !important; /* పక్కా పర్పుల్ కలర్ */
+        color: #ffffff !important;
+        padding: 6px 18px !important;
+        border-radius: 50px !important;
+        font-size: 0.75rem !important;
+        font-weight: 600 !important;
+        display: inline-block !important;
+        margin-bottom: 25px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        box-shadow: 0 4px 10px rgba(142, 68, 173, 0.2) !important;
+        border: none !important; /* పల్చగా కనిపించకుండా బోర్డర్ తీసేయాలి */
     }
+</style>
 
-    /* Heading Badge */
-    .skills-header-badge {
-        background-color: var(--badge-purple);
-        color: #ffffff;
-        padding: 8px 20px;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        display: inline-block;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        box-shadow: 0 4px 10px rgba(142, 68, 173, 0.2);
-    }
+<div class="skills-wrapper" style="text-align: center; margin-top: 30px;">
+    <div class="skills-badge-fixed">
+        💡 SKILLS & SOFTWARE EXPERTISE
+    </div>
+</div>
+
 
     .skills-card-grid {
         display: grid;
