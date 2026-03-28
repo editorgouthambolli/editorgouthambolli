@@ -3,53 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Editor | Theme Test</title>
+    <title>Goutham Bolli | White Glossy Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
-        /* 1. Base Colors & Layout */
+        :root {
+            --primary-purple: #8e44ad; /* Deep Purple from image 2 */
+            --bg-light-purple: #f8f4f9; /* Light purple gradient base from image 2 */
+            --glass-white: rgba(255, 255, 255, 0.5); /* White Glass Base */
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-main: #2c3e50;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #050509; /* Dark Base */
-            /* Purple Light Effect */
-            background-image: radial-gradient(circle at 50% 50%, rgba(160, 32, 240, 0.1) 0%, transparent 80%);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: sans-serif;
+            /* Full page light purple background from image 2 */
+            background-color: var(--bg-light-purple); 
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            padding: 20px;
         }
 
-        /* 2. Glassy Box (Little bit effect) */
-        .glass-box {
-            width: 80%;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.05); /* White Glass */
-            backdrop-filter: blur(10px); /* Glass Blur */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle White Border */
+        /* --- 1. HEADER SECTION (Image 2 style) --- */
+        .header {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 50px;
+            /* Subtle Glass Effect on the overall header area */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 30px;
+        }
+
+        .main-name {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 4rem;
+            color: var(--primary-purple);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: 0.8;
+        }
+
+        /* --- 2. GLASSY CARDS SECTION --- */
+        .journey-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            /* The Pure White Glass Effect */
+            background: rgba(255, 255, 255, 0.45); 
+            backdrop-filter: blur(15px); /* Strong blur for glass feel */
             border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(160, 32, 240, 0.2); /* Purple Glow */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 25px;
+            margin-bottom: 20px;
+            
+            /* Subtle white border for structure */
+            border: 1px solid var(--glass-border);
+            
+            /* Left side accent like image 2, but sleeker */
+            border-left: 5px solid var(--primary-purple);
+            
+            /* Clean shadow for depth */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            
+            /* Glossy reflection effect */
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            
+            transition: 0.3s ease-in-out;
         }
 
-        .text {
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.6);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .card-category {
+            font-size: 0.85rem;
+            background-color: var(--primary-purple);
             color: #ffffff;
-            font-size: 1.2rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        .purple-text {
-            color: #a020f0; /* Purple Color */
-            font-weight: bold;
+        .card-content {
+            font-size: 1rem;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .card-content b {
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+
+        /* Mobile View Fix */
+        @media (max-width: 600px) {
+            .main-name { font-size: 3rem; }
+            .tagline { font-size: 0.9rem; letter-spacing: 3px; }
+            .glass-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="glass-box">
-        <div class="text">White & <span class="purple-text">Purple</span> Glassy Theme</div>
+    <div class="header">
+        <div class="main-name">GOUTHAM BOLLI</div>
+        <div class="tagline">THE CINEMATIC STORYTELLER</div>
+    </div>
+
+    <div class="journey-container">
+        
+        <div class="glass-card">
+            <span class="card-category">PROFESSIONAL SUMMARY</span>
+            <div class="card-content">
+                I am a passionate <b>Cinematic Storyteller</b> specializing in turning raw footage into impactful visual narratives.
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <span class="card-category">BEYOND LIMITS: MY JOURNEY</span>
+            <div class="card-content">
+                Started with a smartphone in 2018, my 7-year journey is a testament that <b>Ambition > Condition</b>.
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <span class="card-category">THE BREAKTHROUGH MOMENT</span>
+            <div class="card-content">
+                In 2022, introduced to <b>Director Prithvi</b>, I got my first big break: 'Babu Gari Lokamantha Mayajalam'.
+            </div>
+        </div>
+
     </div>
 
 </body>
 </html>
+
