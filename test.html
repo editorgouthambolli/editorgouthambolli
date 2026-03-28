@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Full Glass Portfolio</title>
+    <title>Goutham Bolli | Full Journey Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-purple: #8e44ad;
             --bg-gradient: linear-gradient(180deg, #ffffff 0%, #e1bee7 100%);
-            /* Enhanced Glass Specs */
-            --glass-white: rgba(255, 255, 255, 0.3);
+            --glass-white: rgba(255, 255, 255, 0.4);
             --glass-border: rgba(255, 255, 255, 0.6);
             --purple-glow: rgba(142, 68, 173, 0.2);
         }
@@ -27,25 +26,25 @@
             align-items: center;
         }
 
-        /* --- 1. FULL GLASS HEADER (GOUTHAM BOLLI) --- */
+        /* --- HEADER GLASS BOX --- */
         .glass-header {
             background: var(--glass-white);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 50px 30px;
+            border-radius: 25px;
+            padding: 40px 20px;
             text-align: center;
             width: 100%;
             max-width: 850px;
-            margin-top: 40px;
-            margin-bottom: 50px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px var(--purple-glow);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 40px var(--purple-glow), inset 0 0 20px rgba(255,255,255,0.4);
         }
 
-        /* Shine Reflection Animation for Header */
+        /* Shine Effect */
         .glass-header::after {
             content: '';
             position: absolute;
@@ -53,86 +52,62 @@
             width: 50%; height: 200%;
             background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
             transform: rotate(30deg);
-            animation: shine 4s infinite;
+            animation: shine 5s infinite;
         }
 
-        @keyframes shine {
-            0% { left: -60%; }
-            100% { left: 160%; }
-        }
+        @keyframes shine { 0% { left: -60%; } 100% { left: 160%; } }
 
         .main-name {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2.2rem, 10vw, 4rem);
+            font-family: 'Orbitron', sans-serif; /* Inspired by Aftur */
+            font-size: clamp(2rem, 8vw, 3.5rem);
             color: var(--primary-purple);
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             text-transform: uppercase;
             font-weight: 700;
-            text-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
         }
 
         .tagline {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #444;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-top: 15px;
-            font-weight: 400;
+            letter-spacing: 4px;
+            margin-top: 10px;
             opacity: 0.8;
         }
 
-        /* --- 2. GLASS JOURNEY CARDS --- */
-        .journey-container {
-            width: 100%;
-            max-width: 850px;
-        }
+        /* --- JOURNEY GLASS CARDS --- */
+        .journey-container { width: 100%; max-width: 850px; }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            transition: 0.4s ease;
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
-        }
-
-        /* Border Left for the Category style */
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0;
-            width: 6px; height: 100%;
-            background: var(--primary-purple);
-        }
-
-        .glass-card:hover {
-            transform: scale(1.02);
-            background: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 15px 45px var(--purple-glow);
+            border-left: 6px solid var(--primary-purple);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
         }
 
         .card-badge {
             background: var(--primary-purple);
             color: white;
-            padding: 6px 16px;
+            padding: 5px 15px;
             border-radius: 50px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
         .card-content {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #222;
-            font-weight: 400;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #333;
         }
 
         .purple-text {
@@ -140,12 +115,7 @@
             font-weight: 600;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            .glass-header { padding: 40px 20px; }
-            .tagline { font-size: 0.75rem; letter-spacing: 3px; }
-            .glass-card { padding: 20px; }
-        }
+        @media (max-width: 600px) { .main-name { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
@@ -160,28 +130,28 @@
         <div class="glass-card">
             <span class="card-badge">PROFESSIONAL SUMMARY</span>
             <p class="card-content">
-                I am a passionate <span class="purple-text">Cinematic Storyteller</span> specializing in turning raw footage into impactful visual narratives. With mastery in <span class="purple-text">Adobe Premiere Pro, After Effects, and Alight Motion</span>, I ensure every frame tells a story.
+                I am a passionate <span class="purple-text">Cinematic Storyteller</span> specializing in turning raw footage into impactful visual narratives. With mastery in <span class="purple-text">Adobe Premiere Pro, After Effects, and Alight Motion</span>, I ensure every frame tells a story with maximum emotional impact.
             </p>
         </div>
 
         <div class="glass-card">
             <span class="card-badge">BEYOND LIMITS: MY JOURNEY</span>
             <p class="card-content">
-                Started with a smartphone in 2018, my 7-year journey is a testament that <span class="purple-text">Ambition > Condition</span>. proving that true creativity knows no boundaries.
+                Started with a smartphone in 2018, my 7-year journey is a testament that <span class="purple-text">Ambition > Condition</span>. After mastering mobile editing with 7+ impactful shorts, I transitioned to professional desktop tools, proving that true creativity knows no boundaries.
             </p>
         </div>
 
         <div class="glass-card">
             <span class="card-badge">THE BREAKTHROUGH MOMENT (2022)</span>
             <p class="card-content">
-                In 2022, recognized by my best friend and introduced to <span class="purple-text">Director Prithvi</span>, I got my first big break: <span class="purple-text">'Babu Gari Lokamantha Mayajalam'</span>.
+                Every great story needs a bridge. In 2022, recognized by my best friend and introduced to <span class="purple-text">Director Prithvi</span>, I got my first big break: <span class="purple-text">'Babu Gari Lokamantha Mayajalam'</span>. This project transformed my home-grown passion into a professional mission.
             </p>
         </div>
 
         <div class="glass-card">
             <span class="card-badge">UNSTOPPABLE PASSION</span>
             <p class="card-content">
-                My work is driven by one core philosophy: <span class="purple-text">"Creativity has no limits when passion leads the way."</span>
+                My journey from crafting unique <span class="purple-text">Chat Edits on Alight Motion</span> to cinematic projects proves that you don't need a high-end studio to create magic. Whether it's a mobile screen or a professional timeline, my work is driven by one core philosophy: <span class="purple-text">"Creativity has no limits when passion leads the way."</span>
             </p>
         </div>
 
