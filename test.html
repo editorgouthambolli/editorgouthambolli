@@ -159,10 +159,10 @@
 
 </body>
 </html>
-        <style>
-    /* స్కిల్స్ హెడ్డింగ్‌ను పైన ఉన్న జర్నీ కార్డ్స్ హెడ్డింగ్స్‌లా మార్చే కోడ్ */
-    .skills-badge-fixed {
-        background-color: #8e44ad !important; /* పక్కా పర్పుల్ కలర్ */
+ <style>
+    /* స్కిల్స్ హెడ్డింగ్ - పైన ఉన్న వాటిలాగే నిండుగా ఉండటానికి */
+    .skills-title-badge {
+        background-color: #8e44ad !important; /* పక్కా పర్పుల్ */
         color: #ffffff !important;
         padding: 6px 18px !important;
         border-radius: 50px !important;
@@ -173,115 +173,77 @@
         text-transform: uppercase !important;
         letter-spacing: 1px !important;
         box-shadow: 0 4px 10px rgba(142, 68, 173, 0.2) !important;
-        border: none !important; /* పల్చగా కనిపించకుండా బోర్డర్ తీసేయాలి */
     }
-</style>
 
-<div class="skills-wrapper" style="text-align: center; margin-top: 30px;">
-    <div class="skills-badge-fixed">
-        💡 SKILLS & SOFTWARE EXPERTISE
-    </div>
-</div>
-
-
-    .skills-card-grid {
+    /* గ్లాస్ గ్రిడ్ మరియు కార్డ్స్ */
+    .skills-grid-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for professional look */
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         padding: 0 10px;
     }
 
-    /* Same Glass Card Style as image_8.png */
-    .skill-card {
+    .glass-card-style {
         background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         border: 1px solid rgba(255, 255, 255, 0.6);
         border-radius: 20px;
         padding: 25px 15px;
-        transition: 0.3s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
-    }
-
-    .skill-card:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.55);
-        border-color: var(--primary-purple);
-    }
-
-    .s-icon { font-size: 2rem; margin-bottom: 12px; }
-    
-    .s-name {
-        font-weight: 600;
-        color: var(--primary-purple);
-        font-size: 0.95rem;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-        letter-spacing: 1px;
-    }
-
-    .s-desc {
-        font-size: 0.8rem;
-        color: #444;
-        line-height: 1.6;
-    }
-
-    /* Mobile Design: one card per row */
-    @media (max-width: 600px) {
-        .skills-card-grid { grid-template-columns: 1fr; }
+        transition: 0.3s;
     }
 </style>
 
-<div class="skills-wrapper">
-    <div class="skills-header-badge">
+<div class="skills-wrapper" style="text-align: center; margin: 40px auto; width: 100%; max-width: 850px;">
+    
+    <div class="skills-title-badge">
         💡 SKILLS & SOFTWARE EXPERTISE
     </div>
     
-    <div class="skills-card-grid">
-        <div class="skill-card">
-            <div class="s-icon">🎞️</div>
-            <div class="s-name">Video Editing</div>
-            <div class="s-desc">YouTube, Reels, Shorts, Vlogs, etc.</div>
+    <div class="skills-grid-container">
+        <div class="glass-card-style">
+            <div style="font-size: 2rem; margin-bottom: 10px;">🎞️</div>
+            <div style="font-weight: 600; color: #8e44ad; font-size: 0.95rem;">Video Editing</div>
+            <div style="font-size: 0.75rem; color: #444;">YouTube, Reels, Shorts, Vlogs, etc.</div>
         </div>
 
-        <div class="skill-card">
-            <div class="s-icon">💥</div>
-            <div class="s-name">Adobe After Effects</div>
-            <div class="s-desc">Visual Effects & Motion Graphics</div>
+        <div class="glass-card-style">
+            <div style="font-size: 2rem; margin-bottom: 10px;">💥</div>
+            <div style="font-weight: 600; color: #8e44ad; font-size: 0.95rem;">Adobe After Effects</div>
+            <div style="font-size: 0.75rem; color: #444;">Visual Effects & Motion Graphics</div>
         </div>
 
-        <div class="skill-card">
-            <div class="s-icon">🎬</div>
-            <div class="s-name">Adobe Premiere Pro</div>
-            <div class="s-desc">Professional Timeline Editing</div>
+        <div class="glass-card-style">
+            <div style="font-size: 2rem; margin-bottom: 10px;">🎬</div>
+            <div style="font-weight: 600; color: #8e44ad; font-size: 0.95rem;">Adobe Premiere Pro</div>
+            <div style="font-size: 0.75rem; color: #444;">Professional Timeline Editing</div>
         </div>
 
-        <div class="skill-card">
-            <div class="s-icon">🎨</div>
-            <div class="s-name">Adobe Illustrator</div>
-            <div class="s-desc">Title & Logo Designing</div>
+        <div class="glass-card-style">
+            <div style="font-size: 2rem; margin-bottom: 10px;">🎨</div>
+            <div style="font-weight: 600; color: #8e44ad; font-size: 0.95rem;">Adobe Illustrator</div>
+            <div style="font-size: 0.75rem; color: #444;">Title & Logo Designing</div>
         </div>
 
-        <div class="skill-card">
-            <div class="s-icon">📱</div>
-            <div class="s-name">Alight Motion & KineMaster</div>
-            <div class="s-desc">Mobile Editing</div>
+        <div class="glass-card-style">
+            <div style="font-size: 2rem; margin-bottom: 10px;">📱</div>
+            <div style="font-weight: 600; color: #8e44ad; font-size: 0.95rem;">Alight Motion & KineMaster</div>
+            <div style="font-size: 0.75rem; color: #444;">Mobile Editing</div>
         </div>
 
-        <div class="skill-card">
-            <div class="s-icon">✍️</div>
-            <div class="s-name">Content Writing</div>
-            <div class="s-desc">Scriptwriting, Captions, Descriptions</div>
+        <div class="glass-card-style">
+            <div style="font-size: 2rem; margin-bottom: 10px;">✍️</div>
+            <div style="font-weight: 600; color: #8e44ad; font-size: 0.95rem;">Content Writing</div>
+            <div style="font-size: 0.75rem; color: #444;">Scriptwriting, Captions, Descriptions</div>
         </div>
 
-        <div class="skill-card" style="grid-column: span 2;">
-            <div class="s-icon">🧠</div>
-            <div class="s-name">Film Analysis</div>
-            <div class="s-desc">Understanding Editing Styles & Cinematics</div>
+        <div class="glass-card-style" style="grid-column: span 2;">
+            <div style="font-size: 2rem; margin-bottom: 10px;">🧠</div>
+            <div style="font-weight: 600; color: #8e44ad; font-size: 0.95rem;">Film Analysis</div>
+            <div style="font-size: 0.75rem; color: #444;">Understanding Editing Styles & Cinematics</div>
         </div>
     </div>
 </div>
