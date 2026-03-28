@@ -3,156 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Editor | Portfolio Test</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <title>Goutham Editor | Theme Test</title>
     <style>
-        :root {
-            --purple: #a020f0; 
-            --glass: rgba(255, 255, 255, 0.05);
-            --bg: #050509;
-        }
-
+        /* 1. Base Colors & Layout */
         body {
-            margin: 0; background: var(--bg); color: white;
-            font-family: 'Poppins', sans-serif; overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #050509; /* Dark Base */
+            /* Purple Light Effect */
+            background-image: radial-gradient(circle at 50% 50%, rgba(160, 32, 240, 0.1) 0%, transparent 80%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
         }
 
-        /* 1. TRIPLE HEADER (Left: Pr, Middle: Name, Right: Photo) */
-        .top-nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 25px; background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        /* 2. Glassy Box (Little bit effect) */
+        .glass-box {
+            width: 80%;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05); /* White Glass */
+            backdrop-filter: blur(10px); /* Glass Blur */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle White Border */
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(160, 32, 240, 0.2); /* Purple Glow */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .pr-logo {
-            width: 45px; height: 45px; background: #00005b;
-            border: 2px solid #3232ff; transform: rotate(-15deg);
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; color: #3232ff; box-shadow: 0 0 15px rgba(50, 50, 255, 0.4);
+        .text {
+            color: #ffffff;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
         }
 
-        .main-name {
-            font-family: 'Bebas Neue'; font-size: 1.8rem; letter-spacing: 2px;
-            background: linear-gradient(to right, #fff, var(--purple));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
-        .user-photo {
-            width: 45px; height: 45px; border-radius: 50%;
-            border: 2px solid var(--purple); overflow: hidden;
-            box-shadow: 0 0 10px var(--purple);
-        }
-
-        /* 2. JOURNEY SECTION (5 Categories) */
-        .section-title {
-            text-align: center; font-family: 'Bebas Neue'; font-size: 2rem;
-            margin: 30px 0 15px; color: var(--purple);
-        }
-
-        .journey-card {
-            background: var(--glass); margin: 10px 20px; padding: 15px;
-            border-radius: 12px; border-left: 4px solid var(--purple);
-            backdrop-filter: blur(10px);
-        }
-
-        /* 3. WORK FOLDERS (7 Folders) */
-        .folder-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 12px; padding: 20px;
-        }
-
-        .folder {
-            background: var(--glass); padding: 25px 10px; border-radius: 15px;
-            text-align: center; border: 1px solid rgba(255,255,255,0.1);
-            cursor: pointer; transition: 0.3s;
-        }
-
-        .folder:hover { border-color: var(--purple); transform: scale(1.05); }
-
-        /* 4. MAGIC WINDOW (Popup) */
-        .popup-window {
-            display: none; position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%); width: 85%;
-            background: rgba(10, 10, 20, 0.95); backdrop-filter: blur(20px);
-            padding: 25px; border-radius: 20px; border: 1px solid var(--purple); z-index: 2000;
-        }
-
-        .poster-box {
-            width: 100%; height: 200px; background: rgba(255,255,255,0.02);
-            border: 2px dashed var(--purple); border-radius: 12px;
-            margin-top: 15px; display: flex; align-items: center; justify-content: center;
-            cursor: pointer;
-        }
-
-        /* 5. 7 SHOTS AREA */
-        .shots-area {
-            display: none; grid-template-columns: repeat(2, 1fr);
-            gap: 10px; padding: 20px;
-        }
-
-        .shot-card {
-            background: #111; height: 140px; border-radius: 10px;
-            border: 1px solid var(--purple); display: flex; align-items: center; justify-content: center;
+        .purple-text {
+            color: #a020f0; /* Purple Color */
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-nav">
-        <div class="pr-logo">Pr</div>
-        <div class="main-name">GOUTHAM EDITOR</div>
-        <div class="user-photo"><img src="https://via.placeholder.com/50" style="width:100%; height:100%;"></div>
+    <div class="glass-box">
+        <div class="text">White & <span class="purple-text">Purple</span> Glassy Theme</div>
     </div>
-
-    <h2 class="section-title">BEYOND LIMITS</h2>
-    <div class="journey-card"><b>1. 2018:</b> KineMaster తో ప్రయాణం మొదలు.</div>
-    <div class="journey-card"><b>2. Mastery:</b> 7 మొబైల్ షార్ట్స్ తో గుర్తింపు.</div>
-    <div class="journey-card"><b>3. The Bridge:</b> బెస్ట్ ఫ్రెండ్ సపోర్ట్.</div>
-    <div class="journey-card"><b>4. Breakthrough:</b> ఫస్ట్ ప్రొఫెషనల్ ప్రాజెక్ట్.</div>
-    <div class="journey-card"><b>5. Vision:</b> Ambition > Condition!</div>
-
-    <h2 class="section-title">MY WORKSPACE</h2>
-    <div class="folder-grid">
-        <div class="folder" onclick="openWin('Short Films', 'Sponsor: Director Prithvi. Story: బాబు గారి లోకమంతా మాయాజాలమే.')">Short Films</div>
-        <div class="folder" onclick="openWin('Trailers', 'Story: హై-వోల్టేజ్ సినిమాటిక్ కట్స్.')">Trailers</div>
-        <div class="folder" onclick="openWin('Reels', 'Story: ఫాస్ట్ కట్ రీల్స్.')">Reels</div>
-        <div class="folder" onclick="openWin('Vlogs', 'Story: ట్రావెల్ స్టోరీస్.')">Vlogs</div>
-        <div class="folder" onclick="openWin('Shorts', 'Story: మొబైల్ సినిమాటిక్స్.')">Shorts</div>
-        <div class="folder" onclick="openWin('Writing', 'Story: బలమైన మాటలు.')">Writing</div>
-        <div class="folder" onclick="openWin('Designs', 'Story: యూనిక్ టైటిల్స్.')">Designs</div>
-    </div>
-
-    <div id="pop" class="popup-window">
-        <h2 id="pTitle" style="color:var(--purple);">Project</h2>
-        <p id="pStory" style="font-size:0.9rem; color:#ccc;"></p>
-        <div class="poster-box" onclick="closeAndShowShots()">
-            <span style="color:var(--purple); text-align:center;">[ Click to Close & See 7 Shots ]</span>
-        </div>
-    </div>
-
-    <div id="shots" class="shots-area"></div>
-
-    <script>
-        function openWin(title, story) {
-            document.getElementById('pTitle').innerText = title;
-            document.getElementById('pStory').innerText = story;
-            document.getElementById('pop').style.display = 'block';
-            document.getElementById('shots').style.display = 'none';
-        }
-
-        function closeAndShowShots() {
-            document.getElementById('pop').style.display = 'none';
-            const sArea = document.getElementById('shots');
-            sArea.style.display = 'grid';
-            sArea.innerHTML = '';
-            for(let i=1; i<=7; i++) {
-                sArea.innerHTML += `<div class="shot-card">Shot ${i}</div>`;
-            }
-            sArea.scrollIntoView({behavior: "smooth"});
-        }
-    </script>
 
 </body>
 </html>
-
