@@ -159,82 +159,7 @@
 
 </body>
 </html>
-    <style>
-    .skills-section {
-        width: 100%;
-        max-width: 850px;
-        margin: 40px auto;
-        text-align: center;
-    }
-
-    /* పైన ఉన్న వాటిలాగే ఉండే హెడింగ్ స్టైల్ */
-    .skills-header-badge {
-        background: var(--primary-purple);
-        color: white;
-        padding: 8px 20px;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        display: inline-block;
-        margin-bottom: 25px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        box-shadow: 0 4px 15px var(--purple-glow);
-    }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    .skill-glass-card {
-        background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        border-radius: 20px;
-        padding: 20px 15px;
-        transition: 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skill-glass-card:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.55);
-        border-color: var(--primary-purple);
-    }
-
-    .skill-icon { font-size: 1.8rem; margin-bottom: 10px; }
-
-    .skill-name {
-        font-weight: 600;
-        color: var(--primary-purple);
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        margin-bottom: 5px;
-    }
-
-    .skill-desc {
-        font-size: 0.75rem;
-        color: #333;
-        line-height: 1.4;
-    }
-
-    @media (max-width: 600px) {
-        .skills-grid { grid-template-columns: 1fr; }
-    }
-</style>
-
-<div class="skills-section">
-    <div class="skills-header-badge">
-        💡 SKILLS & SOFTWARE EXPERTISE
-    </div>
-    
-    <div class="skills-grid">
+        <div class="skills-grid">
         <div class="skill-glass-card">
             <div class="skill-icon">🎞️</div>
             <div class="skill-name">Video Editing</div>
@@ -248,9 +173,15 @@
         </div>
 
         <div class="skill-glass-card">
-            <div class="skill-icon">🎛️</div>
-            <div class="skill-name">Adobe Premiere Pro illustrator</div>
+            <div class="skill-icon">🎬</div>
+            <div class="skill-name">Adobe Premiere Pro</div>
             <div class="skill-desc">Professional Timeline Editing</div>
+        </div>
+
+        <div class="skill-glass-card">
+            <div class="skill-icon">🎨</div>
+            <div class="skill-name">Adobe Illustrator</div>
+            <div class="skill-desc">Title & Logo Designing</div>
         </div>
 
         <div class="skill-glass-card">
@@ -265,10 +196,19 @@
             <div class="skill-desc">Scriptwriting, Captions, Descriptions</div>
         </div>
 
-        <div class="skill-glass-card">
+        <div class="skill-glass-card full-width">
             <div class="skill-icon">🧠</div>
             <div class="skill-name">Film Analysis</div>
             <div class="skill-desc">Understanding Editing Styles & Cinematics</div>
         </div>
     </div>
-</div>
+
+    <style>
+        /* చివరగా ఉన్న Film Analysis బాక్స్ వెడల్పుగా కనిపించడానికి */
+        .full-width {
+            grid-column: span 2;
+        }
+        @media (max-width: 600px) {
+            .full-width { grid-column: span 1; }
+        }
+    </style>
