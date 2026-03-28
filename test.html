@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Journey - As Is</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Goutham Bolli | Cinematic Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Colors matched from image_2.png */
             --primary-purple: #8e44ad; /* Deep Purple text */
-            --light-purple-bg: #f4ecf7; /* Very light purple/pink card background */
+            --glass-purple-bg: rgba(244, 236, 247, 0.4); /* Light purple glass base */
             --badge-purple: #9b59b6; /* Badge background */
             --bg-gradient-start: #ffffff; /* White top */
             --bg-gradient-end: #e1bee7; /* Light purple bottom */
             --text-dark: #333333;
+            --glass-border: rgba(255, 255, 255, 0.2);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,44 +29,65 @@
             min-height: 100vh;
         }
 
-        /* --- 1. HEADER SECTION (Goutham Bolli) --- */
+        /* --- 1. HEADER SECTION (New Logo Font) --- */
         .header {
             text-align: center;
-            margin-top: 50px;
-            margin-bottom: 40px;
+            margin-top: 60px;
+            margin-bottom: 50px;
         }
 
         .main-name {
-            font-family: 'Bebas Neue', cursive;
+            /* New Bold, Logo-like font (Orbitron) inspired by Aftur reference */
+            font-family: 'Orbitron', sans-serif;
             font-size: 3.5rem;
             color: var(--primary-purple);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 5px;
+            /* Subtle shadow to enhance logo effect */
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
         }
 
         .tagline {
             font-size: 0.9rem;
             color: var(--text-dark);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: -5px;
+            letter-spacing: 4px;
             opacity: 0.8;
+            font-weight: 300;
         }
 
-        /* --- 2. JOURNEY CARDS SECTION (4 Categories) --- */
+        /* --- 2. JOURNEY CARDS SECTION (Glass Effect) --- */
         .journey-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         .journey-card {
-            background-color: var(--light-purple-bg);
-            border-radius: 15px;
+            /* Glassmorphism Effect */
+            background-color: var(--glass-purple-bg);
+            backdrop-filter: blur(15px); /* Strong glass blur */
+            border-radius: 20px;
             padding: 25px;
-            margin-bottom: 20px;
-            /* Subtle shadow like image_2.png */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(142, 68, 173, 0.1);
+            margin-bottom: 25px;
+            
+            /* White borders for structure */
+            border: 1px solid var(--glass-border);
+            
+            /* Clean shadow for depth */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+            
+            /* Shady reflection effect on top */
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+            
+            transition: 0.3s ease;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(244, 236, 247, 0.6);
+            box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.1);
         }
 
         .card-badge {
@@ -82,7 +104,7 @@
         }
 
         .card-content {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-dark);
             line-height: 1.7;
             font-weight: 300;
@@ -97,8 +119,8 @@
 
         /* Mobile View Adjustment */
         @media (max-width: 600px) {
-            .main-name { font-size: 2.5rem; }
-            .tagline { font-size: 0.8rem; letter-spacing: 2px; }
+            .main-name { font-size: 2.5rem; letter-spacing: 2px; }
+            .tagline { font-size: 0.8rem; letter-spacing: 3px; }
             .journey-card { padding: 20px; }
         }
     </style>
