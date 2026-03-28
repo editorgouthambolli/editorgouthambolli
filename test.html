@@ -247,9 +247,9 @@
         </div>
     </div>
 </div>
-<style>
-    /* 1. THEME BASICS & GLASS EFFECT */
-    .g-glass-ui {
+ <style>
+    /* 1. Theme & Glass Effects */
+    .vault-glass-ui {
         background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
@@ -258,8 +258,8 @@
         box-shadow: 0 8px 32px rgba(142, 68, 173, 0.05);
     }
 
-    /* 2. FILE MANAGER STYLE FOLDERS (Horizontal Scroll) */
-    .file-manager-container {
+    /* 2. Professional OS Style Folders (Horizontal Scroll) */
+    .work-folder-container {
         display: flex;
         overflow-x: auto;
         gap: 20px;
@@ -267,10 +267,10 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
-    .file-manager-container::-webkit-scrollbar { display: none; }
+    .work-folder-container::-webkit-scrollbar { display: none; }
 
     .os-folder {
-        min-width: 85px;
+        min-width: 90px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -281,24 +281,24 @@
     }
     .os-folder:active { transform: scale(0.9); background: rgba(142, 68, 173, 0.1); }
 
-    .folder-icon-svg {
-        width: 50px;
+    .folder-svg-icon {
+        width: 55px;
         height: auto;
         filter: drop-shadow(0 4px 6px rgba(142, 68, 173, 0.15));
     }
 
-    .folder-label {
-        margin-top: 8px;
-        font-size: 10px;
+    .work-folder-label {
+        margin-top: 10px;
+        font-size: 11px;
         font-weight: 800;
-        color: #5d3b8e;
+        color: #5d3b8e; /* Rich Purple */
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
 
-    /* 3. PROJECT VAULT POP-UP WINDOW */
-    #vault-popup {
+    /* 3. Project Vault Pop-up */
+    #vault-pop {
         display: none;
         position: fixed;
         top: 50%; left: 50%;
@@ -308,9 +308,9 @@
         padding: 25px;
         text-align: center;
     }
-    .vault-header { color: #824bbd; font-weight: 900; font-size: 16px; margin-bottom: 20px; letter-spacing: 1.5px; }
+    .vault-window-title { color: #824bbd; font-weight: 900; font-size: 16px; margin-bottom: 20px; letter-spacing: 1px; }
     
-    .v-item {
+    .vid-item {
         background: #fcfaff;
         border: 1.5px solid #efebf7;
         padding: 14px;
@@ -322,133 +322,127 @@
         cursor: pointer;
         transition: 0.2s;
     }
-    .v-item:hover { background: #824bbd; color: white; border-color: #824bbd; }
+    .vid-item:hover { background: #824bbd; color: white; border-color: #824bbd; }
 
-    /* 4. SMART AUTO-RATIO PLAYER */
-    #magic-player-box {
+    /* 4. Fixed Smart Player (Appears below folders) */
+    #fixed-player-area {
         margin: 20px auto;
         width: 92%;
         display: none;
         overflow: hidden;
-        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.5s ease-in-out;
     }
-    /* Smart Ratios */
+    /* Dynamic Ratios */
     .ratio-16-9 { aspect-ratio: 16 / 9; width: 100%; }
     .ratio-9-16 { aspect-ratio: 9 / 16; width: 300px; margin: 0 auto; }
     .ratio-4-5 { aspect-ratio: 4 / 5; width: 340px; margin: 0 auto; }
     
-    #player-inner iframe { width: 100%; height: 100%; border: none; border-radius: 18px; }
+    #fixed-inner iframe { width: 100%; height: 100%; border: none; border-radius: 18px; }
 </style>
 
 <div style="margin-top: 30px; padding-bottom: 50px;">
-    <div style="text-align: center; margin-bottom: 5px;">
-        <span style="background:#f3ebff; color:#824bbd; padding:6px 15px; border-radius:20px; font-size:9px; font-weight:900; border:1px solid #e0d4f7;">📂 WORK DIRECTORY</span>
-    </div>
-
-    <div class="file-manager-container" onscroll="playTick()">
-        <div class="os-folder" onclick="showVault('Short Films')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="work-folder-container" onscroll="playTickSound()">
+        <div class="os-folder" onclick="showVaultWindow('Short Films')">
+            <svg class="folder-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 19V9C22 7.89543 21.1046 7 20 7H12L10 4H4C2.89543 4 2 4.89543 2 6V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19Z" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5"/>
             </svg>
-            <div class="folder-label">Short Films</div>
+            <div class="work-folder-label">Short Films</div>
         </div>
-        <div class="os-folder" onclick="showVault('Teasers')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="os-folder" onclick="showVaultWindow('Teasers')">
+            <svg class="folder-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 19V9C22 7.89543 21.1046 7 20 7H12L10 4H4C2.89543 4 2 4.89543 2 6V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19Z" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5"/>
             </svg>
-            <div class="folder-label">Teasers</div>
+            <div class="work-folder-label">Teasers</div>
         </div>
-        <div class="os-folder" onclick="showVault('Reels')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="os-folder" onclick="showVaultWindow('Reels')">
+            <svg class="folder-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 19V9C22 7.89543 21.1046 7 20 7H12L10 4H4C2.89543 4 2 4.89543 2 6V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19Z" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5"/>
             </svg>
-            <div class="folder-label">Reels</div>
+            <div class="work-folder-label">Reels</div>
         </div>
-        <div class="os-folder" onclick="showVault('Wedding')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="os-folder" onclick="showVaultWindow('Wedding')">
+            <svg class="folder-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 19V9C22 7.89543 21.1046 7 20 7H12L10 4H4C2.89543 4 2 4.89543 2 6V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19Z" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5"/>
             </svg>
-            <div class="folder-label">Wedding</div>
+            <div class="work-folder-label">Wedding</div>
         </div>
-        <div class="os-folder" onclick="showVault('Titles')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="os-folder" onclick="showVaultWindow('Titles')">
+            <svg class="folder-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 19V9C22 7.89543 21.1046 7 20 7H12L10 4H4C2.89543 4 2 4.89543 2 6V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19Z" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5"/>
             </svg>
-            <div class="folder-label">Titles</div>
+            <div class="work-folder-label">Titles</div>
         </div>
-        <div class="os-folder" onclick="showVault('Vlogs')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="os-folder" onclick="showVaultWindow('Vlogs')">
+            <svg class="folder-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22 19V9C22 7.89543 21.1046 7 20 7H12L10 4H4C2.89543 4 2 4.89543 2 6V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19Z" fill="#E9D8FD" stroke="#805AD5" stroke-width="1.5"/>
             </svg>
-            <div class="folder-label">Vlogs</div>
+            <div class="work-folder-label">Vlogs</div>
         </div>
     </div>
 
-    <div id="vault-popup" class="g-glass-ui">
-        <div class="vault-header">🎞️ PROJECT VAULT</div>
-        <div id="project-list-dynamic"></div>
-        <div onclick="closeVault()" style="margin-top:15px; font-size:10px; color:#aaa; cursor:pointer; font-weight:800;">[ CANCEL ]</div>
+    <div id="vault-pop" class="vault-glass-ui">
+        <div class="vault-window-title">🎞️ PROJECT VAULT</div>
+        <div id="video-list-content"></div>
+        <div onclick="closeVaultWindow()" style="margin-top:15px; font-size:10px; color:#aaa; cursor:pointer; font-weight:800;">[ CLOSE ]</div>
     </div>
 
-    <div id="magic-player-box" class="g-glass-ui">
-        <div id="player-inner" style="width:100%; height:100%;"></div>
+    <div id="fixed-player-area" class="vault-glass-ui">
+        <div id="fixed-inner" style="width:100%; height:100%;"></div>
     </div>
 </div>
 
 <script>
-    // 🎵 Sound SFX Setup
-    const tickSFX = new Audio('https://www.soundjay.com/buttons/sounds/button-50.mp3');
-    const clickSFX = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3');
-    const shutterSFX = new Audio('https://www.soundjay.com/camera/sounds/camera-shutter-click-01.mp3');
+    const tickSound = new Audio('https://www.soundjay.com/buttons/sounds/button-50.mp3');
+    const clickSound = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3');
+    const shutterSound = new Audio('https://www.soundjay.com/camera/sounds/camera-shutter-click-01.mp3');
 
-    // 📂 Project Database
-    const projectDB = {
+    const directoryDB = {
         'Short Films': [{n: 'O Chinna Prema Katha', id: 'f0-iI7D01kU', r: 'ratio-16-9'}],
-        'Teasers': [{n: 'Kadhlo Konni Pathralu', id: 'f0-iI7D01kU', r: 'ratio-16-9'}],
+        'Teasers': [{n: 'Kadhlo Konni Pathralu Teaser', id: 'f0-iI7D01kU', r: 'ratio-16-9'}],
         'Reels': [{n: 'Cinematic Reel 01', id: 'D-Wf_B_p_Vw', r: 'ratio-9-16'}],
-        'Wedding': [{n: 'Traditional Teaser', id: 'f0-iI7D01kU', r: 'ratio-4-5'}],
-        'Titles': [{n: 'Typography Showreel', id: 'f0-iI7D01kU', r: 'ratio-16-9'}],
-        'Vlogs': [{n: 'Travel Vlog', id: 'f0-iI7D01kU', r: 'ratio-16-9'}]
+        'Wedding': [{n: 'Wedding Highlight', id: 'f0-iI7D01kU', r: 'ratio-4-5'}],
+        'Titles': [{n: 'Title Design Showreel', id: 'f0-iI7D01kU', r: 'ratio-16-9'}],
+        'Vlogs': [{n: 'Travel Diary', id: 'f0-iI7D01kU', r: 'ratio-16-9'}]
     };
 
-    function playTick() { tickSFX.volume = 0.1; tickSFX.play(); }
+    function playTickSound() { tickSound.volume = 0.1; tickSound.play(); }
 
-    function showVault(category) {
-        clickSFX.play();
-        const popup = document.getElementById('vault-popup');
-        const listContainer = document.getElementById('project-list-dynamic');
-        listContainer.innerHTML = '';
-        
-        if(projectDB[category]) {
-            projectDB[category].forEach(proj => {
+    function showVaultWindow(category) {
+        clickSound.play();
+        const popup = document.getElementById('vault-pop');
+        const list = document.getElementById('video-list-content');
+        list.innerHTML = '';
+        if(directoryDB[category]) {
+            directoryDB[category].forEach(proj => {
                 let item = document.createElement('div');
-                item.className = 'v-item';
+                item.className = 'vid-item';
                 item.innerText = proj.n;
-                // Important: Auto-close and Play Logic
-                item.onclick = () => launchSmartVideo(proj.id, proj.r);
-                listContainer.appendChild(item);
+                item.onclick = () => playSmartVideoFixed(proj.id, proj.r);
+                list.appendChild(item);
             });
         }
         popup.style.display = 'block';
     }
 
-    function closeVault() { document.getElementById('vault-popup').style.display = 'none'; }
+    function closeVaultWindow() { document.getElementById('vault-pop').style.display = 'none'; }
 
-    function launchSmartVideo(videoID, ratioClass) {
-        shutterSFX.play(); // Camera shutter on select
-        closeVault(); // ⚡ Auto-close window
+    function playSmartVideoFixed(vidID, ratioClass) {
+        shutterSound.play(); 
         
-        const playerBox = document.getElementById('magic-player-box');
-        const inner = document.getElementById('player-inner');
+        // ⚡ AUTO-CLOSE LOGIC: Closes the vault window immediately
+        closeVaultWindow(); 
         
-        // Apply smart ratio and display
-        playerBox.className = 'g-glass-ui ' + ratioClass;
-        playerBox.style.display = 'block';
+        const playerArea = document.getElementById('fixed-player-area');
+        const inner = document.getElementById('fixed-inner');
         
-        // Inject Video (YouTube)
-        inner.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoID}?autoplay=1" allow="autoplay; fullscreen"></iframe>`;
+        // Set dynamic ratio and show player
+        playerArea.className = 'vault-glass-ui ' + ratioClass;
+        playerArea.style.display = 'block';
         
-        // Smooth scroll to play area
-        playerBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Load YouTube video
+        inner.innerHTML = `<iframe src="https://www.youtube.com/embed/${vidID}?autoplay=1" allow="autoplay; fullscreen"></iframe>`;
+        
+        // Smooth scroll to the player
+        playerArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 </script>
