@@ -247,185 +247,163 @@
         </div>
     </div>
 </div>
-<div class="main-portfolio-wrapper">
-    
-    <div class="selected-works-header">
-        <span class="folder-mini-icon">📂</span> SELECTED WORKS
+<div class="portfolio-main" style="background: #000; padding: 20px; font-family: 'Inter', sans-serif;">
+
+    <div class="header-badge">
+        <span class="icon">📂</span> SELECTED WORKS
     </div>
 
-    <h2 class="library-title">THE LIBRARY</h2>
-    <div class="folder-scroll-container">
-        <div class="folder-wrapper active" onclick="selectFolder(this, 'short-films')">
-            <div class="glass-folder">
-                <div class="folder-glow"></div>
+    <h2 class="section-label">THE LIBRARY</h2>
+    <div class="folders-container">
+        <div class="folder-unit active" onclick="handleFolderClick(this, 'short-films')">
+            <div class="glass-folder-box">
+                <div class="inner-glow"></div>
             </div>
-            <span class="folder-name">SHORT FILMS</span>
+            <span class="folder-title">SHORT FILMS</span>
         </div>
 
-        <div class="folder-wrapper" onclick="selectFolder(this, 'teasers')">
-            <div class="glass-folder">
-                <div class="folder-glow"></div>
+        <div class="folder-unit" onclick="handleFolderClick(this, 'title-designs')">
+            <div class="glass-folder-box">
+                <div class="inner-glow"></div>
             </div>
-            <span class="folder-name">TITLE DESIGNS</span>
+            <span class="folder-title">TITLE DESIGNS</span>
         </div>
 
-        <div class="folder-wrapper" onclick="selectFolder(this, 'vlogs')">
-            <div class="glass-folder">
-                <div class="folder-glow"></div>
+        <div class="folder-unit" onclick="handleFolderClick(this, 'teasers')">
+            <div class="glass-folder-box">
+                <div class="inner-glow"></div>
             </div>
-            <span class="folder-name">WEDDING INVITES</span>
+            <span class="folder-title">TEASERS & TRAILERS</span>
+        </div>
+
+        <div class="folder-unit" onclick="handleFolderClick(this, 'wedding')">
+            <div class="glass-folder-box">
+                <div class="inner-glow"></div>
+            </div>
+            <span class="folder-title">WEDDING INVITES</span>
+        </div>
+
+        <div class="folder-unit" onclick="handleFolderClick(this, 'vlogs')">
+            <div class="glass-folder-box">
+                <div class="inner-glow"></div>
+            </div>
+            <span class="folder-title">VLOGS & TRAVEL</span>
+        </div>
+
+        <div class="folder-unit" onclick="handleFolderClick(this, 'reels')">
+            <div class="glass-folder-box">
+                <div class="inner-glow"></div>
+            </div>
+            <span class="folder-title">SOCIAL MEDIA EDITS</span>
         </div>
     </div>
 
-    <div class="source-preview-container">
-        <h3 class="window-label">SOURCE PREVIEW</h3>
-        <div id="poster-strip" class="poster-strip">
-            <p class="empty-msg">Select a folder to load projects...</p>
+    <div class="source-preview-window">
+        <p class="window-tag">SOURCE PREVIEW</p>
+        <div id="poster-gallery" class="poster-scroll-row">
+            <div class="empty-state">Select a folder to preview projects...</div>
         </div>
-        <div class="custom-scrollbar">
-            <div class="scroll-progress"></div>
+        <div class="custom-progress-bar">
+            <div class="progress-fill"></div>
         </div>
     </div>
 
-    <div id="now-playing-section" class="now-playing-card hidden">
-        <div class="player-flex">
-            <div class="video-side">
-                <div id="main-video-player" class="video-placeholder">
-                    </div>
-            </div>
-            <div class="details-side">
-                <span class="now-label">NOW PLAYING</span>
-                <h2 id="project-title">PROJECT NAME</h2>
-                <p class="category-tag">Video Player</p>
-                <p id="project-desc" class="description-text">
-                    Directed by Prithvi | Edited, VFX, BGM by Goutham Bolli
-                </p>
-                <div class="player-controls">
-                    <span>⏮</span> <span>▶</span> <span>⏭</span>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <style>
-/* 2. CSS Styling - The Cinematic Look */
+/* 2. CSS - The Glassy & Purple Look */
 :root {
-    --purple-main: #a855f7;
-    --dark-bg: #0f0f0f;
-    --glass-bg: rgba(168, 85, 247, 0.15);
+    --purple: #a855f7;
+    --dark-grey: #0f0f0f;
 }
 
-body { background: #000; color: white; font-family: 'Inter', sans-serif; }
-
-/* Header Styling */
-.selected-works-header {
-    background: var(--purple-main);
-    color: white;
+/* Header Badge */
+.header-badge {
+    background: var(--purple);
+    width: fit-content;
+    margin: 10px auto 30px;
     padding: 8px 25px;
     border-radius: 50px;
-    width: fit-content;
-    margin: 20px auto;
     font-weight: bold;
     font-size: 14px;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
 }
 
-.library-title { color: var(--purple-main); text-align: center; font-size: 16px; margin: 20px 0; }
+.section-label { color: var(--purple); text-align: center; font-size: 15px; margin-bottom: 20px; }
 
-/* Real Purple Glassy Folders */
-.folder-scroll-container { display: flex; justify-content: center; gap: 40px; padding: 20px; }
+/* 6 Folders Horizontal Scroll */
+.folders-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 35px;
+    padding: 20px 10px;
+    scrollbar-width: none;
+}
+.folders-container::-webkit-scrollbar { display: none; }
 
-.folder-wrapper { display: flex; flex-direction: column; align-items: center; cursor: pointer; opacity: 0.5; transition: 0.4s; }
-.folder-wrapper.active { opacity: 1; transform: scale(1.1); }
+.folder-unit { display: flex; flex-direction: column; align-items: center; cursor: pointer; opacity: 0.4; transition: 0.4s; flex-shrink: 0; }
+.folder-unit.active { opacity: 1; transform: scale(1.1); }
 
-.glass-folder {
-    width: 80px; height: 55px;
-    background: rgba(138, 43, 226, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Realistic Glass Folder Shape */
+.glass-folder-box {
+    width: 85px; height: 55px;
+    background: rgba(168, 85, 247, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 0 10px 10px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
-    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
-.glass-folder::before {
+.glass-folder-box::before {
     content: ''; position: absolute; top: -10px; left: 0;
-    width: 35px; height: 10px; background: rgba(138, 43, 226, 0.4); border-radius: 5px 5px 0 0;
+    width: 32px; height: 12px; background: rgba(168, 85, 247, 0.4); border-radius: 6px 6px 0 0;
 }
 
-.folder-glow {
+.inner-glow {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 40px; height: 40px; background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%);
+    width: 45px; height: 45px; background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%);
 }
 
-.folder-name { margin-top: 12px; font-size: 12px; font-weight: bold; color: #fff; }
+.folder-title { margin-top: 15px; font-size: 11px; font-weight: bold; color: #fff; letter-spacing: 0.5px; }
 
-/* Underline logic */
-.folder-wrapper.active .folder-name {
-    border-bottom: 3px solid var(--purple-main);
+/* Underline Logic */
+.folder-unit.active .folder-title {
+    border-bottom: 3.5px solid var(--purple);
     padding-bottom: 4px;
 }
 
-/* Source Preview Window */
-.source-preview-container {
-    background: var(--dark-bg);
+/* Black Source Preview Screen */
+.source-preview-window {
+    background: var(--dark-grey);
     border: 1px solid #222;
     border-radius: 20px;
     padding: 20px;
-    margin: 20px auto;
-    max-width: 90%;
+    margin-top: 30px;
 }
-.window-label { text-align: center; color: #666; font-size: 12px; letter-spacing: 2px; margin-bottom: 15px; }
+.window-tag { text-align: center; color: #555; font-size: 11px; letter-spacing: 2px; margin-bottom: 20px; }
 
-.poster-strip { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
-.poster-card { width: 140px; height: 200px; border-radius: 10px; border: 2px solid transparent; transition: 0.3s; cursor: pointer; }
-.poster-card:hover { border-color: var(--purple-main); transform: scale(1.05); }
+.poster-scroll-row { display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; }
+.empty-state { color: #333; width: 100%; text-align: center; padding: 40px; font-size: 13px; }
 
-/* Custom Scrollbar */
-.custom-scrollbar { width: 150px; height: 4px; background: #222; margin: 10px auto; border-radius: 10px; }
-.scroll-progress { width: 40%; height: 100%; background: var(--purple-main); border-radius: 10px; }
-
-/* Now Playing Card */
-.now-playing-card {
-    background: #1a1a1a;
-    border-radius: 30px;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #333;
-}
-.player-flex { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-.video-side { flex: 1; min-width: 250px; }
-.video-placeholder { background: #000; aspect-ratio: 9/16; border-radius: 15px; }
-.details-side { flex: 1.5; }
-.now-label { color: #666; font-size: 10px; }
-.description-text { color: #aaa; font-size: 13px; line-height: 1.5; }
-.hidden { display: none; }
+/* Scrollbar Fill */
+.custom-progress-bar { width: 140px; height: 4px; background: #222; margin: 20px auto; border-radius: 10px; }
+.progress-fill { width: 35%; height: 100%; background: var(--purple); border-radius: 10px; }
 </style>
 
 <script>
-/* 3. Logic - Clicking and Dropping */
-function selectFolder(element, category) {
-    // 1. Remove active from all
-    document.querySelectorAll('.folder-wrapper').forEach(f => f.classList.remove('active'));
-    // 2. Add active to clicked
+/* 3. Logic - Interaction */
+function handleFolderClick(element, category) {
+    // 1. Reset all folders
+    document.querySelectorAll('.folder-unit').forEach(f => f.classList.remove('active'));
+    // 2. Activate clicked folder
     element.classList.add('active');
     
-    // 3. Load Sample Posters (In real, use Admin data)
-    const strip = document.getElementById('poster-strip');
-    strip.innerHTML = `
-        <img src="poster1.jpg" class="poster-card" onclick="playProject('LOST TRAILS', 'Directed by Prithvi | Edited by Goutham')">
-        <img src="poster2.jpg" class="poster-card" onclick="playProject('CITY BEATS', 'Cinematic Street Edit')">
-    `;
-}
+    // 3. Play sound (optional, since you mentioned scroll sound)
+    if (typeof playScrollSound === "function") playScrollSound();
 
-function playProject(name, desc) {
-    const playerSection = document.getElementById('now-playing-section');
-    playerSection.classList.remove('hidden');
-    
-    document.getElementById('project-title').innerText = name;
-    document.getElementById('project-desc').innerText = desc;
-    
-    playerSection.scrollIntoView({ behavior: 'smooth' });
+    // 4. Update Source Preview (This part links to your Netlify Admin data)
+    const gallery = document.getElementById('poster-gallery');
+    gallery.innerHTML = `<div class="empty-state">Loading ${category} projects...</div>`;
 }
 </script>
-
