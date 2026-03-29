@@ -247,105 +247,185 @@
         </div>
     </div>
 </div>
+<div class="main-portfolio-wrapper">
+    
+    <div class="selected-works-header">
+        <span class="folder-mini-icon">📂</span> SELECTED WORKS
+    </div>
 
-</script>
-    <style>
-/* 1. మెయిన్ బాడీ - పక్కా డార్క్ మోడ్ */
-body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
-
-/* 2. SOURCE PREVIEW - ఎడిటింగ్ సాఫ్ట్‌వేర్ విండో లాగా */
-.source-preview {
-    background: #0f0f0f; /* Pure Dark Grey/Black */
-    border: 1px solid #2d2d2d;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 20px;
-    min-height: 250px;
-    box-shadow: inset 0 0 50px rgba(138, 43, 226, 0.1);
-}
-
-/* విండో హెడ్డింగ్ - Adobe Style */
-.window-title {
-    color: #a855f7;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #2d2d2d;
-    padding-bottom: 5px;
-}
-
-/* 3. THE LIBRARY - కింద ఉండే ఫోల్డర్ల సెక్షన్ */
-.library-section { padding: 20px; }
-
-/* REAL FOLDER SHAPE - విండోస్ ఫోల్డర్ లాగా */
-.folder-icon {
-    width: 65px; height: 45px;
-    background: linear-gradient(145deg, #a855f7, #6b21a8);
-    border-radius: 0 8px 8px 8px;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-    transition: 0.3s;
-}
-/* ఫోల్డర్ ట్యాబ్ (పైన ఉండేది) */
-.folder-icon::before {
-    content: ''; position: absolute; top: -8px; left: 0;
-    width: 25px; height: 10px; background: #6b21a8; border-radius: 5px 5px 0 0;
-}
-
-/* 4. SELECTION LOGIC - క్లిక్ చేస్తేనే పేరు + అండర్ లైన్ */
-.folder-container {
-    display: inline-flex; flex-direction: column; align-items: center;
-    margin-right: 30px; opacity: 0.4; transition: 0.3s;
-}
-
-.folder-container.active { opacity: 1; transform: scale(1.1); }
-
-.folder-name {
-    margin-top: 10px; color: #fff; font-size: 14px;
-    visibility: hidden; /* ముందే కనిపించదు */
-}
-
-/* నువ్వు అడిగిన అండర్ లైన్ */
-.folder-container.active .folder-name {
-    visibility: visible;
-    border-bottom: 3px solid #a855f7;
-    padding-bottom: 2px;
-}
-
-/* పోస్టర్లు స్క్రోల్ అయ్యే స్ట్రిప్ */
-.poster-strip { display: flex; gap: 15px; overflow-x: auto; padding: 10px 0; }
-.poster-img { width: 150px; height: 85px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 1px solid #333; }
-</style>
-
-<div class="source-preview">
-    <div class="window-title">SOURCE PREVIEW</div>
-    <div id="poster-area" class="poster-strip">
-        </div>
-</div>
-
-<div class="library-section">
-    <div class="window-title">THE LIBRARY</div>
-    <div class="folders-row" style="display: flex;">
-        
-        <div class="folder-container active" onclick="selectFolder(this)">
-            <div class="folder-icon"></div>
-            <div class="folder-name">Short Films</div>
+    <h2 class="library-title">THE LIBRARY</h2>
+    <div class="folder-scroll-container">
+        <div class="folder-wrapper active" onclick="selectFolder(this, 'short-films')">
+            <div class="glass-folder">
+                <div class="folder-glow"></div>
+            </div>
+            <span class="folder-name">SHORT FILMS</span>
         </div>
 
-        <div class="folder-container" onclick="selectFolder(this)">
-            <div class="folder-icon"></div>
-            <div class="folder-name">Teasers</div>
+        <div class="folder-wrapper" onclick="selectFolder(this, 'teasers')">
+            <div class="glass-folder">
+                <div class="folder-glow"></div>
+            </div>
+            <span class="folder-name">TITLE DESIGNS</span>
         </div>
 
+        <div class="folder-wrapper" onclick="selectFolder(this, 'vlogs')">
+            <div class="glass-folder">
+                <div class="folder-glow"></div>
+            </div>
+            <span class="folder-name">WEDDING INVITES</span>
+        </div>
+    </div>
+
+    <div class="source-preview-container">
+        <h3 class="window-label">SOURCE PREVIEW</h3>
+        <div id="poster-strip" class="poster-strip">
+            <p class="empty-msg">Select a folder to load projects...</p>
+        </div>
+        <div class="custom-scrollbar">
+            <div class="scroll-progress"></div>
+        </div>
+    </div>
+
+    <div id="now-playing-section" class="now-playing-card hidden">
+        <div class="player-flex">
+            <div class="video-side">
+                <div id="main-video-player" class="video-placeholder">
+                    </div>
+            </div>
+            <div class="details-side">
+                <span class="now-label">NOW PLAYING</span>
+                <h2 id="project-title">PROJECT NAME</h2>
+                <p class="category-tag">Video Player</p>
+                <p id="project-desc" class="description-text">
+                    Directed by Prithvi | Edited, VFX, BGM by Goutham Bolli
+                </p>
+                <div class="player-controls">
+                    <span>⏮</span> <span>▶</span> <span>⏭</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<style>
+/* 2. CSS Styling - The Cinematic Look */
+:root {
+    --purple-main: #a855f7;
+    --dark-bg: #0f0f0f;
+    --glass-bg: rgba(168, 85, 247, 0.15);
+}
+
+body { background: #000; color: white; font-family: 'Inter', sans-serif; }
+
+/* Header Styling */
+.selected-works-header {
+    background: var(--purple-main);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 20px auto;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.library-title { color: var(--purple-main); text-align: center; font-size: 16px; margin: 20px 0; }
+
+/* Real Purple Glassy Folders */
+.folder-scroll-container { display: flex; justify-content: center; gap: 40px; padding: 20px; }
+
+.folder-wrapper { display: flex; flex-direction: column; align-items: center; cursor: pointer; opacity: 0.5; transition: 0.4s; }
+.folder-wrapper.active { opacity: 1; transform: scale(1.1); }
+
+.glass-folder {
+    width: 80px; height: 55px;
+    background: rgba(138, 43, 226, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 10px 10px 10px;
+    position: relative;
+    overflow: hidden;
+}
+.glass-folder::before {
+    content: ''; position: absolute; top: -10px; left: 0;
+    width: 35px; height: 10px; background: rgba(138, 43, 226, 0.4); border-radius: 5px 5px 0 0;
+}
+
+.folder-glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 40px; height: 40px; background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%);
+}
+
+.folder-name { margin-top: 12px; font-size: 12px; font-weight: bold; color: #fff; }
+
+/* Underline logic */
+.folder-wrapper.active .folder-name {
+    border-bottom: 3px solid var(--purple-main);
+    padding-bottom: 4px;
+}
+
+/* Source Preview Window */
+.source-preview-container {
+    background: var(--dark-bg);
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+}
+.window-label { text-align: center; color: #666; font-size: 12px; letter-spacing: 2px; margin-bottom: 15px; }
+
+.poster-strip { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
+.poster-card { width: 140px; height: 200px; border-radius: 10px; border: 2px solid transparent; transition: 0.3s; cursor: pointer; }
+.poster-card:hover { border-color: var(--purple-main); transform: scale(1.05); }
+
+/* Custom Scrollbar */
+.custom-scrollbar { width: 150px; height: 4px; background: #222; margin: 10px auto; border-radius: 10px; }
+.scroll-progress { width: 40%; height: 100%; background: var(--purple-main); border-radius: 10px; }
+
+/* Now Playing Card */
+.now-playing-card {
+    background: #1a1a1a;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #333;
+}
+.player-flex { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.video-side { flex: 1; min-width: 250px; }
+.video-placeholder { background: #000; aspect-ratio: 9/16; border-radius: 15px; }
+.details-side { flex: 1.5; }
+.now-label { color: #666; font-size: 10px; }
+.description-text { color: #aaa; font-size: 13px; line-height: 1.5; }
+.hidden { display: none; }
+</style>
+
 <script>
-function selectFolder(el) {
-    document.querySelectorAll('.folder-container').forEach(f => f.classList.remove('active'));
-    el.classList.add('active');
-    // ఇక్కడ పోస్టర్లు లోడ్ అయ్యే లాజిక్ వస్తుంది
+/* 3. Logic - Clicking and Dropping */
+function selectFolder(element, category) {
+    // 1. Remove active from all
+    document.querySelectorAll('.folder-wrapper').forEach(f => f.classList.remove('active'));
+    // 2. Add active to clicked
+    element.classList.add('active');
+    
+    // 3. Load Sample Posters (In real, use Admin data)
+    const strip = document.getElementById('poster-strip');
+    strip.innerHTML = `
+        <img src="poster1.jpg" class="poster-card" onclick="playProject('LOST TRAILS', 'Directed by Prithvi | Edited by Goutham')">
+        <img src="poster2.jpg" class="poster-card" onclick="playProject('CITY BEATS', 'Cinematic Street Edit')">
+    `;
+}
+
+function playProject(name, desc) {
+    const playerSection = document.getElementById('now-playing-section');
+    playerSection.classList.remove('hidden');
+    
+    document.getElementById('project-title').innerText = name;
+    document.getElementById('project-desc').innerText = desc;
+    
+    playerSection.scrollIntoView({ behavior: 'smooth' });
 }
 </script>
+
