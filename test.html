@@ -247,163 +247,137 @@
         </div>
     </div>
 </div>
-<div class="portfolio-main" style="background: #000; padding: 20px; font-family: 'Inter', sans-serif;">
-
-    <div class="header-badge">
-        <span class="icon">📂</span> SELECTED WORKS
+<div class="library-scroller">
+    
+    <div class="category-unit active" onclick="activateCategory(this, 'short-films')">
+        <div class="glass-folder"><div class="center-glow"></div></div>
+        <span class="folder-name">SHORT FILMS</span>
     </div>
 
-    <h2 class="section-label">THE LIBRARY</h2>
-    <div class="folders-container">
-        <div class="folder-unit active" onclick="handleFolderClick(this, 'short-films')">
-            <div class="glass-folder-box">
-                <div class="inner-glow"></div>
-            </div>
-            <span class="folder-title">SHORT FILMS</span>
-        </div>
-
-        <div class="folder-unit" onclick="handleFolderClick(this, 'title-designs')">
-            <div class="glass-folder-box">
-                <div class="inner-glow"></div>
-            </div>
-            <span class="folder-title">TITLE DESIGNS</span>
-        </div>
-
-        <div class="folder-unit" onclick="handleFolderClick(this, 'teasers')">
-            <div class="glass-folder-box">
-                <div class="inner-glow"></div>
-            </div>
-            <span class="folder-title">TEASERS & TRAILERS</span>
-        </div>
-
-        <div class="folder-unit" onclick="handleFolderClick(this, 'wedding')">
-            <div class="glass-folder-box">
-                <div class="inner-glow"></div>
-            </div>
-            <span class="folder-title">WEDDING INVITES</span>
-        </div>
-
-        <div class="folder-unit" onclick="handleFolderClick(this, 'vlogs')">
-            <div class="glass-folder-box">
-                <div class="inner-glow"></div>
-            </div>
-            <span class="folder-title">VLOGS & TRAVEL</span>
-        </div>
-
-        <div class="folder-unit" onclick="handleFolderClick(this, 'reels')">
-            <div class="glass-folder-box">
-                <div class="inner-glow"></div>
-            </div>
-            <span class="folder-title">SOCIAL MEDIA EDITS</span>
-        </div>
+    <div class="category-unit" onclick="activateCategory(this, 'title-designs')">
+        <div class="glass-folder"><div class="center-glow"></div></div>
+        <span class="folder-name">TITLE DESIGNS</span>
     </div>
 
-    <div class="source-preview-window">
-        <p class="window-tag">SOURCE PREVIEW</p>
-        <div id="poster-gallery" class="poster-scroll-row">
-            <div class="empty-state">Select a folder to preview projects...</div>
-        </div>
-        <div class="custom-progress-bar">
-            <div class="progress-fill"></div>
-        </div>
+    <div class="category-unit" onclick="activateCategory(this, 'wedding-invites')">
+        <div class="glass-folder"><div class="center-glow"></div></div>
+        <span class="folder-name">WEDDING INVITES</span>
+    </div>
+
+    <div class="category-unit" onclick="activateCategory(this, 'teasers')">
+        <div class="glass-folder"><div class="center-glow"></div></div>
+        <span class="folder-name">TEASERS & TRAILERS</span>
+    </div>
+
+    <div class="category-unit" onclick="activateCategory(this, 'vlogs')">
+        <div class="glass-folder"><div class="center-glow"></div></div>
+        <span class="folder-name">VLOGS & TRAVEL</span>
+    </div>
+
+    <div class="category-unit" onclick="activateCategory(this, 'reels')">
+        <div class="glass-folder"><div class="center-glow"></div></div>
+        <span class="folder-name">REELS / SHORTS</span>
     </div>
 
 </div>
 
 <style>
-/* 2. CSS - The Glassy & Purple Look */
-:root {
-    --purple: #a855f7;
-    --dark-grey: #0f0f0f;
-}
-
-/* Header Badge */
-.header-badge {
-    background: var(--purple);
-    width: fit-content;
-    margin: 10px auto 30px;
-    padding: 8px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-}
-
-.section-label { color: var(--purple); text-align: center; font-size: 15px; margin-bottom: 20px; }
-
-/* 6 Folders Horizontal Scroll */
-.folders-container {
+/* 2. CSS - Matching Your 3rd Image Exactly */
+.library-scroller {
     display: flex;
     overflow-x: auto;
-    gap: 35px;
-    padding: 20px 10px;
+    gap: 40px;
+    padding: 20px;
     scrollbar-width: none;
+    -ms-overflow-style: none;
 }
-.folders-container::-webkit-scrollbar { display: none; }
+.library-scroller::-webkit-scrollbar {
+    display: none;
+}
 
-.folder-unit { display: flex; flex-direction: column; align-items: center; cursor: pointer; opacity: 0.4; transition: 0.4s; flex-shrink: 0; }
-.folder-unit.active { opacity: 1; transform: scale(1.1); }
+.category-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5; /* Disabled states are dimmed */
+    transition: 0.3s;
+}
 
-/* Realistic Glass Folder Shape */
-.glass-folder-box {
-    width: 85px; height: 55px;
-    background: rgba(168, 85, 247, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+.category-unit.active {
+    opacity: 1; /* Active state is bright */
+    transform: scale(1.1); /* Active state is slightly scaled up */
+}
+
+/* Glassy Folder Look - Matches image_16.png but with purple glow */
+.glass-folder {
+    width: 85px;
+    height: 55px;
+    background: rgba(168, 85, 247, 0.2); /* Semi-transparent purple for glass look */
+    backdrop-filter: blur(15px); /* Strong glass blur */
     border-radius: 0 10px 10px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-.glass-folder-box::before {
-    content: ''; position: absolute; top: -10px; left: 0;
-    width: 32px; height: 12px; background: rgba(168, 85, 247, 0.4); border-radius: 6px 6px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border for glass edge */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
 
-.inner-glow {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 45px; height: 45px; background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%);
+/* Folder tab */
+.glass-folder::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 32px;
+    height: 12px;
+    background: rgba(168, 85, 247, 0.4); /* Tab is slightly more opaque */
+    border-radius: 6px 6px 0 0;
 }
 
-.folder-title { margin-top: 15px; font-size: 11px; font-weight: bold; color: #fff; letter-spacing: 0.5px; }
+/* Central glow in folder */
+.center-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%);
+}
 
-/* Underline Logic */
-.folder-unit.active .folder-title {
-    border-bottom: 3.5px solid var(--purple);
+.folder-name {
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 3. Underline and Glow logic - Highlighting active category */
+.category-unit.active .folder-name {
+    border-bottom: 3.5px solid #a855f7; /* Signature purple underline, thick like sample */
     padding-bottom: 4px;
 }
 
-/* Black Source Preview Screen */
-.source-preview-window {
-    background: var(--dark-grey);
-    border: 1px solid #222;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 30px;
+.category-unit.active .glass-folder {
+    background: rgba(168, 85, 247, 0.4); /* Active folder becomes more intense purple */
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.7); /* Deep glow effect, matches sample */
 }
-.window-tag { text-align: center; color: #555; font-size: 11px; letter-spacing: 2px; margin-bottom: 20px; }
-
-.poster-scroll-row { display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; }
-.empty-state { color: #333; width: 100%; text-align: center; padding: 40px; font-size: 13px; }
-
-/* Scrollbar Fill */
-.custom-progress-bar { width: 140px; height: 4px; background: #222; margin: 20px auto; border-radius: 10px; }
-.progress-fill { width: 35%; height: 100%; background: var(--purple); border-radius: 10px; }
 </style>
 
 <script>
-/* 3. Logic - Interaction */
-function handleFolderClick(element, category) {
-    // 1. Reset all folders
-    document.querySelectorAll('.folder-unit').forEach(f => f.classList.remove('active'));
-    // 2. Activate clicked folder
+/* 4. Logic - Dynamic Highlighting */
+function activateCategory(element, categoryName) {
+    // 1. Reset all categories to dim state
+    document.querySelectorAll('.category-unit').forEach(unit => unit.classList.remove('active'));
+    // 2. Add active to clicked category
     element.classList.add('active');
     
-    // 3. Play sound (optional, since you mentioned scroll sound)
+    // 3. (Optional) Play click sound if you have that logic, linking to your playScrollSound()
     if (typeof playScrollSound === "function") playScrollSound();
 
-    // 4. Update Source Preview (This part links to your Netlify Admin data)
-    const gallery = document.getElementById('poster-gallery');
-    gallery.innerHTML = `<div class="empty-state">Loading ${category} projects...</div>`;
+    // 4. Update the Monitor/Preview window (Links to your video loading data)
+    const monitorStrip = document.getElementById('project-monitor-gallery');
+    monitorStrip.innerHTML = `<div style="color: #444; width: 100%; text-align: center; padding: 40px; font-size: 13px;">Loading ${categoryName} projects...</div>`;
 }
 </script>
+
