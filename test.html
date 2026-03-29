@@ -247,132 +247,105 @@
         </div>
     </div>
 </div>
-<div class="portfolio-container" style="background: #fdfaff; font-family: 'Segoe UI', sans-serif; padding: 20px;">
-    
-    <h2 class="section-title">SOURCE PREVIEW</h2>
-    <div id="source-preview" class="glass-window scroll-container">
-        <div id="poster-gallery" class="poster-strip">
-            <p class="placeholder-text">Select a category from The Library to preview projects</p>
-        </div>
-    </div>
 
-    <div id="project-display-area" class="drop-zone hidden">
-        <h3 id="active-project-name" class="project-heading"></h3>
-        <div id="video-player-container" class="player-wrapper">
-            </div>
-        <div id="project-description" class="glass-card description-box">
-            </div>
-    </div>
+</script>
+    <style>
+/* 1. మెయిన్ బాడీ - పక్కా డార్క్ మోడ్ */
+body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
 
-    <hr class="divider">
+/* 2. SOURCE PREVIEW - ఎడిటింగ్ సాఫ్ట్‌వేర్ విండో లాగా */
+.source-preview {
+    background: #0f0f0f; /* Pure Dark Grey/Black */
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px;
+    min-height: 250px;
+    box-shadow: inset 0 0 50px rgba(138, 43, 226, 0.1);
+}
 
-    <h2 class="section-title">THE LIBRARY</h2>
-    <div class="folder-grid scroll-container">
-        <div class="folder-item" onclick="loadCategory('Short Films', this)">
-            <div class="purple-glass-folder"></div>
-            <span class="folder-label">Short Films</span>
-        </div>
-        <div class="folder-item" onclick="loadCategory('Teasers', this)">
-            <div class="purple-glass-folder"></div>
-            <span class="folder-label">Teasers</span>
-        </div>
-        <div class="folder-item" onclick="loadCategory('Vlogs', this)">
-            <div class="purple-glass-folder"></div>
-            <span class="folder-label">Vlogs</span>
-        </div>
+/* విండో హెడ్డింగ్ - Adobe Style */
+.window-title {
+    color: #a855f7;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2d2d2d;
+    padding-bottom: 5px;
+}
+
+/* 3. THE LIBRARY - కింద ఉండే ఫోల్డర్ల సెక్షన్ */
+.library-section { padding: 20px; }
+
+/* REAL FOLDER SHAPE - విండోస్ ఫోల్డర్ లాగా */
+.folder-icon {
+    width: 65px; height: 45px;
+    background: linear-gradient(145deg, #a855f7, #6b21a8);
+    border-radius: 0 8px 8px 8px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+/* ఫోల్డర్ ట్యాబ్ (పైన ఉండేది) */
+.folder-icon::before {
+    content: ''; position: absolute; top: -8px; left: 0;
+    width: 25px; height: 10px; background: #6b21a8; border-radius: 5px 5px 0 0;
+}
+
+/* 4. SELECTION LOGIC - క్లిక్ చేస్తేనే పేరు + అండర్ లైన్ */
+.folder-container {
+    display: inline-flex; flex-direction: column; align-items: center;
+    margin-right: 30px; opacity: 0.4; transition: 0.3s;
+}
+
+.folder-container.active { opacity: 1; transform: scale(1.1); }
+
+.folder-name {
+    margin-top: 10px; color: #fff; font-size: 14px;
+    visibility: hidden; /* ముందే కనిపించదు */
+}
+
+/* నువ్వు అడిగిన అండర్ లైన్ */
+.folder-container.active .folder-name {
+    visibility: visible;
+    border-bottom: 3px solid #a855f7;
+    padding-bottom: 2px;
+}
+
+/* పోస్టర్లు స్క్రోల్ అయ్యే స్ట్రిప్ */
+.poster-strip { display: flex; gap: 15px; overflow-x: auto; padding: 10px 0; }
+.poster-img { width: 150px; height: 85px; object-fit: cover; border-radius: 5px; cursor: pointer; border: 1px solid #333; }
+</style>
+
+<div class="source-preview">
+    <div class="window-title">SOURCE PREVIEW</div>
+    <div id="poster-area" class="poster-strip">
         </div>
 </div>
 
-<style>
-/* CSS Styling */
-.section-title { color: #8a2be2; font-size: 1.2rem; margin-bottom: 15px; font-weight: bold; }
+<div class="library-section">
+    <div class="window-title">THE LIBRARY</div>
+    <div class="folders-row" style="display: flex;">
+        
+        <div class="folder-container active" onclick="selectFolder(this)">
+            <div class="folder-icon"></div>
+            <div class="folder-name">Short Films</div>
+        </div>
 
-/* Glassmorphism Effect */
-.glass-window, .glass-card {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(138, 43, 226, 0.2);
-    border-radius: 15px;
-    padding: 20px;
-    min-height: 150px;
-    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.1);
-}
+        <div class="folder-container" onclick="selectFolder(this)">
+            <div class="folder-icon"></div>
+            <div class="folder-name">Teasers</div>
+        </div>
 
-/* Horizontal Scroll */
-.scroll-container { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 10px; scrollbar-width: none; }
-.scroll-container::-webkit-scrollbar { display: none; }
-
-/* Purple Glossy Folders */
-.purple-glass-folder {
-    width: 70px; height: 50px;
-    background: linear-gradient(135deg, #a855f7, #6b21a8);
-    border-radius: 5px 15px 5px 5px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(107, 33, 168, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-.purple-glass-folder::before {
-    content: ''; position: absolute; top: -8px; left: 0;
-    width: 30px; height: 10px; background: #6b21a8; border-radius: 5px 5px 0 0;
-}
-
-/* Folder Selection Logic (Underline & Glow) */
-.folder-item { text-align: center; opacity: 0.6; transition: 0.3s; }
-.folder-item.active { opacity: 1; transform: translateY(-5px); }
-.folder-label { display: none; margin-top: 10px; font-size: 14px; color: #6b21a8; }
-.folder-item.active .folder-label { display: block; font-weight: bold; border-bottom: 2px solid #6b21a8; }
-
-/* Poster Styling */
-.poster-card { width: 120px; flex-shrink: 0; cursor: pointer; transition: 0.3s; border-radius: 8px; }
-.poster-card:hover { transform: scale(1.05); }
-
-/* Video Player Auto-Ratio */
-.player-wrapper { position: relative; width: 100%; max-width: 600px; margin: 20px auto; background: #000; border-radius: 10px; overflow: hidden; }
-.video-responsive { width: 100%; aspect-ratio: 16 / 9; } /* Default 16:9 */
-.video-vertical { aspect-ratio: 9 / 16; max-width: 300px; } /* Vertical Shorts */
-
-.hidden { display: none; }
-.project-heading { color: #6b21a8; text-align: center; margin-top: 20px; }
-</style>
+    </div>
+</div>
 
 <script>
-// JavaScript Logic
-function loadCategory(categoryName, element) {
-    // 1. Highlight clicked folder
-    document.querySelectorAll('.folder-item').forEach(f => f.classList.remove('active'));
-    element.classList.add('active');
-
-    // 2. Load posters into Source Preview (Admin data nundi dynamic ga load cheyochu)
-    const gallery = document.getElementById('poster-gallery');
-    gallery.innerHTML = `
-        <img class="poster-card" src="sample-poster1.jpg" onclick="dropProject('Project A', 'Short Film', '16:9', 'This is a cinematic work...')">
-        <img class="poster-card" src="sample-poster2.jpg" onclick="dropProject('Reel Edit', 'Shorts', '9:16', 'This was edited for Instagram...')">
-    `;
-}
-
-function dropProject(name, type, ratio, desc) {
-    // 1. Show Project Area
-    const area = document.getElementById('project-display-area');
-    area.classList.remove('hidden');
-    
-    // 2. Set Heading & Description
-    document.getElementById('active-project-name').innerText = name;
-    document.getElementById('project-description').innerText = desc;
-
-    // 3. Auto Adjust Video Player
-    const playerContainer = document.getElementById('video-player-container');
-    const playerClass = (ratio === '9:16') ? 'video-vertical' : 'video-responsive';
-    
-    playerContainer.innerHTML = `
-        <div class="${playerClass}">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-    `;
-
-    // 4. Smooth Scroll to Player
-    playerContainer.scrollIntoView({ behavior: 'smooth' });
+function selectFolder(el) {
+    document.querySelectorAll('.folder-container').forEach(f => f.classList.remove('active'));
+    el.classList.add('active');
+    // ఇక్కడ పోస్టర్లు లోడ్ అయ్యే లాజిక్ వస్తుంది
 }
 </script>
-    
