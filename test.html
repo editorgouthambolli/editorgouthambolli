@@ -247,137 +247,126 @@
         </div>
     </div>
 </div>
-<div class="library-scroller">
+<div class="editor-workspace" style="background: #fdfafd; padding: 40px 20px; border-radius: 40px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 500px;">
     
-    <div class="category-unit active" onclick="activateCategory(this, 'short-films')">
-        <div class="glass-folder"><div class="center-glow"></div></div>
-        <span class="folder-name">SHORT FILMS</span>
+    <div class="header-badge">
+        <span class="live-indicator"></span> SELECTED WORKS
     </div>
 
-    <div class="category-unit" onclick="activateCategory(this, 'title-designs')">
-        <div class="glass-folder"><div class="center-glow"></div></div>
-        <span class="folder-name">TITLE DESIGNS</span>
+    <div class="folder-shelf">
+        <div class="f-item active" onclick="syncUI(this, 'SHORT FILMS')">
+            <div class="classic-folder">
+                <div class="glass-overlay"></div>
+            </div>
+            <span class="f-label">SHORT FILMS</span>
+        </div>
+        <div class="f-item" onclick="syncUI(this, 'TITLE DESIGNS')">
+            <div class="classic-folder"><div class="glass-overlay"></div></div>
+            <span class="f-label">TITLE DESIGNS</span>
+        </div>
+        <div class="f-item" onclick="syncUI(this, 'WEDDING INVITES')">
+            <div class="classic-folder"><div class="glass-overlay"></div></div>
+            <span class="f-label">WEDDING INVITES</span>
+        </div>
+        <div class="f-item" onclick="syncUI(this, 'TEASERS')">
+            <div class="classic-folder"><div class="glass-overlay"></div></div>
+            <span class="f-label">TEASERS</span>
+        </div>
+        <div class="f-item" onclick="syncUI(this, 'VLOGS')">
+            <div class="classic-folder"><div class="glass-overlay"></div></div>
+            <span class="f-label">VLOGS</span>
+        </div>
+        <div class="f-item" onclick="syncUI(this, 'SOCIAL MEDIA')">
+            <div class="classic-folder"><div class="glass-overlay"></div></div>
+            <span class="f-label">REELS / SOCIAL</span>
+        </div>
     </div>
 
-    <div class="category-unit" onclick="activateCategory(this, 'wedding-invites')">
-        <div class="glass-folder"><div class="center-glow"></div></div>
-        <span class="folder-name">WEDDING INVITES</span>
+    <div class="monitor-frame">
+        <div class="screen-content">
+            <div class="clapper-icon">🎬</div>
+            <p class="status-msg">PROJECT PREVIEW: <span id="current-cat">SHORT FILMS</span></p>
+            <div class="loading-bar"><div class="bar-fill"></div></div>
+        </div>
     </div>
-
-    <div class="category-unit" onclick="activateCategory(this, 'teasers')">
-        <div class="glass-folder"><div class="center-glow"></div></div>
-        <span class="folder-name">TEASERS & TRAILERS</span>
-    </div>
-
-    <div class="category-unit" onclick="activateCategory(this, 'vlogs')">
-        <div class="glass-folder"><div class="center-glow"></div></div>
-        <span class="folder-name">VLOGS & TRAVEL</span>
-    </div>
-
-    <div class="category-unit" onclick="activateCategory(this, 'reels')">
-        <div class="glass-folder"><div class="center-glow"></div></div>
-        <span class="folder-name">REELS / SHORTS</span>
-    </div>
-
 </div>
 
 <style>
-/* 2. CSS - Matching Your 3rd Image Exactly */
-.library-scroller {
-    display: flex;
-    overflow-x: auto;
-    gap: 40px;
-    padding: 20px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+/* Header CSS */
+.header-badge {
+    background: #a855f7; color: white; width: fit-content;
+    margin: 0 auto 40px; padding: 12px 30px; border-radius: 50px;
+    font-weight: 800; font-size: 13px; letter-spacing: 1.5px;
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+    display: flex; align-items: center; gap: 10px;
 }
-.library-scroller::-webkit-scrollbar {
-    display: none;
+.live-indicator { width: 8px; height: 8px; background: #fff; border-radius: 50%; animation: blink 1s infinite; }
+
+/* Folder Shelf & Animation */
+.folder-shelf {
+    display: flex; overflow-x: auto; gap: 35px; padding: 20px;
+    scrollbar-width: none; scroll-snap-type: x mandatory;
+}
+.folder-shelf::-webkit-scrollbar { display: none; }
+
+.f-item { 
+    display: flex; flex-direction: column; align-items: center; 
+    cursor: pointer; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    opacity: 0.5; flex-shrink: 0; scroll-snap-align: center;
+}
+.f-item.active { opacity: 1; transform: translateY(-15px); }
+
+/* The Classic Yellow Folder with my Glass Idea */
+.classic-folder {
+    width: 80px; height: 58px; background: #f3d09a; 
+    border-radius: 0 10px 10px 10px; position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.classic-folder::before {
+    content: ''; position: absolute; top: -10px; left: 0;
+    width: 35px; height: 12px; background: #e6b971; border-radius: 6px 6px 0 0;
+}
+.glass-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 45%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    border-radius: 0 10px 0 0;
 }
 
-.category-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    opacity: 0.5; /* Disabled states are dimmed */
-    transition: 0.3s;
+.f-label { 
+    margin-top: 18px; font-size: 11px; font-weight: 800; color: #999; 
+    transition: 0.3s; letter-spacing: 0.5px;
+}
+.f-item.active .f-label { 
+    color: #a855f7; border-bottom: 4px solid #a855f7; padding-bottom: 6px; 
 }
 
-.category-unit.active {
-    opacity: 1; /* Active state is bright */
-    transform: scale(1.1); /* Active state is slightly scaled up */
+/* Monitor Section */
+.monitor-frame {
+    background: #000; border-radius: 35px; padding: 60px 20px;
+    margin-top: 40px; border: 10px solid #f2ebf7;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
+.clapper-icon { font-size: 45px; margin-bottom: 20px; animation: clap 2.5s infinite; }
+.status-msg { color: #555; font-size: 11px; font-weight: 900; letter-spacing: 2px; }
+#current-cat { color: #a855f7; }
 
-/* Glassy Folder Look - Matches image_16.png but with purple glow */
-.glass-folder {
-    width: 85px;
-    height: 55px;
-    background: rgba(168, 85, 247, 0.2); /* Semi-transparent purple for glass look */
-    backdrop-filter: blur(15px); /* Strong glass blur */
-    border-radius: 0 10px 10px 10px;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border for glass edge */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-}
+.loading-bar { width: 120px; height: 4px; background: #1a1a1a; margin: 20px auto; border-radius: 10px; overflow: hidden; }
+.bar-fill { width: 40%; height: 100%; background: #a855f7; border-radius: 10px; }
 
-/* Folder tab */
-.glass-folder::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 32px;
-    height: 12px;
-    background: rgba(168, 85, 247, 0.4); /* Tab is slightly more opaque */
-    border-radius: 6px 6px 0 0;
-}
-
-/* Central glow in folder */
-.center-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 45px;
-    height: 45px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.8) 0%, transparent 70%);
-}
-
-.folder-name {
-    margin-top: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #fff;
-}
-
-/* 3. Underline and Glow logic - Highlighting active category */
-.category-unit.active .folder-name {
-    border-bottom: 3.5px solid #a855f7; /* Signature purple underline, thick like sample */
-    padding-bottom: 4px;
-}
-
-.category-unit.active .glass-folder {
-    background: rgba(168, 85, 247, 0.4); /* Active folder becomes more intense purple */
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.7); /* Deep glow effect, matches sample */
-}
+/* Animations */
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes clap { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-10deg); } }
 </style>
 
 <script>
-/* 4. Logic - Dynamic Highlighting */
-function activateCategory(element, categoryName) {
-    // 1. Reset all categories to dim state
-    document.querySelectorAll('.category-unit').forEach(unit => unit.classList.remove('active'));
-    // 2. Add active to clicked category
-    element.classList.add('active');
-    
-    // 3. (Optional) Play click sound if you have that logic, linking to your playScrollSound()
-    if (typeof playScrollSound === "function") playScrollSound();
-
-    // 4. Update the Monitor/Preview window (Links to your video loading data)
-    const monitorStrip = document.getElementById('project-monitor-gallery');
-    monitorStrip.innerHTML = `<div style="color: #444; width: 100%; text-align: center; padding: 40px; font-size: 13px;">Loading ${categoryName} projects...</div>`;
+function syncUI(el, catName) {
+    // Reset all
+    document.querySelectorAll('.f-item').forEach(item => item.classList.remove('active'));
+    // Set Active
+    el.classList.add('active');
+    // Update Monitor
+    document.getElementById('current-cat').innerText = catName;
+    // Scroll into view
+    el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 }
 </script>
-
