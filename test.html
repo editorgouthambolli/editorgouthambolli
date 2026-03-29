@@ -247,178 +247,132 @@
         </div>
     </div>
 </div>
-<style>
-    /* 1. SIDE SCROLLING FOR FOLDERS */
-    .folder-scroll-section {
-        display: flex;
-        overflow-x: auto; /* పక్కకి స్క్రోల్ అవ్వడానికి */
-        white-space: nowrap;
-        gap: 25px;
-        padding: 20px 15px;
-        scrollbar-width: none; /* స్క్రోల్ బార్ కనిపించదు */
-        -ms-overflow-style: none;
-    }
-    .folder-scroll-section::-webkit-scrollbar { display: none; }
-
-    /* 2. REAL WINDOWS STYLE FOLDERS */
-    .os-folder-unit {
-        min-width: 80px;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-    .os-folder-unit:active { transform: scale(0.85); }
-
-    .folder-icon-svg {
-        width: 55px;
-        height: auto;
-        filter: drop-shadow(0 4px 6px rgba(130, 75, 189, 0.2));
-    }
-
-    /* CLEAR PURPLE TEXT */
-    .folder-title-txt {
-        margin-top: 10px;
-        font-size: 11px;
-        font-weight: 800;
-        color: #6b21a8; /* Rich Purple */
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    /* 3. VAULT WINDOW (POP-UP) */
-    #vault-window-ui {
-        display: none;
-        position: fixed;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        width: 85%; max-width: 320px;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        border: 2px solid #e0d4f7;
-        border-radius: 20px;
-        z-index: 10000;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-    }
-    .vault-head { color: #824bbd; font-weight: 900; font-size: 15px; margin-bottom: 15px; }
+<div class="portfolio-container" style="background: #fdfaff; font-family: 'Segoe UI', sans-serif; padding: 20px;">
     
-    .proj-item-btn {
-        background: #fcfaff;
-        border: 1.5px solid #efebf7;
-        padding: 12px;
-        margin: 8px 0;
-        border-radius: 12px;
-        color: #444;
-        font-weight: 700;
-        font-size: 13px;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-    .proj-item-btn:hover { background: #824bbd; color: white; }
-
-    /* 4. FIXED PLAYER AREA (BELOW FOLDERS) */
-    #fixed-play-zone {
-        margin: 20px auto;
-        width: 94%;
-        display: none;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 2px solid #e0d4f7;
-    }
-    /* ASPECT RATIOS */
-    .res-16-9 { aspect-ratio: 16 / 9; width: 100%; }
-    .res-9-16 { aspect-ratio: 9 / 16; width: 280px; margin: 0 auto; }
-    .res-4-5 { aspect-ratio: 4 / 5; width: 320px; margin: 0 auto; }
-
-    #video-frame iframe { width: 100%; height: 100%; border: none; border-radius: 18px; }
-</style>
-
-<div style="margin-top: 25px;">
-    <div class="folder-scroll-section" onscroll="playTick()">
-        
-        <div class="os-folder-unit" onclick="openVaultUI('Short Films')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M22 19V9C22 7.89 21.1 7 20 7H12L10 4H4C2.89 4 2 4.89 2 6V19C2 20.1 2.89 21 4 21H20C21.1 21 22 20.1 22 19Z" fill="#E9D8FD" stroke="#824bbd" stroke-width="1.5"/></svg>
-            <div class="folder-title-txt">Short Films</div>
+    <h2 class="section-title">SOURCE PREVIEW</h2>
+    <div id="source-preview" class="glass-window scroll-container">
+        <div id="poster-gallery" class="poster-strip">
+            <p class="placeholder-text">Select a category from The Library to preview projects</p>
         </div>
-
-        <div class="os-folder-unit" onclick="openVaultUI('Teasers')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M22 19V9C22 7.89 21.1 7 20 7H12L10 4H4C2.89 4 2 4.89 2 6V19C2 20.1 2.89 21 4 21H20C21.1 21 22 20.1 22 19Z" fill="#E9D8FD" stroke="#824bbd" stroke-width="1.5"/></svg>
-            <div class="folder-title-txt">Teasers</div>
-        </div>
-
-        <div class="os-folder-unit" onclick="openVaultUI('Reels')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M22 19V9C22 7.89 21.1 7 20 7H12L10 4H4C2.89 4 2 4.89 2 6V19C2 20.1 2.89 21 4 21H20C21.1 21 22 20.1 22 19Z" fill="#E9D8FD" stroke="#824bbd" stroke-width="1.5"/></svg>
-            <div class="folder-title-txt">Reels</div>
-        </div>
-
-        <div class="os-folder-unit" onclick="openVaultUI('Wedding')">
-            <svg class="folder-icon-svg" viewBox="0 0 24 24" fill="none"><path d="M22 19V9C22 7.89 21.1 7 20 7H12L10 4H4C2.89 4 2 4.89 2 6V19C2 20.1 2.89 21 4 21H20C21.1 21 22 20.1 22 19Z" fill="#E9D8FD" stroke="#824bbd" stroke-width="1.5"/></svg>
-            <div class="folder-title-txt">Wedding</div>
-        </div>
-
     </div>
 
-    <div id="vault-window-ui">
-        <div class="vault-head">📁 CHOOSE PROJECT</div>
-        <div id="dynamic-proj-list"></div>
-        <div onclick="closeVaultUI()" style="margin-top:15px; font-size:10px; color:#aaa; cursor:pointer;">[ CANCEL ]</div>
+    <div id="project-display-area" class="drop-zone hidden">
+        <h3 id="active-project-name" class="project-heading"></h3>
+        <div id="video-player-container" class="player-wrapper">
+            </div>
+        <div id="project-description" class="glass-card description-box">
+            </div>
     </div>
 
-    <div id="fixed-play-zone">
-        <div id="video-frame" style="width:100%; height:100%;"></div>
-    </div>
+    <hr class="divider">
+
+    <h2 class="section-title">THE LIBRARY</h2>
+    <div class="folder-grid scroll-container">
+        <div class="folder-item" onclick="loadCategory('Short Films', this)">
+            <div class="purple-glass-folder"></div>
+            <span class="folder-label">Short Films</span>
+        </div>
+        <div class="folder-item" onclick="loadCategory('Teasers', this)">
+            <div class="purple-glass-folder"></div>
+            <span class="folder-label">Teasers</span>
+        </div>
+        <div class="folder-item" onclick="loadCategory('Vlogs', this)">
+            <div class="purple-glass-folder"></div>
+            <span class="folder-label">Vlogs</span>
+        </div>
+        </div>
 </div>
 
+<style>
+/* CSS Styling */
+.section-title { color: #8a2be2; font-size: 1.2rem; margin-bottom: 15px; font-weight: bold; }
+
+/* Glassmorphism Effect */
+.glass-window, .glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 150px;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.1);
+}
+
+/* Horizontal Scroll */
+.scroll-container { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 10px; scrollbar-width: none; }
+.scroll-container::-webkit-scrollbar { display: none; }
+
+/* Purple Glossy Folders */
+.purple-glass-folder {
+    width: 70px; height: 50px;
+    background: linear-gradient(135deg, #a855f7, #6b21a8);
+    border-radius: 5px 15px 5px 5px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(107, 33, 168, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.purple-glass-folder::before {
+    content: ''; position: absolute; top: -8px; left: 0;
+    width: 30px; height: 10px; background: #6b21a8; border-radius: 5px 5px 0 0;
+}
+
+/* Folder Selection Logic (Underline & Glow) */
+.folder-item { text-align: center; opacity: 0.6; transition: 0.3s; }
+.folder-item.active { opacity: 1; transform: translateY(-5px); }
+.folder-label { display: none; margin-top: 10px; font-size: 14px; color: #6b21a8; }
+.folder-item.active .folder-label { display: block; font-weight: bold; border-bottom: 2px solid #6b21a8; }
+
+/* Poster Styling */
+.poster-card { width: 120px; flex-shrink: 0; cursor: pointer; transition: 0.3s; border-radius: 8px; }
+.poster-card:hover { transform: scale(1.05); }
+
+/* Video Player Auto-Ratio */
+.player-wrapper { position: relative; width: 100%; max-width: 600px; margin: 20px auto; background: #000; border-radius: 10px; overflow: hidden; }
+.video-responsive { width: 100%; aspect-ratio: 16 / 9; } /* Default 16:9 */
+.video-vertical { aspect-ratio: 9 / 16; max-width: 300px; } /* Vertical Shorts */
+
+.hidden { display: none; }
+.project-heading { color: #6b21a8; text-align: center; margin-top: 20px; }
+</style>
+
 <script>
-    const tick = new Audio('https://www.soundjay.com/buttons/sounds/button-50.mp3');
-    const click = new Audio('https://www.soundjay.com/buttons/sounds/button-16.mp3');
-    const shutter = new Audio('https://www.soundjay.com/camera/sounds/camera-shutter-click-01.mp3');
+// JavaScript Logic
+function loadCategory(categoryName, element) {
+    // 1. Highlight clicked folder
+    document.querySelectorAll('.folder-item').forEach(f => f.classList.remove('active'));
+    element.classList.add('active');
 
-    const myProjects = {
-        'Short Films': [{n: 'O Chinna Prema Katha', id: 'f0-iI7D01kU', r: 'res-16-9'}],
-        'Teasers': [{n: 'Kadhlo Konni Pathralu', id: 'f0-iI7D01kU', r: 'res-16-9'}],
-        'Reels': [{n: 'Cinematic Edit 01', id: 'D-Wf_B_p_Vw', r: 'res-9-16'}]
-    };
+    // 2. Load posters into Source Preview (Admin data nundi dynamic ga load cheyochu)
+    const gallery = document.getElementById('poster-gallery');
+    gallery.innerHTML = `
+        <img class="poster-card" src="sample-poster1.jpg" onclick="dropProject('Project A', 'Short Film', '16:9', 'This is a cinematic work...')">
+        <img class="poster-card" src="sample-poster2.jpg" onclick="dropProject('Reel Edit', 'Shorts', '9:16', 'This was edited for Instagram...')">
+    `;
+}
 
-    function playTick() { tick.volume = 0.1; tick.play(); }
+function dropProject(name, type, ratio, desc) {
+    // 1. Show Project Area
+    const area = document.getElementById('project-display-area');
+    area.classList.remove('hidden');
+    
+    // 2. Set Heading & Description
+    document.getElementById('active-project-name').innerText = name;
+    document.getElementById('project-description').innerText = desc;
 
-    function openVaultUI(cat) {
-        click.play();
-        const win = document.getElementById('vault-window-ui');
-        const list = document.getElementById('dynamic-proj-list');
-        list.innerHTML = '';
-        if(myProjects[cat]) {
-            myProjects[cat].forEach(p => {
-                let div = document.createElement('div');
-                div.className = 'proj-item-btn';
-                div.innerText = p.n;
-                // 🔥 AUTO-CLOSE on click
-                div.onclick = () => launchVideoNow(p.id, p.r);
-                list.appendChild(div);
-            });
-            win.style.display = 'block';
-        }
-    }
+    // 3. Auto Adjust Video Player
+    const playerContainer = document.getElementById('video-player-container');
+    const playerClass = (ratio === '9:16') ? 'video-vertical' : 'video-responsive';
+    
+    playerContainer.innerHTML = `
+        <div class="${playerClass}">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+    `;
 
-    function closeVaultUI() { document.getElementById('vault-window-ui').style.display = 'none'; }
-
-    function launchVideoNow(vidID, ratio) {
-        shutter.play();
-        closeVaultUI(); // ⚡ విండో వెంటనే క్లోజ్ అవుతుంది
-        
-        const player = document.getElementById('fixed-play-zone');
-        const frame = document.getElementById('video-frame');
-        
-        player.className = ratio;
-        player.style.display = 'block';
-        frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${vidID}?autoplay=1" allow="autoplay; fullscreen"></iframe>`;
-        
-        player.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    // 4. Smooth Scroll to Player
+    playerContainer.scrollIntoView({ behavior: 'smooth' });
+}
 </script>
-
     
