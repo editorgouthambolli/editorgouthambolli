@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goutham Bolli | Visual Storyteller</title>
+    <title>Goutham Bolli | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #f8f9fa;
-            color: #2d3436;
+            background-color: #fcfaff;
             font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
         }
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            border-radius: 24px;
         }
         .purple-gradient {
             background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
@@ -24,106 +24,106 @@
         .horizontal-scroll {
             display: flex;
             overflow-x: auto;
-            gap: 1.5rem;
-            padding-bottom: 1rem;
-            scrollbar-width: thin;
-            scrollbar-color: #6c5ce7 transparent;
+            gap: 20px;
+            padding: 10px 0;
+            scrollbar-width: none;
         }
         .horizontal-scroll::-webkit-scrollbar {
-            height: 6px;
+            display: none;
         }
-        .horizontal-scroll::-webkit-scrollbar-thumb {
-            background: #6c5ce7;
-            border-radius: 10px;
+        .project-card {
+            min-width: 280px;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="antialiased">
 
-    <header class="max-w-5xl mx-auto mb-12 text-center py-20 glass relative overflow-hidden">
-        <div class="absolute -top-10 -right-10 w-40 h-40 purple-gradient rounded-full opacity-20 blur-3xl"></div>
-        <h1 class="text-4xl md:text-6xl font-bold mb-2">Goutham Bolli</h1>
-        <p class="text-purple-600 font-medium tracking-widest uppercase mb-4">Visual Storyteller | Video Editor | Title Designer</p>
-        <p class="italic text-gray-500">"Turning raw footage into cinematic experiences. Ambition > Condition."</p>
+    <header class="max-w-6xl mx-auto px-6 py-16 text-center">
+        <div class="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-widest text-purple-600 uppercase bg-purple-100 rounded-full">
+            Available for Freelance
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Goutham Bolli</h1>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            విజువల్ స్టోరీటెల్లర్ & వీడియో ఎడిటర్. సినిమాటిక్ అనుభూతిని అందించడమే నా పని.
+        </p>
     </header>
 
-    <section class="max-w-5xl mx-auto mb-12 grid md:grid-cols-2 gap-8">
-        <div class="glass p-8">
-            <h2 class="text-2xl font-bold mb-4 text-purple-700">About Me</h2>
-            <p class="text-gray-600 leading-relaxed">
-                [span_3](start_span)Dedicated Video Editor with over 7 years of experience[span_3](end_span). [span_4](start_span)Specialized in Title Design and Intro Editing using Adobe Premiere Pro, Illustrator, and After Effects[span_4](end_span).
-            </p>
+    <section class="max-w-6xl mx-auto px-6 mb-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="glass-card p-6 text-center">
+            <h3 class="text-3xl font-bold text-purple-600">7+</h3>
+            <p class="text-sm text-gray-500">Years Exp</p>
         </div>
-        <div class="glass p-8">
-            <h2 class="text-2xl font-bold mb-4 text-purple-700">Technical Mastery</h2>
-            <ul class="text-gray-600 space-y-2">
-                [span_5](start_span)<li>• Adobe Premiere Pro (Expert Mastery)[span_5](end_span)</li>
-                [span_6](start_span)<li>• After Effects & Illustrator[span_6](end_span)</li>
-                [span_7](start_span)<li>• Mobile Mastery (Alight Motion & KineMaster)[span_7](end_span)</li>
-                [span_8](start_span)<li>• Cinematic Title Branding[span_8](end_span)</li>
-            </ul>
+        <div class="glass-card p-6 text-center">
+            <h3 class="text-3xl font-bold text-purple-600">50+</h3>
+            <p class="text-sm text-gray-500">Projects</p>
+        </div>
+        <div class="glass-card p-6 text-center">
+            <h3 class="text-3xl font-bold text-purple-600">Adobe</h3>
+            <p class="text-sm text-gray-500">Expertise</p>
+        </div>
+        <div class="glass-card p-6 text-center">
+            <h3 class="text-3xl font-bold text-purple-600">4K</h3>
+            <p class="text-sm text-gray-500">Quality</p>
         </div>
     </section>
 
-    <section class="max-w-5xl mx-auto mb-12">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-            <span class="w-8 h-8 purple-gradient rounded shadow-lg"></span> 
-            Creative Portfolio
-        </h2>
+    <section class="max-w-6xl mx-auto px-6 mb-20">
+        <h2 class="text-2xl font-bold mb-8 italic">నా వర్క్ కేటగిరీలు</h2>
         <div class="horizontal-scroll">
-            <div class="min-w-[300px] glass p-6 hover:shadow-xl transition-all">
-                <div class="text-4xl mb-4">🎬</div>
-                <h3 class="font-bold text-lg mb-2">Short Films</h3>
-                [span_9](start_span)<p class="text-sm text-gray-500">Narrative & Cinematic Stories[span_9](end_span)</p>
+            <div class="project-card glass-card p-8 purple-gradient text-white">
+                <span class="text-3xl">🎬</span>
+                <h3 class="text-xl font-bold mt-4">Short Films</h3>
+                <p class="opacity-80 text-sm mt-2">కంప్లీట్ పోస్ట్ ప్రొడక్షన్ & ఎడిటింగ్.</p>
             </div>
-            <div class="min-w-[300px] glass p-6 hover:shadow-xl transition-all">
-                <div class="text-4xl mb-4">⚡</div>
-                <h3 class="font-bold text-lg mb-2">Teasers & Trailers</h3>
-                [span_10](start_span)<p class="text-sm text-gray-500">High-energy Promotional Edits[span_10](end_span)</p>
+            <div class="project-card glass-card p-8 border-2">
+                <span class="text-3xl">✒️</span>
+                <h3 class="text-xl font-bold mt-4 text-purple-700">Title Design</h3>
+                <p class="text-gray-500 text-sm mt-2">యూనిక్ మరియు క్యాచీ టైటిల్ కార్డ్స్.</p>
             </div>
-            <div class="min-w-[300px] glass p-6 hover:shadow-xl transition-all">
-                <div class="text-4xl mb-4">✍️</div>
-                <h3 class="font-bold text-lg mb-2">Title Designs</h3>
-                [span_11](start_span)<p class="text-sm text-gray-500">Custom Intros & Motion Graphics[span_11](end_span)</p>
+            <div class="project-card glass-card p-8 border-2">
+                <span class="text-3xl">⚡</span>
+                <h3 class="text-xl font-bold mt-4 text-purple-700">Teasers</h3>
+                <p class="text-gray-500 text-sm mt-2">హై ఎనర్జీ టీజర్స్ & ట్రైలర్స్.</p>
             </div>
-             <div class="min-w-[300px] glass p-6 hover:shadow-xl transition-all">
-                <div class="text-4xl mb-4">📺</div>
-                <h3 class="font-bold text-lg mb-2">Vlogs & YouTube</h3>
-                [span_12](start_span)<p class="text-sm text-gray-500">Professional Lifestyle Content[span_12](end_span)</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto mb-12">
-        <h2 class="text-2xl font-bold mb-6">Featured Work</h2>
-        <div class="space-y-6">
-            <div class="glass p-6 border-l-4 border-purple-600">
-                <div class="flex justify-between items-start mb-2">
-                    <h3 class="font-bold text-xl">O Chinna Prema Katha</h3>
-                    <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">9.5/10</span>
-                </div>
-                [span_13](start_span)<p class="text-sm text-purple-500 mb-2">Lead Film Editor (Post-Production)[span_13](end_span)</p>
-                [span_14](start_span)<p class="text-gray-600 text-sm mb-4">Cinematic Editing, BGM, Title Design, and End Credits[span_14](end_span).</p>
-                <a href="https://youtu.be/OkYXCAz-Kg" class="text-purple-600 font-bold hover:underline">Watch Teaser →</a>
-            </div>
-
-            <div class="glass p-6 border-l-4 border-purple-600">
-                <div class="flex justify-between items-start mb-2">
-                    <h3 class="font-bold text-xl">Kathalu Konni Paathralu</h3>
-                    <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">9/10</span>
-                </div>
-                [span_15](start_span)<p class="text-sm text-purple-500 mb-2">Title Designer & Intro Editor[span_15](end_span)</p>
-                <a href="https://youtu.be/020f7h7551U" class="text-purple-600 font-bold hover:underline">View Project →</a>
+            <div class="project-card glass-card p-8 border-2">
+                <span class="text-3xl">📱</span>
+                <h3 class="text-xl font-bold mt-4 text-purple-700">Social Media</h3>
+                <p class="text-gray-500 text-sm mt-2">రీల్స్ & యూట్యూబ్ కంటెంట్.</p>
             </div>
         </div>
     </section>
 
-    <footer class="max-w-5xl mx-auto text-center py-12 glass purple-gradient text-white">
-        <h2 class="text-3xl font-bold mb-4">Let's Work Together!</h2>
-        [span_16](start_span)<p class="mb-8 opacity-90">"Every cut tells a story - Let me help tell yours."[span_16](end_span)</p>
-        <div class="flex flex-wrap justify-center gap-6">
-            [span_17](start_span)<a href="tel:8341388567" class="bg-white text-purple-700 px-6 py-2 rounded-full font-bold shadow-lg">Call: 83413 88567[span_17](end_span)</a>
-            [span_18](start_span)<a href="https://wa.me/message/CK6NURAZ3MWGB1" class="bg-green-500 text-white px-6 py-2 rounded-full font-bold shadow-lg">WhatsApp[span_18](end_span)</a>
+    <section class="max-w-6xl mx-auto px-6 mb-24">
+        <div class="glass-card overflow-hidden grid md:grid-cols-2 items-center">
+            <div class="p-10">
+                <span class="text-purple-600 font-bold text-sm">FEATURED WORK</span>
+                <h2 class="text-3xl font-bold mt-2 mb-4">O Chinna Prema Katha</h2>
+                <p class="text-gray-600 mb-6 italic leading-relaxed">
+                    "ఈ ప్రాజెక్ట్ కి నేను లీడ్ ఎడిటర్ గా పనిచేశాను. టైటిల్ డిజైన్ నుండి ఎండ్ క్రెడిట్స్ వరకు నా విజువల్ స్టైల్ కనిపిస్తుంది."
+                </p>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs bg-gray-100 px-3 py-1 rounded">Rating: 9.5/10</span>
+                    <a href="#" class="text-purple-600 font-bold hover:underline">లింక్ చూడండి →</a>
+                </div>
+            </div>
+            <div class="h-64 md:h-full bg-gray-200 purple-gradient opacity-30">
+                </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100 py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8">పని చేద్దామా?</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="tel:8341388567" class="text-lg font-medium hover:text-purple-600 transition">📞 83413 88567</a>
+                <a href="#" class="text-lg font-medium hover:text-purple-600 transition">📸 Instagram</a>
+                <a href="#" class="text-lg font-medium hover:text-purple-600 transition">✉️ Email Me</a>
+            </div>
+            <p class="mt-12 text-gray-400 text-sm">© 2026 Goutham Bolli. All Rights Reserved.</p>
         </div>
     </footer>
 
