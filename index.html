@@ -1,22 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="te">
 <head>
     <meta charset="UTF-8">
-    <title>Goutham Bolli | Admin Setup</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goutham Bolli | Visual Storyteller</title>
+    <style>
+        :root {
+            --primary-purple: #8A2BE2;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        [span_0](start_span)/* Hero Header[span_0](end_span) */
+        header {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 1rem;
+            color: #555;
+        }
+
+        [span_1](start_span)/* Summary Section[span_1](end_span) */
+        .section-title {
+            color: var(--primary-purple);
+            border-bottom: 2px solid var(--primary-purple);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        [span_2](start_span)/* Portfolio Folder Scrolling[span_2](end_span) */
+        .portfolio-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: thin;
+        }
+
+        .folder-card {
+            min-width: 200px;
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 15px;
+            border: 1px solid var(--primary-purple);
+            transition: transform 0.3s;
+        }
+
+        .folder-card:hover {
+            transform: translateY(-10px);
+            background: var(--primary-purple);
+            color: white;
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-item {
+            padding: 1.5rem;
+        }
+
+        .badge {
+            background: var(--primary-purple);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        [span_3](start_span)/* Contact Section[span_3](end_span) */
+        .contact-info {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary-purple);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align:center; margin-top:50px;">Setting up Admin... Please wait...</h1>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+
+<div class="container">
+    <header class="glass-card">
+        [span_4](start_span)<h1 class="hero-title">Goutham Bolli[span_4](end_span)</h1>
+        <p class="hero-subtitle">Visual Storyteller | Video Editor | [span_5](start_span)Title Designer[span_5](end_span)</p>
+        [span_6](start_span)<p class="tagline">"Turning raw footage into cinematic experiences. For me, it's always Ambition > Condition."[span_6](end_span)</p>
+    </header>
+
+    <section class="glass-card">
+        <h2 class="section-title">Professional Summary</h2>
+        <p>నేను విజువల్ స్టోరీ టెల్లింగ్‌పై మక్కువ ఉన్న వీడియో ఎడిటర్‌ని. 7 ఏళ్లకు పైగా అనుభవంతో, మొబైల్ ఎడిటింగ్ నుండి ప్రొఫెషనల్ ఇండస్ట్రీ ప్రమాణాలకు ఎదిగాను. [span_7](start_span)Adobe Premiere Pro మరియు Illustrator లో నాకు మంచి పట్టు ఉంది.[span_7](end_span)</p>
+    </section>
+
+    <section class="glass-card">
+        <h2 class="section-title">Technical Expertise</h2>
+        <ul>
+            [span_8](start_span)<li><strong>Adobe Premiere Pro:</strong> Expert Mastery in narrative flow.[span_8](end_span)</li>
+            [span_9](start_span)<li><strong>After Effects & Illustrator:</strong> Cinematic Title Design.[span_9](end_span)</li>
+            [span_10](start_span)<li><strong>Mobile Mastery:</strong> Alight Motion & KineMaster.[span_10](end_span)</li>
+        </ul>
+    </section>
+
+    <section class="glass-card">
+        <h2 class="section-title">Creative Portfolio</h2>
+        <div class="portfolio-scroll">
+            [span_11](start_span)<div class="folder-card"><h3>Short Films</h3><p>Narrative Stories[span_11](end_span)</p></div>
+            [span_12](start_span)<div class="folder-card"><h3>Teasers</h3><p>High-energy Edits[span_12](end_span)</p></div>
+            [span_13](start_span)<div class="folder-card"><h3>Title Designs</h3><p>Custom Intros[span_13](end_span)</p></div>
+            [span_14](start_span)<div class="folder-card"><h3>Digital Invites</h3><p>Event Intros[span_14](end_span)</p></div>
+        </div>
+    </section>
+
+    <section class="glass-card">
+        [span_15](start_span)<span class="badge">Teaser Out Now[span_15](end_span)</span>
+        <h2 class="section-title">Featured Project: O Chinna Prema Katha</h2>
+        [span_16](start_span)<p><strong>Role:</strong> Lead Film Editor[span_16](end_span)</p>
+        <p>ఇది నా కెరీర్‌లో ఒక ముఖ్యమైన మైలురాయి. [span_17](start_span)దీనికి సినిమాటిక్ ఎడిటింగ్, BGM మరియు టైటిల్ డిజైన్ నేను నిర్వహించాను.[span_17](end_span)</p>
+        [span_18](start_span)<a href="https://youtu.be/OkYXCAz-Kg" class="btn">Watch Teaser[span_18](end_span)</a>
+    </section>
+
+    <section class="glass-card contact-info">
+        <h2 class="section-title">Let's Work Together!</h2>
+        [span_19](start_span)<p>మీ పర్సనల్ లేదా బిజినెస్ కంటెంట్ కోసం క్రియేటివ్ ఎడిటర్ కావాలంటే నన్ను సంప్రదించండి.[span_19](end_span)</p>
+        [span_20](start_span)<p><strong>Phone:</strong> 83413 88567[span_20](end_span)</p>
+        <div style="margin-top: 20px;">
+            [span_21](start_span)<a href="https://wa.me/message/CK6NURAZ3MWGB1" class="btn" style="background: #25D366;">WhatsApp Me[span_21](end_span)</a>
+            [span_22](start_span)<a href="https://www.instagram.com/editorgouthambolli" class="btn">Instagram[span_22](end_span)</a>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>
